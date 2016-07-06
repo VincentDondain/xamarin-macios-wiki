@@ -1,17 +1,6 @@
 #AppKit.framework
 
 ``` diff
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h	2016-06-03 05:13:45.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h	2016-06-29 03:31:49.000000000 +0200
-@@ -112,6 +112,7 @@
- #import <AppKit/NSSliderCell.h>
- #import <AppKit/NSSpellProtocol.h>
- #import <AppKit/NSStackView.h>
-+#import <AppKit/NSGridView.h>
- #import <AppKit/NSText.h>
- #import <AppKit/NSTextField.h>
- #import <AppKit/NSTextFieldCell.h>
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSApplication.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSApplication.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSApplication.h	2016-06-03 05:13:45.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSApplication.h	2016-06-29 03:31:49.000000000 +0200
@@ -108,34 +97,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.pla
  };
  
  typedef struct __BCFlags {
-@@ -78,9 +68,15 @@
-     unsigned int        isDrawingFocus:1;
-     unsigned int        allowTitleTightening:1;
-     unsigned int        imageHugsTitle:1;
--    unsigned int        __reserved:5;
-+    unsigned int        shouldNotHighlightOnPerformClick:1;
-+    unsigned int        leadingOrTrailing:1;
-+    unsigned int        alwaysRadioExclusive:1;
-+    unsigned int        __reserved:2;
- #else
--    unsigned int        __reserved:5;
-+    unsigned int        __reserved:2;
-+    unsigned int        alwaysRadioExclusive:1;
-+    unsigned int        leadingOrTrailing:1;
-+    unsigned int        shouldNotHighlightOnPerformClick:1;
-     unsigned int        imageHugsTitle:1;
-     unsigned int        allowTitleTightening:1;
-     unsigned int        isDrawingFocus:1;
-@@ -128,8 +124,7 @@
- #endif
- } _BCFlags2;
- 
--@interface NSButtonCell : NSActionCell
--{
-+@interface NSButtonCell : NSActionCell {
-     /*All instance variables are private*/
-     NSString	       *_altContents;
-     id			_sound;
 @@ -172,18 +167,8 @@
  
  @end
@@ -310,20 +271,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.pla
  - (void)setNextState;			/* toggle/cycle through states */
  @end
  
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSCollectionView.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSCollectionView.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSCollectionView.h	2016-06-03 05:13:45.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSCollectionView.h	2016-06-29 03:31:50.000000000 +0200
-@@ -170,8 +170,9 @@
-         unsigned int observingClipFrameChanges:1;
-         unsigned int allowsSectionDrop:1;
-         unsigned int backgroundViewScrollsWithContent:1;
-+        unsigned int opensGaps:1;
-         unsigned int visMode:1;
--        unsigned int reserved:12;
-+        unsigned int reserved:11;
-     } _cvFlags;
-     id _delegate;
-     NSMutableArray *_backgroundLayers;
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSComboBox.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSComboBox.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSComboBox.h	2016-06-03 05:13:45.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSComboBox.h	2016-06-29 03:31:49.000000000 +0200
@@ -357,19 +304,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.pla
  
  @interface NSComboBox : NSTextField {
      /*All instance variables are private*/
-@@ -44,10 +65,9 @@
- 
- @property BOOL completes;
- 
--- (nullable id <NSComboBoxDelegate>)delegate;
--- (void)setDelegate:(nullable id <NSComboBoxDelegate>)delegate;
-+@property (nullable, assign) id<NSComboBoxDelegate> delegate;
- 
--/* These two methods can only be used when usesDataSource is YES */
-+/* The dataSource will only be used when usesDataSource is YES */
- @property (nullable, assign) id<NSComboBoxDataSource> dataSource;
- 
- /* These methods can only be used when usesDataSource is NO */
 @@ -65,25 +85,4 @@
  
  @end
@@ -408,18 +342,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.pla
  
  /* The operation queue that the write request will be issued from. If this method is not implemented, the mainOperationQueue is used. */
  - (NSOperationQueue *)promiseOperationQueueForFilePromiseProvider:(NSFilePromiseProvider*)filePromiseProvider;
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSFilePromiseReceiver.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSFilePromiseReceiver.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSFilePromiseReceiver.h	2016-06-03 05:13:45.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSFilePromiseReceiver.h	2016-06-29 03:31:50.000000000 +0200
-@@ -28,7 +28,7 @@
-     NSInteger _promiseType;
-     void (^_readerBlock)(NSURL *, NSError * __nullable);
-     struct {
--        unsigned int usesFileCoordniation:1;
-+        unsigned int usesFileCoordination:1;
-         unsigned int registered:1;
-         unsigned int reserved:30;
-     } _flags;
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSGraphics.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSGraphics.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSGraphics.h	2016-06-03 05:13:45.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSGraphics.h	2016-06-29 03:31:49.000000000 +0200
@@ -436,33 +358,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.pla
  
  /* Keys for deviceDescription dictionaries.
  */
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSGridView.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSGridView.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSGridView.h	2016-06-03 05:13:45.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSGridView.h	2016-06-29 03:31:50.000000000 +0200
-@@ -56,6 +56,7 @@
-     NSMutableArray *_columns;
-     NSMutableArray *_rows;
-     NSMapTable *_cellTable;
-+    NSInteger _currentConstraintGeneration;
-     
-     id  _reserved __unused;
-     id  _reserved2 __unused;
-@@ -122,6 +123,7 @@
-     
-     NSGridCellPlacement _yPlacement;
-     NSGridRowAlignment _rowAlignment;
-+    NSInteger _hasContentInGeneration;
- 
-     CGFloat _height;
-     CGFloat _topPadding;
-@@ -159,6 +161,7 @@
-     id  _reserved2 __unused;
-     id  _reserved3 __unused;
-     
-+    NSInteger _hasContentInGeneration;
-     NSGridCellPlacement _xPlacement;
-     CGFloat _width;
-     CGFloat _trailingPadding;
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSImage.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSImage.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSImage.h	2016-06-03 05:13:45.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSImage.h	2016-06-29 03:31:49.000000000 +0200
@@ -488,26 +383,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.pla
   */
  APPKIT_EXTERN NSString * const NSImageNameRightFacingTriangleTemplate NS_AVAILABLE_MAC(10_5);
  APPKIT_EXTERN NSString * const NSImageNameLeftFacingTriangleTemplate NS_AVAILABLE_MAC(10_5);
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSMenuItem.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSMenuItem.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSMenuItem.h	2016-06-03 05:13:45.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSMenuItem.h	2016-06-29 03:31:49.000000000 +0200
-@@ -10,6 +10,7 @@
- #import <AppKit/AppKitDefines.h>
- #import <AppKit/NSUserInterfaceValidation.h>
- #import <AppKit/NSView.h>
-+#import <AppKit/NSCell.h>
- 
- NS_ASSUME_NONNULL_BEGIN
- 
-@@ -102,7 +103,7 @@
- 
- @property (nullable, strong) NSImage *image;
- 
--@property NSInteger state;
-+@property NSInteger /* NSControlState */ state;
- @property (null_resettable, strong) NSImage *onStateImage; // checkmark by default
- @property (nullable, strong) NSImage *offStateImage; // none by default
- @property (null_resettable, strong) NSImage *mixedStateImage; // horizontal line by default?
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSOpenGLView.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSOpenGLView.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSOpenGLView.h	2016-06-03 05:13:45.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSOpenGLView.h	2016-06-29 03:31:49.000000000 +0200
@@ -534,40 +409,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.pla
  /* Convert to/from the device pixel aligned coordinates sytem of a display 
   */
  - (NSRect)convertRectToBacking:(NSRect)rect NS_AVAILABLE_MAC(10_7);
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSSharingService.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSSharingService.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSSharingService.h	2016-06-03 05:13:45.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSSharingService.h	2016-06-29 03:31:50.000000000 +0200
-@@ -139,7 +139,7 @@
- /* The following methods are invoked when the service is performed and the sharing window pops up, to present a transition between the original items and the sharing window.
-  */
- - (NSRect)sharingService:(NSSharingService *)sharingService sourceFrameOnScreenForShareItem:(id)item;
--#if !defined(SWIFT_CLASS_EXTRA) || (defined(SWIFT_SDK_OVERLAY_APPKIT_EPOCH) && SWIFT_SDK_OVERLAY_APPKIT_EPOCH >= 6)
-+#if !defined(SWIFT_CLASS_EXTRA) || (defined(SWIFT_SDK_OVERLAY_APPKIT_EPOCH) && SWIFT_SDK_OVERLAY_APPKIT_EPOCH >= 1)
- /* When non-nil, the image returned would be used for the transitioning animation. When nil, the transitioning animation is disabled.
-  */
- - (nullable NSImage *)sharingService:(NSSharingService *)sharingService transitionImageForShareItem:(id)item contentRect:(NSRect *)contentRect;
-@@ -150,7 +150,7 @@
- 
- /* The following method is invoked when the service is performed and wants to display its contents in a popover. The delegate should return the view that will act as the anchor of the popover, along with the target rectangle within the bounds of that view and preferred edge of that rectangle for the popover to appear. The delegate may also return nil, indicating that there is no anchoring view currently available, in which case the service may attempt to display the service via some other means.
-  
-- The service named NSSharingServiceNameCloudSharing prefers to display itself using a popover anchored to an "iCloud Sharing" or "Share" button. If no such button is available or visible, return nil.
-+ The service named NSSharingServiceNameCloudSharing prefers to display itself using a popover anchored to an "Add People" or "Share" button. If no such button is available or visible, return nil.
-  */
- - (nullable NSView *)anchoringViewForSharingService:(NSSharingService *)sharingService showRelativeToRect:(NSRect *)positioningRect preferredEdge:(NSRectEdge *)preferredEdge;
- 
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSSliderCell.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSSliderCell.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSSliderCell.h	2016-06-03 05:13:45.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSSliderCell.h	2016-06-29 03:31:49.000000000 +0200
-@@ -43,7 +43,8 @@
-         unsigned int snappedToPreviousValue:1;
-         unsigned int snappedToDefaultValue:1;
-         unsigned int snappingAllowed:1;
--        unsigned int reserved2:19;
-+        unsigned int collapseOnResize:1;
-+        unsigned int reserved2:18;
-     } _scFlags;
- }
- 
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTabView.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTabView.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTabView.h	2016-06-03 05:13:45.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTabView.h	2016-06-29 03:31:49.000000000 +0200
@@ -600,38 +441,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.pla
  @interface NSTabView : NSView
  {
  @private
-@@ -35,7 +50,11 @@
-     id	_tabViewItems;                          	// array of NSTabViewItem
-     NSTabViewItem	*_selectedTabViewItem;		// nil only if _tabViewItems is empty
-     NSFont		*_font;				// font use to display the tab label
--    NSTabViewType	_tabViewType;
-+    struct __NSTabViewTypeFlags {
-+        unsigned int tabViewBorderType:3;
-+        unsigned int tabPosition:5;
-+        unsigned int reserved:24;
-+    } _typeFlags;
-     BOOL		_allowTruncatedLabels;
-     id                  _delegate;
- 
-@@ -75,7 +94,8 @@
-         unsigned int ownedByTabViewController:1;
-         unsigned int reserved:19;
-     } _flags;
--    NSTabViewItem 	*_focusedTabViewItem;			
-+    NSTabViewItem 	*_focusedTabViewItem;
-+
-     void		*_tabViewUnused2 __unused;
- }
- 
-@@ -83,7 +103,7 @@
- 
- - (void)selectTabViewItem:(nullable NSTabViewItem *)tabViewItem;
- - (void)selectTabViewItemAtIndex:(NSInteger)index;				// May raise an NSRangeException
--- (void)selectTabViewItemWithIdentifier:(id)identifier;			// May raise an NSRangeException if identifier not found
-+- (void)selectTabViewItemWithIdentifier:(id)identifier;                         // May raise an NSRangeException if identifier not found
- - (void)takeSelectedTabViewItemFromSender:(nullable id)sender;			// May raise an NSRangeException
- 
- 	/* Navigation */
 @@ -95,12 +115,14 @@
  
  	/* Getters */
@@ -651,68 +460,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.pla
  @property BOOL drawsBackground;  						// only relevant for borderless tab view type
  @property NSControlTint controlTint;
  @property NSControlSize controlSize;
-@@ -108,7 +130,7 @@
- 	/* Add/Remove tabs */
- 
- - (void)addTabViewItem:(NSTabViewItem *)tabViewItem;				// Add tab at the end.
--- (void)insertTabViewItem:(NSTabViewItem *)tabViewItem atIndex:(NSInteger)index;	// May raise an NSRangeException
-+- (void)insertTabViewItem:(NSTabViewItem *)tabViewItem atIndex:(NSInteger)index;// May raise an NSRangeException
- - (void)removeTabViewItem:(NSTabViewItem *)tabViewItem;				// tabViewItem must be an existing tabViewItem
- 
- 	/* Delegate */
-@@ -121,13 +143,13 @@
- 
- 	/* Geometry */
- 
--@property (readonly) NSRect contentRect;							// Return the rect available for a "page". 
-+@property (readonly) NSRect contentRect;					// Return the rect available for a "page".
- 
- 	/* Query */
- 
- @property (readonly) NSInteger numberOfTabViewItems;
- - (NSInteger)indexOfTabViewItem:(NSTabViewItem *)tabViewItem;			// NSNotFound if not found
--- (NSTabViewItem *)tabViewItemAtIndex:(NSInteger)index;			// May raise an NSRangeException	
-+- (NSTabViewItem *)tabViewItemAtIndex:(NSInteger)index;                         // May raise an NSRangeException	
- - (NSInteger)indexOfTabViewItemWithIdentifier:(id)identifier;			// NSNotFound if not found
- 
- @end
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTableView.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTableView.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTableView.h	2016-06-03 05:13:45.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTableView.h	2016-06-29 03:31:49.000000000 +0200
-@@ -111,7 +111,7 @@
-     
-     /* The table will use a row height specified for a small/medium or large table.
-      It is required that all sizes be fully tested and supported if NSTableViewRowSizeStyleCustom is not used.
--     Some standard Aqua metrics may be applied to cells based on the current size. */
-+     Some standard Aqua metrics may be applied to cells based on the current size. Specifically, the metrics will be applied to the NSTableCellView's textField and imageView outlets. Don't use these and add your own outlets if you wish to control the metrics yourself. */
-     NSTableViewRowSizeStyleSmall = 1,
-     NSTableViewRowSizeStyleMedium = 2,
-     NSTableViewRowSizeStyleLarge = 3,
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTableViewRowAction.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTableViewRowAction.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTableViewRowAction.h	2016-06-03 05:13:45.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTableViewRowAction.h	2016-06-29 03:31:49.000000000 +0200
-@@ -27,8 +27,8 @@
-     NSColor *_backgroundColor;
- #ifndef __OBJC2__
-     unsigned int _flags:32;
--    id _reserved;
- #endif
-+    NSImage *_image;
- }
- 
- + (instancetype)rowActionWithStyle:(NSTableViewRowActionStyle)style title:(NSString *)title handler:(void (^)(NSTableViewRowAction *action, NSInteger row))handler;
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTextField.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTextField.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTextField.h	2016-06-03 05:13:45.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTextField.h	2016-06-29 03:31:49.000000000 +0200
-@@ -72,7 +72,7 @@
- + (instancetype)wrappingLabelWithString:(NSString *)stringValue NS_SWIFT_NAME(init(wrappingLabelWithString:)) NS_AVAILABLE_MAC(10_12);
- 
- /*!
-- Creates a non-editable, selectable text field that displays attributed text.
-+ Creates a non-editable, non-selectable text field that displays attributed text.
-  The line break mode of this field is determined by the attributed string's NSParagraphStyle attribute.
-  @param attributedStringValue The attributed string to display in the field.
-  @return An initialized text field object.
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTitlebarAccessoryViewController.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTitlebarAccessoryViewController.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTitlebarAccessoryViewController.h	2016-06-03 05:13:45.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTitlebarAccessoryViewController.h	2016-06-29 03:31:50.000000000 +0200
@@ -726,46 +473,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.pla
  - (void)viewWillAppear NS_REQUIRES_SUPER;
  - (void)viewDidAppear NS_REQUIRES_SUPER;
  - (void)viewDidDisappear NS_REQUIRES_SUPER;
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSViewController.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSViewController.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSViewController.h	2016-06-03 05:13:45.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSViewController.h	2016-06-29 03:31:50.000000000 +0200
-@@ -57,7 +57,8 @@
-     unsigned int _viewIsAppearing:1;
-     unsigned int _delayViewDidAppear:1;
-     unsigned int _isContentViewController:1;
--    unsigned int _reserved:29 __unused;
-+    unsigned int _shouldDirtyLayoutOnSizeChanges:1;
-+    unsigned int _reserved:28 __unused;
- }
- 
- /* The designated initializer. The specified nib should typically have the class of the file's owner set to NSViewController, or a subclass of yours, with the "view" outlet connected to a view. If you pass in a nil nib name then -nibName will return nil. -loadView can be used to assign a view before -view is invoked. If you pass in a nil bundle then -nibBundle will return nil and -loadView will interpret it using the same rules as -[NSNib initWithNibNamed:bundle:].
-@@ -154,7 +155,7 @@
- */
- - (void)dismissViewController:(NSViewController *)viewController NS_AVAILABLE_MAC(10_10);
- 
--/* Dismisses the ViewController.  If the presenter is a ViewController, it will be sent a -dismissViewController: message with this ViewController as the parameter.  Does nothing if the receiver is not currently presented.
-+/* Dismisses the receiver.  If the receiver’s presenter is an NSViewController, it will be sent a -dismissViewController: message with this receiver as the parameter.  Does nothing if the receiver is not currently presented.
- */
- - (IBAction)dismissController:(nullable id)sender NS_AVAILABLE_MAC(10_10);
- 
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSVisualEffectView.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSVisualEffectView.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSVisualEffectView.h	2016-06-03 05:13:45.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSVisualEffectView.h	2016-06-29 03:31:50.000000000 +0200
-@@ -54,11 +54,13 @@
-     struct NSVisualEffectViewInternal *_NSVisualEffectViewInternal;
-     
- #if !__LP64__
--    uint8_t _reserved[48];
-+    uint8_t _reserved[40];
- #endif
-     CALayer *_darkenLayer;
-     CALayer *_maskLayer;
-     CALayer *_clearCopyLayer;
-+    CALayer *_backdropLayer;
-+    CALayer *_backdropLayerForMask;
-     
-     unsigned int _dirty:1;
-     unsigned int _hasMask:1;
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSWindow.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSWindow.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSWindow.h	2016-06-03 05:13:45.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSWindow.h	2016-06-29 03:31:50.000000000 +0200
