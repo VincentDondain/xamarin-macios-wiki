@@ -4,32 +4,6 @@
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLAsset.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLAsset.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLAsset.h	2015-10-03 01:47:32.000000000 +0200
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLAsset.h	2016-05-16 07:44:17.000000000 +0200
-@@ -2,7 +2,7 @@
-  @header MDLAsset.h
-  @framework ModelIO
-  @abstract Structures for representing contents of 3d model files
-- @copyright Copyright © 2015 Apple, Inc. All rights reserved.
-+ @copyright Copyright © 2016 Apple, Inc. All rights reserved.
-  */
- 
- #import <ModelIO/ModelIOExports.h>
-@@ -12,12 +12,15 @@
- #import <Foundation/NSURL.h>
- #import <simd/simd.h>
- 
-+@class MDLLightProbe;
-+@class MDLTexture;
-+
- /*!
-  @class MDLAsset
-  
-  @abstract An MDLAsset represents the contents of a model file.
-  
--@discussion
-+ @discussion
- 
-  Each asset contains a collection of hierarchies of objects, where each object 
-  in the asset is the top level of a hierarchy. Objects include transforms, 
 @@ -81,8 +84,15 @@
             vertexDescriptor:(nullable MDLVertexDescriptor*)vertexDescriptor
              bufferAllocator:(nullable id<MDLMeshBufferAllocator>)bufferAllocator;
@@ -93,35 +67,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
   @abstract The bounds of the MDLAsset at the earliest time sample
   */
  @property (nonatomic, readonly) MDLAxisAlignedBoundingBox boundingBox;
-@@ -153,7 +178,9 @@
-  @property startTime
-  @abstract Start time bracket of animation data
-  @discussion If no animation data was specified by resource or resource incapable 
--             of specifying animation data, this value defaults to 0
-+             of specifying animation data, this value defaults to 0. If startTime
-+             was set explicitly, then the value of startTime will be the lesser
-+             of the set value and the animated values.
-  */
- @property (nonatomic, readwrite) NSTimeInterval startTime;
- 
-@@ -161,13 +188,15 @@
-  @property endTime
-  @abstract End time bracket of animation data
-  @discussion If no animation data was specified by resource or resource incapable
--             of specifying animation data, this value defaults to 0
-+             of specifying animation data, this value defaults to 0. If the
-+             endTime was set explicitly, then the value of endTime will be the
-+             greater of the set value and the animated values.
-  */
- @property (nonatomic, readwrite) NSTimeInterval endTime;
- 
- /*!
-  @property URL
-- @abstract  URL used to create the asset
-+ @abstract URL used to create the asset
-  @discussion If no animation data was specified by resource or resource incapable 
-              of specifying animation data, this value defaults to 0
-  */
 @@ -181,7 +210,7 @@
  
  /*!
@@ -186,15 +131,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLCamera.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLCamera.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLCamera.h	2015-10-03 01:47:32.000000000 +0200
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLCamera.h	2016-05-16 07:44:17.000000000 +0200
-@@ -97,6 +97,8 @@
-  
-  4. Geometry of the lens
-  
-+    This is a thin lens model.
-+ 
-     @property focalLength
-  
-     The default focal length is 50mm, corresponding to a field of view of 54 
 @@ -226,6 +228,13 @@
  
   */
@@ -220,23 +156,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
   Move the camera back and orient the camera so that a bounding box is framed 
   within the current field of view. Uses the Y axis as up.
   If setNearAndFar is YES, the near and far visibility distances will be set.
-diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLLight.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLLight.h
---- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLLight.h	2015-10-03 01:47:32.000000000 +0200
-+++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLLight.h	2016-05-18 04:40:09.000000000 +0200
-@@ -56,13 +56,6 @@
-  @property attenuationStartDistance. Within the attenuation start distance, the
-            light is maximally bright.
-  @property attenuationEndDistance. Beyond this distance, there is no light.
--
-- @discussion A good formula to calculate falloff is
-- 
--   falloff = clamp((1 - (distance/attenuationStartDistance)^4) ^2), 0, 1) / (distance^2 + 1)
-- 
--   Note that adding one to distance in the denominator prevents numerical issues 
--   very close to the light's origin.
-  */
- 
- NS_CLASS_AVAILABLE(10_11, 9_0)
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLMaterial.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLMaterial.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLMaterial.h	2015-10-03 01:47:32.000000000 +0200
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLMaterial.h	2016-05-18 04:40:08.000000000 +0200
@@ -377,37 +296,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
          and/or materials to be applied to mesh
   */
  - (instancetype)initWithVertexBuffer:(id<MDLMeshBuffer>)vertexBuffer
-@@ -60,17 +68,17 @@
- 
- /*!
-  @method initWithVertexBuffer:vertexCount:descriptor:submeshes:
-- @abstract Initialize object with an array of vertex buffers (Structure of 
-+ @abstract Initialize object with an array of vertex buffers (Structure of
-            Arrays) and a collection of submeshes
-- @return Initialized mesh or nil if descriptor's layout array is incompatible 
-+ @return Initialized mesh or nil if descriptor's layout array is incompatible
-          with vertexBuffers array
-  @param vertexCount Number of vertices in vertexBuffers
-- @param vertexBuffer An array of MDLMeshBuffer objects containing vertex data 
-+ @param vertexBuffer An array of MDLMeshBuffer objects containing vertex data
-          for the mesh
-  @param descriptor VertexDescriptor specifying how to interpret vertex data
-- @param submeshes Array of submeshes with index buffers referencing vertex data 
-+ @param submeshes Array of submeshes with index buffers referencing vertex data
-         and/or materials to be applied to mesh
-- @discussion Allows initialization with the layout of the vertexBuffers in a 
-+ @discussion Allows initialization with the layout of the vertexBuffers in a
-         structure-of-arrays form, in other words, non-interleaved vertex attributes
-  */
- - (instancetype)initWithVertexBuffers:(NSArray<id<MDLMeshBuffer>> *)vertexBuffers
-@@ -78,7 +86,6 @@
-                            descriptor:(MDLVertexDescriptor *)descriptor
-                             submeshes:(NSArray<MDLSubmesh*> *)submeshes;
- 
--
- /*!
-  @method vertexAttributeDataForAttributeNamed:
-  @abstract convenience selector to get quick access to vertex attribute data
 @@ -88,6 +95,20 @@
  - (nullable MDLVertexAttributeData*)vertexAttributeDataForAttributeNamed:(NSString*)name;
  
@@ -429,30 +317,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
   @property boundingBox
   @abstract Bounding box encompasing the mesh
   @discussion Calculated by iterating through MDLVertexAttributePosition to find
-@@ -99,15 +120,15 @@
- /*!
-  @property vertexDescriptor
-  @abstract Immutable vertex descriptor for interpreting data in vertexBuffers
-- @discussion Setting this applies the new layout in 'vertexBuffers' thus is a 
--             heavyweight operation as structured copies of almost all vertex 
--             buffer data could be made.  Additionally, if the new vertexDescriptor 
--             does not have an attribute in the original vertexDescriptor, that 
--             attribute will be deleted.  If the original vertexDescriptor does 
--             not have an attribute in the new vertexDescriptor, the data for the 
--             added attribute set as the added attribute's initializationValue 
-+ @discussion Setting this applies the new layout in 'vertexBuffers' thus is a
-+             heavyweight operation as structured copies of almost all vertex
-+             buffer data could be made.  Additionally, if the new vertexDescriptor
-+             does not have an attribute in the original vertexDescriptor, that
-+             attribute will be deleted.  If the original vertexDescriptor does
-+             not have an attribute in the new vertexDescriptor, the data for the
-+             added attribute set as the added attribute's initializationValue
-              property.
-- 
-+
-              The allocator associated with each original meshbuffer is used to
-              reallocate the corresponding resultant meshbuffer.
-  */
 @@ -116,11 +137,11 @@
  /*!
   @property vertexCount
@@ -952,31 +816,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
          the texture in the Mesh.
   @result Success or failure of the baking process.
   */
-@@ -429,17 +602,17 @@
-  @abstract Creates an Ambient Occlusion texture, returns true upon success, false
-            upon failure
-  @param quality Float between 0 and 1 that defines quality of the bake process.
--        0 is of lower quality but bakes faster and uses less memory, where 1 is 
-+        0 is of lower quality but bakes faster and uses less memory, where 1 is
-         of higher quality.
-- @param attenuationFactor Float between 0 to 1 that defines how to attenuate the 
--        AO value. 0 doesn't change it, and at 1, all AO values are white except 
-+ @param attenuationFactor Float between 0 to 1 that defines how to attenuate the
-+        AO value. 0 doesn't change it, and at 1, all AO values are white except
-         if they are originally completely black. Quadratic attenuation in between.
-- @param objectsToConsider NSArray of MDLMeshes containing the objects to raytrace 
-+ @param objectsToConsider NSArray of MDLMeshes containing the objects to raytrace
-         against
-- @param vertexAttributeName NSString of the MDLVertexAttribute where the vertex 
--        texture UVs will be stored. Creates it if it doesn't exist, otherwise 
-+ @param vertexAttributeName NSString of the MDLVertexAttribute where the vertex
-+        texture UVs will be stored. Creates it if it doesn't exist, otherwise
-         overwrites current values.
-- @param materialPropertyName NSString of the MDLMaterialProperty that will store 
-+ @param materialPropertyName NSString of the MDLMaterialProperty that will store
-         the texture in the Mesh.
-  @result Success or failure of the baking process.
-   */
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLObject.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLObject.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLObject.h	2015-10-03 01:47:32.000000000 +0200
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLObject.h	2016-05-16 08:40:26.000000000 +0200

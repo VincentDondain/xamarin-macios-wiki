@@ -1,26 +1,6 @@
 #PhotosUI.framework
 
 ``` diff
-diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/PhotosUI.framework/Headers/PHContentEditingController.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/PhotosUI.framework/Headers/PHContentEditingController.h
---- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/PhotosUI.framework/Headers/PHContentEditingController.h	2015-10-03 02:24:13.000000000 +0200
-+++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/PhotosUI.framework/Headers/PHContentEditingController.h	2016-06-01 05:16:03.000000000 +0200
-@@ -8,8 +8,9 @@
- #import <Foundation/Foundation.h>
- #import <UIKit/UIImage.h>
- 
--@class PHAdjustmentData, PHContentEditingInput, PHContentEditingOutput;
-+NS_ASSUME_NONNULL_BEGIN
- 
-+@class PHAdjustmentData, PHContentEditingInput, PHContentEditingOutput;
- 
- // Protocol to which the principal view controller of the extension must conform.
- @protocol PHContentEditingController <NSObject>
-@@ -31,3 +32,5 @@
- @property (readonly, nonatomic) BOOL shouldShowCancelConfirmation;
- 
- @end
-+
-+NS_ASSUME_NONNULL_END
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/PhotosUI.framework/Headers/PHLivePhotoView.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/PhotosUI.framework/Headers/PHLivePhotoView.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/PhotosUI.framework/Headers/PHLivePhotoView.h	2015-10-03 02:24:13.000000000 +0200
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/PhotosUI.framework/Headers/PHLivePhotoView.h	2016-06-01 05:16:03.000000000 +0200
