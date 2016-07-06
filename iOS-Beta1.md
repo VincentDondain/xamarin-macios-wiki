@@ -1,52 +1,52 @@
 ### To Bind
 ###### New Frameworks
-- [ ] CallKit.framework *(Added)*
-- [ ] Intents.framework *(Added)*
-- [ ] IntentsUI.framework *(Added)*
-- [ ] Messages.framework *(Added)*
-- [ ] Speech.framework *(Added)*
-- [ ] UserNotifications.framework *(Added)*
-- [ ] UserNotificationsUI.framework *(Added)*
-- [ ] VideoSubscriberAccount.framework *(Added)*
+- [X] CallKit.framework *(Added)* - Alex - [PR 189] Filled radar https://trello.com/c/afWXDZ3A
+- [ ] Intents.framework *(Added)* - Alex
+- [ ] IntentsUI.framework *(Added)* - Alex
+- [X] Messages.framework *(Added)* - Vincent - https://github.com/xamarin/xamarin-macios/pull/190
+- [X] Speech.framework *(Added)* - Alex - [PR 203] - Filled radar https://trello.com/c/s6s6YKua
+- [X] UserNotifications.framework *(Added)* - Alex
+- [X] UserNotificationsUI.framework *(Added)* - Alex
+- [X] VideoSubscriberAccount.framework *(Added)* - Alex - [Done] PR 205
 
 
 ###### Existing Frameworks
 - [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-iOS-Beta1)
-- [ ] [AVKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AVKit-iOS-Beta1)
+- [X] [AVKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AVKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/298
 - [ ] [AddressBook.framework](https://github.com/xamarin/xamarin-macios/wiki/AddressBook-iOS-Beta1)
 - [ ] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-iOS-Beta1)
 - [ ] [AudioUnit.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioUnit-iOS-Beta1)
 - [ ] [CFNetwork.framework](https://github.com/xamarin/xamarin-macios/wiki/CFNetwork-iOS-Beta1)
-- [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-iOS-Beta1)
-- [ ] [Contacts.framework](https://github.com/xamarin/xamarin-macios/wiki/Contacts-iOS-Beta1)
+- [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-iOS-Beta1) - initial work by Tim - https://gist.github.com/timrisi/0b190b114f153d7198db4b41be2ed839
+- [X] [Contacts.framework](https://github.com/xamarin/xamarin-macios/wiki/Contacts-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/278
 - [ ] [CoreAudio.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreAudio-iOS-Beta1)
-- [ ] [CoreBluetooth.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreBluetooth-iOS-Beta1)
-- [ ] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-iOS-Beta1)
+- [X] [CoreBluetooth.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreBluetooth-iOS-Beta1) - Vincent - Filled radar https://trello.com/c/oqB27JA6 - https://github.com/xamarin/xamarin-macios/pull/342
+- [ ] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-iOS-Beta1) - Manuel
 - [ ] [CoreFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreFoundation-iOS-Beta1)
-- [ ] [CoreGraphics.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreGraphics-iOS-Beta1)
-- [ ] [CoreImage.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreImage-iOS-Beta1)
-- [ ] [CoreLocation.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreLocation-iOS-Beta1)
+- [X] [CoreGraphics.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreGraphics-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/337
+- [X] [CoreImage.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreImage-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/263
+- [X] [CoreLocation.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreLocation-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/334
 - [ ] [CoreMIDI.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMIDI-iOS-Beta1)
-- [ ] [CoreMedia.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMedia-iOS-Beta1)
-- [ ] [CoreMotion.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMotion-iOS-Beta1)
-- [ ] [CoreSpotlight.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreSpotlight-iOS-Beta1)
-- [ ] [CoreTelephony.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreTelephony-iOS-Beta1)
-- [ ] [CoreText.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreText-iOS-Beta1)
-- [ ] [CoreVideo.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreVideo-iOS-Beta1)
-- [ ] [EventKit.framework](https://github.com/xamarin/xamarin-macios/wiki/EventKit-iOS-Beta1)
-- [ ] [ExternalAccessory.framework](https://github.com/xamarin/xamarin-macios/wiki/ExternalAccessory-iOS-Beta1)
+- [ ] [CoreMedia.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMedia-iOS-Beta1) - new constants added to non-bound API
+- [X] [CoreMotion.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMotion-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/338
+- [X] [CoreSpotlight.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreSpotlight-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/344
+- [X] [CoreTelephony.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreTelephony-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/279
+- [X] [CoreText.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreText-iOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/346
+- [X] [CoreVideo.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreVideo-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/280
+- [X] [EventKit.framework](https://github.com/xamarin/xamarin-macios/wiki/EventKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/273
+- [X] [ExternalAccessory.framework](https://github.com/xamarin/xamarin-macios/wiki/ExternalAccessory-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/274
 - [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-iOS-Beta1)
-- [ ] [GLKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GLKit-iOS-Beta1)
-- [ ] [GameController.framework](https://github.com/xamarin/xamarin-macios/wiki/GameController-iOS-Beta1)
-- [ ] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-iOS-Beta1)
+- [ ] [GLKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GLKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/351
+- [X] [GameController.framework](https://github.com/xamarin/xamarin-macios/wiki/GameController-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/276
+- [ ] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-iOS-Beta1) - Vincent
 - [ ] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-iOS-Beta1)
 - [ ] [HealthKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HealthKit-iOS-Beta1)
-- [ ] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-iOS-Beta1)
+- [X] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-iOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/324
 - [ ] [IOKit.framework](https://github.com/xamarin/xamarin-macios/wiki/IOKit-iOS-Beta1)
 - [ ] [ImageIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ImageIO-iOS-Beta1)
 - [ ] [JavaScriptCore.framework](https://github.com/xamarin/xamarin-macios/wiki/JavaScriptCore-iOS-Beta1)
-- [ ] [LocalAuthentication.framework](https://github.com/xamarin/xamarin-macios/wiki/LocalAuthentication-iOS-Beta1)
-- [ ] [MapKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MapKit-iOS-Beta1)
+- [ ] [LocalAuthentication.framework](https://github.com/xamarin/xamarin-macios/wiki/LocalAuthentication-iOS-Beta1) - Sebastien - some new, unused and conflicting defines needs to be checked against new seeds. Some types are now marked as available on watchOS and tvOS from the iOS SDK but are not (yet?) part of the other SDK
+- [X] [MapKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MapKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/311
 - [ ] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-iOS-Beta1)
 - [ ] [MessageUI.framework](https://github.com/xamarin/xamarin-macios/wiki/MessageUI-iOS-Beta1)
 - [ ] [Metal.framework](https://github.com/xamarin/xamarin-macios/wiki/Metal-iOS-Beta1)
@@ -55,24 +55,24 @@
 - [ ] [MobileCoreServices.framework](https://github.com/xamarin/xamarin-macios/wiki/MobileCoreServices-iOS-Beta1)
 - [ ] [ModelIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ModelIO-iOS-Beta1)
 - [ ] [MultipeerConnectivity.framework](https://github.com/xamarin/xamarin-macios/wiki/MultipeerConnectivity-iOS-Beta1)
-- [ ] [NetworkExtension.framework](https://github.com/xamarin/xamarin-macios/wiki/NetworkExtension-iOS-Beta1)
-- [ ] [NotificationCenter.framework](https://github.com/xamarin/xamarin-macios/wiki/NotificationCenter-iOS-Beta1)
-- [ ] [OpenGLES.framework](https://github.com/xamarin/xamarin-macios/wiki/OpenGLES-iOS-Beta1)
+- [X] [NetworkExtension.framework](https://github.com/xamarin/xamarin-macios/wiki/NetworkExtension-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/309
+- [X] [NotificationCenter.framework](https://github.com/xamarin/xamarin-macios/wiki/NotificationCenter-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/323
+- [X] [OpenGLES.framework](https://github.com/xamarin/xamarin-macios/wiki/OpenGLES-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/302
 - [ ] [PassKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PassKit-iOS-Beta1)
-- [ ] [Photos.framework](https://github.com/xamarin/xamarin-macios/wiki/Photos-iOS-Beta1)
+- [ ] [Photos.framework](https://github.com/xamarin/xamarin-macios/wiki/Photos-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/348
 - [ ] [PhotosUI.framework](https://github.com/xamarin/xamarin-macios/wiki/PhotosUI-iOS-Beta1)
-- [ ] [PushKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PushKit-iOS-Beta1)
-- [ ] [QuartzCore.framework](https://github.com/xamarin/xamarin-macios/wiki/QuartzCore-iOS-Beta1)
-- [ ] [QuickLook.framework](https://github.com/xamarin/xamarin-macios/wiki/QuickLook-iOS-Beta1)
-- [ ] [ReplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/ReplayKit-iOS-Beta1)
-- [ ] [SafariServices.framework](https://github.com/xamarin/xamarin-macios/wiki/SafariServices-iOS-Beta1)
+- [X] [PushKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PushKit-iOS-Beta1) - Sebastien - mostly changes wrt PKPushType -> NS_STRING_ENUM. https://github.com/xamarin/xamarin-macios/pull/347
+- [ ] [QuartzCore.framework](https://github.com/xamarin/xamarin-macios/wiki/QuartzCore-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/350
+- [X] [QuickLook.framework](https://github.com/xamarin/xamarin-macios/wiki/QuickLook-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/272
+- [X] [ReplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/ReplayKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/270
+- [X] [SafariServices.framework](https://github.com/xamarin/xamarin-macios/wiki/SafariServices-iOS-Beta1) - Tim - https://github.com/xamarin/xamarin-macios/pull/217
 - [ ] [SceneKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SceneKit-iOS-Beta1)
-- [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-iOS-Beta1)
+- [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-iOS-Beta1) - Sebastien
 - [ ] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-iOS-Beta1)
-- [ ] [SystemConfiguration.framework](https://github.com/xamarin/xamarin-macios/wiki/SystemConfiguration-iOS-Beta1)
+- [X] [SystemConfiguration.framework](https://github.com/xamarin/xamarin-macios/wiki/SystemConfiguration-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/312
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-iOS-Beta1)
-- [ ] [VideoToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/VideoToolbox-iOS-Beta1)
-- [ ] [WatchConnectivity.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchConnectivity-iOS-Beta1)
-- [ ] [WatchKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchKit-iOS-Beta1)
-- [ ] [WebKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WebKit-iOS-Beta1)
-- [ ] [iAd.framework](https://github.com/xamarin/xamarin-macios/wiki/iAd-iOS-Beta1)
+- [X] [VideoToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/VideoToolbox-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/291
+- [X] [WatchConnectivity.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchConnectivity-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/290
+- [ ] [WatchKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchKit-iOS-Beta1) - Sebastien
+- [X] [WebKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WebKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/345
+- [X] [iAd.framework](https://github.com/xamarin/xamarin-macios/wiki/iAd-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/289
