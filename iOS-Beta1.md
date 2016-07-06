@@ -26,7 +26,7 @@
 - [X] [CoreGraphics.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreGraphics-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/337
 - [X] [CoreImage.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreImage-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/263
 - [X] [CoreLocation.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreLocation-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/334
-- [ ] [CoreMIDI.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMIDI-iOS-Beta1)
+- [X] [CoreMIDI.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMIDI-iOS-Beta1) - no source change required
 - [ ] [CoreMedia.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMedia-iOS-Beta1) - new constants added to non-bound API
 - [X] [CoreMotion.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMotion-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/338
 - [X] [CoreSpotlight.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreSpotlight-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/344
