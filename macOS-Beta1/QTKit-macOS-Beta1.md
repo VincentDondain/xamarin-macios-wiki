@@ -1,0 +1,5586 @@
+#QTKit.framework
+
+``` diff
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureAudioPreviewOutput.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureAudioPreviewOutput.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureAudioPreviewOutput.h	2015-08-23 04:07:41.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureAudioPreviewOutput.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,43 +0,0 @@
+-/*
+-	File:		QTCaptureAudioPreviewOutput.h
+-
+-	Copyright:	(c)2007-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-#if (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4)
+-
+-#import <QTKit/QTCaptureOutput.h>
+-
+-@class QTCaptureAudioPreviewOutputInternal;
+-
+-@interface QTCaptureAudioPreviewOutput : QTCaptureOutput {
+-@private
+-	QTCaptureAudioPreviewOutputInternal	*_internal;
+-	long								_reserved4;
+-	long								_reserved5;
+-	long								_reserved6;
+-}
+-
+-// These methods determine the unique ID of the CoreAudio device being used for audio preview. A unique ID of nil corresponds to the default system output device.
+-- (NSString *)outputDeviceUniqueID AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setOutputDeviceUniqueID:(NSString *)uniqueID AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (float)volume AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setVolume:(float)volume AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-#endif	/* (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4) */
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureConnection.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureConnection.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureConnection.h	2015-08-23 04:07:42.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureConnection.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,67 +0,0 @@
+-/*
+-	File:		QTCaptureConnection.h
+- 
+-	Copyright:	(c)2007-2012 by Apple Inc., all rights reserved.
+- 
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-#if (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4)
+-
+-@class QTFormatDescription;
+-
+-// Notifications
+-QTKIT_EXTERN NSString * const QTCaptureConnectionFormatDescriptionWillChangeNotification	AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTCaptureConnectionFormatDescriptionDidChangeNotification		AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-QTKIT_EXTERN NSString * const QTCaptureConnectionAttributeWillChangeNotification			AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTCaptureConnectionAttributeDidChangeNotification				AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-// userInfo key for QTCaptureConnectionAttributeWillChangeNotification and QTCaptureConnectionAttributeDidChangeNotification for the key of the changed attribute
+-QTKIT_EXTERN NSString * const QTCaptureConnectionChangedAttributeKey						AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-// Attributes
+-QTKIT_EXTERN NSString * const QTCaptureConnectionAudioAveragePowerLevelsAttribute			AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;  // NSArray of NSNumbers representing power for each audio channel in dB
+-QTKIT_EXTERN NSString * const QTCaptureConnectionAudioPeakHoldLevelsAttribute				AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;	// NSArray of NSNumbers representing power for each audio channel in dB
+-QTKIT_EXTERN NSString * const QTCaptureConnectionAudioMasterVolumeAttribute					AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;	// NSNumber between 0.0 and 1.0 for normal volume; above 1.0 for boosted gain
+-QTKIT_EXTERN NSString * const QTCaptureConnectionAudioVolumesAttribute						AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;	// NSArray of NSNumbers between 0.0 and 1.0 for normal volume; above 1.0 for boosted gain
+-QTKIT_EXTERN NSString * const QTCaptureConnectionEnabledAudioChannelsAttribute				AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;	// NSIndexSet containing the indices of the audio channels that are enabled
+-
+-@class QTCaptureConnectionInternal;
+-
+-@interface QTCaptureConnection : NSObject {
+-@private
+-	QTCaptureConnectionInternal	*_internal;
+-	long						_reserved1;
+-	long						_reserved2;
+-	long						_reserved3;
+-}
+-
+-- (id)owner AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (NSString *)mediaType AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;	// media types are defined in QTMedia.h
+-- (QTFormatDescription *)formatDescription AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (BOOL)isEnabled AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setEnabled:(BOOL)enabled AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (NSDictionary *)connectionAttributes AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setConnectionAttributes:(NSDictionary *)connectionAttributes AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (BOOL)attributeIsReadOnly:(NSString *)attributeKey AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (id)attributeForKey:(NSString *)attributeKey AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setAttribute:(id)attribute forKey:(NSString *)key AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-#endif /* (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4) */
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureDecompressedAudioOutput.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureDecompressedAudioOutput.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureDecompressedAudioOutput.h	2015-08-23 04:07:42.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureDecompressedAudioOutput.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,91 +0,0 @@
+-/*
+-	File:		QTCaptureDecompressedAudioOutput.h
+- 
+-	Copyright:	(c)2008-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#import <QTKit/QTCaptureOutput.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-#if (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_6_3) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4)
+-
+-@class QTCaptureDecompressedAudioOutputInternal;
+-
+-@class QTCaptureConnection;
+-@class QTSampleBuffer;
+-
+-/*!
+-    @class QTCaptureDecompressedAudioOutput
+-
+-    @abstract An QTCaptureDecompressedAudioOutput object is an output destination for QTCaptureSession that can be used to process audio sample buffers from
+-    the audio being captured.
+- 
+-    @discussion This class represents an output destination for a QTCaptureSession object that can be used to process audio sample buffers from the
+-    audio being captured. Instances of QTCaptureDecompressedAudioOutput produce audio sample buffers suitable for custom high-quality realtime processing.
+-    Applications can access the audio sample buffers via the captureOutput:didOutputAudioSampleBuffer:fromConnection: delegate method. Clients can
+-    also create subclasses of QTCaptureDecompressedAudioOutput to add custom capturing behavior.
+-*/
+-@interface QTCaptureDecompressedAudioOutput : QTCaptureOutput {
+-@private
+-	QTCaptureDecompressedAudioOutputInternal    *_internal;
+-	id                                          _delegate;
+-
+-	long                                        _reserved4;
+-	long                                        _reserved5;
+-	long                                        _reserved6;
+-}
+-
+-/*!
+-    @method delegate
+-    @abstract Returns the receiver’s delegate..
+-*/
+-- (id)delegate AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method setDelegate:
+-    @abstract Sets the receiver’s delegate..
+-*/
+-- (void)setDelegate:(id)delegate AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method outputAudioSampleBuffer:fromConnection:
+-    @abstract Called whenever the receiver outputs a new audio sample buffer.
+-    @discussion This method should not be invoked directly. Subclasses can override this method to provide custom processing behavior for each sample
+-    buffer. The default implementation calls the delegate’s captureOutput:didOutputAudioSampleBuffer:fromConnection: method. Subclasses should not
+-    assume that this method will be called on the main thread. In addition, this method is called periodically, so it must be efficient to prevent
+-    capture performance problems.
+-    @param sampleBuffer A sample buffer containing the audio data and additional information about the buffer, such as its presentation time.
+-    @param connection The connection from which the audio was received.
+-*/
+-- (void)outputAudioSampleBuffer:(QTSampleBuffer *)sampleBuffer fromConnection:(QTCaptureConnection *)connection AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-@interface NSObject	(QTCaptureDecompressedAudioOutput_Delegate)
+-
+-/*!
+-    @method captureOutput:didOutputAudioSampleBuffer:fromConnection:
+-    @abstract This method is called whenever the audio data output outputs a new audio sample buffer.
+-    @discussion Delegates receive this message whenever the output produces a new audio sample buffer. Delegates can use the provided sample buffer
+-    for custom processing of captured audio. Delegates should not assume that this method will be called on the main thread. In addition, this method
+-    is called periodically, so it must be efficient to prevent capture performance problems.
+-    @param captureOutput The QTCaptureDecompressedAudioOutput instance that output the frame.
+-    @param sampleBuffer A sample buffer containing the audio data and additional information about the buffer, such as its presentation time.
+-    @param connection The connection from which the audio was received.
+-*/
+-- (void)captureOutput:(QTCaptureOutput *)captureOutput didOutputAudioSampleBuffer:(QTSampleBuffer *)sampleBuffer fromConnection:(QTCaptureConnection *)connection AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-#endif /* (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_6_3) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4) */
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureDecompressedVideoOutput.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureDecompressedVideoOutput.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureDecompressedVideoOutput.h	2015-08-23 04:07:42.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureDecompressedVideoOutput.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,198 +0,0 @@
+-/*
+-	File:		QTCaptureDecompressedVideoOutput.h
+- 
+-	Copyright:	(c)2008-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-#if (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4)
+-
+-#import <QTKit/QTCaptureOutput.h>
+-#import <QuartzCore/QuartzCore.h>
+-
+-@class QTCaptureDecompressedVideoOutputInternal;
+-
+-@class QTCaptureConnection;
+-@class QTSampleBuffer;
+-
+-/*!
+-    @class QTCaptureDecompressedVideoOutput
+-
+-    @abstract An QTCaptureDecompressedVideoOutput object is an output destination for QTCaptureSession that can be used to process decompressed
+-    frames from the video being captured.
+-
+-    @discussion This class represents an output destination for a QTCaptureSession object that can be used to process decompressed frames from the
+-    video being captured. Instances of QTCaptureDecompressedVideoOutput produce decompressed video frames suitable for high-quality processing.
+-    Because instances maintain maximum frame quality and avoid dropping frames, using this output may result in reduced performance while capturing.
+-    Applications that need to process decompressed frames but can tolerate dropped frames or drops in decompression quality should use
+-    QTCaptureVideoPreviewOutput instead. Applications can access the decompressed frames via the
+-    captureOutput:didOutputVideoFrame:withSampleBuffer:fromConnection: delegate method. Clients can also create subclasses of
+-    QTCaptureDecompressedVideoOutput to add custom capturing behavior.
+-*/
+-@interface QTCaptureDecompressedVideoOutput : QTCaptureOutput {
+-@private
+-	QTCaptureDecompressedVideoOutputInternal	*_internal;
+-	id											_delegate;
+-
+-	long										_reserved4;
+-	long										_reserved5;
+-	long										_reserved6;
+-}
+-
+-/*!
+-    @method pixelBufferAttributes
+-    @abstract Returns the Core Video pixel buffer attributes previously set by setPixelBufferAttributes: that determine what kind of pixel buffers
+-    are output by the receiver.
+-    @discussion This method returns the pixel buffer attributes set by setPixelBufferAttributes: that clients can use to customize the size and pixel
+-    format of the video frames output by the receiver. When the dictionary is non-nil, the receiver will attempt to output pixel buffers using the
+-    attributes specified in the dictionary. A non-nil dictionary also guarantees that the output CVImageBuffer is a CVPixelBuffer. When the value for
+-    kCVPixelBufferPixelFormatTypeKey is set to an NSNumber, all image buffers output by the receiver will be in that format. When the value is an
+-    NSArray, image buffers output by the receiver will be in the most optimal format specified in that array. If the captured images are not in the
+-    one of the specified pixel formats, then a format conversion will be performed. If the dictionary is NIL or there is no value for the
+-    kCVPixelBufferPixelFormatTypeKey, then the receiver will output images in the most efficient possible format given the input. For example, if the
+-    source is an iSight producing component Y'CbCr 8-bit 4:2:2 video then Y'CbCr 8-bit 4:2:2 will be used as the output format in order to avoid any
+-    conversions. The default value for the returned dictionary is nil.
+-    @result A dictionary containing pixel buffer attributes for buffers output by the reciever. The keys in the dictionary are described in
+-    CoreVideo/CVPixelBuffer.h. If the return value is nil, then the receiver outputs buffers using the fastest possible pixel buffer attributes.
+-*/
+-- (NSDictionary *)pixelBufferAttributes AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method setPixelBufferAttributes:
+-    @abstract Sets the CoreVideo pixel buffer attributes that determine what kind of pixel buffers are output by the receiver.
+-    @discussion This method sets the pixel buffer attributes that clients can use to customize the size and pixel format of the video frames output
+-    by the receiver. When the dictionary is non-nil, the receiver will attempt to output pixel buffers using the attributes specified in the
+-    dictionary. A non-nil dictionary also guarantees that the output CVImageBuffer is a CVPixelBuffer. When the value for
+-    kCVPixelBufferPixelFormatTypeKey is set to an NSNumber, all image buffers output by the receiver will be in that format. When the value is an
+-    NSArray, image buffers output by the receiver will be in the most optimal format specified in that array. If the captured images are not in the
+-    one of the specified pixel formats, then a format conversion will be performed. If the dictionary is NIL or there is no value for the
+-    kCVPixelBufferPixelFormatTypeKey, then the receiver will output images in the most efficient possible format given the input. For example, if the
+-    source is an iSight producing component Y'CbCr 8-bit 4:2:2 video then Y'CbCr 8-bit 4:2:2 will be used as the output format in order to avoid any
+-    conversions.
+-    @param pixelBufferAttributes A dictionary containing pixel buffer attributes for buffers that will be output by the reciever. The keys in the
+-    dictionary are described in CoreVideo/CVPixelBuffer.h. If the dictionary is NIL, then the receiver outputs buffers using the fastest possible
+-    pixel buffer attributes..
+-*/
+-- (void)setPixelBufferAttributes:(NSDictionary *)pixelBufferAttributes AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_6_3
+-
+-/*!
+-    @method minimumVideoFrameInterval
+-    @abstract Returns the minimum time interval between which the receiver will output consecutive video frames.
+-    @discussion This method returns the minimum amount of time that should seperate consecutive frames output by the receiver. This is equivalent to
+-    the inverse of the maximum frame rate. A value of 0 indicates an unlimited maximum frame rate. The default value is 0.
+-    @result An NSTimeInterval specifying the minimum interval between video frames. Returns 0 if there is no frame rate limit set.
+-*/
+-- (NSTimeInterval)minimumVideoFrameInterval AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method setMinimumVideoFrameInterval:
+-    @abstract Sets the minimum time interval between which the receiver should output consecutive video frames.
+-    @discussion This method sets the minimum amount of time that should seperate consecutive frames output by the receiver. This is equivalent to the
+-    inverse of the maximum frame rate. A value of 0 indicates an unlimited maximum frame rate. The default value is 0.
+-    @param minimumVideoFrameInterval An NSTimeInterval specifying the minimum interval between video frames. A value of 0 indicates that there should
+-    be no frame rate limit.
+-*/
+-- (void)setMinimumVideoFrameInterval:(NSTimeInterval)minimumVideoFrameInterval AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+- @method automaticallyDropsLateVideoFrames
+- @abstract Returns whether the receiver discards video frames that are output before earlier frames have been processed.
+- @discussion If this method returns YES, the receiver will discard frames that are queued up while the thread handling existing frames is
+- blocked in the outputVideoFrame:withSampleBuffer:fromConnection: or the captureOutput:didOutputVideoFrame:withSampleBuffer:fromConnection:
+- delegate method. The delegate method captureOutput:didDropVideoFrameWithSampleBuffer:fromConnection: will be called for each frame that is
+- dropped. The default value is NO.
+- @result This method returns YES if the receiver drops late video frames and returns NO otherwise.
+- */
+-- (BOOL)automaticallyDropsLateVideoFrames AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+- @method setAutomaticallyDropsLateVideoFrames:
+- @abstract Sets whether the receiver discards video frames that are output before earlier frames have been processed.
+- @discussion Setting this to YES will cause the receiver to discard frames that are queued up while the thread handling existing frames is
+- blocked in the outputVideoFrame:withSampleBuffer:fromConnection: or the captureOutput:didOutputVideoFrame:withSampleBuffer:fromConnection:
+- delegate method. The delegate method captureOutput:didDropVideoFrameWithSampleBuffer:fromConnection: will be called for each frame that is
+- dropped. The default value is NO.
+- @param automaticallyDropsLateVideoFrames Whether the receiver should drop late video frames
+- */
+-- (void)setAutomaticallyDropsLateVideoFrames:(BOOL)automaticallyDropsLateVideoFrames AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-#endif /* QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_6_3 */
+-
+-/*!
+-    @method delegate
+-    @abstract Returns the receiver�s delegate..
+-*/
+-- (id)delegate AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method setDelegate:
+-    @abstract Sets the receiver�s delegate..
+-*/
+-- (void)setDelegate:(id)delegate AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method outputVideoFrame:withSampleBuffer:fromConnection:
+-    @abstract Called whenever the receiver outputs a new video frame.
+-    @discussion This method should not be invoked directly. Subclasses can override this method to provide custom processing behavior for each frame.
+-    The default implementation calls the delegate�s captureOutput:didOutputVideoFrame:withSampleBuffer:fromConnection: method. Subclasses should not
+-    assume that this method will be called on the main thread. In addition, this method is called periodically, so it must be efficient to prevent
+-    capture performance problems.
+-    @param videoFrame A Core Video image buffer containing the decompressed frame.
+-    @param sampleBuffer A sample buffer containing additional information about the frame, such as its presentation time.
+-    @param connection The connection from which the video was received.
+-*/
+-- (void)outputVideoFrame:(CVImageBufferRef)videoFrame withSampleBuffer:(QTSampleBuffer *)sampleBuffer fromConnection:(QTCaptureConnection *)connection AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-@interface NSObject	(QTCaptureDecompressedVideoOutput_Delegate)
+-
+-/*!
+-    @method captureOutput:didOutputVideoFrame:withSampleBuffer:fromConnection:
+-    @abstract This method is called whenever the decompressed video video output outputs a new video frame.
+-    @discussion Delegates receive this message whenever the output decompresses and outputs a new video frame. Delegates can use the provided video
+-    frame for a custom preview or for further image processing. Delegates should not assume that this method will be called on the main thread. In
+-    addition, this method is called periodically, so it must be efficient to prevent capture performance problems.
+-    @param captureOutput The QTCaptureDecompressedVideoOutput instance that output the frame.
+-    @param videoFrame A Core Video image buffer containing the decompressed frame.
+-    @param sampleBuffer A sample buffer containing additional information about the frame, such as its presentation time..
+-    @param connection The connection from which the video was received.
+-*/
+-- (void)captureOutput:(QTCaptureOutput *)captureOutput didOutputVideoFrame:(CVImageBufferRef)videoFrame withSampleBuffer:(QTSampleBuffer *)sampleBuffer fromConnection:(QTCaptureConnection *)connection AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_6_3
+-/*!
+-    @method captureOutput:didDropVideoFrameWithSampleBuffer:fromConnection:
+-    @abstract This method is called once for each frame that is dropped when automaticallyDropsLateVideoFrames is set to YES.
+-    @discussion When automaticallyDropsLateVideoFrames is set to YES, this method is called whenever a late video frame is dropped. This method is
+-    called once for each dropped frame and may be called before the call to the outputVideoFrame:withSampleBuffer:fromConnection: or the
+-    captureOutput:didOutputVideoFrame:withSampleBuffer:fromConnection: delegate method during which those frames were dropped returns. The
+-    QTSampleBuffer object passed to this delegate method will contain metadata about the dropped video frame, such as its duration and presentation
+-    time stamp, but will contain no actual video data. Delegates should not assume that this method will be called on the main thread. Because this
+-    method may be called on the same thread that is responsible for outputting video frames, it must be efficient to prevent further capture
+-    performance problems, such as additional dropped video frames.
+-    @param captureOutput The QTCaptureDecompressedVideoOutput instance that dropped the late video frame.
+-    @param sampleBuffer A QTSampleBuffer instance contaaining metadata about the dropped frame, such as its duration and presentation time stamp.
+-    This sample buffer will contain none of the original video data, therefpre its bytesForAllSamples method will return NULL.
+-    @param connection The connection from which the dropped video frame was received.
+-*/
+-- (void)captureOutput:(QTCaptureOutput *)captureOutput didDropVideoFrameWithSampleBuffer:(QTSampleBuffer *)sampleBuffer fromConnection:(QTCaptureConnection *)connection AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif /* QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_6_3 */
+-
+-@end
+-
+-#endif /* (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4) */
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureDevice.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureDevice.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureDevice.h	2015-08-23 04:07:42.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureDevice.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,146 +0,0 @@
+-/*
+-	File:		QTCaptureDevice.h
+- 
+-	Copyright:	(c)2007-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-#if (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4)
+-
+-//==================================================================================================
+-// Notifications
+-//==================================================================================================
+-QTKIT_EXTERN NSString * const QTCaptureDeviceWasConnectedNotification					AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTCaptureDeviceWasDisconnectedNotification				AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTCaptureDeviceFormatDescriptionsWillChangeNotification	AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTCaptureDeviceFormatDescriptionsDidChangeNotification	AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTCaptureDeviceAttributeWillChangeNotification			AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTCaptureDeviceAttributeDidChangeNotification				AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-// userInfo key for QTCaptureDeviceAttributeWillChangeNotification and QTCaptureDeviceAttributeDidChangeNotification - returns the key of the attribute that changed
+-QTKIT_EXTERN NSString * const QTCaptureDeviceChangedAttributeKey						AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-//==================================================================================================
+-// Attributes
+-//==================================================================================================
+-
+-// This attribute returns whether or not data capture on the device is suspended due to a feature on the device.
+-// For example, this attribute is YES for the external iSight when its privacy iris is closed, or for the internal iSight on a notebook when the notebook's display is closed.
+-QTKIT_EXTERN NSString * const QTCaptureDeviceSuspendedAttribute							AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber interpreted as a BOOL
+-                                                                                                                                    // Read Only. KVC key name: @"suspended"
+-
+-// This attribute returns an array of QTCaptureDevice objects that, although they are separate devices on the system, are a part of the same physical device as the receiver.
+-// For example, for the external iSight camera, this attribute returns an array containing a QTCaptureDevice for the external iSight microphone.
+-QTKIT_EXTERN NSString * const QTCaptureDeviceLinkedDevicesAttribute						AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSArray of QTCaptureDevice objects
+-                                                                                                                                    // Read Only. KVC key name: @"linkedDevices"
+-
+-// Some devices can capture data from one of multiple data sources (different input jacks on the same audio device, for example).
+-// For devices with multiple possible data sources these attributes can be used to get and set which data source the device is currently using.
+-QTKIT_EXTERN NSString * const QTCaptureDeviceAvailableInputSourcesAttribute             AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSArray of NSDictionary objects containing keys and values described below
+-                                                                                                                                    // Read Only. KVC key name: @"availableInputSources"
+-QTKIT_EXTERN NSString * const QTCaptureDeviceInputSourceIdentifierAttribute             AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // An object returned by the QTCaptureDeviceInputSourceIdentifierKey key in one of the dictionaries returned by QTCaptureDeviceAvailableInputSourcesAttribute
+-                                                                                                                                    // Read/Write. KVC key name: @"inputSourceIdentifier"
+-
+-// keys for the dictionaries returned by QTCaptureDeviceAvailableInputSourcesAttribute:
+-QTKIT_EXTERN NSString * const QTCaptureDeviceInputSourceIdentifierKey                   AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // An object representing a unique ID for the input source. This ID is not guaranteed to persist between device connections or changes in device configuration.
+-                                                                                                                                    // KVC key name: @"identifier"
+-QTKIT_EXTERN NSString * const QTCaptureDeviceInputSourceLocalizedDisplayNameKey         AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSString containing a name for the data source suitable for display in a user interface
+-                                                                                                                                    // KVC key name: @"localizedDisplayName"
+-
+-// If a device was intialized using a legacy Sequence Grabber component, this attribute returns the component instance responsible for capturing from the device
+-#if !__LP64__
+-QTKIT_EXTERN NSString * const QTCaptureDeviceLegacySequenceGrabberAttribute				AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSValue interpreted as a Sequence Grabber ComponentInstance
+-                                                                                                                                    // Read Only. KVC key name: @"legacySequenceGrabber"
+-#endif
+-
+-// For AVC devices with transport controls, such as tape-based camcorders, this attribute can be used to control the media on the device
+-QTKIT_EXTERN NSString * const QTCaptureDeviceAVCTransportControlsAttribute				AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSDictionary containing keys and values described below
+-                                                                                                                                    // Read/Write. KVC key name: @"AVCTransportControls"
+-
+-// keys for the dictionary passed to QTCaptureDeviceAVCTransportControlsAttribute
+-QTKIT_EXTERN NSString * const QTCaptureDeviceAVCTransportControlsPlaybackModeKey		AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber interpreted as a  QTCaptureDeviceAVCTransportControlsPlaybackMode
+-                                                                                                                                    // KVC key name: @"playbackMode"
+-QTKIT_EXTERN NSString * const QTCaptureDeviceAVCTransportControlsSpeedKey				AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber interpreted as a QTCaptureDeviceAVCTransportControlsSpeed
+-                                                                                                                                    // KVC key name: @"speed"
+-
+-// values for the dictionary passed to QTCaptureDeviceAVCTransportControlsAttribute
+-enum {
+-	QTCaptureDeviceAVCTransportControlsNotPlayingMode		= 0,
+-	QTCaptureDeviceAVCTransportControlsPlayingMode			= 1
+-};
+-typedef NSUInteger QTCaptureDeviceAVCTransportControlsPlaybackMode;
+-
+-enum {
+-	QTCaptureDeviceAVCTransportControlsFastestReverseSpeed	= -19000,	
+-	QTCaptureDeviceAVCTransportControlsVeryFastReverseSpeed	= -16000,
+-	QTCaptureDeviceAVCTransportControlsFastReverseSpeed		= -13000,
+-	QTCaptureDeviceAVCTransportControlsNormalReverseSpeed	= -10000,
+-	QTCaptureDeviceAVCTransportControlsSlowReverseSpeed		= -7000,
+-	QTCaptureDeviceAVCTransportControlsVerySlowReverseSpeed = -4000,
+-	QTCaptureDeviceAVCTransportControlsSlowestReverseSpeed	= -1000,
+-	QTCaptureDeviceAVCTransportControlsStoppedSpeed			= 0,	
+-	QTCaptureDeviceAVCTransportControlsSlowestForwardSpeed	= 1000,
+-	QTCaptureDeviceAVCTransportControlsVerySlowForwardSpeed = 4000,
+-	QTCaptureDeviceAVCTransportControlsSlowForwardSpeed		= 7000,
+-	QTCaptureDeviceAVCTransportControlsNormalForwardSpeed	= 10000,
+-	QTCaptureDeviceAVCTransportControlsFastForwardSpeed		= 13000,
+-	QTCaptureDeviceAVCTransportControlsVeryFastForwardSpeed	= 16000,
+-	QTCaptureDeviceAVCTransportControlsFastestForwardSpeed	= 19000,
+-};
+-typedef NSInteger QTCaptureDeviceAVCTransportControlsSpeed;
+-
+-//==================================================================================================
+-// QTCaptureDevice Class
+-//==================================================================================================
+-
+-@class QTCaptureDeviceInternal;
+-
+-@interface QTCaptureDevice : NSObject <NSCoding> {
+-@private
+-	QTCaptureDeviceInternal	*_internal;
+-	long					_reserved1;
+-	long					_reserved2;
+-	long					_reserved3;
+-}
+-
+-+ (NSArray *)inputDevices AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-+ (NSArray *)inputDevicesWithMediaType:(NSString *)mediaType AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;				// media types are defined in QTMedia.h
+-+ (QTCaptureDevice *)defaultInputDeviceWithMediaType:(NSString *)mediaType AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;	// media types are defined in QTMedia.h
+-+ (QTCaptureDevice *)deviceWithUniqueID:(NSString *)deviceUniqueID AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (NSString *)uniqueID AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (NSString *)modelUniqueID AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (NSString *)localizedDisplayName AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (NSArray *)formatDescriptions AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (BOOL)hasMediaType:(NSString *)mediaType AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;	// media types are defined in QTMedia.h
+-
+-- (NSDictionary *)deviceAttributes AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setDeviceAttributes:(NSDictionary *)deviceAttributes AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (BOOL)attributeIsReadOnly:(NSString *)attributeKey AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (id)attributeForKey:(NSString *)attributeKey AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setAttribute:(id)attribute forKey:(NSString *)attributeKey AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-// Applications can use KVO with the @"connected" and @"inUseByAnotherApplication" keys to be notified of changes.
+-- (BOOL)isConnected AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (BOOL)isInUseByAnotherApplication AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (BOOL)isOpen AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (BOOL)open:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)close AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-#endif /* (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4) */
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureDeviceInput.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureDeviceInput.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureDeviceInput.h	2015-08-23 04:07:42.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureDeviceInput.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,43 +0,0 @@
+-/*
+-	File:		QTCaptureDeviceInput.h
+-
+-	Copyright:	(c)2007-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-#if (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4)
+-
+-#import <QTKit/QTCaptureInput.h>
+-
+-@class QTCaptureDevice;
+-
+-@class QTCaptureDeviceInputInternal;
+-
+-@interface QTCaptureDeviceInput : QTCaptureInput {
+-@private;
+-	QTCaptureDeviceInputInternal *_internal;
+-	long						_reserved4;
+-	long						_reserved5;
+-	long						_reserved6;
+-}
+-
+-+ (id)deviceInputWithDevice:(QTCaptureDevice *)device AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (id)initWithDevice:(QTCaptureDevice *)device AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (QTCaptureDevice *)device AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-#endif	/* (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4) */
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureFileOutput.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureFileOutput.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureFileOutput.h	2015-08-23 04:07:42.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureFileOutput.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,336 +0,0 @@
+-/*
+-	File:		QTCaptureFileOutput.h
+-
+-	Copyright:	(c)2008-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-#if (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4)
+-
+-#import <QTKit/QTCaptureOutput.h>
+-#import <QTKit/QTTime.h>
+-
+-enum {
+-    QTCaptureFileOutputBufferDestinationNewFile	= 1,
+-    QTCaptureFileOutputBufferDestinationOldFile	= 2
+-};
+-typedef NSUInteger QTCaptureFileOutputBufferDestination;
+-
+-@class QTCaptureConnection;
+-@class QTCompressionOptions;
+-@class QTSampleBuffer;
+-
+-@class QTCaptureFileOutputInternal;
+-
+-@interface QTCaptureFileOutput : QTCaptureOutput {
+-@private
+-	QTCaptureFileOutputInternal	*_fileOutputInternal;
+-	
+-	id __weak					_delegate;
+-
+-	long						_reserved4;
+-	long						_reserved5;
+-	long						_reserved6;
+-}
+-
+-/*!
+-    @method     outputFileURL
+-    @result     Returns the URL of the file to which the receiver is currently recording incoming buffers. If no file is being recorded, this method returns nil.
+-*/
+-- (NSURL *)outputFileURL AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method     recordToOutputFileURL:
+-    @abstract   Sets the file to which the receiver should record incoming buffers, stopping recording on the existing output file (if there is one) and overwriting the file at the specified URL (if it exists). To stop recording to any file, applications can pass nil as the file URL. Whenever the output file is changed, any pending recording for the previous file is finished in the background. Applications must implement the captureOutput:didFinishRecordingToOutputFileAtURL:forConnections:dueToError: delegate method to be notified when the file is finished.
+-    @param      url
+-                An NSURL object specifying the file to which the receiver should record incoming buffers.
+-    @discussion This method is equivalent to calling recordToOutputFileURL:bufferDestination: with a buffer destination of QTCaptureFileOutputBufferDestinationNewFile.
+-*/
+-- (void)recordToOutputFileURL:(NSURL *)url AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method     recordToOutputFileURL:bufferDestination:
+-    @abstract   Sets the file to which the receiver should record incoming buffers, stopping recording on the existing output file (if there is one) and overwriting the file at the specified URL (if it exists). To stop recording to any file, applications can pass nil as the file URL. Whenever the output file is changed, any pending recording for the previous file is finished in the background. Applications must implement the captureOutput:didFinishRecordingToOutputFileAtURL:forConnections:dueToError: delegate method to be notified when the file is finished. If specified, the buffer destination determines whether the buffer currently in flight should be included in the old file or the new file.
+-    @param      url
+-                An NSURL object specifying the file to which the receiver should record incoming buffers.
+-    @param      bufferDestination
+-                A QTCaptureFileOutputBufferDestination value indicating whether the buffer currently in flight should be included in the old file or the new file.
+-*/
+-- (void)recordToOutputFileURL:(NSURL *)url bufferDestination:(QTCaptureFileOutputBufferDestination)bufferDestination AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_6_3
+-
+-/*!
+-    @method     isRecordingPaused
+-    @abstract   Returns whether recording to the current output file is paused.
+-    @discussion This method returns a BOOL value indicating whether recording to the file returned by outputFileURL has been previously paused using the pauseRecording method. When a recording is paused, captured samples are not written to the output file, but new samples can be written to the same file in the future by calling resumeRecording. The value of this method is key value observable using the key @"recordingPaused".
+-    @result     Returns YES if recording to the current output file is paused and NO otherwise.
+-*/
+-- (BOOL)isRecordingPaused AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method     pauseRecording
+-    @abstract   Pauses recording to the current output file.
+-    @discussion This method causes the receiver to stop writing captured samples to the current output file returned by outputFileURL, but leaves the file open so that samples can be written to it in the future, when resumeRecording is called. This allows clients to record multiple media segments that are not contiguous in time to a single file. When clients stop recording or change files using recordToOutputFileURL:bufferDestination: or recording automatically stops due to an error condition while recording is paused, the output file will be finished and closed normally without requiring a matching call to resumeRecording. When there is no current output file or when recording is already paused, this method does nothing. This method can be called within the captureOutput:didOutputSampleBuffer:fromConnection: delegate method to pause recording after an exact media sample.
+-*/
+-- (void)pauseRecording AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method     resumeRecording
+-    @abstract   Resumes recording to the current output file after it was previously paused using pauseRecording.
+-    @discussion This method causes the receiver to resume writing captured samples to the current output file returned by outputFileURL, after recording was previously paused using pauseRecording. This allows clients to record multiple media segments that are not contiguous in time to a single file. When there is no current output file or when recording is not paused, this method does nothing. This method can be called within the captureOutput:didOutputSampleBuffer:fromConnection: delegate method to resume recording at an exact media sample.
+-*/
+-- (void)resumeRecording AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-#endif /* QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_6_3 */
+-
+-/*!
+-    @method     compressionOptionsForConnection:
+-    @param      connection
+-                A QTCaptureConnection object specifying a capture connection.
+-    @result     Returns a QTCompressionOptions object indicating the current compression options for the specified capture connection.
+-*/
+-- (QTCompressionOptions *)compressionOptionsForConnection:(QTCaptureConnection *)connection AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method     setCompressionOptions:forConnection:
+-    @param      compressionOptions
+-                A QTCompressionOptions object specifying the desired compression options for the specified capture connection.
+-    @param      connection
+-                A QTCaptureConnection object specifying a capture connection.
+-    @abstract   Sets the compression options for a specified capture connection.
+-*/
+-- (void)setCompressionOptions:(QTCompressionOptions *)compressionOptions forConnection:(QTCaptureConnection *)connection AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method     maximumVideoSize
+-    @abstract   Returns the maximum dimensions within which the receiver will record video.
+-    @discussion This method returns the maximum limit on the dimensions of video that the receiver records to a file previously set by setMaximumVideoSize:. When a size is set, all video recorded by the receiver will be no larger than the specified size while still preserving the original aspect ratio of the content. A value of NSZeroSize indicates that there should be no limit. If this is set to a value other than NSZeroSize, device native compressed video, such as DV video, will be decompressed so that it can be resized. By default, there is no limit on the maximum recorded video size.
+-    @result     An NSSize specifying the maximum dimensions at which the receiver should record video. Returns NSZeroSize if there is no limit.
+-*/
+-- (NSSize)maximumVideoSize AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method     setMaximumVideoSize:
+-    @abstract   Sets the maximum dimensions within which the receiver should record video.
+-    @discussion This method sets the maximum limit on the dimensions of video that the receiver records to a file. When a size is set, all video recorded by the receiver will be no larger than the specified size, while still preserving the original aspect ratio of the content. A value of NSZeroSize indicates that there should be no limit. If this is set to a value other than NSZeroSize, device native compressed video, such as DV video, will be decompressed so that it can be resized. By default, there is no limit on the maximum recorded video size.
+-    @param      maximumVideoSize
+-                An NSSize specifying the maximum dimensions at which the receiver should record video. A value of NSZeroSize indicates that there should be no limit.
+-*/
+-- (void)setMaximumVideoSize:(NSSize)maximumVideoSize AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method     minimumVideoFrameInterval
+-    @abstract   Returns the minimum time interval between which the receiver will record consecutive video frames.
+-    @discussion This method returns the minimum amount of time that should seperate consecutive frames recorded by the receiver. This is equivalent to the inverse of the maximum frame rate. A value of 0 indicates an unlimited maximum frame rate. If this is set to a value other than 0, device native compressed video, such as DV video, will be decompressed so that its frame rate can be adjusted. The default value is 0.
+-    @result     An NSTimeInterval specifying the minimum interval between video frames. Returns 0 if there is no frame rate limit set.
+-*/
+-- (NSTimeInterval)minimumVideoFrameInterval AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method     setMinimumVideoFrameInterval:
+-    @abstract   Sets the minimum time interval between which the receiver should record consecutive video frames.
+-    @discussion This method sets the minimum amount of time that should seperate consecutive frames recorded by the receiver. This is equivalent to the inverse of the maximum frame rate. A value of 0 indicates an unlimited maximum frame rate. If this is set to a value other than 0, device native compressed video, such as DV video, will be decompressed so that its frame rate can be adjusted. The default value is 0.
+-    @param      minimumVideoFrameInterval
+-                An NSTimeInterval specifying the minimum interval between video frames. A value of 0 indicates that there should be no frame rate limit.
+-*/
+-- (void)setMinimumVideoFrameInterval:(NSTimeInterval)minimumVideoFrameInterval AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method     recordedDuration
+-    @result     A QTTime value indicating the total duration recorded to the current output file.
+-*/
+-- (QTTime)recordedDuration AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method     recordedFileSize
+-    @result     A UInt64 value indicating the current file size of the current output file.
+-*/
+-- (UInt64)recordedFileSize AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-// These methods set a soft limit on the length of recorded files. Delegates can determine what to do when the limit is reached by implementing the captureOutput:shouldChangeOutputFileAtURL:forConnections:dueToError: method. By default, the current output file is set to nil when the limit is reached.
+-/*!
+-    @method     maximumRecordedDuration
+-    @result     A QTTime value indicating the maximum duration to be recorded to the current output file.
+-*/
+-- (QTTime)maximumRecordedDuration AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method     setMaximumRecordedDuration:
+-    @param      maximumRecordedDuration
+-                A QTTime value indicating the maximum duration to be recorded to the current output file.
+-    @discussion This method sets the maximum duration to be recorded to the current output file. Delegates can determine what to do when this limit is reached by implementing the captureOutput:shouldChangeOutputFileAtURL:forConnections:dueToError: method. By default, the current output file is set to nil when this limit is reached.
+-*/
+-- (void)setMaximumRecordedDuration:(QTTime)maximumRecordedDuration AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method     maximumRecordedFileSize
+-    @result     A UInt64 value indicating the maximum number of bytes to be recorded to the current output file.
+-*/
+-- (UInt64)maximumRecordedFileSize AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method     setMaximumRecordedFileSize:
+-    @param      maximumRecordedFileSize
+-                A UInt64 value indicating the maximum number of bytes to be recorded to the current output file.
+-    @discussion This method sets the maximum number of bytes to be recorded to the current output file. Delegates can determine what to do when this limit is reached by implementing the captureOutput:shouldChangeOutputFileAtURL:forConnections:dueToError: method. By default, the current output file is set to nil when this limit is reached.
+-*/
+-- (void)setMaximumRecordedFileSize:(UInt64)maximumRecordedFileSize AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method     delegate
+-    @abstract   Returns the delegate of a QTCaptureFileOutput object.
+-*/
+-- (id)delegate AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-    @method     setDelegate:
+-    @param      delegate
+-                An object that is to serve as the delegate for a QTCaptureFileOutput object.
+-*/
+-- (void)setDelegate:(id)delegate AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-@interface NSObject (QTCaptureFileOutput_Delegate)
+-
+-/*!
+-	@method     captureOutput:didOutputSampleBuffer:fromConnection:
+-	@abstract   This method is called whenever the capture output receives a new sample buffer.
+-	@param      captureOutput
+-                The capture file output that has received a new sample buffer.
+-	@param      sampleBuffer
+-                The new sample buffer.
+-	@param      connection
+-                The QTCaptureConnection object that provided the new sample buffer.
+-    @discussion
+-                This method is called every time the capture output receives a new sample buffer. When called within this method, recordToOutputFileURL: and recordToOutputFileURL:bufferDestination: are guaranteed to occur on the given sample buffer. Delegates should not expect this method to be called on the main thread. In addition, since this method is called frequently, it must be efficient.
+-*/
+-- (void)captureOutput:(QTCaptureFileOutput *)captureOutput didOutputSampleBuffer:(QTSampleBuffer *)sampleBuffer fromConnection:(QTCaptureConnection *)connection AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method     captureOutput:willStartRecordingToOutputFileAtURL:forConnections:
+-	@abstract   This method is called when the capture output starts recording to a new file.
+-	@param      captureOutput
+-                The capture file output that has started recording to a new file.
+-	@param      fileURL
+-                An NSURL object indicating the file about to be recorded to.
+-	@param      connections
+-                An array of QTCaptureConnection objects that provided the data that is being written to the file. These objects are owned by the QTCaptureFileOutput object.
+-*/
+-- (void)captureOutput:(QTCaptureFileOutput *)captureOutput willStartRecordingToOutputFileAtURL:(NSURL *)fileURL forConnections:(NSArray *)connections AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method     captureOutput:didStartRecordingToOutputFileAtURL:forConnections:
+-	@abstract   This method is called when the capture output starts recording to a new file.
+-	@param      captureOutput
+-                The capture file output that has started recording to a new file.
+-	@param      fileURL
+-                An NSURL object indicating the file that is being recorded to.
+-	@param      connections
+-                An array of QTCaptureConnection objects that provided the data that is being written to the file. These objects are owned by the QTCaptureFileOutput object.
+-*/
+-- (void)captureOutput:(QTCaptureFileOutput *)captureOutput didStartRecordingToOutputFileAtURL:(NSURL *)fileURL forConnections:(NSArray *)connections AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method     captureOutput:shouldChangeOutputFileAtURL:forConnections:dueToError:
+-	@abstract   This method is called when the capture output reaches a soft limit (for example, the set maximum file size or duration).
+-	@param      captureOutput
+-                The capture file output that has reached a soft limit.
+-	@param      outputFileURL
+-                An NSURL object indicating the file that is being recorded to.
+-	@param      connections
+-                An array of QTCaptureConnection objects that provided the data that is being written to the file. These objects are owned by the QTCaptureFileOutput object.
+-	@param      error
+-                An NSError object.
+-    @result     A BOOL value.
+-    @discussion
+-                If the delegate returns NO, the file writer will continue writing the same file. If the delegate returns YES and doesn't set a new output file, captureOutput:mustChangeOutputFileAtURL:forConnections:dueToError: will be called. If the delegate returns YES and sets a new output file, recording will continue on the new file.
+-*/
+-- (BOOL)captureOutput:(QTCaptureFileOutput *)captureOutput shouldChangeOutputFileAtURL:(NSURL *)outputFileURL forConnections:(NSArray *)connections dueToError:(NSError *)error AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method     captureOutput:mustChangeOutputFileAtURL:forConnections:dueToError:
+-	@abstract   This method is called when the capture output reaches a hard limit (for example, space running out on the current disk, or the stream format of the incoming media changing).
+-	@param      captureOutput
+-                The capture file output that has reached a hard limit.
+-	@param      outputFileURL
+-                An NSURL object indicating the file that is being recorded to.
+-	@param      connections
+-                An array of QTCaptureConnection objects that provided the data that is being written to the file. These objects are owned by the QTCaptureFileOutput object.
+-	@param      error
+-                An NSError object.
+-    @discussion
+-                If the delegate does nothing, the current output file will be set to nil. If the delegate sets a new output file (on a different disk, in the case of hitting a disk space limit) recording will continue on the new file.
+-*/
+-- (void)captureOutput:(QTCaptureFileOutput *)captureOutput mustChangeOutputFileAtURL:(NSURL *)outputFileURL forConnections:(NSArray *)connections dueToError:(NSError *)error AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method     captureOutput:willFinishRecordingToOutputFileAtURL:forConnections:dueToError:
+-	@abstract   This method is called when a file will be finished, either because recordToFile: or recordToFile:bufferDestination: was called or an error forced the file to be finished.
+-	@param      captureOutput
+-                The capture file output that has reached a hard limit.
+-	@param      outputFileURL
+-                An NSURL object indicating the file that is about to be finished being recorded to.
+-	@param      connections
+-                An array of QTCaptureConnection objects that provided the data that is being written to the file. These objects are owned by the QTCaptureFileOutput object.
+-	@param      error
+-                An NSError object. If the file was forced to be finished due to an error, the error is described in this parameter. Otherwise, this parameter is nil.
+-*/
+-- (void)captureOutput:(QTCaptureFileOutput *)captureOutput willFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL forConnections:(NSArray *)connections dueToError:(NSError *)error AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method     captureOutput:didFinishRecordingToOutputFileAtURL:forConnections:dueToError:
+-	@abstract   This method is called whenever a file is finished successfully.
+-	@param      captureOutput
+-                The capture file output that has reached a hard limit.
+-	@param      outputFileURL
+-                An NSURL object indicating the file that is finished being recorded to.
+-	@param      connections
+-                An array of QTCaptureConnection objects that provided the data that is being written to the file. These objects are owned by the QTCaptureFileOutput object.
+-	@param      error
+-                An NSError object. If the file was forced to be finished due to an error (including errors that resulted in either of the above two methods being called), the error is described in this parameter. Otherwise, this parameter is nil.
+-*/
+-- (void)captureOutput:(QTCaptureFileOutput *)captureOutput didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL forConnections:(NSArray *)connections dueToError:(NSError *)error AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method     captureOutput:didPauseRecordingToOutputFileAtURL:forConnections:
+-	@abstract   This method is called whenever the output is recording to a file and successfully pauses the recording at the request of the client.
+-	@discussion Delegates can use this method to be informed when a request to pause recording is actually respected. It is safe for delegates to change what the file output is currently doing (starting a new file, for example) from within this method. Clients should not assume that this method will be called on the main thread and should also try to make this method as efficient as possible. If recording to a file is stopped, either manually or due to an error, this method is not guaranteed to be called, even if a previous call to pauseRecording was made.
+-	@param      captureOutput
+-                The capture file output that has paused its file recording.
+-	@param      fileURL
+-                The file URL of the file that is being written.
+-	@param      connections
+-                An array of QTCaptureConnection objects owned by the file output that provided the data that is being written to the file.
+-*/
+-- (void)captureOutput:(QTCaptureFileOutput *)captureOutput didPauseRecordingToOutputFileAtURL:(NSURL *)fileURL forConnections:(NSArray *)connections AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method     captureOutput:didResumeRecordingToOutputFileAtURL:forConnections:
+-	@abstract   This method is called whenever the output, at the request of the client, successfully resumes a file recording that was paused.
+-	@discussion Delegates can use this method to be informed when a request to resume a paused recording is actually respected. It is safe for delegates to change what the file output is currently doing (starting a new file, for example) from within this method. Clients should not assume that this method will be called on the main thread and should also try to make this method as efficient as possible. If recording to a file is stopped, either manually or due to an error, this method is not guaranteed to be called, even if a previous call to resumeRecording was made.
+-	@param      captureOutput
+-                The capture file output that has resumed its paused file recording.
+-	@param      fileURL
+-                The file URL of the file that is being written.
+-	@param      connections
+-                An array of QTCaptureConnection objects owned by the file output that provided the data that is being written to the file.
+-*/
+-- (void)captureOutput:(QTCaptureFileOutput *)captureOutput didResumeRecordingToOutputFileAtURL:(NSURL *)fileURL forConnections:(NSArray *)connections AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-#endif	/* (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4) */
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureInput.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureInput.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureInput.h	2015-08-23 04:07:42.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureInput.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,36 +0,0 @@
+-/*
+-	File:		QTCaptureInput.h
+-
+-	Copyright:	(c)2007-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-#if (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4)
+-
+-@class QTCaptureSession;
+-
+-@interface QTCaptureInput : NSObject {
+-@private
+-	QTCaptureSession * __weak	_session;
+-	long						_reserved1;
+-	long						_reserved2;
+-	long						_reserved3;
+-}
+-
+-- (NSArray *)connections AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-#endif	/* (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4) */
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureLayer.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureLayer.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureLayer.h	2015-08-23 04:07:42.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureLayer.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,40 +0,0 @@
+-/*
+-	File:		QTCaptureLayer.h
+- 
+-	Copyright:	(c)2007-2012 by Apple Inc., all rights reserved.
+- 
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-#if (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5)
+-
+-#import <QuartzCore/QuartzCore.h>
+-
+-@class QTCaptureSession;
+-@class QTCaptureLayerPrivate;
+-
+-@interface QTCaptureLayer : CALayer								// QTCaptureLayer is a layer that renders a capture session within a layer hierarchy
+-{
+-@private
+-	QTCaptureLayerPrivate	*_captureLayerPriv;
+-}
+-
+-+ (id)layerWithSession:(QTCaptureSession *)session AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (id)initWithSession:(QTCaptureSession *)session AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;				// the designated initializer
+-
+-- (void)setSession:(QTCaptureSession *)session AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (QTCaptureSession *)session AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-#endif /* (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5) */
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureMovieFileOutput.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureMovieFileOutput.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureMovieFileOutput.h	2015-08-23 04:07:42.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureMovieFileOutput.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,36 +0,0 @@
+-/*
+-	File:		QTCaptureMovieFileOutput.h
+-
+-	Copyright:	(c)2008-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-#if (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4)
+-
+-#import <QTKit/QTCaptureFileOutput.h>
+-
+-/* This is a concrete subclass of QTCaptureFileOutput. See QTCaptureFileOutput.h for complete method declarations. */
+-
+-@class QTCaptureMovieFileOutputInternal;
+-
+-@interface QTCaptureMovieFileOutput : QTCaptureFileOutput {
+-@private
+-	QTCaptureMovieFileOutputInternal		*_internal;
+-	long									_reserved8;
+-}
+-
+-@end
+-
+-#endif /* (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4) */
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureOutput.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureOutput.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureOutput.h	2015-08-23 04:07:42.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureOutput.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,36 +0,0 @@
+-/*
+-	File:		QTCaptureOutput.h
+- 
+-	Copyright:	(c)2007-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-#if (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4)
+-
+-@class QTCaptureSession;
+-
+-@interface QTCaptureOutput : NSObject {
+-@private
+-	QTCaptureSession * __weak	_session;
+-	long						_reserved1;
+-	long						_reserved2;
+-	long						_reserved3;
+-}
+-
+-- (NSArray *)connections AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-#endif /* (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4) */
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureSession.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureSession.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureSession.h	2015-08-23 04:07:42.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureSession.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,56 +0,0 @@
+-/*
+-	File:		QTCaptureSession.h
+-
+-	Copyright:	(c)2007-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-#if (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4)
+-
+-// notifications
+-QTKIT_EXTERN NSString * const QTCaptureSessionRuntimeErrorNotification  AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTCaptureSessionErrorKey                  AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@class QTCaptureConnection;
+-@class QTCaptureInput;
+-@class QTCaptureOutput;
+-
+-@class QTCaptureSessionInternal;
+-@class QTCaptureSessionInternalState;
+-
+-@interface QTCaptureSession : NSObject {
+-@private
+-	QTCaptureSessionInternal		*_internal;
+-	QTCaptureSessionInternalState	*_internalState;
+-	long							_reserved1;
+-	long							_reserved2;
+-	long							_reserved3;
+-}
+-
+-- (NSArray *)inputs AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (BOOL)addInput:(QTCaptureInput *)input error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)removeInput:(QTCaptureInput *)input AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (NSArray *)outputs AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (BOOL)addOutput:(QTCaptureOutput *)output error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)removeOutput:(QTCaptureOutput *)output AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (BOOL)isRunning AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)startRunning AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)stopRunning AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-#endif	/* (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4) */
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureVideoPreviewOutput.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureVideoPreviewOutput.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureVideoPreviewOutput.h	2015-08-23 04:07:42.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureVideoPreviewOutput.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,63 +0,0 @@
+-/*
+-	File:		QTCaptureVideoPreviewOutput.h
+- 
+-	Copyright:	(c)2007-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-#if (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4)
+-
+-#import <QTKit/QTCaptureOutput.h>
+-#if !__LP64__
+-	#include <QuickTime/QuickTime.h>
+-#endif
+-#import <QuartzCore/QuartzCore.h>
+-
+-@class QTCaptureVideoPreviewOutputInternal;
+-
+-@class QTCaptureConnection;
+-@class QTSampleBuffer;
+-
+-@interface QTCaptureVideoPreviewOutput : QTCaptureOutput {
+-@private
+-	QTCaptureVideoPreviewOutputInternal	*_internal;
+-	__weak id							_delegate;
+-
+-	long								_reserved4;
+-}
+-
+-- (NSDictionary *)pixelBufferAttributes AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setPixelBufferAttributes:(NSDictionary *)pixelBufferAttributes AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;	
+-
+-#if !__LP64__
+-- (QTVisualContextRef)visualContextForConnection:(QTCaptureConnection *)connection AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setVisualContext:(QTVisualContextRef)visualContext forConnection:(QTCaptureConnection *)connection AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif
+-
+-- (id)delegate AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setDelegate:(id)delegate AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-// To be overridden by subclasses - do not invoke directly
+-- (void)outputVideoFrame:(CVImageBufferRef)videoFrame withSampleBuffer:(QTSampleBuffer *)sampleBuffer fromConnection:(QTCaptureConnection *)connection AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-@interface NSObject	(QTCaptureVideoPreviewOutput_Delegate)
+-
+-- (void)captureOutput:(QTCaptureOutput *)captureOutput didOutputVideoFrame:(CVImageBufferRef)videoFrame withSampleBuffer:(QTSampleBuffer *)sampleBuffer fromConnection:(QTCaptureConnection *)connection AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-#endif	/* (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4) */
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureView.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureView.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureView.h	2015-08-23 04:07:42.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCaptureView.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,62 +0,0 @@
+-/*
+-	File:		QTCaptureView.h
+-
+-	Copyright:	(c)2007-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Cocoa/Cocoa.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-#if (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4)
+-
+-@class QTCaptureSession;
+-@class QTCaptureConnection;
+-
+-@class QTCaptureViewInternal;
+-
+-@class CIImage;
+-
+-@interface QTCaptureView : NSView {
+-@private
+-	QTCaptureViewInternal			*_internal;
+-
+-	long							_reserved1;
+-	long							_reserved2;
+-	long							_reserved3;
+-}
+-
+-- (QTCaptureSession *)captureSession AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setCaptureSession:(QTCaptureSession *)captureSession AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-// If there are multiple video connections that can be previewed, these methods determine which the view will display.
+-- (NSArray *)availableVideoPreviewConnections AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (QTCaptureConnection *)videoPreviewConnection AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setVideoPreviewConnection:(QTCaptureConnection *)videoPreviewConnection AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (NSColor *)fillColor AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setFillColor:(NSColor *)fillColor AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (BOOL)preservesAspectRatio AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setPreservesAspectRatio:(BOOL)preservesAspectRatio AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (NSRect)previewBounds AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;	// Subclasses can override this method to provide custom preview bounds
+-
+-- (id)delegate AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setDelegate:(id)delegate AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-@interface NSObject (QTCaptureView_Delegate)
+-- (CIImage *)view:(QTCaptureView *)view willDisplayImage:(CIImage *)image AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-@end
+-
+-#endif /* (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4) */
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCompressionOptions.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCompressionOptions.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCompressionOptions.h	2015-08-23 04:07:42.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTCompressionOptions.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,73 +0,0 @@
+-/*
+-	File:		QTCompressionOptions.h
+- 
+-	Copyright:	(c)2007-2012 by Apple Inc., all rights reserved.
+- 
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-#if (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4)
+-
+-/*
+-	Compression options identifiers:
+-	
+-	A QTCompressionOptions object can be created with any of the following identifiers, each representing a set of options that determine how media will be compressed. 
+- 
+-	These compression options are appropriate for high quality intermediate video that requires further processing.
+-		@"QTCompressionOptionsLosslessAnimationVideo";
+-		@"QTCompressionOptionsJPEGVideo";
+-		@"QTCompressionOptionsLosslessAppleIntermediateVideo";		// Not available in 64-bit
+-
+-	These compression options are appropriate for medium and low quality video that will be used for delivery to destinations such as the internet.
+-		@"QTCompressionOptions120SizeH264Video";
+-		@"QTCompressionOptions240SizeH264Video";
+-		@"QTCompressionOptionsSD480SizeH264Video";
+-		@"QTCompressionOptionsHD720SizeH264Video";
+-		@"QTCompressionOptions120SizeMPEG4Video";		// Not available in 64-bit
+-		@"QTCompressionOptions240SizeMPEG4Video";		// Not available in 64-bit
+-		@"QTCompressionOptionsSD480SizeMPEG4Video";		// Not available in 64-bit
+-	
+-	This compression option is appropriate for lossless audio that requires further processing, or is intended for high fidelity destinations.
+-		@"QTCompressionOptionsLosslessALACAudio";
+- 
+-	These compression options are appropriate for audio delivered with lossy compression.
+-		@"QTCompressionOptionsHighQualityAACAudio";		// For music and other high quality audio
+-		@"QTCompressionOptionsVoiceQualityAACAudio";	// For voice recordings
+-*/
+-
+-@class QTCompressionOptionsInternal;
+-
+-@interface QTCompressionOptions : NSObject
+-{
+-@private
+-	QTCompressionOptionsInternal	*_internal;
+-	long							_reserved;
+-}
+-
+-// This method returns all of the possible identifiers for the given media type that can be used with compressionOptionsWithIdentifier: on the user's system. Media types are defined in QTMedia.h.
+-+ (NSArray *)compressionOptionsIdentifiersForMediaType:(NSString *)mediaType AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-// This method returns a compression options object configured for the given identifier.
+-+ (id)compressionOptionsWithIdentifier:(NSString *)identifier AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (NSString *)mediaType AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (NSString *)localizedDisplayName AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (NSString *)localizedCompressionOptionsSummary AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (BOOL)isEqualToCompressionOptions:(QTCompressionOptions *)compressionOptions AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-#endif	/* (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4) */
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTDataReference.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTDataReference.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTDataReference.h	2015-08-23 04:07:42.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTDataReference.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,79 +0,0 @@
+-/*
+-	File:		QTDataReference.h
+-
+-	Copyright:	(c)2004-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#if !__LP64__
+-	#import <QuickTime/QuickTime.h>
+-#endif
+-#import <QTKit/QTKitDefines.h>
+-
+-// data handler types
+-QTKIT_EXTERN NSString * const QTDataReferenceTypeFile       AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTDataReferenceTypeHandle     AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTDataReferenceTypePointer    AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTDataReferenceTypeResource   AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTDataReferenceTypeURL        AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@interface QTDataReference : NSObject <NSCoding>
+-{
+-@private
+-#if __LP64__
+-	int32_t		_proxy;
+-#else
+-	NSString	*_fileName;
+-	NSURL		*_url;
+-	NSData		*_data;
+-	NSString	*_name;
+-	NSString	*_MIMEType;
+-	Handle		_dataRef;
+-	OSType		_dataRefType;
+-#endif
+-	long		_reserved1;
+-	long		_reserved2;
+-	long		_reserved3;
+-}
+-
+-	// class methods
+-+ (id)dataReferenceWithDataRef:(Handle)dataRef type:(NSString *)type AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-+ (id)dataReferenceWithDataRefData:(NSData *)dataRefData type:(NSString *)type AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-+ (id)dataReferenceWithReferenceToFile:(NSString *)fileName AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-+ (id)dataReferenceWithReferenceToURL:(NSURL *)url AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-+ (id)dataReferenceWithReferenceToData:(NSData *)data AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-+ (id)dataReferenceWithReferenceToData:(NSData *)data name:(NSString *)name MIMEType:(NSString *)MIMEType AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-	// init
+-- (id)initWithDataRef:(Handle)dataRef type:(NSString *)type AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (id)initWithDataRefData:(NSData *)dataRefData type:(NSString *)type AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (id)initWithReferenceToFile:(NSString *)fileName AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (id)initWithReferenceToURL:(NSURL *)url AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (id)initWithReferenceToData:(NSData *)data AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (id)initWithReferenceToData:(NSData *)data name:(NSString *)name MIMEType:(NSString *)MIMEType AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-	// getters
+-- (Handle)dataRef AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (NSData *)dataRefData AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (NSString *)dataRefType AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (NSString *)referenceFile AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (NSURL *)referenceURL AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (NSData *)referenceData AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (NSString *)name AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (NSString *)MIMEType AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-	// setters
+-- (void)setDataRef:(Handle)dataRef AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setDataRefType:(NSString *)type AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTError.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTError.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTError.h	2015-08-23 04:07:42.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTError.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,61 +0,0 @@
+-/*
+-	File:		QTError.h
+- 
+-	Copyright:	(c)2007-2012 by Apple Inc., all rights reserved.
+- 
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2
+-
+-QTKIT_EXTERN NSString * const QTKitErrorDomain							AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-QTKIT_EXTERN NSString * const QTErrorCaptureInputKey					AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTErrorCaptureOutputKey					AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTErrorDeviceKey							AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTErrorExcludingDeviceKey					AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTErrorTimeKey							AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;  // NSValue interpreted as QTTime
+-QTKIT_EXTERN NSString * const QTErrorFileSizeKey						AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;  // NSNumber interpreted as file size in bytes
+-QTKIT_EXTERN NSString * const QTErrorRecordingSuccesfullyFinishedKey	AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7;
+-QTKIT_EXTERN NSString * const QTErrorRecordingSuccessfullyFinishedKey	AVAILABLE_QTKIT_VERSION_7_7_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-enum {
+-	QTErrorUnknown                                      = -1,
+-	QTErrorIncompatibleInput                            = 1002,
+-	QTErrorIncompatibleOutput                           = 1003,
+-	QTErrorInvalidInputsOrOutputs                       = 1100,
+-	QTErrorDeviceAlreadyUsedbyAnotherSession            = 1101,
+-	QTErrorNoDataCaptured                               = 1200,
+-	QTErrorSessionConfigurationChanged                  = 1201,
+-	QTErrorDiskFull                                     = 1202,
+-	QTErrorDeviceWasDisconnected                        = 1203,
+-	QTErrorMediaChanged                                 = 1204,
+-	QTErrorMaximumDurationReached                       = 1205,
+-	QTErrorMaximumFileSizeReached                       = 1206,
+-	QTErrorMediaDiscontinuity                           = 1207,
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_6_3
+-    QTErrorMaximumNumberOfSamplesForFileFormatReached   = 1208,
+-#endif /* QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_6_3 */
+-	QTErrorDeviceNotConnected                           = 1300,
+-	QTErrorDeviceInUseByAnotherApplication              = 1301,
+-	QTErrorDeviceExcludedByAnotherDevice                = 1302,
+-	QTErrorInvalidDestinationFileTypeForExport			= 1501,
+-	QTErrorInvalidSourceFileTypeForExport				= 1502,
+-	QTErrorExportExecutionFailed						= 1503,
+-	QTErrorExportInsufficientSpaceOnDevice				= 1504,
+-	QTErrorExportNoSuchDirectoryOrFile					= 1505,
+-	QTErrorExportIOError								= 1506,
+-};
+-
+-#endif /* QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2 */
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTExportOptions.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTExportOptions.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTExportOptions.h	2015-08-23 04:07:42.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTExportOptions.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,117 +0,0 @@
+-/*
+-	File:		QTExportOptions.h
+-
+-	Copyright:	(c)2009-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#import <QTKit/QTKitDefines.h>
+-#pragma mark Export Options Identifiers
+-
+-
+-/* These export options are used to produce files that can be played on the specified Apple devices.
+-	The files should have .m4v extensions (or .m4a for exports with audio only sources). */
+-QTKIT_EXTERN NSString * const QTExportOptionsAppleM4VCellular		AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTExportOptionsAppleM4V480pSD			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTExportOptionsAppleM4ViPod			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTExportOptionsAppleM4VAppleTV		AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTExportOptionsAppleM4VWiFi			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTExportOptionsAppleM4V720pHD			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/* These export options can be used to produce QuickTime .mov files with the specified video size.
+-	The export will not scale the video up from a smaller size. The video will be compressed using
+-	H.264 and the audio will be compressed using AAC.  */
+-QTKIT_EXTERN NSString * const QTExportOptionsQuickTimeMovie480p		AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTExportOptionsQuickTimeMovie720p		AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTExportOptionsQuickTimeMovie1080p	AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*  This export option will produce an audio only .m4a file with appropriate gapless playback data */
+-QTKIT_EXTERN NSString * const QTExportOptionsAppleM4A				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-
+-/*!
+-    @class QTExportOptions
+-
+-    @abstract A QTExportOptions is a collection of settings that define an export that can be executed by a QTExportSession object.
+-
+-    @discussion A QTExportOptions object is initializd with an export identifier and is used to configure a QTExportSession.  It can 
+-	provide some information about the export that will be performed if it is used to configure a QTExportSession.  The class also 
+-	provided methods that allow the client to query what identifiers are available.
+-*/
+-
+-@class QTMovie, QTTrack;
+-@class QTExportOptionsInternal;
+-
+-@interface QTExportOptions : NSObject <NSCopying>
+-{
+-@protected
+-	QTExportOptionsInternal*	_internal;
+-}
+-
+-/*!
+-	@method						allExportOptionsIdentifiers
+-	@abstract					Returns all available identifiers used for retrieving preset export options.
+-	@discussion					Returns all identifiers currently available on the current system. �Note that not all identifiers are 
+-								compatible with all movies.
+-	@result						An NSArray containing the identifiers.
+-*/
+-+ (NSArray *)allExportOptionsIdentifiers AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method						exportOptionsIdentifiersCompatibleWithMovie:
+-	@abstract					Returns only the identifiers compatible with the given QTMovie object.
+-	@discussion					Not all export setups are compatible with all movies. �This method returns only the identifiers for options 
+-								that will be compatible with the given movie. �A client should pass in a movie that is ready to be exported. �
+-								In order to ensure that the setup and running of an export operation will succeed using a set of options 
+-								from the returned identifiers, no significant changes (such as adding or deleting tracks) should be made to 
+-								the movie between retrieving compatible identifiers and performing the export operation.
+-	@param movie				A QTMovie object that is intended to be exported.
+-	@result						An NSArray containing NSString values for the identifiers of compatible export types.  
+-								The array is a complete list of the valid identifiers that can be used as arguments to 
+-								exportOptionsWithIdentifier along with the movie specified.
+-*/
+-+ (NSArray *)exportOptionsIdentifiersCompatibleWithMovie:(QTMovie *)movie AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method						localizedNameForExportOptionsIdentifier:
+-	@abstract					Returns a short localized name for the given export identifiers.
+-	@discussion					The returned name will fit on one line and is suitable for displaying in a list or menu of export identifiers 
+-								in the user interface.
+-	@param 		identifier 		An export options identifier.
+-	@result						A localized name for the given identifier.
+-*/
+-+ (NSString *)localizedNameForExportOptionsIdentifier:(NSString *)identifier AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method						exportOptionsWithIdentifier:
+-	@abstract					Create an autoreleased instance of QTExportOptions for the export type with the specified identifier.
+-	@param		identifier		Determines the type of the output container file (e.g. QuickTime movie file, iPod video file, etc.)
+-								and the compression options for the output media.
+-	@result						Returns the initialized and autoreleased instance of QTExportOptions.
+-*/
+-+ (id)exportOptionsWithIdentifier:(NSString *)identifier AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method						localizedExportOptionsSummary
+-	@result						Returns a localized description of the export options intended for end-user display.
+- */
+-- (NSString *)localizedExportOptionsSummary AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method						recommendedFileTypesForExportedFile
+-	@result						Returns an array of UTI file types as NSStrings that best fit the export described by the QTExportOptions object.  
+-								The first entry in the list is the currently recommended choice.
+- */
+-- (NSArray *)recommendedFileTypesForExportedFile AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTExportSession.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTExportSession.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTExportSession.h	2015-08-23 04:07:42.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTExportSession.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,131 +0,0 @@
+-/*
+-	File:		QTExportSession.h
+-
+-	Copyright:	(c)2009-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-
+-@class QTMovie, QTExportOptions;
+-@class QTExportSessionInternal;
+-
+-@protocol QTExportSessionDelegate;
+-
+-#if (defined(MAC_OS_X_VERSION_10_7) && (MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_7))
+-/*!
+-    @class			QTExportSession
+-
+-    @abstract		A QTExportSession object produces a trancoded output from a given QTMovie source according to the settings in a QTExportOptions object.
+-
+-    @discussion		This class instantiates an object that manages exporting a QTMovie object (or a collection of QTTrack objects) to produce a transcoded output 
+-					in the format specified in a QTExportOptions object that might be provided at initiaization time. 
+-*/
+-
+-@interface QTExportSession : NSObject
+-{
+-@private
+-	QTExportSessionInternal		*_internal;
+-}
+-
+-@property (assign)		id<QTExportSessionDelegate>	delegate AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-@property (readonly, copy)	QTExportOptions				*exportOptions AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/* These properties are KV Observable */
+-@property (readonly) double progress AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-@property (readonly, getter=isRunning) BOOL running AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-@property (readonly, getter=isFinished)	BOOL finished AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-@property (readonly, getter=isCancelled) BOOL cancelled AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/*!
+-	@method						initWithMovie:exportOptions:outputURL:error:
+-	@abstract					Initialize a QTExportSession with the specified options.
+-	@param		movie			A QTMovie object that is intended to be exported.
+-	@param		exportOptions   A QTExportOptions object that describes the desired export.
+-	@param		outputURL		An NSURL to be used for the result ofthe export.
+-	@param		outError		If there is an error initializing the QTExportOptions object, an NSError containing the error code will be assingned to outError;
+-	@result						Returns the initialized QTExportSession.
+-*/
+-- (id)initWithMovie:(QTMovie *)movie exportOptions:(QTExportOptions *)exportOptions outputURL:(NSURL *)outputURL error:(NSError **)outError AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/*!
+-	@method						run
+-	@abstract					Start or resume the export operation asynchronously. 
+-	@discussion					Initiates or resumes an asynchronous export operation and returns immediately.
+-								Information regarding progress, success, or failure will be reported to the delegate object.
+-*/
+-- (void)run AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/*!
+-	@method						cancel
+-	@abstract					Cancel the execution of an asynchronous export. 
+-								Cancels the execution of a running export.  Nas no effect if run has not been called.
+-*/
+-- (void)cancel AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/*!
+-	@method						waitUntilFinished:
+-	@abstract					Wait for the running asynchronous export operation to finish.
+-	@discussion					Blocks the current thread until the export operation for the QTExportSession completes.
+-	@param		error			If the export operation fails, describes the reason for failure.
+-	@result						Returns YES if the export operation succeeded, otherwise NO.
+-*/
+-- (BOOL)waitUntilFinished:(NSError **)error AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/*!
+-	@method						localizedExportSessionOutputSummary
+-	@result						Returns a localized description of the export session intended for end-user display. The description is a human readable text string
+-								describing the output container format and the formats of the media streams that it will contain.
+-*/
+-- (NSString *)localizedExportSessionOutputSummary AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-@end
+-
+-
+-/* Delegate interface for receiving progress and completion information from an instance of QTExportSession */
+-
+-@protocol QTExportSessionDelegate
+-@optional
+-
+-/*!
+-	@method						exportSessionDidSucceed:
+-	@abstract					Delegate method that indicates that the specified export operation has completed successfully.
+-	@param		exportSession	A reference to the QTExportSession that's reporting success.
+-*/
+-- (void)exportSessionDidSucceed:(QTExportSession *)exportSession AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/*!
+-	@method						exportSession:didFailWithError:
+-	@abstract					Delegate method that indicates that the export operation ultimately failed. 
+-	@param		exportSession	A reference to the QTExportSession that's reporting failure.
+-	@param		error			An autoreleased NSError describing the reason for failure.
+-*/
+-- (void)exportSession:(QTExportSession *)exportSession didFailWithError:(NSError *)error AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/*!
+-	 @method					exportSessionWasCancelled:
+-	 @abstract					Delegate method that indicates that the export operation was cancelled by the user. 
+-	 @param		exportSession	A reference to the QTExportSession that's reporting failure.
+-*/
+-- (void)exportSessionWasCancelled:(QTExportSession *)exportSession AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/*!
+-	@method						exportSession:didReachProgress:
+-	@abstract					Delegate call that indicates the current progress state of the export, with a range of 0.0 to 1.0.
+-	@param		exportSession	A reference to the QTExportSession that's reporting progress.
+-	@param		progress		A double between 0.0 and 1.0 inclusive to indicate the progress of the export operation.
+-*/
+-- (void)exportSession:(QTExportSession *)exportSession didReachProgress:(double)progress AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-@end
+-
+-#endif	// if (defined(MAC_OS_X_VERSION_10_7) && (MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_7))
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTFormatDescription.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTFormatDescription.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTFormatDescription.h	2015-08-23 04:07:42.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTFormatDescription.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,57 +0,0 @@
+-/*
+-	File:		QTFormatDescription.h
+- 
+-	Copyright:	(c)2007-2012 by Apple Inc., all rights reserved.
+- 
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-#if (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4)
+-
+-// Attribute Keys:
+-
+-// Audio-specific
+-QTKIT_EXTERN NSString * const QTFormatDescriptionAudioStreamBasicDescriptionAttribute			AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSValue interpreted as AudioStreamBasicDescription
+-QTKIT_EXTERN NSString * const QTFormatDescriptionAudioMagicCookieAttribute						AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSData
+-QTKIT_EXTERN NSString * const QTFormatDescriptionAudioChannelLayoutAttribute					AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSData interpreted as AudioChannelLayout
+-
+-// Video-specific
+-QTKIT_EXTERN NSString * const QTFormatDescriptionVideoCleanApertureDisplaySizeAttribute			AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSValue interpreted as NSSize
+-QTKIT_EXTERN NSString * const QTFormatDescriptionVideoProductionApertureDisplaySizeAttribute	AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSValue interpreted as NSSize
+-QTKIT_EXTERN NSString * const QTFormatDescriptionVideoEncodedPixelsSizeAttribute				AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSValue interpreted as NSSize
+-
+-@class QTFormatDescriptionInternal;
+-
+-@interface QTFormatDescription : NSObject {
+-@private
+-	QTFormatDescriptionInternal	*_internal;
+-	long						_reserved1;
+-	long						_reserved2;
+-	long						_reserved3;
+-}
+-
+-- (NSString *)mediaType AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;	// Media types defined in QTMedia.h
+-- (UInt32)formatType AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;		// A four character code representing the format or codec type. Video codec types are defined in <QuickTime/ImageCompression.h>. Audio codec types are define in <CoreAudio/CoreAudioTypes.h>.
+-- (NSString *)localizedFormatSummary AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (NSData *)quickTimeSampleDescription AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;	// Contains a QuickTime SampleDescription structure
+-
+-- (NSDictionary *)formatDescriptionAttributes AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (id)attributeForKey:(NSString *)key AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (BOOL)isEqualToFormatDescription:(QTFormatDescription *)formatDescription AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-#endif	/* (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4) */
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTKit.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTKit.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTKit.h	2015-08-23 04:07:43.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTKit.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,51 +0,0 @@
+-/*
+-	File:		QTKit.h
+-
+-	Copyright:	(c)2004-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <AvailabilityMacros.h>
+-
+-#import <QTKit/QTKitDefines.h>
+-#import <QTKit/QTError.h>
+-
+-#import <QTKit/QTDataReference.h>
+-#import <QTKit/QTMovie.h>
+-#import <QTKit/QTTrack.h>
+-#import <QTKit/QTMedia.h>
+-#import <QTKit/QTMovieView.h>
+-#import <QTKit/QTMovieLayer.h>
+-#import <QTKit/QTTime.h>
+-#import <QTKit/QTTimeRange.h>
+-#import <QTKit/QTUtilities.h>
+-
+-#import <QTKit/QTCaptureSession.h>
+-#import <QTKit/QTCaptureInput.h>
+-#import <QTKit/QTCaptureOutput.h>
+-#import <QTKit/QTCaptureConnection.h>
+-#import <QTKit/QTCaptureDeviceInput.h>
+-#import <QTKit/QTCaptureFileOutput.h>
+-#import <QTKit/QTCaptureMovieFileOutput.h>
+-#import <QTKit/QTCaptureView.h>
+-#import <QTKit/QTCaptureDevice.h>
+-#import <QTKit/QTCaptureVideoPreviewOutput.h>
+-#import <QTKit/QTCaptureAudioPreviewOutput.h>
+-#import <QTKit/QTCaptureDecompressedVideoOutput.h>
+-#import <QTKit/QTCaptureDecompressedAudioOutput.h>
+-#import <QTKit/QTFormatDescription.h>
+-#import <QTKit/QTSampleBuffer.h>
+-#import <QTKit/QTCompressionOptions.h>
+-#import <QTKit/QTCaptureLayer.h>
+-
+-#import <QTKit/QTMetadataItem.h>
+-#import <QTKit/QTMovieModernizer.h>
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTKitDefines.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTKitDefines.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTKitDefines.h	2015-08-23 04:07:43.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTKitDefines.h	2016-05-23 03:56:45.000000000 +0200
+@@ -1,7 +1,7 @@
+ /*
+ 	File:		QTKitDefines.h
+ 
+-	Copyright:	(c)2004-2012 by Apple Inc., all rights reserved.
++	Copyright:	(c)2004-2015 by Apple Inc., all rights reserved.
+ 
+ */
+ 
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMedia.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMedia.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMedia.h	2015-08-23 04:07:43.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMedia.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,389 +0,0 @@
+-/*
+-	File:		QTMedia.h
+-
+-	Copyright:	(c)2004-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-/*!
+-    @class			QTMedia
+-
+-    @abstract		A QTMedia object is an object that represents the data associated with a QTTrack object.
+- 
+-	@discussion		A QTMovie object typically contains one or more streams of media data, which are represented by
+-					QTTrack objects. A QTTrack object has exactly one QTMedia object associated with it. The QTMedia
+-					object exposes attributes such as media type and media characteristics.
+- 
+-					When a QTMovie object has been initialized with QTMovieOpenForPlaybackAttribute set to NO,
+-					a QTMedia object wraps the underlying QuickTime media (of type Media).
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#if !__LP64__
+-	#import <QuickTime/QuickTime.h>
+-#endif
+-#import <QTKit/QTKitDefines.h>
+-
+-	// media types
+-/*!
+-	@constant		QTMediaTypeVideo
+-	@abstract		The media type of a video track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTypeVideo								AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaTypeSound
+-	@abstract		The media type of a sound track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTypeSound								AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaTypeText
+-	@abstract		The media type of a text track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTypeText								AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaTypeBase
+-	@abstract		The media type of a base track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTypeBase								AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaTypeMPEG
+-	@abstract		The media type of an MPEG track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTypeMPEG								AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaTypeMusic
+-	@abstract		The media type of a music track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTypeMusic								AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaTypeTimeCode
+-	@abstract		The media type of a timecode track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTypeTimeCode							AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaTypeSprite
+-	@abstract		The media type of a sprite track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTypeSprite								AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaTypeFlash
+-	@abstract		The media type of a Flash track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTypeFlash								AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaTypeMovie
+-	@abstract		The media type of a movie media track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTypeMovie								AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaTypeTween
+-	@abstract		The media type of a tween track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTypeTween								AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaType3D
+-	@abstract		The media type of a QuickDraw 3D track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaType3D									AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaTypeSkin
+-	@abstract		The media type of a skin track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTypeSkin								AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaTypeQTVR
+-	@abstract		The media type of a QuickTime VR track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTypeQTVR								AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaTypeHint
+-	@abstract		The media type of a hint track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTypeHint								AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaTypeStream
+-	@abstract		The media type of a stream track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTypeStream								AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaTypeMuxed
+-	@abstract		The media type of a multiplexed audio and video track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTypeMuxed								AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaTypeQuartzComposer
+-	@abstract		The media type of a Quartz Composer track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTypeQuartzComposer						AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaTypeSubtitle
+-	@abstract		The media type of a subtitle track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTypeSubtitle							AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaTypeClosedCaption
+-	@abstract		The media type of a closed-caption track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTypeClosedCaption						AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-	// media characteristics
+-/*!
+-	@constant		QTMediaCharacteristicVisual
+-	@abstract		Indicates whether a QTMedia object has visual data.
+- */
+-QTKIT_EXTERN NSString * const QTMediaCharacteristicVisual					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaCharacteristicAudio
+-	@abstract		Indicates whether a QTMedia object has audio data.
+- */
+-QTKIT_EXTERN NSString * const QTMediaCharacteristicAudio					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaCharacteristicCanSendVideo
+-	@abstract		Indicates whether a QTMedia object can send visual data to another track.
+- */
+-QTKIT_EXTERN NSString * const QTMediaCharacteristicCanSendVideo				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaCharacteristicProvidesActions
+-	@abstract		Indicates whether a QTMedia object has actions.
+- */
+-QTKIT_EXTERN NSString * const QTMediaCharacteristicProvidesActions			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaCharacteristicNonLinear
+-	@abstract		Indicates whether a QTMedia object is non-linear.
+- */
+-QTKIT_EXTERN NSString * const QTMediaCharacteristicNonLinear				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaCharacteristicCanStep
+-	@abstract		Indicates whether a QTMedia object can step.
+- */
+-QTKIT_EXTERN NSString * const QTMediaCharacteristicCanStep					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaCharacteristicHasNoDuration
+-	@abstract		Indicates whether a QTMedia object has no duration.
+- */
+-QTKIT_EXTERN NSString * const QTMediaCharacteristicHasNoDuration			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaCharacteristicHasSkinData
+-	@abstract		Indicates whether a QTMedia object has skin data.
+- */
+-QTKIT_EXTERN NSString * const QTMediaCharacteristicHasSkinData				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaCharacteristicProvidesKeyFocus
+-	@abstract		Indicates whether key events can be focused at a QTMedia object.
+- */
+-QTKIT_EXTERN NSString * const QTMediaCharacteristicProvidesKeyFocus			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@constant		QTMediaCharacteristicHasVideoFrameRate
+-	@abstract		Indicates whether a QTMedia object has a video frame rate.
+- */
+-QTKIT_EXTERN NSString * const QTMediaCharacteristicHasVideoFrameRate		AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-	// media attributes
+-/*!
+-	@constant		QTMediaCreationTimeAttribute
+-	@abstract		The creation time of the container from which a QTMedia object was initialized; the value for this key is of type NSDate.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie containing this media has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMediaCreationTimeAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;  // NSDate
+-
+-/*!
+-	@constant		QTMediaDurationAttribute
+-	@abstract		The duration of a QTMedia object; the value for this key is of type NSValue, interpreted as a QTTime.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie containing this media has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMediaDurationAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;	// NSValue (QTTime)
+-
+-/*!
+-	@constant		QTMediaModificationTimeAttribute
+-	@abstract		The modification time of a QTMedia object; the value for this key is of type NSDate.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie containing this media has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMediaModificationTimeAttribute				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;	// NSDate
+-
+-/*!
+-	@constant		QTMediaSampleCountAttribute
+-	@abstract		The number of samples in a QTMedia object; the value for this key is of type NSNumber, interpreted as a long.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie containing this media has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMediaSampleCountAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;	// NSNumber (long)
+-
+-/*!
+-	@constant		QTMediaQualityAttribute
+-	@abstract		The quality of a QTMedia object; the value for this key is of type NSNumber, interpreted as a short.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read but not written when the movie containing this media has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMediaQualityAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;	// NSNumber (short)
+-
+-/*!
+-	@constant		QTMediaTimeScaleAttribute
+-	@abstract		The time scale of a QTMedia object; the value for this key is of type NSNumber, interpreted as a long.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read but not written when the movie containing this media has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTimeScaleAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;	// NSNumber (long)
+-
+-/*!
+-	@constant		QTMediaTypeAttribute
+-	@abstract		The type of a QTMedia object; the value for this key is of type NSString.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie containing this media has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMediaTypeAttribute							AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;	// NSString
+-
+-@class QTMovie;
+-@class QTTrack;
+-@class QTQuickTimeMovieWrapper;
+-
+-@interface QTMedia : NSObject
+-{
+-@private
+-#if __LP64__
+-	int32_t					_proxy;
+-#else
+-	Media					_quickTimeMedia;
+-	NSUndoManager			*_undoManager;
+-	NSDictionary			*_undoAttributes;
+-	QTQuickTimeMovieWrapper	*_quickTimeMovieWrapper;
+-#endif
+-	long					_flags;
+-	QTTrack					*_track;
+-}
+-
+-#if !__LP64__
+-	// class/init methods
+-/*!
+-	@method			mediaWithQuickTimeMedia:error:
+-	@abstract		Returns a QTMedia object associated with a QuickTime Media.
+-	@discussion		This method cannot be called when the movie containing this media has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					In addition, this method cannot be called by 64-bit applications.
+-	@param			media
+-					A QuickTime Media with which to initialize the QTMedia object.
+-	@param			errorPtr
+-					A pointer to an NSError object; if a QTMedia object cannot be created, an NSError object is returned in this location.
+-*/
+-+ (id)mediaWithQuickTimeMedia:(Media)media error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			initWithQuickTimeMedia:error:
+-	@abstract		Returns a QTMedia object associated with a QuickTime Media.
+-	@discussion		This method cannot be called when the movie containing this media has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					In addition, this method cannot be called by 64-bit applications.
+-	@param			media
+-					A QuickTime Media with which to initialize the QTMedia object.
+-	@param			errorPtr
+-					A pointer to an NSError object; if a QTMedia object cannot be created, an NSError object is returned in this location.
+-*/
+-- (id)initWithQuickTimeMedia:(Media)media error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif
+-
+-	// parent
+-/*!
+-	@method			track
+-	@abstract		Returns the QTTrack object associated with a QTMedia object.
+-	@discussion		This method can be called when the movie containing this media has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (QTTrack *)track AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-	// attributes
+-/*!
+-	@method			mediaAttributes
+-	@abstract		Returns a dictionary containing the current values of all public attributes of a QTMedia object.
+-	@discussion		This method can be called when the movie containing this media has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (NSDictionary *)mediaAttributes AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			setMediaAttributes:
+-	@abstract		Sets the attributes of a QTMedia object using the key-value pairs in a specified dictionary.
+-	@discussion		This method can be called when the movie containing this media has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					However, certain attributes may not be writable when the movie containing this media has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			attributes
+-					An NSDictionary object that specifies the attributes to set and their desired values.
+-*/
+-- (void)setMediaAttributes:(NSDictionary *)attributes AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			attributeForKey:
+-	@abstract		Returns the current value of an attribute of a QTMedia object.
+-	@discussion		This method can be called when the movie containing this media has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			attributeKey
+-					An NSString object that specifies the attribute to be read; pass strings like QTMediaTimeScaleAttribute or QTMediaTypeAttribute.
+-*/
+-- (id)attributeForKey:(NSString *)attributeKey AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			setAttribute:forKey:
+-	@abstract		Sets an attribute of a QTMedia object to a specified value.
+-	@discussion		This method can be called when the movie containing this media has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					However, certain attributes may not be writable when the movie containing this media has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			value
+-					An object that specifies the value of the attribute to be written.
+-	@param			attributeKey
+-					An NSString object that specifies the attribute to be written; pass strings like QTMediaTimeScaleAttribute or QTMediaTypeAttribute.
+-*/
+-- (void)setAttribute:(id)value forKey:(NSString *)attributeKey AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-	// characteristics
+-/*!
+-	@method			hasCharacteristic:
+-	@abstract		Indicates whether a QTMedia object has a specified characteristic.
+-	@discussion		This method can be called when the movie containing this media has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			characteristic
+-					An NSString object that specifies the characteristic to be read; pass strings like QTMediaCharacteristicVisual or QTMediaCharacteristicAudio.
+-	@result			Returns YES if the QTMedia object has the specified characteristic, NO otherwise. 
+-*/
+-- (BOOL)hasCharacteristic:(NSString *)characteristic AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-#if !__LP64__
+-	// underlying QT object
+-/*!
+-	@method			quickTimeMedia
+-	@abstract		Returns the QuickTime Media associated with a QTMedia object.
+-	@discussion		This method cannot be called when the movie containing this media has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					In addition, this method cannot be called by 64-bit applications.
+-*/
+-- (Media)quickTimeMedia AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif
+-
+-@end
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMetadataItem.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMetadataItem.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMetadataItem.h	2015-08-23 04:07:43.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMetadataItem.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,370 +0,0 @@
+-/*
+-	File:       QTMetadataItem.h
+-
+-	Copyright:  (c) 2010-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Cocoa/Cocoa.h>
+-#import <QTKit/QTKit.h>
+-
+-// metadata formats
+-QTKIT_EXTERN NSString * const QTMetadataFormatQuickTimeUserData								AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataFormatQuickTimeMetadata								AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataFormatiTunesMetadata								AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataFormatID3Metadata									AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-// metadata key spaces
+-QTKIT_EXTERN NSString * const QTMetadataKeySpaceCommon										AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataKeySpaceQuickTimeUserData							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataKeySpaceQuickTimeMetadata							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataKeySpaceiTunes										AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataKeySpaceID3											AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-// metadata keys for QTMetadataKeySpaceCommon
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyTitle										AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyCreator									AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeySubject									AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyDescription								AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyPublisher									AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyContributor								AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyCreationDate								AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyLastModifiedDate							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyType										AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyFormat										AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyIdentifier									AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeySource										AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyLanguage									AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyRelation									AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyLocation									AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyCopyrights									AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyAlbumName									AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyAuthor										AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyArtist										AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyArtwork									AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyMake										AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyModel										AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeySoftware									AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataCommonKeyComment									AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-// metadata keys for QTMetadataKeySpaceQuickTimeUserData
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyAlbum							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyArranger						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyArtist							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyAuthor							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyChapter							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyComment							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyComposer						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyCopyright						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyCreationDate					AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyDescription						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyDirector						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyDisclaimer						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyEncodedBy						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyFullName						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyGenre							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyHostComputer					AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyInformation						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyKeywords						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyMake							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyModel							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyOriginalArtist					AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyOriginalFormat					AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyOriginalSource					AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyPerformers						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyProducer						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyPublisher						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyProduct							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeySoftware						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeySpecialPlaybackRequirements		AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyTrack							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyWarning							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyWriter							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyURLLink							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyLocationISO6709					AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyTrackName						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyCredits							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeUserDataKeyPhonogramRights					AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-QTKIT_EXTERN NSString * const QTMetadataISOUserDataKeyCopyright								AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadata3GPUserDataKeyCopyright								AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadata3GPUserDataKeyAuthor								AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadata3GPUserDataKeyPerformer								AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadata3GPUserDataKeyGenre									AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadata3GPUserDataKeyRecordingYear							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadata3GPUserDataKeyLocation								AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadata3GPUserDataKeyTitle									AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadata3GPUserDataKeyDescription							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-// metadata keys for QTMetadataKeySpaceQuickTimeMetadata
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyAuthor							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyComment							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyCopyright						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyCreationDate					AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyDirector						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyDisplayName						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyInformation						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyKeywords						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyProducer						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyPublisher						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyAlbum							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyArtist							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyArtwork							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyDescription						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeySoftware						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyYear							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyGenre							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyiXML							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyLocationISO6709					AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyMake							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyModel							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyArranger						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyEncodedBy						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyOriginalArtist					AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyPerformer						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyComposer						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyCredits							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataQuickTimeMetadataKeyPhonogramRights					AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-// metadata keys for QTMetadataKeySpaceiTunes
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyAlbum								AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyArtist								AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyUserComment						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyCoverArt							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyCopyright							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyReleaseDate						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyEncodedBy							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyPredefinedGenre					AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyUserGenre							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeySongName							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyTrackSubTitle						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyEncodingTool						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyComposer							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyAlbumArtist						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyAccountKind						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyAppleID							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyArtistID							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeySongID								AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyDiscCompilation					AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyDiscNumber							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyGenreID							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyGrouping							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyPlaylistID							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyContentRating						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyBeatsPerMin						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyTrackNumber						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyArtDirector						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyArranger							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyAuthor								AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyLyrics								AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyAcknowledgement					AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyConductor							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyDescription						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyDirector							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyEQ									AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyLinerNotes							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyRecordCompany						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyOriginalArtist						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyPhonogramRights					AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyProducer							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyPerformer							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyPublisher							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeySoundEngineer						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeySoloist							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyCredits							AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyThanks								AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyOnlineExtras						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-QTKIT_EXTERN NSString * const QTMetadataiTunesMetadataKeyExecProducer						AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-// metadata keys for QTMetadataKeySpaceID3
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyAudioEncryption                       AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* AENC Audio encryption */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyAttachedPicture                       AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* APIC Attached picture */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyAudioSeekPointIndex                   AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* ASPI Audio seek point index */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyComments                              AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* COMM Comments */        
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyCommerical                            AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* COMR Commercial frame */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyEncryption                            AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* ENCR Encryption method registration */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyEqualization                          AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* EQUA Equalization */    
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyEqualization2                         AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* EQU2 Equalization (2) */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyEventTimingCodes                      AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* ETCO Event timing codes */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyGeneralEncapsulatedObject             AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* GEOB General encapsulated object */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyGroupIdentifier                       AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* GRID Group identification registration */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyInvolvedPeopleList_v23                AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* IPLS Involved people list */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyLink                                  AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* LINK Linked information */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyMusicCDIdentifier                     AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* MCDI Music CD identifier */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyMPEGLocationLookupTable               AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* MLLT MPEG location lookup table */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyOwnership                             AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* OWNE Ownership frame */ 
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyPrivate                               AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* PRIV Private frame */   
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyPlayCounter                           AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* PCNT Play counter */    
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyPopularimeter                         AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* POPM Popularimeter */   
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyPositionSynchronization               AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* POSS Position synchronisation frame */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyRecommendedBufferSize                 AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* RBUF Recommended buffer size */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyRelativeVolumeAdjustment              AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* RVAD Relative volume adjustment */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyRelativeVolumeAdjustment2             AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* RVA2 Relative volume adjustment (2) */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyReverb                                AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* RVRB Reverb */          
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeySeek                                  AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* SEEK Seek frame */      
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeySignature                             AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* SIGN Signature frame */ 
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeySynchronizedLyric                     AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* SYLT Synchronized lyric/text */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeySynchronizedTempoCodes                AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* SYTC Synchronized tempo codes */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyAlbumTitle                            AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TALB Album/Movie/Show title */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyBeatsPerMinute                        AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TBPM BPM (beats per minute) */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyComposer                              AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TCOM Composer */        
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyContentType                           AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TCON Content type */    
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyCopyright                             AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TCOP Copyright message */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyDate                                  AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TDAT Date */            
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyEncodingTime                          AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TDEN Encoding time */   
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyPlaylistDelay                         AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TDLY Playlist delay */  
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyOriginalReleaseTime                   AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TDOR Original release time */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyRecordingTime                         AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TDRC Recording time */  
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyReleaseTime                           AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TDRL Release time */    
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyTaggingTime                           AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TDTG Tagging time */    
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyEncodedBy                             AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TENC Encoded by */      
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyLyricist                              AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TEXT Lyricist/Text writer */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyFileType                              AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TFLT File type */       
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyTime                                  AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TIME Time */            
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyInvolvedPeopleList_v24                AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TIPL Involved people list */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyContentGroupDescription               AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TIT1 Content group description */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyTitleDescription                      AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TIT2 Title/songname/content description */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeySubTitle                              AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TIT3 Subtitle/Description refinement */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyInitialKey                            AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TKEY Initial key */     
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyLanguage                              AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TLAN Language(s) */     
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyLength                                AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TLEN Length */          
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyMusicianCreditsList                   AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TMCL Musician credits list */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyMediaType                             AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TMED Media type */      
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyMood                                  AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TMOO Mood */            
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyOriginalAlbumTitle                    AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TOAL Original album/movie/show title */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyOriginalFilename                      AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TOFN Original filename */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyOriginalLyricist                      AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TOLY Original lyricist(s)/text writer(s) */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyOriginalArtist                        AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TOPE Original artist(s)/performer(s) */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyOriginalReleaseYear                   AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TORY Original release year */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyFileOwner                             AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TOWN File owner/licensee */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyLeadPerformer                         AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TPE1 Lead performer(s)/Soloist(s) */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyBand                                  AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TPE2 Band/orchestra/accompaniment */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyConductor                             AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TPE3 Conductor/performer refinement */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyModifiedBy                            AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TPE4 Interpreted, remixed, or otherwise modified by */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyPartOfASet                            AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TPOS Part of a set */   
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyProducedNotice                        AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TPRO Produced notice */ 
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyPublisher                             AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TPUB Publisher */       
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyTrackNumber                           AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TRCK Track number/Position in set */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyRecordingDates                        AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TRDA Recording dates */ 
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyInternetRadioStationName              AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TRSN Internet radio station name */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyInternetRadioStationOwner             AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TRSO Internet radio station owner */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeySize                                  AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TSIZ Size */            
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyAlbumSortOrder                        AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TSOA Album sort order */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyPerformerSortOrder                    AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TSOP Performer sort order */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyTitleSortOrder                        AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TSOT Title sort order */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyInternationalStandardRecordingCode    AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TSRC ISRC (international standard recording code) */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyEncodedWith                           AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TSSE Software/Hardware and settings used for encoding */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeySetSubtitle                           AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TSST Set subtitle */    
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyYear                                  AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TYER Year */            
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyUserText                              AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* TXXX User defined text information frame */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyUniqueFileIdentifier                  AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* UFID Unique file identifier */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyTermsOfUse                            AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* USER Terms of use */    
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyUnsynchronizedLyric                   AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* USLT Unsynchronized lyric/text transcription */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyCommercialInformation                 AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* WCOM Commercial information */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyCopyrightInformation                  AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* WCOP Copyright/Legal information */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyOfficialAudioFileWebpage              AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* WOAF Official audio file webpage */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyOfficialArtistWebpage                 AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* WOAR Official artist/performer webpage */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyOfficialAudioSourceWebpage            AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* WOAS Official audio source webpage */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyOfficialInternetRadioStationHomepage	AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* WORS Official Internet radio station homepage */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyPayment                               AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* WPAY Payment */         
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyOfficialPublisherWebpage              AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* WPUB Publisher's official webpage */
+-QTKIT_EXTERN NSString * const QTMetadataID3MetadataKeyUserURL                               AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;			/* WXXX User defined URL link frame */
+-
+-#if (defined(MAC_OS_X_VERSION_10_7) && (MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_7))
+-/*!
+-    @class			QTMetadataItem
+-    @abstract		QTMetadataItem represents an item of metadata associated with a QTMovie or QTTrack object.
+-    
+-	@discussion		QTMetadataItem objects have keys that accord with the specification of the container format from which they're drawn.
+-	
+-					You can filter arrays of QTMetadataItem objects by locale or by key and keyspace via the category
+-					QTMetadataItem_ArrayFiltering defined below.
+-*/
+-
+-@class QTMetadataItemInternal;
+-
+-@interface QTMetadataItem : NSObject <NSCopying, NSMutableCopying, NSCoding>
+-{
+-	QTMetadataItemInternal	*_priv;
+-}
+-
+-/* indicates the key of the metadata item */
+-@property (readonly, copy) id<NSCopying> key AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/* indicates the keyspace of the metadata item's key; this will typically be the default keyspace for the metadata container in which the metadata item is stored */
+-@property (readonly, copy) NSString *keySpace AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/* indicates the locale of the metadata item; may be nil if no locale information is available for the metadata item */
+-@property (readonly, copy) NSLocale *locale AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/* indicates the timestamp of the metadata item. */
+-@property (readonly) QTTime time AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/* provides the value of the metadata item */
+-@property (readonly, copy) id<NSCopying> value AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/* provides a dictionary of the additional attributes */
+-@property (readonly, copy) NSDictionary *extraAttributes AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-@end
+-
+-
+-@interface QTMetadataItem (QTMetadataItem_TypeCoercion)
+-
+-/* provides the value of the metadata item as a string; will be nil if the value cannot be represented as a string */
+-@property (readonly) NSString *stringValue AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/* provides the value of the metadata item as an NSNumber. If the metadata item's value can't be coerced to a number, @"numberValue" will be nil. */
+-@property (readonly) NSNumber *numberValue AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/* provides the value of the metadata item as an NSDate. If the metadata item's value can't be coerced to a date, @"dateValue" will be nil. */
+-@property (readonly) NSDate *dateValue AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/* provides the raw bytes of the value of the metadata item */
+-@property (readonly) NSData *dataValue AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-@end
+-
+-
+-@interface QTMetadataItem (QTMetadataItem_ArrayFiltering)
+-
+-/*!
+-	@method			metadataItemsFromArray:withLocale:
+-	@abstract		Filters an array of QTMetadataItem objects according to locale.
+-	@param			array
+-					An array of QTMetadataItem objects to be filtered by locale.
+-	@param			locale
+-					The NSLocale that must be matched for a metadata item to be copied to the output array.
+-	@result			An NSArray object containing the metadata items of the specified NSArray that match the specified locale.
+-*/
+-+ (NSArray *)metadataItemsFromArray:(NSArray *)array withLocale:(NSLocale *)locale AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/*!
+-	@method			metadataItemsFromArray:withKey:keySpace:
+-	@abstract		Filters an array of QTMetadataItem objects according to key and/or keySpace.
+-	@param			array
+-					An array of QTMetadataItem objects to be filtered by key and/or keySpace.
+-	@param			key
+-					The key that must be matched for a metadata item to be copied to the output array.
+-					The keys will be compared to the keys of the QTMetadataItem objects in the array via [key isEqual:].
+-					If no filtering according to key is desired, pass nil. 
+-	@param			keySpace
+-					The keySpace that must be matched for a metadata item to be copied to the output array.
+-					The keySpace will be compared to the keySpaces of the QTMetadataItems in the array via [keySpace isEqualToString:].
+-					If no filtering according to keySpace is desired, pass nil. 
+-	@result			An NSArray object containing the metadata items of the specified NSArray that match the specified key and/or keySpace.
+-*/
+-+ (NSArray *)metadataItemsFromArray:(NSArray *)array withKey:(id)key keySpace:(NSString *)keySpace AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-@end
+-
+-#endif	// if (defined(MAC_OS_X_VERSION_10_7) && (MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_7))
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMovie.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMovie.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMovie.h	2015-08-23 04:07:43.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMovie.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,1921 +0,0 @@
+-/*
+-	File:		QTMovie.h
+-
+-	Copyright:	(c)2004-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-/*!
+-    @class			QTMovie
+-
+-    @abstract		A QTMovie object is an object that represents a playable collection of media data.
+- 
+-	@discussion		A QTMovie object can be initialized from a file, from a resource specified by a URL, from a block of memory, 
+-					from a pasteboard, or from an existing QuickTime movie. Once a QTMovie object has been initialized, 
+-					it will typically be used in combination with a QTMovieView for playback. It can also be used for other purposes,
+-					such as converting the media data into a different format.
+- 
+-					The designated initializer for the QTMovie class is initWithAttributes:error:, whose first parameter is a dictionary
+-					of attribute keys and their desired values. One of these attributes must specify the location of the media data (for instance,
+-					using the QTMovieURLAttribute key). Other attributes may specify desired movie-opening behaviors, and others still may
+-					specify desired initial values of QTMovie properties (for instance, QTMovieVolumeAttribute).
+- 
+-					There are two movie-opening behaviors. Specifying QTMovieOpenForPlaybackAttribute with the value YES indicates that 
+-					the QTMovie object will be used only for playback, in which case QTKit may be able to use more efficient code paths for some media data.
+-					Specifying QTMovieOpenAsyncRequiredAttribute with the value YES indicates that all operations necessary to open the movie file (or other container)
+-					and to create a valid QTMovie object must occur asynchronously. In other words, initWithAttributes:error: will return almost immediately, 
+-					performing any lengthy operations on another thread.
+- 
+-					The initializer for a QTMovie object must be called on the main thread. As just indicated, you can use the QTMovieOpenAsyncRequiredAttribute
+-					to request that any lengthy loading operations be done on a background thread. In that case, you must monitor the movie load state to determine
+-					when and if the movie has loaded successfully. Some media types cannot successfully be loaded on a background thread and your application should
+-					be prepared for that possibility. Once a QTMovie object has been successfully loaded, you can migrate it to other threads; see the 
+-					QTMovie_Threading category below for methods that you can use to do this. 
+- 
+-					An exception, QTDisallowedForInitializationPurposeException, is raised whenever the client attempts to call a method that is not allowed
+-					under a requested movie-opening behavior. For example, if a QTMovie object is initialized with QTMovieOpenForPlaybackAttribute set to YES,
+-					then QTDisallowedForInitializationPurposeException is raised if the client attempts to call methods that export the media data.
+-					
+-					An exception, QTMovieUneditableException, is raised whenever the client attempts to directly or indirectly edit a QTMovie object 
+-					that is not currently set as editable (for instance, by calling appendSelectionFromMovie: on an uneditable movie).
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <QTKit/QTKitDefines.h>
+-#import <QTKit/QTTime.h>
+-#import <QTKit/QTTimeRange.h>
+-
+-#import <Cocoa/Cocoa.h>
+-
+-#if !__LP64__
+-#import <QuickTime/QuickTime.h>
+-#endif
+-
+-@class QTMovie;
+-@class QTTrack;
+-@class QTDataReference;
+-@class QTMovieMediaHelper;
+-@class QTInvalidationSet;
+-
+-	// pasteboard support
+-QTKIT_EXTERN NSString * const QTMoviePasteboardType							AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-	// notifications                                                                                                    description									parameter			parameter type
+-QTKIT_EXTERN NSString * const QTMovieEditabilityDidChangeNotification		AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // change in movie editability				-					-
+-QTKIT_EXTERN NSString * const QTMovieEditedNotification						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // edit was done to the movie				-					-
+-QTKIT_EXTERN NSString * const QTMovieLoadStateDidChangeNotification			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // change in movie load state				-					-
+-QTKIT_EXTERN NSString * const QTMovieLoopModeDidChangeNotification			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // change in movie looping mode				-					-
+-QTKIT_EXTERN NSString * const QTMovieMessageStringPostedNotification		AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // message string							message				NSString
+-QTKIT_EXTERN NSString * const QTMovieRateDidChangeNotification				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // change in movie rate						rate				NSNumber (float)
+-QTKIT_EXTERN NSString * const QTMovieSelectionDidChangeNotification			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // change in selection start/duration		-					-
+-QTKIT_EXTERN NSString * const QTMovieNaturalSizeDidChangeNotification       AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;    // change in movie natural size             -                   -
+-QTKIT_EXTERN NSString * const QTMovieSizeDidChangeNotification				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_6_3;
+-QTKIT_EXTERN NSString * const QTMovieStatusStringPostedNotification			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // status string							status				NSString
+-QTKIT_EXTERN NSString * const QTMovieTimeDidChangeNotification				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // goto time occurred						-					-
+-QTKIT_EXTERN NSString * const QTMovieVolumeDidChangeNotification			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // change in volume						-					-
+-QTKIT_EXTERN NSString * const QTMovieDidEndNotification						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // movie ended							-					-
+-QTKIT_EXTERN NSString * const QTMovieChapterDidChangeNotification			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // change in current chapter				-					-
+-QTKIT_EXTERN NSString * const QTMovieChapterListDidChangeNotification		AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // change in chapter list					-					-
+-QTKIT_EXTERN NSString * const QTMovieEnterFullScreenRequestNotification		AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // full screen playback requested			-					-
+-QTKIT_EXTERN NSString * const QTMovieExitFullScreenRequestNotification		AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // normal windowed playback requested		-					-
+-QTKIT_EXTERN NSString * const QTMovieCloseWindowRequestNotification			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // window close requested					-					-
+-QTKIT_EXTERN NSString * const QTMovieApertureModeDidChangeNotification		AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // change in visual aperture mode			-					-
+-
+-	// notification parameters
+-QTKIT_EXTERN NSString * const QTMovieMessageNotificationParameter			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTMovieRateDidChangeNotificationParameter		AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTMovieStatusFlagsNotificationParameter		AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTMovieStatusCodeNotificationParameter		AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTMovieStatusStringNotificationParameter		AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-QTKIT_EXTERN NSString * const QTMovieTargetIDNotificationParameter			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTMovieTargetNameNotificationParameter		AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-	// writeToFile: attributes dictionary keys
+-QTKIT_EXTERN NSString * const QTMovieExport									AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-QTKIT_EXTERN NSString * const QTMovieExportType								AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (long)
+-QTKIT_EXTERN NSString * const QTMovieFlatten								AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-QTKIT_EXTERN NSString * const QTMovieExportSettings							AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSData (QTAtomContainer)
+-QTKIT_EXTERN NSString * const QTMovieExportManufacturer						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (long)
+-
+-	// addImage: attributes dictionary keys
+-QTKIT_EXTERN NSString * const QTAddImageCodecType							AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSString
+-QTKIT_EXTERN NSString * const QTAddImageCodecQuality						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber
+-
+-	// data locators for movieWithAttributes/initWithAttributes
+-/*!
+-	@constant		QTMovieDataReferenceAttribute
+-	@abstract		The data reference of a QTMovie object; the value for this key is of type QTDataReference.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieDataReferenceAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // QTDataReference
+-QTKIT_EXTERN NSString * const QTMoviePasteboardAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSPasteboard
+-QTKIT_EXTERN NSString * const QTMovieDataAttribute							AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSData
+-
+-	// movie instantiation options for movieWithAttributes/initWithAttributes
+-QTKIT_EXTERN NSString * const QTMovieFileOffsetAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (long long)
+-QTKIT_EXTERN NSString * const QTMovieDontInteractWithUserAttribute			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTMovieResolveDataRefsAttribute
+-	@abstract		Indicates whether external data references in a movie file should be resolved (NSNumber YES) or not resolved (NSNumber NO).
+-	@discussion		A movie file can contain references to media data in other locations. By default, QTMovie attempts to resolve these references
+-					at the time that the movie file is opened and a QTMovie object is instantiated. You can prevent that resolution from occurring 
+-					by passing an NSNumber wrapping the value NO as the value of this attribute.
+- */
+-QTKIT_EXTERN NSString * const QTMovieResolveDataRefsAttribute				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL) (default = YES)
+-
+-/*!
+-	@constant		QTMovieAskUnresolvedDataRefsAttribute
+-	@abstract		Indicates whether the user should be prompted to help find any unresolved data references (NSNumber YES) or not (NSNumber NO).
+-	@discussion		When the value of the QTMovieResolveDataRefsAttribute attribute is an NSNumber wrapping the value YES and a movie file contains 
+-					unresolved data references, this attribute indicates whether the user should be prompted to help find the missing referenced data
+-					(NSNumber YES) or not (NSNumber NO). Typically QTMovie will display a dialog box that allows the user to navigate to the file or URL
+-					containing the referenced data. By setting this attribute to NO, you can prevent that dialog box from being displayed and thereby
+-					speed up the movie opening and initialization process.
+- */
+-QTKIT_EXTERN NSString * const QTMovieAskUnresolvedDataRefsAttribute			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL) (default = YES)
+-
+-/*!
+-	@constant		QTMovieOpenAsyncOKAttribute
+-	@abstract		Indicates whether a movie file can be opened asynchronously if possible (NSNumber YES) or not (NSNumber NO).
+-	@discussion		Opening a movie file and initializing a QTMovie object for that file may require a considerable amount of time, perhaps to
+-					convert the data in the file from one format to another. By setting this attribute to an NSNumber wrapping the value YES, you
+-					grant QTMovie permission to return a non-nil QTMovie identifier to your application immediately and then to continue processing the
+-					file data internally. If a movie is opened asynchronously, you must monitor the movie load state and ensure that it has reached the
+-					appropriate threshold before attempting to perform certain operations on the movie. For instance, you cannot export or copy 
+-					a QTMovie object until its load state has reached QTMovieLoadStateComplete. 
+- */
+-QTKIT_EXTERN NSString * const QTMovieOpenAsyncOKAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL) (default = YES)
+-
+-/*!
+-	@constant		QTMovieOpenAsyncRequiredAttribute
+-	@abstract		Indicates whether the QTMovie must be opened asynchronously (NSNumber YES) or not (NSNumber NO).
+-	@discussion		Set this attribute to an NSNumber wrapping YES to indicate that all operations necessary to open the movie file (or other container)
+-					and create a valid QTMovie object must occur asynchronously. That is to say, the methods +movieWithAttributes:error:
+-					and -initWithAttributes:error: must return almost immediately, performing any lengthy operations on another thread. Your application
+-					can monitor the movie load state to determine the progress of those operations. 
+- */
+-QTKIT_EXTERN NSString * const QTMovieOpenAsyncRequiredAttribute				AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;	// NSNumber (BOOL) (default = NO)
+-
+-/*!
+-	@constant		QTMovieOpenForPlaybackAttribute
+-	@abstract		Indicates whether the QTMovie will be used only for playback (NSNumber YES) or not (NSNumber NO).
+-	@discussion		Set this attribute to an NSNumber wrapping YES to indicate that you intend to use movie playback methods (such as -play or -stop, 
+-					or corresponding movie view methods such as -play: or -pause:) to control the movie, but do not intend to use other methods that edit,
+-					export, or in any way modify the movie. Knowing that you need playback services only may allow QTMovie to use more efficient code paths
+-					for some media files.
+-					
+-					This attribute is meaningful only when added to the dictionary passed to -initWithAttributes:error:. In particular, setting this
+-					attribute on a QTMovie object that is already open has no effect.
+- */
+-QTKIT_EXTERN NSString * const QTMovieOpenForPlaybackAttribute				AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;	// NSNumber (BOOL) (default = NO)
+-
+-// movie attributes
+-/*!
+-	@constant		QTMovieApertureModeAttribute
+-	@abstract		The aperture mode attribute of a QTMovie object.
+-					This value is an NSString that indicates the current aperture mode of the QTMovie object.
+-	@discussion		The values of this key are QTMovieApertureModeClassic, QTMovieApertureModeClean, QTMovieApertureModeProduction, 
+-					and QTMovieApertureModeEncodedPixels.
+-					This attribute can be read and written.
+-					This attribute can be read and written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieApertureModeAttribute					AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSString
+-
+-/*!
+-	@constant		QTMovieActiveSegmentAttribute
+-	@abstract		The active segment of a QTMovie object; the value for this key is of type NSValue, interpreted as a QTTimeRange structure.
+-	@discussion		This constant is available in Mac OS X 10.4 and later, but deprecated in Mac OS X 10.5 and later.
+-					This attribute can be read and written.
+-					This attribute cannot be read or written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieActiveSegmentAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_2;
+-
+-/*!
+-	@constant		QTMovieAutoAlternatesAttribute
+-	@abstract		The auto-alternate state of a QTMovie object. The value for this key is of type NSNumber, interpreted as a BOOL.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read and written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieAutoAlternatesAttribute				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTMovieCopyrightAttribute
+-	@abstract		The copyright string of a QTMovie object; the value for this key is of type NSString.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieCopyrightAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSString
+-
+-/*!
+-	@constant		QTMovieCreationTimeAttribute
+-	@abstract		The creation time of the container from which a QTMovie object was initialized; the value for this key is of type NSDate.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieCreationTimeAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSDate
+-
+-/*!
+-	@constant		QTMovieCurrentSizeAttribute
+-	@abstract		The current size of a QTMovie object; the value for this key is of type NSValue, interpreted as an NSSize structure.
+-	@discussion		This attribute can be read and written.
+-					This attribute cannot be read or written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					This attribute is deprecated in QTKit version 7.6 and later.
+- */
+-QTKIT_EXTERN NSString * const QTMovieCurrentSizeAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_6_3;
+-
+-/*!
+-	@constant		QTMovieCurrentTimeAttribute
+-	@abstract		The current time of a QTMovie object; the value for this key is of type NSValue, interpreted as a QTTime structure.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read and written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieCurrentTimeAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSValue (QTTime)
+-
+-/*!
+-	@constant		QTMovieDataSizeAttribute
+-	@abstract		The data size of a QTMovie object. The value for this key is of type NSNumber, which is interpreted as a long long.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieDataSizeAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (long long)
+-
+-/*!
+-	@constant		QTMovieDelegateAttribute
+-	@abstract		The delegate for a QTMovie object. The value for this key is of type NSObject.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read and written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieDelegateAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSObject
+-
+-/*!
+-	@constant		QTMovieDisplayNameAttribute
+-	@abstract		The display name of a QTMovie object.
+-					A display name is stored as user data in a movie file and hence may differ from the base name of the movie�s filename or URL.
+-					The value for this key is of type NSString.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieDisplayNameAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSString
+-
+-/*!
+-	@constant		QTMovieDurationAttribute
+-	@abstract		The duration of a QTMovie object; the value for this key is of type NSValue, interpreted as a QTTime structure.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieDurationAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSValue (QTTime)
+-
+-/*!
+-	@constant		QTMovieEditableAttribute
+-	@abstract		The editable setting of a QTMovie object; the value for this key is of type NSNumber, interpreted as a BOOL.
+-					This value is YES if the movie can be edited, NO otherwise.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieEditableAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTMovieFileNameAttribute
+-	@abstract		The file name string of a QTMovie object; the value for this key is of type NSString.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieFileNameAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSString
+-
+-/*!
+-	@constant		QTMovieHasApertureModeDimensionsAttribute
+-	@abstract		The aperture mode dimensions set on any track in this QTMovie object, even if those dimemsions are all identical to the classic dimensions 
+-					(as is the case for content with square pixels and no edge-processing region). 
+-					The value for this key is of type NSNumber, interpreted as a BOOL.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieHasApertureModeDimensionsAttribute		AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTMovieHasAudioAttribute
+-	@abstract		The audio data setting of a QTMovie object; the value for this key is of type NSNumber, interpreted as a BOOL. 
+-					This value is YES if the movie contains audio data, NO otherwise.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieHasAudioAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTMovieHasDurationAttribute
+-	@abstract		The duration setting of a QTMovie object; the value for this key is of type NSNumber, interpreted as a BOOL.
+-					This value is YES if the movie has a duration, NO otherwise. 
+-					(Some types of movies, for instance QuickTime VR movies, have no duration.)
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieHasDurationAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTMovieHasVideoAttribute
+-	@abstract		The video data setting of a QTMovie object; the value for this key is of type NSNumber, interpreted as a BOOL.
+-					This value is YES if the movie contains video data, NO otherwise.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieHasVideoAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTMovieIsActiveAttribute
+-	@abstract		The active setting of a QTMovie object; the value for this key is of type NSNumber, interpreted as a BOOL
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read and written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieIsActiveAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTMovieIsInteractiveAttribute
+-	@abstract		The interactive setting of a QTMovie object.
+-					The value for this key is of type NSNumber, interpreted as a BOOL. This value is YES if the movie is interactive, NO otherwise.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieIsInteractiveAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTMovieIsLinearAttribute
+-	@abstract		The linear setting of a QTMovie object; the value for this key is of type NSNumber, interpreted as a BOOL.
+-					This value is YES if the movie is linear, as opposed to a non-linear QuickTime VR movie.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieIsLinearAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTMovieIsSteppableAttribute
+-	@abstract		The steppable setting of a QTMovie object; the value for this key is of type NSNumber, interpreted as a BOOL. 
+-					This value is YES if the movie can step from frame to frame, NO otherwise.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieIsSteppableAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTMovieLoadStateAttribute
+-	@abstract		The load state value of a QTMovie object; the value for this key is of type NSNumber, interpreted as a long.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieLoadStateAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (long)
+-
+-/*!
+-	@constant		QTMovieLoadStateErrorAttribute
+-	@abstract		The load state error of a QTMovie object; the value for this key is of type NSError.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieLoadStateErrorAttribute				AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;    // NSError
+-
+-/*!
+-	@constant		QTMovieLoopsAttribute
+-	@abstract		The looping setting of a QTMovie object; the value for this key is of type NSNumber, interpreted as a BOOL.
+-					This value is YES if the movie is set to loop, NO otherwise.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read and written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieLoopsAttribute							AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTMovieLoopsBackAndForthAttribute
+-	@abstract		The palindrome looping setting of a QTMovie object; the value for this key is of type NSNumber, interpreted as a BOOL.
+-					This value is YES if the movie is set to loop back and forth.
+-	@discussion		Note that QTMovieLoopsAttribute and QTMovieLoopsBackAndForthAttribute are independent and indeed exclusive.
+-					QTMovieLoopsAttribute is used to get and set the state of normal looping; QTMovieLoopsBackAndForthAttribute is used to get and set
+-					the state of palindrome looping.
+-					This attribute can be read and written.
+-					This attribute can be read and written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieLoopsBackAndForthAttribute				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTMovieModificationTimeAttribute
+-	@abstract		The modification time of a QTMovie object; the value for this key is of type NSDate.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieModificationTimeAttribute				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSDate
+-
+-/*!
+-	@constant		QTMovieMutedAttribute
+-	@abstract		The mute setting of a QTMovie object. The value for this key is of type NSNumber, interpreted as a BOOL.
+-					This value is YES if the movie volume is muted, NO otherwise.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read and written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieMutedAttribute							AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTMovieNaturalSizeAttribute
+-	@abstract		The natural size of a QTMovie object; the value for this key is of type NSValue, interpreted as an NSSize structure.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieNaturalSizeAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSValue (NSSize)
+-
+-/*!
+-	@constant		QTMoviePlaysAllFramesAttribute
+-	@abstract		The play-all-frames setting of a QTMovie object; the value for this key is of type NSNumber, interpreted as a BOOL.
+-					This value is YES if the movie will play all frames, NO otherwise.
+-	@discussion		This attribute can be read and written.
+-					This attribute cannot be read or written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMoviePlaysAllFramesAttribute				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTMoviePlaysSelectionOnlyAttribute
+-	@abstract		The play-selection setting of a QTMovie object; the value for this key is of type NSNumber, interpreted as a BOOL.
+-					This value is YES if the movie will play only the current selection, NO otherwise.
+-	@discussion		This attribute can be read and written.
+-					This attribute cannot be read or written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMoviePlaysSelectionOnlyAttribute			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTMoviePosterTimeAttribute
+-	@abstract		The movie poster time of a QTMovie object; the value for this key is of type NSValue, interpreted as a QTTime structure.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMoviePosterTimeAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSValue (QTTime)
+-
+-/*!
+-	@constant		QTMoviePreferredMutedAttribute
+-	@abstract		The preferred mute setting of a QTMovie object; the value for this key is of type NSNumber, interpreted as a BOOL.
+-					This value is YES if the movie preferred mute setting is muted, NO otherwise.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMoviePreferredMutedAttribute				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTMoviePreferredRateAttribute
+-	@abstract		The preferred rate of a QTMovie object; the value for this key is of type NSNumber, interpreted as a float.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMoviePreferredRateAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (float)
+-
+-/*!
+-	@constant		QTMoviePreferredVolumeAttribute
+-	@abstract		The preferred volume of a QTMovie object; the value for this key is of type NSNumber, interpreted as a float.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMoviePreferredVolumeAttribute				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (float)
+-
+-/*!
+-	@constant		QTMoviePreviewModeAttribute
+-	@abstract		The preview mode setting of a QTMovie object; the value for this key is of type NSNumber, interpreted as a BOOL.
+-					This value is YES if the movie is in preview mode, NO otherwise.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMoviePreviewModeAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTMoviePreviewRangeAttribute
+-	@abstract		The preview range of a QTMovie object; the value for this key is of type NSValue, interpreted as a QTTimeRange structure.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMoviePreviewRangeAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSValue (QTTimeRange)
+-
+-/*!
+-	@constant		QTMovieRateAttribute
+-	@abstract		The playback rate of a QTMovie object; the value for this key is of type NSNumber, interpreted as a float
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read and written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieRateAttribute							AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (float)
+-
+-/*!
+-	@constant		QTMovieSelectionAttribute
+-	@abstract		The selection range of a QTMovie object; the value for this key is of type NSValue, interpreted as a QTTimeRange structure.
+-	@discussion		This attribute can be read and written.
+-					This attribute cannot be read or written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieSelectionAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSValue (QTTimeRange)
+-
+-/*!
+-	@constant		QTMovieTimeScaleAttribute
+-	@abstract		The time scale of a QTMovie object; the value for this key is of type NSNumber, interpreted as a long.
+-	@discussion		This attribute can be read and (in Mac OS X 10.5 and later) written; in earlier versions of Mac OS X, this attribute is readable only.
+-					In general, you should set this attribute only on newly-created movies or on movies that have not been edited.
+-					Also, you should only increase the time scale value, and you should try to use integer multiples of the existing time scale.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieTimeScaleAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (long)
+-
+-/*!
+-	@constant		QTMovieURLAttribute
+-	@abstract		The URL of a QTMovie object; the value for this key is of type NSURL.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieURLAttribute							AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSURL
+-
+-/*!
+-	@constant		QTMovieVolumeAttribute
+-	@abstract		The volume of a QTMovie object; the value for this key is of type NSNumber, interpreted as a float.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read and written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieVolumeAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (float)
+-
+-/*!
+-	@constant		QTMovieRateChangesPreservePitchAttribute
+-	@abstract		The rate-changes-preserve-pitch setting of a QTMovie object; the value for this key is of type NSNumber, interpreted as a BOOL.
+-	@discussion		When the playback rate is not unity, audio must be resampled in order to play at a new rate.
+-					The default resampling affects the pitch of the audio (for example, playing at 2x speed raises the pitch by an octave,
+-					1/2x lowers an octave). If this property is set on the movie, an alternative algorithm is used,
+-					which alters the speed without changing the pitch.
+-					Since this is more computationally expensive, this property may be silently ignored on some slow CPUs.
+-					This attribute can be read but not written; it must be among the initialization attributes to have any effect.
+-					This attribute can be read but not written when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTMovieRateChangesPreservePitchAttribute		AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-	// aperture modes
+-QTKIT_EXTERN NSString * const QTMovieApertureModeClassic					AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTMovieApertureModeClean						AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTMovieApertureModeProduction					AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTMovieApertureModeEncodedPixels				AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-	// movie frame image options for frameImageAtTime:withAttributes:error:
+-QTKIT_EXTERN NSString * const QTMovieFrameImageSize							AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSValue (NSSize)
+-QTKIT_EXTERN NSString * const QTMovieFrameImageType							AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSString
+-QTKIT_EXTERN NSString * const QTMovieFrameImageTypeNSImage					AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTMovieFrameImageTypeCGImageRef				AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTMovieFrameImageTypeCIImage					AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTMovieFrameImageTypeCVPixelBufferRef			AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTMovieFrameImageTypeCVOpenGLTextureRef		AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTMovieFrameImageOpenGLContext				AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSValue (CGLContextObj)
+-QTKIT_EXTERN NSString * const QTMovieFrameImagePixelFormat					AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSValue (CGLPixelFormatObj)
+-QTKIT_EXTERN NSString * const QTMovieFrameImageRepresentationsType			AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSArray of NSString; strings are, e.g., NSBitmapImageRep
+-QTKIT_EXTERN NSString * const QTMovieFrameImageDeinterlaceFields			AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL) (default = YES)
+-QTKIT_EXTERN NSString * const QTMovieFrameImageHighQuality					AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL) (default = YES)
+-QTKIT_EXTERN NSString * const QTMovieFrameImageSingleField					AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL) (default = YES)
+-
+-/*!
+- @constant		QTMovieFrameImageSessionMode
+- @abstract		Indicates that two or more calls to frameImageAtTime:withAttributes:error: will be made on the same QTMovie object.
+- @discussion	By adding this key with the associated value that is an NSNumber wrapping the BOOL YES to the dictionary of
+-				attributes, an application indicates that it will make more than one call to frameImageAtTime:withAttributes:error: on
+-				the same QTMovie object. This knowledge permits QTMovie to cache certain objects and data structures used to generate
+-				a frame image, thereby improving performance. When the caller has obtained all the frame images desired from a
+-				given QTMovie object, the caller should follow those session calls with a call where this value is NO; this is
+-				a signal to QTMovie to dispose of that cached data.
+- */
+-QTKIT_EXTERN NSString * const QTMovieFrameImageSessionMode					AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;	// NSNumber (BOOL) (default = NO)
+-
+-	// exceptions
+-QTKIT_EXTERN NSString * const QTMovieUneditableException					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTDisallowedForInitializationPurposeException					
+-																			AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-	// keys for dictionaries in -chapters array
+-QTKIT_EXTERN NSString * const QTMovieChapterName							AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSString
+-QTKIT_EXTERN NSString * const QTMovieChapterStartTime						AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSValue (QTTime)
+-
+-	// keys for attributes dictionary in -addChapters
+-QTKIT_EXTERN NSString * const QTMovieChapterTargetTrackAttribute			AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // QTTrack
+-
+-// constants for movieFileTypes method
+-typedef enum {
+-	QTIncludeStillImageTypes			= 1 << 0,
+-	QTIncludeTranslatableTypes			= 1 << 1,
+-	QTIncludeAggressiveTypes			= 1 << 2,
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2
+-	QTIncludeDynamicTypes				= 1 << 3,
+-#endif
+-	QTIncludeCommonTypes				= 0,
+-	QTIncludeAllTypes					= 0xffff
+-} QTMovieFileTypeOptions;
+-
+-// constants for movieShouldContinueOp delegate method
+-typedef enum {
+-#if __LP64__
+-	QTMovieOperationBeginPhase			= 0,
+-	QTMovieOperationUpdatePercentPhase  = 1,
+-	QTMovieOperationEndPhase			= 2
+-#else
+-	QTMovieOperationBeginPhase			= movieProgressOpen,
+-	QTMovieOperationUpdatePercentPhase  = movieProgressUpdatePercent,
+-	QTMovieOperationEndPhase			= movieProgressClose
+-#endif
+-} QTMovieOperationPhase;
+-
+-// constants for QTMovieLoadStateAttribute
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2
+-enum {
+-	QTMovieLoadStateError				= -1L,			// an error occurred while loading the movie
+-	QTMovieLoadStateLoading				= 1000,			// the movie is loading
+-	QTMovieLoadStateLoaded				= 2000,			// the movie atom has loaded; it's safe to query movie properties
+-	QTMovieLoadStatePlayable			= 10000,		// the movie has loaded enough media data to begin playing
+-	QTMovieLoadStatePlaythroughOK		= 20000,		// the movie has loaded enough media data to play through to the end
+-	QTMovieLoadStateComplete			= 100000L		// the movie has loaded completely
+-};
+-typedef NSInteger QTMovieLoadState;
+-#endif
+-
+-@interface NSObject (QTMovie_Delegate)
+-/*!
+-	@method			movie:linkToURL:
+-	@abstract		If implemented by a delegate of a QTMovie object, called to handle the movie controller action mcActionLinkToURL.
+-	@param			movie
+-					A QTMovie object.
+-	@param			url
+-					An NSURL object.
+-	@discussion		QTMovie objects can contain requests to open URLs; an application can implement this delegate method to
+-					override the default URL-opening mechanism in QTKit. In general, most applications will not need to install a delegate
+-					to handle this.
+-					This delegate method is not called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			A BOOL value; a delegate should return YES if it handled this method, NO otherwise.
+-*/
+-	- (BOOL)movie:(QTMovie *)movie linkToURL:(NSURL *)url AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;			// return YES if delegate handled link-to-URL request
+-
+-/*!
+-	@method			movieShouldLoadData:
+-	@abstract		If implemented by a delegate of a QTMovie object, called periodically while the movie is loading its data.
+-	@param			sender
+-					The QTMovie object that is loading its data.
+-	@discussion		This delegate method is deprecated and should not be used in new code.
+-					This delegate method is not called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			A BOOL value; this value is ignored by QTKit.
+-*/
+-	- (BOOL)movieShouldLoadData:(id)sender AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			movieShouldTask:
+-	@abstract		If implemented by a delegate of a QTMovie object, called before QTKit performs the standard idle processing on a movie.
+-	@param			movie
+-					The QTMovie object that is about to perform idle processing.
+-	@discussion		This delegate method is deprecated and should not be used in new code.
+-					This delegate method is not called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			A BOOL value; a delegate should return YES to cancel the standard movie idle processing, NO otherwise.
+-*/
+-	- (BOOL)movieShouldTask:(id)movie AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			externalMovie:
+-	@abstract		If implemented by a delegate of a QTMovie object, called when an external movie needs to be found
+-					(usually for a wired action targeted at an external movie).
+-	@param			dictionary
+-					An NSDictionary object that contains information about the desired external movie.
+-					The keys for the dictionary in this delegate method are QTMovieTargetIDNotificationParameter and QTMovieTargetNameNotificationParameter.
+-					The QTMovieTargetIDNotificationParameter key indicates that the delegate should return a QTMovie object that has the specified movie ID.
+-					The QTMovieTargetNameNotificationParameter key indicates that the delegate should return a QTMovie object that has the specified movie name.
+-	@discussion		This delegate method is not called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			A QTMovie object.
+-*/
+-	- (QTMovie *)externalMovie:(NSDictionary *)dictionary AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			movie:shouldContinueOperation:withPhase:atPercent:withAttributes:
+-	@abstract		If implemented by a delegate of a QTMovie object, called periodically during lengthy operations (such as exporting a movie).
+-	@param			op
+-					An NSString object that is a localized description of the operation being performed.
+-	@param			phase
+-					A value of type QTMovieOperationPhase that indicates indicates whether the operation is just beginning (QTMovieOperationBeginPhase), 
+-					ending (QTMovieOperationEndPhase), or is at a certain percentage of completion (QTMovieOperationUpdatePercentPhase).
+-	@param			percent
+-					When the phase paramter is QTMovieOperationUpdatePercentPhase, the approximate percentage of the operation completed.
+-	@param			attributes
+-					An NSDictionary object that the same dictionary passed to a QTMovie method that caused the lengthy operation 
+-					(for example, the attributes dictionary passed to writeToFile:withAttributes:error:). This parameter may be nil.
+-	@discussion		This delegate method is not called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			A BOOL value; a delegate should return YES to continue the lengthy operation, NO to cancel it.
+-*/
+-	- (BOOL)movie:(QTMovie *)movie shouldContinueOperation:(NSString *)op withPhase:(QTMovieOperationPhase)phase atPercent:(NSNumber *)percent withAttributes:(NSDictionary *)attributes AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-@end
+-
+-@interface QTMovie : NSObject <NSCoding, NSCopying>
+-{
+-@private
+-#if !__LP64__
+-	Movie					_movie;
+-#endif
+-	long					_state;
+-	QTMovieMediaHelper		*_mediaHelper;
+-	CFBooleanRef			_initedViaInitWithAttributes;
+-	QTInvalidationSet		*_children;
+-	long					_reserved1;
+-	long					_reserved2;
+-	long					_reserved3;
+-	long					_reserved4;
+-	long					_reserved5;
+-	long					_reserved6;
+-	long					_reserved7;
+-	long					_reserved8;
+-	long					_reserved9;
+-	long					_reserved10;
+-	long					_reserved11;
+-	long					_reserved12;
+-	long					_reserved13;
+-	long					_reserved14;
+-	long					_reserved15;
+-}
+-
+-/*!
+-	@method			duration
+-	@abstract		Returns the duration of a QTMovie object.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			A QTTime structure that indicates the duration of the movie.
+-*/
+-- (QTTime)duration AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-@interface QTMovie (QTMovie_Initialization)
+-
+-/*!
+-	@method			canInitWithPasteboard:
+-	@abstract		Determines whether the contents of the specified pasteboard can be used to initialize a QTMovie object.
+-	@param			pasteboard
+-					An NSPasteboard object.
+-	@result			YES if a QTMovie object can be initialized from the specified pasteboard, NO otherwise.
+-*/
+-+ (BOOL)canInitWithPasteboard:(NSPasteboard *)pasteboard AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			canInitWithFile:
+-	@abstract		Determines whether the contents of the specified file can be used to initialize a QTMovie object.
+-	@param			fileName
+-					An NSString object that specifies a full pathname to a file.
+-	@result			YES if a QTMovie object can be initialized from the specified file, NO otherwise.
+-*/
+-+ (BOOL)canInitWithFile:(NSString *)fileName AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			canInitWithURL:
+-	@abstract		Determines whether the contents of the specified URL can be used to initialize a QTMovie object.
+-	@param			url
+-					An NSURL object.
+-	@result			YES if a QTMovie object can be initialized from the specified URL, NO otherwise.
+-*/
+-+ (BOOL)canInitWithURL:(NSURL *)url AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			canInitWithDataReference:
+-	@abstract		Determines whether the specified data reference can be used to initialize a QTMovie object.
+-	@param			dataReference
+-					An QTDataReference object.
+-	@result			YES if a QTMovie object can be initialized from the specified data reference, NO otherwise.
+-*/
+-+ (BOOL)canInitWithDataReference:(QTDataReference *)dataReference AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			movieFileTypes:
+-	@abstract		Returns an array of file types that can be used to initialize a QTMovie object.
+-	@param			types
+-					A value of type QTMovieFileTypeOptions that indicates the kinds of file types that are to be returned.
+-					Passing QTIncludeCommonTypes as the types parameter returns an array of all the common file types that QTKit can open in place on the current system.
+-					This array includes the file types .mov and .mqv, and any files types that can be opened using a movie importer
+-					that does not need to write data into a new file while performing the import.
+-					This array excludes any file types for still images and any file types that require an aggressive movie importer
+-					(for instance, the movie importer for text files).
+-	@result			An NSArray object that contains NSString objects indicating supported file types.
+-*/
+-+ (NSArray *)movieFileTypes:(QTMovieFileTypeOptions)types AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			movieUnfilteredFileTypes
+-	@abstract		Returns an array of file types that can be used to initialize a QTMovie object.
+-	@result			An NSArray object that contains NSString objects indicating supported file types.
+-*/
+-+ (NSArray *)movieUnfilteredFileTypes AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			movieUnfilteredPasteboardTypes
+-	@abstract		Returns an array of pasteboard types that can be used to initialize a QTMovie object.
+-	@result			An NSArray object that contains NSString objects indicating supported pasteboard types.
+-*/
+-+ (NSArray *)movieUnfilteredPasteboardTypes AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2
+-/*!
+-	@method			movieTypesWithOptions:
+-	@abstract		Returns an array of UTIs that QTKit can open.
+-	@param			types
+-					A value of type QTMovieFileTypeOptions that indicates the kinds of UTIs that are to be returned.
+-					See the description of +movieFileTypes for more information.
+-	@result			An NSArray object that contains NSString objects indicating supported file types.
+-*/
+-+ (NSArray *)movieTypesWithOptions:(QTMovieFileTypeOptions)types AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif
+-
+-/*!
+-	@method			movie
+-	@abstract		Creates an empty QTMovie object.
+-	@result			An empty QTMovie object. This movie contains no playable data.
+-*/
+-+ (id)movie AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			movieWithFile:error:
+-	@abstract		Creates a QTMovie object initialized with the data in a specified file.
+-	@param			fileName
+-					An NSString object that specifies a full pathname to a file.
+-	@param			errorPtr
+-					A pointer to an NSError object; if a movie cannot be created, an NSError object is returned in this location.
+-	@result			An autoreleased QTMovie object.
+-*/
+-+ (id)movieWithFile:(NSString *)fileName error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			movieWithURL:error:
+-	@abstract		Creates a QTMovie object initialized with the contents of the specified URL.
+-	@param			url
+-					An NSURL object.
+-	@param			errorPtr
+-					A pointer to an NSError object; if a movie cannot be created, an NSError object is returned in this location.
+-	@result			An autoreleased QTMovie object.
+-*/
+-+ (id)movieWithURL:(NSURL *)url error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			movieWithDataReference:error:
+-	@abstract		Creates a QTMovie object initialized with data specified by a data reference.
+-	@param			dataReference
+-					A QTDataReference object that specifies data from which a QTMovie object can be initialized.
+-	@param			errorPtr
+-					A pointer to an NSError object; if a movie cannot be created, an NSError object is returned in this location.
+-	@result			An autoreleased QTMovie object.
+-*/
+-+ (id)movieWithDataReference:(QTDataReference *)dataReference error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			movieWithPasteboard:error:
+-	@abstract		Creates a QTMovie object initialized with the contents of the specified pasteboard.
+-	@param			pasteboard
+-					An NSPasteboard object that contains data from which a QTMovie object can be initialized.
+-					The contents of the pasteboard can be a QuickTime movie (of type Movie), a file path, or data of type QTMoviePasteboardType.
+-	@param			errorPtr
+-					A pointer to an NSError object; if a movie cannot be created, an NSError object is returned in this location.
+-	@result			An autoreleased QTMovie object.
+-*/
+-+ (id)movieWithPasteboard:(NSPasteboard *)pasteboard error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			movieWithData:error:
+-	@abstract		Creates a QTMovie object initialized with data specified by an NSData object.
+-	@param			data
+-					An NSData object that contains data from which a QTMovie object can be initialized.
+-	@param			errorPtr
+-					A pointer to an NSError object; if a movie cannot be created, an NSError object is returned in this location.
+-	@result			An autoreleased QTMovie object.
+-*/
+-+ (id)movieWithData:(NSData *)data error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-#if !__LP64__
+-/*!
+-	@method			movieWithQuickTimeMovie:disposeWhenDone:error:
+-	@abstract		Creates a QTMovie object initialized from an existing QuickTime movie.
+-	@discussion		This method cannot be called by 64-bit applications.
+-	@param			movie
+-					A QuickTime movie (of type Movie).
+-	@param			dispose
+-					A BOOL value that indicates whether QTKit should call DisposeMovie on the specified QuickTime movie
+-					when the QTMovie object is deallocated. Passing YES effectively transfers ownership of the Movie to QTKit.
+-					Most applications will probably want to pass YES; passing NO means that the application wants to call DisposeMovie itself,
+-					perhaps so that it can operate on a Movie after it has been disassociated from a QTMovie object.
+-					Clients that pass NO for the dispose parameter must invalidate the QTMovie object (by calling -[QTMovie invalidate])
+-					before calling DisposeMovie on the specified QuickTime movie. Failure to do this may result in a crash.
+-	@param			errorPtr
+-					A pointer to an NSError object; if a movie cannot be created, an NSError object is returned in this location.
+-	@result			An autoreleased QTMovie object.
+-*/
+-+ (id)movieWithQuickTimeMovie:(Movie)movie disposeWhenDone:(BOOL)dispose error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif
+-
+-/*!
+-	@method			movieWithAttributes:error:
+-	@abstract		Creates a QTMovie object initialized with a specified set of attributes.
+-	@param			attributes
+-					An NSDictionary object whose key-value pairs specify the attributes to use when initializing the movie.
+-					There are three types of attributes that can be included in this dictionary: (1) attributes that specify the location
+-					of the movie data (for instance, QTMovieFileNameAttribute); (2) attributes that specify how the movie is to be instantiated
+-					(for instance, QTMovieOpenForPlaybackAttribute); (3) attributes that specify playback characteristics of the movie
+-					or other properties of the QTMovie object (for instance, QTMovieVolumeAttribute).
+-	@param			errorPtr
+-					A pointer to an NSError object; if a movie cannot be created, an NSError object is returned in this location.
+-	@result			An autoreleased QTMovie object.
+-*/
+-+ (id)movieWithAttributes:(NSDictionary *)attributes error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			movieNamed:error:
+-	@abstract		Creates a QTMovie object initialized with the data from the movie having the specified name in the application�s bundle.
+-	@param			errorPtr
+-					A pointer to an NSError object; if a movie cannot be created, an NSError object is returned in this location.
+-	@result			A QTMovie object.
+-*/
+-+ (id)movieNamed:(NSString *)name error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			initWithFile:error:
+-	@abstract		Creates a QTMovie object initialized with the data in a specified file.
+-	@param			fileName
+-					An NSString object that specifies a full pathname to a file.
+-	@param			errorPtr
+-					A pointer to an NSError object; if a movie cannot be created, an NSError object is returned in this location.
+-	@result			A QTMovie object.
+-*/
+-- (id)initWithFile:(NSString *)fileName error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			initWithURL:error:
+-	@abstract		Creates a QTMovie object initialized with the contents of the specified URL.
+-	@param			url
+-					An NSURL object.
+-	@param			errorPtr
+-					A pointer to an NSError object; if a movie cannot be created, an NSError object is returned in this location.
+-	@result			A QTMovie object.
+-*/
+-- (id)initWithURL:(NSURL *)url error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			initWithDataReference:error:
+-	@abstract		Creates a QTMovie object initialized with data specified by a data reference.
+-	@param			dataReference
+-					A QTDataReference object that specifies data from which a QTMovie object can be initialized.
+-	@param			errorPtr
+-					A pointer to an NSError object; if a movie cannot be created, an NSError object is returned in this location.
+-	@result			A QTMovie object.
+-*/
+-- (id)initWithDataReference:(QTDataReference *)dataReference error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			initWithPasteboard:error:
+-	@abstract		Creates a QTMovie object initialized with the contents of the specified pasteboard.
+-	@param			pasteboard
+-					An NSPasteboard object that contains data from which a QTMovie object can be initialized.
+-					The contents of the pasteboard can be a QuickTime movie (of type Movie), a file path, or data of type QTMoviePasteboardType.
+-	@param			errorPtr
+-					A pointer to an NSError object; if a movie cannot be created, an NSError object is returned in this location.
+-	@result			A QTMovie object.
+-*/
+-- (id)initWithPasteboard:(NSPasteboard *)pasteboard error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			initWithData:error:
+-	@abstract		Creates a QTMovie object initialized with data specified by an NSData object.
+-	@param			data
+-					An NSData object that contains data from which a QTMovie object can be initialized.
+-	@param			errorPtr
+-					A pointer to an NSError object; if a movie cannot be created, an NSError object is returned in this location.
+-	@result			A QTMovie object.
+-*/
+-- (id)initWithData:(NSData *)data error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			initWithMovie:timeRange:error:
+-	@abstract		Creates a QTMovie object initialized with some or all of the data from an existing QTMovie object.
+-	@discussion		This method cannot be called when the QTMovie object specified by the movie parameter has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			movie
+-					A QTMovie object.
+-	@param			range
+-					A QTTimeRange structure that delimits the segment of data from the movie parameter to be used to initialize the receiver.
+-	@param			errorPtr
+-					A pointer to an NSError object; if a movie cannot be created, an NSError object is returned in this location.
+-	@result			A QTMovie object.
+-*/
+-- (id)initWithMovie:(QTMovie *)movie timeRange:(QTTimeRange)range error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-#if !__LP64__
+-/*!
+-	@method			initWithQuickTimeMovie:disposeWhenDone:error:
+-	@abstract		Creates a QTMovie object initialized from an existing QuickTime movie.
+-	@discussion		This method cannot be called by 64-bit applications.
+-	@param			movie
+-					A QuickTime movie (of type Movie).
+-	@param			dispose
+-					A BOOL value that indicates whether QTKit should call DisposeMovie on the specified QuickTime movie
+-					when the QTMovie object is deallocated. Passing YES effectively transfers ownership of the Movie to QTKit.
+-					Most applications will probably want to pass YES; passing NO means that the application wants to call DisposeMovie itself,
+-					perhaps so that it can operate on a Movie after it has been disassociated from a QTMovie object.
+-					Clients that pass NO for the dispose parameter must invalidate the QTMovie object (by calling -[QTMovie invalidate])
+-					before calling DisposeMovie on the specified QuickTime movie. Failure to do this may result in a crash.
+-	@param			errorPtr
+-					A pointer to an NSError object; if a movie cannot be created, an NSError object is returned in this location.
+-	@result			A QTMovie object.
+-*/
+-- (id)initWithQuickTimeMovie:(Movie)movie disposeWhenDone:(BOOL)dispose error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif
+-
+-/*!
+-	@method			initWithAttributes:error:
+-	@abstract		Creates a QTMovie object initialized with a specified set of attributes.
+-	@param			attributes
+-					An NSDictionary object whose key-value pairs specify the attributes to use when initializing the movie.
+-					There are three types of attributes that can be included in this dictionary: (1) attributes that specify the location
+-					of the movie data (for instance, QTMovieFileNameAttribute); (2) attributes that specify how the movie is to be instantiated
+-					(for instance, QTMovieOpenForPlaybackAttribute); (3) attributes that specify playback characteristics of the movie
+-					or other properties of the QTMovie object (for instance, QTMovieVolumeAttribute).
+-	@param			errorPtr
+-					A pointer to an NSError object; if a movie cannot be created, an NSError object is returned in this location.
+-	@result			A QTMovie object.
+-*/
+-- (id)initWithAttributes:(NSDictionary *)attributes error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			movieWithTimeRange:error:
+-	@abstract		Returns a QTMovie object initialized with the data in the specified time range of an existing QTMovie object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			range
+-					A QTTimeRange structure that indicates the segment in the movie to use to initialize a QTMovie object.
+-	@param			errorPtr
+-					A pointer to an NSError object; if a movie cannot be created, an NSError object is returned in this location.
+-	@result			A QTMovie object.
+-*/
+-- (id)movieWithTimeRange:(QTTimeRange)range error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2
+-/*!
+-	@method			initToWritableFile:error:
+-	@abstract		Creates an empty, writable storage container at the location specified by the data reference and returns an editable QTMovie object associated with that container.
+-	@discussion		Movie data can be added to the QTMovie object returned by this method (for example, using the addImage:forDuration:withAttributes: method).
+-	@param			filename
+-					An NSString object that specifies a full pathname to a file.
+-	@param			errorPtr
+-					A pointer to an NSError object; if the storage container or the QTMovie object cannot be created, an NSError object is returned in this location.
+-	@result			A QTMovie object. This object is editable.
+-*/
+-- (id)initToWritableFile:(NSString *)filename error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			initToWritableData:error:
+-	@abstract		Creates an empty, writable storage container in memory and returns an editable QTMovie object associated with that container.
+-	@discussion		Movie data can be added to the QTMovie object returned by this method (for example, using the addImage:forDuration:withAttributes: method).
+-	@param			data
+-					An NSMutableData object.
+-	@param			errorPtr
+-					A pointer to an NSError object; if the storage container or the QTMovie object cannot be created, an NSError object is returned in this location.
+-	@result			A QTMovie object. This object is editable.
+-*/
+-- (id)initToWritableData:(NSMutableData *)data error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			initToWritableDataReference:error:
+-	@abstract		Creates an empty, writable storage container at the location specified by the data reference and returns an editable QTMovie object associated with that container.
+-	@discussion		Movie data can be added to the QTMovie object returned by this method (for example, using the addImage:forDuration:withAttributes: method).
+-	@param			dataReference
+-					A QTDataReference object.
+-	@param			errorPtr
+-					A pointer to an NSError object; if the storage container or the QTMovie object cannot be created, an NSError object is returned in this location.
+-	@result			A QTMovie object. This object is editable.
+-*/
+-- (id)initToWritableDataReference:(QTDataReference *)dataReference error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			invalidate
+-	@abstract		Invalidates a QTMovie object immediately.
+-	@discussion		By the time this method has returned, the receiver will have detached itself from any resources it is using, 
+-					disposing of these resources when appropriate.
+-					Attempting to make any non-trivial use of the receiver after invalidating it will result in undefined behavior.
+-					This method does not release the receiver, so under retain/release memory management
+-					release must still be called on the receiver for it to be fully deallocated.
+-					Because this method defeats sharing of QTMovie objects,
+-					it should only be called when it is known that the object is no longer needed.
+-					This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (void)invalidate AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif
+-
+-@end
+-
+-@interface QTMovie (QTMovie_Inspection)
+-
+-	// attributes
+-/*!
+-	@method			movieAttributes
+-	@abstract		Returns a dictionary containing the current values of all public attributes of a QTMovie object.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (NSDictionary *)movieAttributes AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			setMovieAttributes:
+-	@abstract		Sets the attributes of a QTMovie object using the key-value pairs in a specified dictionary.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					However, certain attributes may not be writable when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			attributes
+-					An NSDictionary object that specifies the attributes to set and their desired values.
+-*/
+-- (void)setMovieAttributes:(NSDictionary *)attributes AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			attributeForKey:
+-	@abstract		Returns the current value of an attribute of a QTMovie object.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			attributeKey
+-					An NSString object that specifies the attribute to be read; pass strings like QTMovieTimeScaleAttribute or QTMovieVolumeAttribute.
+-	@result			An NSObject that is the value of the specified attribute key.
+-*/
+-- (id)attributeForKey:(NSString *)attributeKey AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			setAttribute:forKey:
+-	@abstract		Sets an attribute of a QTMovie object to a specified value.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					However, certain attributes may not be writable when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			value
+-					An object that specifies the value of the attribute to be written.
+-	@param			attributeKey
+-					An NSString object that specifies the attribute to be written; pass strings like QTMovieTimeScaleAttribute or QTMovieVolumeAttribute.
+-*/
+-- (void)setAttribute:(id)value forKey:(NSString *)attributeKey AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			tracks
+-	@abstract		Returns an array of QTTrack objects representing the tracks in a QTMovie object.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (NSArray *)tracks AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			tracksOfMediaType:
+-	@abstract		Returns an array of QTTrack objects representing the tracks in a QTMovie object of a specified media type.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			type
+-					An NSString object that specifies a media type; pass strings like QTMediaTypeVideo or QTMediaTypeText.
+-*/
+-- (NSArray *)tracksOfMediaType:(NSString *)type AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-@interface QTMovie (QTMovie_Image)
+-
+-/*!
+-	@method			posterImage
+-	@abstract		Returns an NSImage that is the poster image of a QTMovie object.
+-	@discussion		This method may return nil when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			An NSImage object representing the movie poster image. If the movie has no visual data at the poster image time,
+-					nil is returned.
+-*/
+-- (NSImage *)posterImage AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			currentFrameImage
+-	@abstract		Returns an NSImage object for the frame at the current time in a QTMovie object.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			An NSImage object representing the frame image at the current time. If the movie has no visual data at the
+-					current time, nil is returned.
+-*/
+-- (NSImage *)currentFrameImage AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			frameImageAtTime:
+-	@abstract		Returns an NSImage that is the frame image at a specified time in a QTMovie object.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			time
+-					A QTTime structure that specifies the time at which a frame image is to returned.
+-	@result			An NSImage object representing the frame image at the specified time. If the movie has no visual data at the
+-					specified time, nil is returned.
+-*/
+-- (NSImage *)frameImageAtTime:(QTTime)time AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2
+-/*!
+-	@method			frameImageAtTime:withAttributes:error:
+-	@abstract		Returns the frame image at a specified time in a QTMovie object.
+-	@param			time
+-					A QTTime structure that specifies the time at which a frame image is to returned.
+-	@param			attributes
+-					An NSDictionary object that specifies the desired attributes of the returned frame image.
+-	@param			errorPtr
+-					A pointer to an NSError object; if a frame image cannot be created, an NSError object is returned in this location.
+-	@result			An NSImage object, a CIImage object, a CGImageRef reference, a CVPixelBufferRef reference, or a  CVOpenGLTextureRef reference 
+-					for the movie image at the specified time. If the movie has no visual data at the specified time, nil is returned.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					All images returned by this method are autoreleased objects and must be retained by the caller if they are to be accessed outside
+-					of the current run loop cycle. However, applications running under garbage collection must call CVPixelBufferRelease on any
+-					CVPixelBufferRef returned by this method.
+-*/
+-- (void *)frameImageAtTime:(QTTime)time withAttributes:(NSDictionary *)attributes error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif
+-
+-@end
+-
+-@interface QTMovie (QTMovie_Format)
+-
+-/*!
+-	@method			movieFormatRepresentation
+-	@abstract		Returns the movie atom data of a QTMovie object in an NSData object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			An NSData object that contains the movie atom data of a movie.
+-*/
+-- (NSData *)movieFormatRepresentation AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+- 
+-/*!
+-	@method			writeToFile:withAttributes:
+-	@abstract		Exports or flattens a QTMovie object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			fileName
+-					An NSString object that specifies a full pathname to a file.
+-	@param			attributes
+-					An NSDictionary object that specifies the desired operation and its options. If the dictionary attributes contains an object
+-					whose key is QTMovieFlatten, then the movie is flattened into the specified file. If the dictionary attributes contains an object
+-					whose key is QTMovieExport, then the movie is exported into the specified file using a movie exporter whose type is specified by
+-					the value of the key QTMovieExportType. The value associated with the QTMovieExportSettings key should be an object of type NSData
+-					that contains an atom container of movie export settings.
+-	@result			YES if the movie file was successfully created, NO otherwise. NO will also be returned if the load state of the target movie
+-					is less than QTMovieLoadStateComplete, in which case no attempt is made to write the QTMovie into a file.
+-*/
+-- (BOOL)writeToFile:(NSString *)fileName withAttributes:(NSDictionary *)attributes AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2
+-/*!
+-	@method			writeToFile:withAttributes:error:
+-	@abstract		Exports or flattens a QTMovie object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			fileName
+-					An NSString object that specifies a full pathname to a file.
+-	@param			attributes
+-					An NSDictionary object that specifies the desired operation and its options. If the dictionary attributes contains an object
+-					whose key is QTMovieFlatten, then the movie is flattened into the specified file. If the dictionary attributes contains an object
+-					whose key is QTMovieExport, then the movie is exported into the specified file using a movie exporter whose type is specified by
+-					the value of the key QTMovieExportType. The value associated with the QTMovieExportSettings key should be an object of type NSData
+-					that contains an atom container of movie export settings.
+-	@param			errorPtr
+-					A pointer to an NSError object; if the operation fails, an NSError object is returned in this location.
+-	@result			YES if the movie file was successfully created, NO otherwise. NO will also be returned if the load state of the target movie
+-					is less than QTMovieLoadStateComplete, in which case no attempt is made to write the QTMovie into a file.
+-*/
+-- (BOOL)writeToFile:(NSString *)fileName withAttributes:(NSDictionary *)attributes error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif
+-
+-/*!
+-	@method			canUpdateMovieFile
+-	@abstract		Indicates whether a movie file can be updated with changes made to a QTMovie object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			YES if the movie file can be updated, NO otherwise.
+-*/
+-- (BOOL)canUpdateMovieFile AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			updateMovieFile
+-	@abstract		Updates the movie file of a QTMovie object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			YES if the update succeeds, NO otherwise.
+-*/
+-- (BOOL)updateMovieFile AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-@interface QTMovie (QTMovie_Time)
+-
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2
+-/*!
+-	@method			autoplay
+-	@abstract		Sets a QTMovie object to start playing when a sufficient amount of media data is available.
+-	@discussion		The autoplay method configures a QTMovie object to begin playing as soon as enough data is available that
+-					the playback can likely continue uninterrupted to the end of the movie. This is most useful for movies being loaded from a remote URL
+-					or from an extremely slow local device. For movies stored on most local devices, this method has the same effect as the -play method.
+-					This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (void)autoplay AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_6_3;
+-#endif
+-
+-/*!
+-	@method			play
+-	@abstract		Starts a QTMovie object playing.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (void)play AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			stop
+-	@abstract		Stops a QTMovie object playing.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (void)stop AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			currentTime
+-	@abstract		Returns the current time of a QTMovie object.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (QTTime)currentTime AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			setCurrentTime:
+-	@abstract		Sets the current time of a QTMovie object to a specified time.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			time
+-					A QTTime structure that specifies the time to be made the current movie time.
+-*/
+-- (void)setCurrentTime:(QTTime)time AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			gotoBeginning
+-	@abstract		Sets the current time of a QTMovie object to the beginning of the movie.
+-	@discussion		If the movie is playing, the movie continues playing at the new time.
+-					This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (void)gotoBeginning AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			gotoEnd
+-	@abstract		Sets the current time of a QTMovie object to the end of the movie.
+-	@discussion		If the movie is playing in one of the looping modes, the movie continues playing accordingly; otherwise, it stops.
+-					This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (void)gotoEnd AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			gotoNextSelectionPoint
+-	@abstract		Sets the current time of a QTMovie object to the next selection point.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (void)gotoNextSelectionPoint AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			gotoPreviousSelectionPoint
+-	@abstract		Sets the current time of a QTMovie object to the previous selection point.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (void)gotoPreviousSelectionPoint AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			gotoPosterTime
+-	@abstract		Sets the current time of a QTMovie object to the movie poster time.
+-	@discussion		If no movie poster time is defined, the current time is set to the beginning of the movie. If the movie is playing,
+-					the movie continues playing at the new time.
+-					This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (void)gotoPosterTime AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			stepForward
+-	@abstract		Steps a QTMovie object forward one frame.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (void)stepForward AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			stepBackward
+-	@abstract		Steps a QTMovie object backward one frame.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (void)stepBackward AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-@interface QTMovie (QTMovie_PlaybackControl)
+-
+-/*!
+-	@method			rate
+-	@abstract		Returns the current playback rate of a QTMovie object.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			A float value that is the current playback rate.
+-*/
+-- (float)rate AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			setRate:
+-	@abstract		Sets the playback rate of a QTMovie object.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			rate
+-					A float value that specifies the desired movie playback rate.
+-*/
+-- (void)setRate:(float)rate AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			volume
+-	@abstract		Returns the current volume of a QTMovie object.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (float)volume AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			setVolume:
+-	@abstract		Sets the volume of a QTMovie object.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			volume
+-					A float value that specifies the desired movie volume.
+-*/
+-- (void)setVolume:(float)volume AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			muted
+-	@abstract		Returns the current muted state of a QTMovie object.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			YES if the movie is currently muted, NO otherwise.
+-*/
+-- (BOOL)muted AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			setMuted:
+-	@abstract		Sets the muted state of a QTMovie object.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			mute
+-					A BOOL value that indicates the desired muted state of the movie.
+-*/
+-- (void)setMuted:(BOOL)mute AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-@interface QTMovie (QTMovie_Selection)
+-
+-/*!
+-	@method			setSelection:
+-	@abstract		Sets the selection of a QTMovie object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			selection
+-					A QTTimeRange structure that indicates the desired movie selection.
+-*/
+-- (void)setSelection:(QTTimeRange)selection AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			selectionStart
+-	@abstract		Returns the start time of the current selection of a QTMovie object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			A QTTime structure that indicates the start time of the current selection of a movie.
+-*/
+-- (QTTime)selectionStart AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			selectionEnd
+-	@abstract		Returns the end time of the current selection of a QTMovie object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			A QTTime structure that indicates the end time of the current selection of a movie.
+-*/
+-- (QTTime)selectionEnd AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			selectionDuration
+-	@abstract		Returns the duration of the current selection of a QTMovie object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			A QTTime structure that indicates the duration of the current selection of a movie.
+-*/
+-- (QTTime)selectionDuration AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-@interface QTMovie (QTMovie_Editing)
+-
+-/*!
+-	@method			replaceSelectionWithSelectionFromMovie:
+-	@abstract		Replaces the current selection in a QTMovie object with the current selection in a QTMovie object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					If the movie is not editable, an exception will be raised.
+-	@param			movie
+-					A QTMovie object. (This may be the same object as the receiver.)
+-*/
+-- (void)replaceSelectionWithSelectionFromMovie:(id)movie AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			appendSelectionFromMovie:
+-	@abstract		Appends to a QTMovie object the currently selected segment in a QTMovie object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					If the movie is not editable, an exception will be raised.
+-	@param			movie
+-					A QTMovie object. (This may be the same object as the receiver.)
+-*/
+-- (void)appendSelectionFromMovie:(id)movie AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			insertSegmentOfMovie:timeRange:atTime:
+-	@abstract		Inserts into a QTMovie object the specified selection of a QTMovie object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					If the movie is not editable, an exception will be raised.
+-	@param			movie
+-					The QTMovie object from which the segment to be inserted is copied.
+-	@param			range
+-					A QTTimeRange structure that indicates the segment in movie to be copied.
+-	@param			time
+-					A QTTime structure that indicates the time in the target movie at which the copied segment is to be inserted.
+-*/
+-- (void)insertSegmentOfMovie:(QTMovie *)movie timeRange:(QTTimeRange)range atTime:(QTTime)time AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			insertSegmentOfMovie:fromRange:scaledToRange:
+-	@abstract		Inserts into a QTMovie object the specified segment of another QTMovie object, scaling that new segment to a specified start time and duration.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					If the movie is not editable, an exception will be raised.
+-	@param			movie
+-					The QTMovie object from which the segment to be inserted is copied.
+-	@param			srcRange
+-					A QTTimeRange structure that indicates the segment in movie to be copied.
+-	@param			dstRange
+-					A QTTimeRange structure that indicates the range in the target movie into which the copied segment is to be inserted.
+-*/
+-- (void)insertSegmentOfMovie:(QTMovie *)movie fromRange:(QTTimeRange)srcRange scaledToRange:(QTTimeRange)dstRange AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			insertEmptySegmentAt:
+-	@abstract		Inserts an empty segment into a QTMovie object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					If the movie is not editable, an exception will be raised.
+-	@param			range
+-					A QTTimeRange structure that indicates the range in the movie at which an empty segment is to be inserted.
+-*/
+-- (void)insertEmptySegmentAt:(QTTimeRange)range AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			deleteSegment:
+-	@abstract		Deletes a specified segment from a QTMovie object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					If the movie is not editable, an exception will be raised.
+-	@param			segment
+-					A QTTimeRange structure that indicates the segment in the movie to be deleted.
+-*/
+-- (void)deleteSegment:(QTTimeRange)segment AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			scaleSegment:newDuration:
+-	@abstract		Scales a segment of a QTMovie object to a new duration.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					If the movie is not editable, an exception will be raised.
+-	@param			segment
+-					A QTTimeRange structure that indicates the segment in the movie to be scaled.
+-	@param			newDuration
+-					A QTTime structure that indicates the desired duration of the segment that is to be scaled.
+-*/
+-- (void)scaleSegment:(QTTimeRange)segment newDuration:(QTTime)newDuration AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			addImage:forDuration:withAttributes:
+-	@abstract		Adds an image to a QTMovie object for the specified duration, using attributes specified in the attributes dictionary.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					If the movie is not editable, an exception will be raised.
+-	@param			image
+-					An NSImage that is to be appended to the target movie.
+-	@param			duration
+-					A QTTime structure that indicates the desired duration of the appended image in the movie.
+-	@param			attributes
+-					An NSDictionary object that specifies attributes of the appended image.
+-					Keys in this dictionary can be QTAddImageCodecType to select a codec type and QTAddImageCodecQuality to select a quality.
+-					Qualities are expected to be specified as NSNumbers, using the codec values like codecNormalQuality.
+-					The attributes dictionary can also contain a value for the QTTrackTimeScaleAttribute key,
+-					which is used as the time scale of the new track, should one need to be created.
+-					The default time scale for a new track is 600.
+-*/
+-- (void)addImage:(NSImage *)image forDuration:(QTTime)duration withAttributes:(NSDictionary *)attributes AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2
+-/*!
+-	@method			insertSegmentOfTrack:timeRange:atTime:
+-	@abstract		Inserts into a QTMovie object the specified segment of a QTTrack object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					If the movie is not editable, an exception will be raised.
+-					This method is deprecated and should not be used in new code.
+-	@param			track
+-					The QTTrack object from which the segment to be inserted is copied.
+-	@param			range
+-					A QTTimeRange structure that indicates the segment in track to be copied.
+-	@param			time
+-					A QTTime structure that indicates the time in the target movie at which the copied segment is to be inserted.
+-	@result			The QTTrack object into which the copied segment is inserted.
+-*/
+-- (QTTrack *)insertSegmentOfTrack:(QTTrack *)track timeRange:(QTTimeRange)range atTime:(QTTime)time AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_6_3;
+-
+-/*!
+-	@method			insertSegmentOfTrack:fromRange:scaledToRange:
+-	@abstract		Inserts into a QTMovie object the specified segment of a QTTrack object, scaling that new segment to a specified start time and duration.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					If the movie is not editable, an exception will be raised.
+-					This method is deprecated and should not be used in new code.
+-	@param			track
+-					The QTTrack object from which the segment to be inserted is copied.
+-	@param			srcRange
+-					A QTTimeRange structure that indicates the segment in track to be copied.
+-	@param			dstRange
+-					A QTTimeRange structure that indicates the range in the target movie at which the copied segment is to be inserted.
+-	@result			The QTTrack object into which the copied segment is inserted.
+-*/
+-- (QTTrack *)insertSegmentOfTrack:(QTTrack *)track fromRange:(QTTimeRange)srcRange scaledToRange:(QTTimeRange)dstRange AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_6_3;
+-
+-/*!
+-	@method			removeTrack:
+-	@abstract		Removes a track from a QTMovie object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					If the movie is not editable, an exception will be raised.
+-	@param			track
+-					The QTTrack object to be removed.
+-*/
+-- (void)removeTrack:(QTTrack *)track AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_6_3;
+-#endif
+-
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_7
+-/*!
+-	@method			trackByInsertingSegmentOfTrack:timeRange:atTime:
+-	@abstract		Inserts into a QTMovie object the specified segment of a QTTrack object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					If the movie is not editable, an exception will be raised.
+-	@param			track
+-					The QTTrack object from which the segment to be inserted is copied.
+-	@param			range
+-					A QTTimeRange structure that indicates the segment in track to be copied.
+-	@param			time
+-					A QTTime structure that indicates the time in the target movie at which the copied segment is to be inserted.
+-	@result			The QTTrack object into which the copied segment is inserted; this is an autoreleased object.
+-*/
+-- (QTTrack *)trackByInsertingSegmentOfTrack:(QTTrack *)track timeRange:(QTTimeRange)range atTime:(QTTime)time AVAILABLE_QTKIT_VERSION_7_7_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			trackByInsertingSegmentOfTrack:fromRange:scaledToRange:
+-	@abstract		Inserts into a QTMovie object the specified segment of a QTTrack object, scaling that new segment to a specified start time and duration.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					If the movie is not editable, an exception will be raised.
+-	@param			track
+-					The QTTrack object from which the segment to be inserted is copied.
+-	@param			srcRange
+-					A QTTimeRange structure that indicates the segment in track to be copied.
+-	@param			dstRange
+-					A QTTimeRange structure that indicates the range in the target movie at which the copied segment is to be inserted.
+-	@result			The QTTrack object into which the copied segment is inserted; this is an autoreleased object.
+-*/
+-- (QTTrack *)trackByInsertingSegmentOfTrack:(QTTrack *)track fromRange:(QTTimeRange)srcRange scaledToRange:(QTTimeRange)dstRange AVAILABLE_QTKIT_VERSION_7_7_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif
+-
+-@end
+-
+-@interface QTMovie (QTMovie_Delegate)
+-
+-/*!
+-	@method			delegate
+-	@abstract		Returns the delegate of a QTMovie object.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (id)delegate AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			setDelegate:
+-	@abstract		Sets the delegate of a QTMovie object.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			delegate
+-					An object that is to serve as the delegate for the movie.
+-*/
+-- (void)setDelegate:(id)delegate AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-#if !__LP64__
+-@interface QTMovie (QTMovie_Primitives)
+-
+-/*!
+-	@method			quickTimeMovie
+-	@abstract		Returns the QuickTime Movie associated with a QTMovie object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					This method cannot be called by 64-bit applications.
+-	@result			A QuickTime Movie.
+-*/
+-- (Movie)quickTimeMovie AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			quickTimeMovieController
+-	@abstract		Returns the QuickTime movie controller associated with a QTMovie object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					This method cannot be called by 64-bit applications.
+-	@result			A QuickTime MovieController.
+-*/
+-- (MovieController)quickTimeMovieController AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-#endif
+-
+-@interface QTMovie (QTMovie_VisualSupport)
+-
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2
+-
+-/*!
+-	@method			generateApertureModeDimensions
+-	@abstract		Adds aperture mode dimensions information to a QTMovie object.
+-	@discussion		This method adds information to a QTMovie object needed to support aperture modes for movies created with
+-					applications and/or versions of QuickTime that did not support aperture mode dimensions.
+-					If the image descriptions in video tracks lack tags describing clean aperture and pixel aspect ratio information,
+-					the media data is scanned to see if the correct values can be divined and attached. Then the aperture mode dimensions
+-					are calculated and set. Afterwards, the QTTrackHasApertureModeDimensionsAttribute property will be set to YES for those tracks.
+-					Tracks that do not support aperture modes are not changed.
+-					This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (void)generateApertureModeDimensions AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			removeApertureModeDimensions
+-	@abstract		Removes aperture mode dimensions information from a QTMovie object.
+-	@discussion		This method does not attempt to modify sample descriptions, so it may not completely reverse the effects of generateApertureModeDimensions.
+-					It sets the QTMovieHasApertureModeDimensionsAttribute property to NO.
+-					This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (void)removeApertureModeDimensions AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif
+-
+-@end
+-
+-@interface QTMovie (QTMovie_VisualContext)
+-
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2
+-#if !__LP64__
+-/*!
+-	@method			setVisualContext:
+-	@abstract		Sets the visual context of a QTMovie object to a specified visual context.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					This method cannot be called by 64-bit applications.
+-	@param			visualContext
+-					A visual context.
+-*/
+-- (void)setVisualContext:(QTVisualContextRef)visualContext AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			visualContext
+-	@abstract		Returns the current visual context of a QTMovie object.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					This method cannot be called by 64-bit applications.
+-*/
+-- (QTVisualContextRef)visualContext AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif
+-#endif
+-
+-@end
+-
+-@interface QTMovie (QTMovie_Threading)
+-
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2
+-/*!
+-	@method			enterQTKitOnThread
+-	@abstract		Performs any QTKit-specific initialization for the current (non-main) thread.
+-	@discussion		A call to this method must be paired with a subsequent call to exitQTKitOnThread.
+-*/
+-+ (void)enterQTKitOnThread AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			enterQTKitOnThreadDisablingThreadSafetyProtection
+-	@abstract		Performs any QTKit-specific initialization for the current (non-main) thread, allowing non-threadsafe components.
+-	@discussion		A call to this method must be paired with a subsequent call to exitQTKitOnThread.
+-*/
+-+ (void)enterQTKitOnThreadDisablingThreadSafetyProtection AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			exitQTKitOnThread
+-	@abstract		Performs any QTKit-specific shut-down for the current (non-main) thread.
+-	@discussion		A call to this method must be paired with a previous call to enterQTKitOnThread or enterQTKitOnThreadDisablingThreadSafetyProtection.
+-*/
+-+ (void)exitQTKitOnThread AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			attachToCurrentThread
+-	@abstract		Attaches a QTMovie object to the current thread.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			YES if successful, NO otherwise.
+-*/
+-- (BOOL)attachToCurrentThread AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			detachFromCurrentThread
+-	@abstract		Detaches a QTMovie object from the current thread.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			YES if successful, NO otherwise.
+-*/
+-- (BOOL)detachFromCurrentThread AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			setIdling:
+-	@abstract		Sets the idling state of a QTMovie object.
+-	@discussion		Movies attached to background threads should not be idled; if they are idled, unexpected behavior can result.
+-					This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			state
+-					A BOOL value that indicates whether to idle the movie (YES) or not (NO).
+-*/
+-- (void)setIdling:(BOOL)state AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			isIdling
+-	@abstract		Returns the current idling state of a QTMovie object.
+-	@discussion		This method returns the idling state of a QTMovie object (that is, whether it is being tasked).
+-					Movies attached to background threads should not be idled; if they are idled, unexpected behavior can result.
+-					This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			YES if the movie is idling, NO otherwise.
+-*/
+-- (BOOL)isIdling AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif
+-
+-@end
+-
+-@interface QTMovie (QTMovie_Chapters)
+-
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2
+-/*!
+-	@method			hasChapters
+-	@abstract		Returns a BOOL value that indicates whether a QTMovie object has chapters.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			YES if the movie has chapters, NO otherwise.
+-*/
+-- (BOOL)hasChapters AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			chapterCount
+-	@abstract		Returns the number of chapters in a QTMovie object, or 0 if there are no chapters.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@result			The number of chapters in a movie, or 0 if there are no chapters.
+-*/
+-- (NSInteger)chapterCount AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			chapters
+-	@abstract		Returns an NSArray object containing information about the chapters in a QTMovie object.
+-	@discussion		Each array element is an NSDictionary object containing key-value pairs. Currently two keys are defined for this dictionary:
+-					QTMovieChapterName and QTMovieChapterStartTime. The value for the QTMovieChapterName key is an NSString object that is the chapter name.
+-					The value for the QTMovieChapterStartTime key is an NSValue object that wraps a QTTime structure that indicates the start time of the chapter.
+-					This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (NSArray *)chapters AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			addChapters:withAttributes:error:
+-	@abstract		Adds chapters to a QTMovie object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					If the movie is not editable, an exception will be raised.
+-	@param			chapters
+-					An NSArray object whose elements are NSDictionary objects. Currently two keys are defined for this dictionary:
+-					QTMovieChapterName and QTMovieChapterStartTime. The value for the QTMovieChapterName key is an NSString object that is the chapter name.
+-					The value for the QTMovieChapterStartTime key is an NSValue object that wraps a QTTime structure that indicates the start time of the chapter. 
+-	@param			attributes
+-					An NSDictionary object that contains additional attributes for the chapters. Currently only one key is recognized for this dictionary:
+-					QTMovieChapterTargetTrackAttribute, which specifies the QTTrack object in the QTMovie object that is the target of the chapters;
+-					if none is specified, this method uses first video track in movie. If no video track is in the movie,
+-					this method uses the first audio track in the movie. If no audio track is in the movie, this method uses the first track in the movie. 
+-	@param			errorPtr
+-					A pointer to an NSError object; if chapters cannot be added to the movie, an NSError object is returned in this location.
+-*/
+-- (void)addChapters:(NSArray *)chapters withAttributes:(NSDictionary *)attributes error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			removeChapters
+-	@abstract		Removes any existing chapters from a QTMovie object.
+-	@discussion		This method cannot be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					If the movie is not editable, an exception will be raised.
+-	@result			YES if either the QTMovie object has no chapters or the chapters were successfully removed from it; NO if the chapters could not be removed from the receiver.
+-*/
+-- (BOOL)removeChapters AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			startTimeOfChapter:
+-	@abstract		Returns the start time of the chapter having the specified 0-based index in the list of chapters.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			chapterIndex
+-					A 0-based index.
+-	@result			A QTTime structure that indicates the start time of the chapter having the specified 0-based index in the list of chapters.
+-*/
+-- (QTTime)startTimeOfChapter:(NSInteger)chapterIndex AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;		// 0-based index
+-
+-/*!
+-	@method			chapterIndexForTime:
+-	@abstract		Returns the 0-based index of the chapter that contains the specified time in a QTMovie object.
+-	@discussion		This method can be called when the movie has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			time
+-					A QTTime structure that indicates the time in the movie at which to find the current chapter.
+-*/
+-- (NSInteger)chapterIndexForTime:(QTTime)time AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;				// 0-based index
+-
+-#endif
+-
+-@end
+-
+-@interface QTMovie (QTMovie_MetadataReading)
+-
+-#if (defined(MAC_OS_X_VERSION_10_7) && (MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_7))
+-/*!
+-	@method			commonMetadata
+-	@abstract		Returns an NSArray containing QTMetadataItem objects for each common metadata key for which a value for the current locale is available.
+-	@result			An NSArray containing QTMetadataItem objects for each common metadata key for which a value for the current locale is available; may be nil if there is no metadata that's appropriately localized.
+-	@discussion		The returned metadata may be tagged with default locale information or with no locale information, if that's the best available choice.
+-*/
+-- (NSArray *)commonMetadata AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/*!
+-	@method			availableMetadataFormats
+-	@abstract		Returns an NSArray containing NSString objects representing the metadata formats available to the receiver.
+-	@result			An NSArray containing an NSString objects, each of which represents a metadata format that is available to the receiver.
+-*/
+-- (NSArray *)availableMetadataFormats AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/*!
+-	@method			metadataForFormat:
+-	@abstract		Returns an NSArray of QTMetadataItem objects having a specified format.
+-	@param			format
+-					The metadata format for which items are requested.
+-	@result			An NSArray containing all QTMetadataItem objects of the receiver that have the specified format; may be nil if there is no metadata of the specified format.
+-*/
+-- (NSArray *)metadataForFormat:(NSString *)format AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-#endif
+-
+-@end
+-
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMovieLayer.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMovieLayer.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMovieLayer.h	2015-08-23 04:07:43.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMovieLayer.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,47 +0,0 @@
+-/*
+-	File:		QTMovieLayer.h
+-
+-	Copyright:	(c)2005-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-/* Note: do not attempt to directly modify the `contents' property of
+- * an QTMovieLayer object - doing so will effectively turn it into a
+- * regular CALayer. */
+-
+-
+-#import <Foundation/Foundation.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-#if (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5)
+-
+-#import <QuartzCore/QuartzCore.h>
+-
+-@class QTMovie;
+-@class QTMovieLayerPrivate;
+-@class QTInfoLayer;
+-
+-@interface QTMovieLayer : CALayer								// QTMovieLayer is a layer that renders a QTMovie within a layer hierarchy
+-{
+-	@private
+-	QTMovieLayerPrivate *	_movieLayerPriv;
+-}
+-
+-+ (id)layerWithMovie:(QTMovie *)movie AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (id)initWithMovie:(QTMovie *)movie AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;							// the designated initializer
+-
+-- (void)setMovie:(QTMovie *)movie AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (QTMovie *)movie AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-#endif /* (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5) */
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMovieModernizer.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMovieModernizer.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMovieModernizer.h	2015-08-23 04:07:43.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMovieModernizer.h	2016-05-23 03:56:45.000000000 +0200
+@@ -1,14 +1,18 @@
+-#ifdef forPublicRelease
+ /*
+ 	File:		QTMovieModernizer.h
+ 
+-	Copyright:	(c) 2013-2014 by Apple Inc. All rights reserved.
++	Copyright:	(c) 2013-2015 by Apple Inc. All rights reserved.
+ 
+ */
+-#else // not forPublicRelease
++
+ /*
+- */
+-#endif
++  QTKit has been deprecated in 10.9.
++
++  AVFoundation and AVKit are the frameworks recommended for all new development 
++  involving time-based audiovisual media on OS X.  In order to transition your 
++  project from QTKit to AVFoundation please refer to:
++  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
++*/
+ 
+ #import <Foundation/Foundation.h>
+ #import <QTKit/QTKitDefines.h>
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMovieView.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMovieView.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMovieView.h	2015-08-23 04:07:43.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTMovieView.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,150 +0,0 @@
+-/*
+-	File:		QTMovieView.h
+-
+-	Copyright:	(c)2004-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Cocoa/Cocoa.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-@class QTMovie;
+-@class QTMovieControllerView;
+-@class QTMovieViewInternal;
+-
+-QTKIT_EXTERN NSString * const QTMovieViewMovieBinding						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTMovieViewControllerVisibleBinding			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTMovieViewPreservesAspectRatioBinding		AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN NSString * const QTMovieViewFillColorBinding					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-#if __LP64__
+-@interface QTMovieView : NSView <NSCoding, NSUserInterfaceValidations>
+-#else
+-@interface QTMovieView : NSView <NSCoding, NSUserInterfaceValidations, NSTextInput>
+-#endif
+-{
+-@private
+-    QTMovie                 *_movie;
+-    
+-    NSColor                 *_fillColor;
+-    BOOL                    _controllerVisible;
+-	BOOL                    _preservesAspectRatio;
+-    
+-#if !__LP64__
+-    NSView                  *_rendererView;
+-    QTMovieControllerView   *_movieControllerView;
+-#endif    
+-    NSUInteger              _viewFlags;
+-    QTMovieViewInternal     *_internal;
+-	long					_reserved3;
+-	id						_delegate;
+-#if __LP64__
+-	int32_t					_proxy;
+-	int32_t					_delegateProxy;
+-    BOOL					_useVisualContext;
+-    NSView                  *_rendererView;
+-	QTMovieControllerView   *_movieControllerView;
+-#endif
+-}
+-
+-- (QTMovie *)movie AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setMovie:(QTMovie *)movie AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (BOOL)preservesAspectRatio AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setPreservesAspectRatio:(BOOL)preservesAspectRatio AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (NSColor *)fillColor AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setFillColor:(NSColor *)fillColor AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+- @method		isControllerVisible
+- @abstract		Returns an indication of whether the QTMovieView has been requested to display a built-in movie controller UI.
+- @discussion	Via -setControllerVisible: the client tells QTMovieView whether or not to display a user interface for controlling
+- 				the movie within its bounds. Via -isControllerVisible the client can determine whether a QTMovieView has been configured
+- 				to display such an interface. Via -controllerBarHeight the client can determine the height of the portion of the
+- 				QTMovieView that's required to display that interface. Note that some types of QuickTime content are authored to
+- 				display their own user interface; for those types of content it's possible for -controllerBarHeight to return 0
+- 				even when -isControllerVisible is YES.
+-*/
+-- (BOOL)isControllerVisible AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setControllerVisible:(BOOL)controllerVisible AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setShowsResizeIndicator:(BOOL)show AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2
+-- (BOOL)isBackButtonVisible AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setBackButtonVisible:(BOOL)state AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (BOOL)isCustomButtonVisible AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setCustomButtonVisible:(BOOL)state AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (BOOL)isHotSpotButtonVisible AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setHotSpotButtonVisible:(BOOL)state AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (BOOL)areStepButtonsVisible AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setStepButtonsVisible:(BOOL)state AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (BOOL)isTranslateButtonVisible AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setTranslateButtonVisible:(BOOL)state AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (BOOL)isVolumeButtonVisible AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setVolumeButtonVisible:(BOOL)state AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (BOOL)areZoomButtonsVisible AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setZoomButtonsVisible:(BOOL)state AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif /* QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2 */ 
+-
+-- (NSRect)movieBounds AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (NSRect)movieControllerBounds AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (float)controllerBarHeight AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (IBAction)play:(id)sender AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (IBAction)pause:(id)sender AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (IBAction)gotoBeginning:(id)sender AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (IBAction)gotoEnd:(id)sender AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (IBAction)gotoNextSelectionPoint:(id)sender AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (IBAction)gotoPreviousSelectionPoint:(id)sender AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (IBAction)gotoPosterFrame:(id)sender AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (IBAction)stepForward:(id)sender AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (IBAction)stepBackward:(id)sender AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (BOOL)isEditable AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setEditable:(BOOL)editable AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-- (IBAction)cut:(id)sender AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (IBAction)copy:(id)sender AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (IBAction)paste:(id)sender AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (IBAction)selectAll:(id)sender AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (IBAction)selectNone:(id)sender AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (IBAction)delete:(id)sender AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (IBAction)add:(id)sender AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (IBAction)addScaled:(id)sender AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (IBAction)replace:(id)sender AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (IBAction)trim:(id)sender AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2
+-- (id)delegate AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)setDelegate:(id)delegate AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif /* QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2 */ 
+-
+-@end
+-
+-@interface NSObject (QTMovieView_Delegate)
+-
+-#if (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4)
+-- (CIImage *)view:(QTMovieView *)view willDisplayImage:(CIImage *)image AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif /* (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4) */
+-
+-#if (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_6_3) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6)
+-/*!
+- @method		menuForEventDelegate:
+- @param			An NSEvent object that specifies an event.
+- @abstract		Returns an NSMenu object that is the contextual menu for the specified event.
+- @discussion	This delegate method can be used instead of subclassing QTMovieView in cases that
+-				an application cannot hard link against the QTKit framework.
+- */
+-
+-- (NSMenu *)menuForEventDelegate:(NSEvent *)event AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif
+-
+-@end
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTSampleBuffer.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTSampleBuffer.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTSampleBuffer.h	2015-08-23 04:07:43.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTSampleBuffer.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,90 +0,0 @@
+-/*
+-	File:		QTSampleBuffer.h
+- 
+-	Copyright:	(c)2007-2012 by Apple Inc., all rights reserved.
+- 
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-#if (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4)
+-
+-#import <QTKit/QTTime.h>
+-#import <CoreAudio/CoreAudioTypes.h>	// AudioBufferList and AudioStreamPacketDescription
+-
+-QTKIT_EXTERN NSString * const QTSampleBufferSMPTETimeAttribute					AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;  // NSValue interpreted as a SMPTETime (defined in CoreAudio/CoreAudioTypes.h). See QTTime.h for operations that can be performed on SMPTETime structures.
+-QTKIT_EXTERN NSString * const QTSampleBufferDateRecordedAttribute				AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;  // NSDate
+-QTKIT_EXTERN NSString * const QTSampleBufferHostTimeAttribute					AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;  // NSNumber, interpreted as a uint64_t
+-QTKIT_EXTERN NSString * const QTSampleBufferSceneChangeTypeAttribute			AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;  // One of the following string constants:
+-QTKIT_EXTERN NSString * const QTSampleBufferExplicitSceneChange					AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;  // scene change is explicitly marked in the metadata of the sample buffer
+-QTKIT_EXTERN NSString * const QTSampleBufferTimeStampDiscontinuitySceneChange	AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;  // scene change indicated by a discontinuity between this sample buffer's time stamp and the previous sample buffer's time stamp
+-
+-// Options passed to audioBufferListWithOptions:
+-enum {
+-	QTSampleBufferAudioBufferListOptionAssure16ByteAlignment = (1L << 0)
+-};
+-typedef NSUInteger QTSampleBufferAudioBufferListOptions;
+-
+-@class QTFormatDescription;
+-@class QTSampleBufferInternal;
+-
+-@interface QTSampleBuffer : NSObject {
+-@private
+-	QTSampleBufferInternal	*_internal;
+-	long					_reserved1;
+-	long					_reserved2;
+-	long					_reserved3;
+-}
+-
+-- (void *)bytesForAllSamples AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (NSUInteger)lengthForAllSamples AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-// Format info
+-- (QTFormatDescription *)formatDescription AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-// Timing info
+-- (QTTime)duration AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (QTTime)decodeTime AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (QTTime)presentationTime AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-// Multiple sample info
+-- (NSUInteger)numberOfSamples AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-// Attributes
+-- (NSDictionary *)sampleBufferAttributes AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (id)attributeForKey:(NSString *)key AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-// These methods allow clients to control when the potentially large memory buffers owned by a QTSampleBuffer are deallocated. A newly allocated QTSampleBuffer has a sample use count of 1. When the sample use count drops to 0, the memory allocated for the samples will be freed and the bytesForAllSamples, lengthForAllSamples, and audioBufferListWithOptions: methods will each throw an NSInternalInconsistencyException when called. Clients using garbage collection in particular should ensure that the sample use count is 0 when they no longer require the sample data owned by a QTSampleBuffer, so that memory can be deallocated propmptly rather than when the object is finalized.
+-// Clients interested in the sample data of QTSampleBuffer objects returned by other APIs in QTKit should call incrementSampleUseCount to ensure that they have acceess to the sample data, and later call decrementSampleUseCount when they no longer need that data.
+-@interface QTSampleBuffer (QTSampleBuffer_UseCount)
+-
+-- (NSUInteger)sampleUseCount AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)incrementSampleUseCount AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (void)decrementSampleUseCount AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-// These methods provide functionality specific to audio sample buffers. If the receiver of one of these methods is not an audio sample buffer an NSInternalInconsistencyException will be thrown.
+-@interface QTSampleBuffer (QTAudioSampleBuffer)
+-
+-// This method returns a pointer to a CoreAudio AudioBufferList containing all of the audio data in the sample buffer. The AudioBufferList can then be passed to CoreAudio APIs for rendering and processing audio. The returned AudioBufferList will be valid for as long as the QTSampleBuffer is valid and its sample use count has not been decpremented to 0. Clients passing the AudioBufferList to an audio unit must include the QTSampleBufferAudioBufferListOptionAssure16ByteAlignment flag in the options parameter.
+-- (AudioBufferList *)audioBufferListWithOptions:(QTSampleBufferAudioBufferListOptions)options AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-// Use this method with VBR audio sample buffers to get the size of each audio packet in the buffer. The maximum value in the range must be the value returned by numberOfSamples. If the sample buffer does not contain VBR audio, this method returns NO and leaves audioStreamPacketDescriptions untouched. Otherwise it fills the memory pointed to by audioStreamPacketDescriptions with an array of CoreAudio AudioStreamPacketDescription structures and returns YES.
+-- (BOOL)getAudioStreamPacketDescriptions:(AudioStreamPacketDescription *)audioStreamPacketDescriptions inRange:(NSRange)range AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-#endif /* (QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4) */
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTTime.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTTime.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTTime.h	2015-08-23 04:07:43.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTTime.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,83 +0,0 @@
+-/*
+-	File:		QTTime.h
+-
+-	Copyright:	(c)2004-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#if !__LP64__
+-	#import <QuickTime/QuickTime.h>
+-#endif
+-#import <CoreAudio/CoreAudioTypes.h>	// SMPTETime
+-#import <QTKit/QTKitDefines.h>
+-
+-enum {
+-    kQTTimeIsIndefinite = 1 << 0
+-};
+-
+-typedef struct {
+-	long long		timeValue;
+-	long			timeScale;
+-	long			flags;
+-} QTTime;
+-
+-QTKIT_EXTERN const QTTime QTZeroTime												AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN const QTTime QTIndefiniteTime											AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-QTKIT_EXTERN QTTime QTMakeTimeWithTimeRecord (TimeRecord timeRecord)				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN QTTime QTMakeTimeWithTimeInterval (NSTimeInterval timeInterval)		AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN QTTime QTMakeTime (long long timeValue, long timeScale)				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN QTTime QTMakeTimeScaled (QTTime time, long timeScale)					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-QTKIT_EXTERN BOOL QTGetTimeRecord (QTTime time, TimeRecord *timeRecord)				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN BOOL QTGetTimeInterval (QTTime time, NSTimeInterval *timeInterval)		AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-QTKIT_EXTERN NSComparisonResult QTTimeCompare (QTTime time, QTTime otherTime)		AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-QTKIT_EXTERN QTTime QTTimeIncrement (QTTime time, QTTime increment)					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN QTTime QTTimeDecrement (QTTime time, QTTime decrement)					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-// dd:hh:mm:ss.ff/ts
+-QTKIT_EXTERN NSString *QTStringFromTime (QTTime time)								AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN QTTime QTTimeFromString (NSString *string)								AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-QTKIT_EXTERN BOOL QTTimeIsIndefinite (QTTime time)									AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@interface NSValue (NSValueQTTimeExtensions)
+-+ (NSValue *)valueWithQTTime:(QTTime)time AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (QTTime)QTTimeValue AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-@end
+-
+-@interface NSCoder (NSQTTimeCoding)
+-- (void)encodeQTTime:(QTTime)time forKey:(NSString *)key AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (QTTime)decodeQTTimeForKey:(NSString *)key AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-@end
+-
+-// SMPTETime:
+-
+-// hh:mm:ss:ff or hh:mm:ss;ff for drop frame
+-QTKIT_EXTERN NSString *QTStringFromSMPTETime(SMPTETime time)						AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2
+-
+-@interface NSValue (NSValueQTSMPTETimeExtensions)
+-+ (NSValue *)valueWithSMPTETime:(SMPTETime)time AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (SMPTETime)SMPTETimeValue AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-@end
+-
+-@interface NSCoder (NSCoderQTSMPTETimeCoding)
+-- (void)encodeSMPTETime:(SMPTETime)time forKey:(NSString *)key AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (SMPTETime)decodeSMPTETimeForKey:(NSString *)key AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-@end
+-
+-#endif	/* QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2 */
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTTimeRange.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTTimeRange.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTTimeRange.h	2015-08-23 04:07:43.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTTimeRange.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,51 +0,0 @@
+-/*
+-	File:		QTTimeRange.h
+-
+-	Copyright:	(c)2004-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#if !__LP64__
+-	#import <QuickTime/QuickTime.h>
+-#endif
+-#import <QTKit/QTKitDefines.h>
+-#import <QTKit/QTTime.h>
+-
+-typedef struct {
+-	QTTime		time;
+-	QTTime		duration;
+-} QTTimeRange;
+-
+-QTKIT_EXTERN QTTimeRange QTMakeTimeRange (QTTime time, QTTime duration)						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-QTKIT_EXTERN BOOL QTTimeInTimeRange (QTTime time, QTTimeRange range)						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN BOOL QTEqualTimeRanges (QTTimeRange range, QTTimeRange range2)					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-QTKIT_EXTERN QTTime QTTimeRangeEnd (QTTimeRange range)										AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-QTKIT_EXTERN QTTimeRange QTUnionTimeRange (QTTimeRange range1, QTTimeRange range2)			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN QTTimeRange QTIntersectionTimeRange (QTTimeRange range1, QTTimeRange range2)	AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-// dd:hh:mm:ss.ff/ts~dd:hh:mm:ss.ff/ts
+-QTKIT_EXTERN NSString *QTStringFromTimeRange (QTTimeRange range)							AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN QTTimeRange QTTimeRangeFromString (NSString* string)							AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@interface NSValue (NSValueQTTimeRangeExtensions)
+-+ (NSValue *)valueWithQTTimeRange:(QTTimeRange)range AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (QTTimeRange)QTTimeRangeValue AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-@end
+-
+-@interface NSCoder (NSQTTimeRangeCoding)
+-- (void)encodeQTTimeRange:(QTTimeRange)range forKey:(NSString *)key AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-- (QTTimeRange)decodeQTTimeRangeForKey:(NSString *)key AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-@end
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTTrack.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTTrack.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTTrack.h	2015-08-23 04:07:43.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTTrack.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,473 +0,0 @@
+-/*
+-	File:		QTTrack.h
+-
+-	Copyright:	(c)2004-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-/*!
+-    @class			QTTrack
+-
+-    @abstract		A QTTrack object is an object that represents the ordering and other characteristics 
+-					of media data in a QTMovie object, such as a single video track or audio track.
+- 
+-	@discussion		A QTMovie object typically contains one or more streams of media data, which are represented by
+-					QTTrack objects. When a QTMovie object has been initialized with QTMovieOpenForPlaybackAttribute set to NO,
+-					a QTTrack object wraps the underlying QuickTime track (of type Track).
+- 
+-					A QTMovie object may have several QTTrack objects associated with it. By constrast, a QTTrack object has
+-					exactly one QTMedia object associated with it.
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#if !__LP64__
+-	#import <QuickTime/QuickTime.h>
+-#endif
+-#import <QTKit/QTKitDefines.h>
+-#import <QTKit/QTTime.h>
+-#import <QTKit/QTTimeRange.h>
+-
+-@class QTMovie;
+-@class QTMedia;
+-@class NSImage;
+-@class QTTrackHelper;
+-@class QTInvalidationSet;
+-
+-	// track attributes
+-/*!
+-	@constant		QTTrackBoundsAttribute
+-	@abstract		The bounding rectangle of a QTTrack object; the value for this key is of type NSValue, interpreted as an NSRect.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTTrackBoundsAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSValue (NSRect)
+-
+-/*!
+-	@constant		QTTrackCreationTimeAttribute
+-	@abstract		The creation time of the container from which a QTTrack object was initialized; the value for this key is of type NSDate.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTTrackCreationTimeAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSDate
+-
+-/*!
+-	@constant		QTTrackDimensionsAttribute
+-	@abstract		The dimensions of a QTTrack object; the value for this key is of type NSValue, interpreted as an NSSize.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read but not written when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTTrackDimensionsAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSValue (NSSize)
+-
+-/*!
+-	@constant		QTTrackDisplayNameAttribute
+-	@abstract		The display name of a QTTrack object; the value for this key is of type NSString.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read but not written when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTTrackDisplayNameAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSString
+-
+-/*!
+-	@constant		QTTrackEnabledAttribute
+-	@abstract		Whether a QTTrack object is enabled; the value for this key is of type NSNumber, interpreted as a BOOL.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read and written when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTTrackEnabledAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTTrackFormatSummaryAttribute
+-	@abstract		A localized, human-readable string that summarizes a QTTrack object�s format; for example, �16-bit Integer (Big Endian), Stereo (L R), 48.000 kHz�.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTTrackFormatSummaryAttribute					AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSString
+-
+-/*!
+-	@constant		QTTrackIsChapterTrackAttribute
+-	@abstract		Whether a QTTrack object is a chapter track for some other QTTrack object; the value for this key is of type NSNumber, interpreted as a BOOL.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTTrackIsChapterTrackAttribute				AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTTrackHasApertureModeDimensionsAttribute
+-	@abstract		Whether aperture mode dimensions have been set on a QTTrack object; the value for this key is of type NSNumber, interpreted as a BOOL.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTTrackHasApertureModeDimensionsAttribute		AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTTrackIDAttribute
+-	@abstract		The track ID of a QTTrack object; the value for this key is of type NSNumber, interpreted as a long.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTTrackIDAttribute							AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (long)
+-
+-/*!
+-	@constant		QTTrackLayerAttribute
+-	@abstract		The track layer of a QTTrack object; the value for this key is of type NSNumber, interpreted as a short.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read but not written when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTTrackLayerAttribute							AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (short)
+-
+-/*!
+-	@constant		QTTrackMediaTypeAttribute
+-	@abstract		The media type of a QTTrack object; the value for this key is of type NSString.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTTrackMediaTypeAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSString
+-
+-/*!
+-	@constant		QTTrackModificationTimeAttribute
+-	@abstract		The modification time of a QTTrack object; the value for this key is of type NSDate.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTTrackModificationTimeAttribute				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSDate
+-
+-/*!
+-	@constant		QTTrackRangeAttribute
+-	@abstract		The range of time occupied by a QTTrack object; the value for this key is of type NSValue, interpreted as a QTTimeRange.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read but not written when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTTrackRangeAttribute							AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSValue (QTTimeRange)
+-
+-/*!
+-	@constant		QTTrackTimeScaleAttribute
+-	@abstract		The time scale of a QTTrack object; the value for this key is of type NSNumber, interpreted as a long.
+-	@discussion		This attribute can be read but not written.
+-					This attribute can be read but not written when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTTrackTimeScaleAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (long)
+-
+-/*!
+-	@constant		QTTrackUsageInMovieAttribute
+-	@abstract		Whether a QTTrack object contributes data to the movie; the value for this key is of type NSNumber, interpreted as a BOOL.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read but not written when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTTrackUsageInMovieAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTTrackUsageInPosterAttribute
+-	@abstract		Whether a QTTrack object contributes data to the movie poster; the value for this key is of type NSNumber, interpreted as a BOOL.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read but not written when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTTrackUsageInPosterAttribute					AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTTrackUsageInPreviewAttribute
+-	@abstract		Whether a QTTrack object contributes data to the movie preview; the value for this key is of type NSNumber, interpreted as a BOOL.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read but not written when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTTrackUsageInPreviewAttribute				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (BOOL)
+-
+-/*!
+-	@constant		QTTrackVolumeAttribute
+-	@abstract		The volume of a QTTrack object; the value for this key is of type NSNumber, interpreted as a float.
+-	@discussion		This attribute can be read and written.
+-					This attribute can be read and written when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+- */
+-QTKIT_EXTERN NSString * const QTTrackVolumeAttribute						AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;      // NSNumber (float)
+-
+-@interface QTTrack : NSObject
+-{
+-@private
+-	long				_flags;
+-	QTTrackHelper		*_trackHelper;
+-	QTMovie				*_movie;
+-	QTInvalidationSet	*_children;
+-	int32_t				_cachedTrackID;
+-	long				_reserved1;
+-	long				_reserved2;
+-	long				_reserved3;
+-	long				_reserved4;
+-}
+-
+-#if !__LP64__
+-	// class/init methods
+-/*!
+-	@method			trackWithQuickTimeTrack:error:
+-	@abstract		Returns a QTTrack object associated with a QuickTime Track.
+-	@discussion		This method cannot be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					In addition, this method cannot be called by 64-bit applications.
+-	@param			track
+-					A QuickTime Track with which to initialize the QTTrack object.
+-	@param			errorPtr
+-					A pointer to an NSError object; if a QTTrack object cannot be created, an NSError object is returned in this location.
+-*/
+-+ (id)trackWithQuickTimeTrack:(Track)track error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			initWithQuickTimeTrack:error:
+-	@abstract		Returns a QTTrack object associated with a QuickTime Track.
+-	@discussion		This method cannot be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					In addition, this method cannot be called by 64-bit applications.
+-	@param			track
+-					A QuickTime Track with which to initialize the QTTrack object.
+-	@param			errorPtr
+-					A pointer to an NSError object; if a QTTrack object cannot be created, an NSError object is returned in this location.
+-*/
+-- (id)initWithQuickTimeTrack:(Track)track error:(NSError **)errorPtr AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif
+-
+-	// parent/child
+-/*!
+-	@method			movie
+-	@abstract		Returns the QTMovie object associated with a QTTrack object.
+-	@discussion		This method can be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (QTMovie *)movie AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			media
+-	@abstract		Returns the QTMedia object associated with a QTTrack object.
+-	@discussion		This method can be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (QTMedia *)media AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-	// attributes
+-/*!
+-	@method			isEnabled
+-	@abstract		Returns YES if the QTTrack object is currently enabled, NO otherwise.
+-	@discussion		This method can be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (BOOL)isEnabled AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			setEnabled:
+-	@abstract		Sets the enabled state of a QTTrack object.
+-	@discussion		This method can be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			enabled
+-					The desired track enabled state.
+-*/
+-- (void)setEnabled:(BOOL)enabled AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			volume
+-	@abstract		Returns the current volume of a QTTrack object.
+-	@discussion		This method can be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (float)volume AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			setVolume:
+-	@abstract		Sets the volume of a QTTrack object.
+-	@discussion		This method can be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			volume
+-					The desired track volume.
+-*/
+-- (void)setVolume:(float)volume AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			trackAttributes
+-	@abstract		Returns a dictionary containing the current values of all public attributes of a QTTrack object.
+-	@discussion		This method can be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (NSDictionary *)trackAttributes AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			setTrackAttributes:
+-	@abstract		Sets the attributes of a QTTrack object using the key-value pairs in a specified dictionary.
+-	@discussion		This method can be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					However, certain attributes may not be writable when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			attributes
+-					An NSDictionary object that specifies the attributes to set and their desired values.
+-*/
+-- (void)setTrackAttributes:(NSDictionary *)attributes AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			attributeForKey:
+-	@abstract		Returns the current value of an attribute of a QTTrack object.
+-	@discussion		This method can be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			attributeKey
+-					An NSString object that specifies the attribute to be read; pass strings like QTTrackTimeScaleAttribute or QTTrackVolumeAttribute.
+-	@result			An NSObject that is the value of the specified attribute key.
+-*/
+-- (id)attributeForKey:(NSString *)attributeKey AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			setAttribute:forKey:
+-	@abstract		Sets an attribute of a QTTrack object to a specified value.
+-	@discussion		This method can be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					However, certain attributes may not be writable when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			value
+-					An object that specifies the value of the attribute to be written.
+-	@param			attributeKey
+-					An NSString object that specifies the attribute to be written; pass strings like QTTrackTimeScaleAttribute or QTTrackVolumeAttribute.
+-*/
+-- (void)setAttribute:(id)value forKey:(NSString *)attributeKey AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-#if !__LP64__
+-	// underlying QT object
+-/*!
+-	@method			quickTimeTrack
+-	@abstract		Returns the QuickTime Track associated with a QTTrack object.
+-	@discussion		This method cannot be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					In addition, this method cannot be called by 64-bit applications.
+-*/
+-- (Track)quickTimeTrack AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif
+-
+-	// track-level editing
+-/*!
+-	@method			insertSegmentOfTrack:timeRange:atTime:
+-	@abstract		Inserts into a QTTrack object the specified segment of another QTTrack object.
+-	@discussion		This method cannot be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					If the movie containing this track is not editable, an exception will be raised.
+-	@param			track
+-					The QTTrack object from which the segment to be inserted is copied.
+-	@param			range
+-					A QTTimeRange structure that indicates the segment in track to be copied.
+-	@param			time
+-					A QTTime structure that indicates the time in the target track at which the copied segment is to be inserted.
+-*/
+-- (void)insertSegmentOfTrack:(QTTrack *)track timeRange:(QTTimeRange)range atTime:(QTTime)time AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			insertSegmentOfTrack:fromRange:scaledToRange:
+-	@abstract		Inserts into a QTTrack object the specified segment of another QTTrack object, scaling that new segment to a specified start time and duration.
+-	@discussion		This method cannot be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					If the movie containing this track is not editable, an exception will be raised.
+-	@param			track
+-					The QTTrack object from which the segment to be inserted is copied.
+-	@param			srcRange
+-					A QTTimeRange structure that indicates the segment in track to be copied.
+-	@param			dstRange
+-					A QTTimeRange structure that indicates the range in the target track into which the copied segment is to be inserted.
+-*/
+-- (void)insertSegmentOfTrack:(QTTrack *)track fromRange:(QTTimeRange)srcRange scaledToRange:(QTTimeRange)dstRange AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			insertEmptySegmentAt:
+-	@abstract		Inserts an empty segment into a QTTrack object.
+-	@discussion		This method cannot be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					If the movie containing this track is not editable, an exception will be raised.
+-	@param			range
+-					A QTTimeRange structure that indicates the segment in the target track at which an empty segment is to be inserted.
+-*/
+-- (void)insertEmptySegmentAt:(QTTimeRange)range AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			deleteSegment:
+-	@abstract		Deletes a specified segment from a QTTrack object.
+-	@discussion		This method cannot be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					If the movie containing this track is not editable, an exception will be raised.
+-	@param			segment
+-					A QTTimeRange structure that indicates the segment in the target track that is to be deleted.
+-*/
+-- (void)deleteSegment:(QTTimeRange)segment AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			scaleSegment:newDuration:
+-	@abstract		Scales a segment of a QTTrack object to a new duration.
+-	@discussion		This method cannot be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-					If the movie containing this track is not editable, an exception will be raised.
+-	@param			segment
+-					A QTTimeRange structure that indicates the segment in the target track that is to be scaled.
+-	@param			newDuration
+-					A QTTime structure that indicates the desired duration of the segment that is to be scaled.
+-*/
+-- (void)scaleSegment:(QTTimeRange)segment newDuration:(QTTime)newDuration AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			addImage:forDuration:withAttributes:
+-	@abstract		Adds an image to a QTTrack object for the specified duration, using attributes specified in the attributes dictionary.
+-	@discussion		This method cannot be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			image
+-					An NSImage that is to be appended to the target track.
+-	@param			duration
+-					A QTTime structure that indicates the desired duration of the appended image in the track.
+-	@param			attributes
+-					An NSDictionary object that specifies attributes of the appended image.
+-					Keys in this dictionary can be QTAddImageCodecType to select a codec type and QTAddImageCodecQuality to select a quality.
+-					Qualities are expected to be specified as NSNumbers, using the codec values like codecNormalQuality.
+-					(See ImageCompression.h for the complete list.)
+-*/
+-- (void)addImage:(NSImage *)image forDuration:(QTTime)duration withAttributes:(NSDictionary *)attributes AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-@end
+-
+-@interface QTTrack (QTTrack_VisualSupport)
+-
+-#if QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2
+-/*!
+-	@method			apertureModeDimensionsForMode:
+-	@abstract		Returns an NSSize value that indicates the dimensions of a QTTrack object for the specified aperture mode.
+-	@discussion		This method cannot be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			mode
+-					An NSString object that indicates the aperture mode whose dimensions are to be returned; pass values like QTMovieApertureModeClean.
+-*/
+-- (NSSize)apertureModeDimensionsForMode:(NSString *)mode AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			setApertureModeDimensions:forMode:
+-	@abstract		Sets the aperture mode dimensions of a QTTrack object for the specified aperture mode.
+-	@discussion		This method cannot be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-	@param			dimensions
+-					An NSSize structure that indicates the desired dimensions for the specified aperture mode.
+-	@param			mode
+-					An NSString object that indicates the aperture mode whose dimensions are to be set; pass values like QTMovieApertureModeClean.
+-*/
+-- (void)setApertureModeDimensions:(NSSize)dimensions forMode:(NSString *)mode AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			generateApertureModeDimensions
+-	@abstract		Adds aperture mode dimensions information to a QTTrack object.
+-	@discussion		This method adds information to a QTTrack object needed to support aperture modes for movie created with
+-					applications and/or versions of QuickTime that did not support aperture mode dimensions.
+-					This method cannot be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (void)generateApertureModeDimensions AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-
+-/*!
+-	@method			removeApertureModeDimensions
+-	@abstract		Removes aperture mode dimensions information from a QTTrack object.
+-	@discussion		This method cannot be called when the movie containing this track has been initialized with QTMovieOpenForPlaybackAttribute set to YES.
+-*/
+-- (void)removeApertureModeDimensions AVAILABLE_QTKIT_VERSION_7_2_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-#endif /* QTKIT_VERSION_MAX_ALLOWED >= QTKIT_VERSION_7_2 */
+-
+-#if (defined(MAC_OS_X_VERSION_10_7) && (MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_7))
+-/*!
+-	@method			commonMetadata
+-	@abstract		Returns an NSArray containing QTMetadataItem objects for each common metadata key for which a value for the current locale is available.
+-	@result			An NSArray containing QTMetadataItem objects for each common metadata key for which a value for the current locale is available; may be nil if there is no metadata that's appropriately localized.
+-	@discussion		The returned metadata may be tagged with default locale information or with no locale information, if that's the best available choice.
+-*/
+-- (NSArray *)commonMetadata AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/*!
+-	@method			availableMetadataFormats
+-	@abstract		Returns an NSArray containing NSString objects representing the metadata formats available to the receiver.
+-	@result			An NSArray containing an NSString objects, each of which represents a metadata format that is available to the receiver.
+-*/
+-- (NSArray *)availableMetadataFormats AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-
+-/*!
+-	@method			metadataForFormat:
+-	@abstract		Returns an NSArray of QTMetadataItem objects having a specified format.
+-	@param			format
+-					The metadata format for which items are requested.
+-	@result			An NSArray containing all QTMetadataItem objects of the receiver that have the specified format; may be nil if there is no metadata of the specified format.
+-*/
+-- (NSArray *)metadataForFormat:(NSString *)format AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_9;
+-#endif
+-
+-@end
+diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTUtilities.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTUtilities.h
+--- /Applications/Xcode73.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTUtilities.h	2015-08-23 04:07:43.000000000 +0200
++++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/QTKit.framework/Headers/QTUtilities.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,22 +0,0 @@
+-/*
+-	File:		QTUtilities.h
+-
+-	Copyright:	(c)2004-2012 by Apple Inc., all rights reserved.
+-
+-*/
+-
+-/*
+-  QTKit has been deprecated in 10.9.
+-
+-  AVFoundation and AVKit are the frameworks recommended for all new development 
+-  involving time-based audiovisual media on OS X.  In order to transition your 
+-  project from QTKit to AVFoundation please refer to:
+-  "Technical Note TN2300 Transitioning QTKit code to AV Foundation".
+-*/
+-
+-#import <Foundation/Foundation.h>
+-#import <QTKit/QTKitDefines.h>
+-
+-	// helper functions
+-QTKIT_EXTERN NSString *QTStringForOSType (OSType type)				AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+-QTKIT_EXTERN OSType QTOSTypeForString (NSString *string)			AVAILABLE_QTKIT_VERSION_7_0_AND_LATER_BUT_DEPRECATED_IN_QTKIT_VERSION_7_7_3;
+
+```
