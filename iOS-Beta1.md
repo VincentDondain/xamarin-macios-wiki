@@ -36,7 +36,7 @@
 - [X] [EventKit.framework](https://github.com/xamarin/xamarin-macios/wiki/EventKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/273
 - [X] [ExternalAccessory.framework](https://github.com/xamarin/xamarin-macios/wiki/ExternalAccessory-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/274
 - [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-iOS-Beta1)
-- [ ] [GLKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GLKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/351
+- [X] [GLKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GLKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/351
 - [X] [GameController.framework](https://github.com/xamarin/xamarin-macios/wiki/GameController-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/276
 - [ ] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-iOS-Beta1) - Vincent
 - [ ] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-iOS-Beta1)
@@ -62,7 +62,7 @@
 - [ ] [Photos.framework](https://github.com/xamarin/xamarin-macios/wiki/Photos-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/348
 - [ ] [PhotosUI.framework](https://github.com/xamarin/xamarin-macios/wiki/PhotosUI-iOS-Beta1)
 - [X] [PushKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PushKit-iOS-Beta1) - Sebastien - mostly changes wrt PKPushType -> NS_STRING_ENUM. https://github.com/xamarin/xamarin-macios/pull/347
-- [ ] [QuartzCore.framework](https://github.com/xamarin/xamarin-macios/wiki/QuartzCore-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/350
+- [X] [QuartzCore.framework](https://github.com/xamarin/xamarin-macios/wiki/QuartzCore-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/350
 - [X] [QuickLook.framework](https://github.com/xamarin/xamarin-macios/wiki/QuickLook-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/272
 - [X] [ReplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/ReplayKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/270
 - [X] [SafariServices.framework](https://github.com/xamarin/xamarin-macios/wiki/SafariServices-iOS-Beta1) - Tim - https://github.com/xamarin/xamarin-macios/pull/217
