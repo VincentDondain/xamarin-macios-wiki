@@ -1,4 +1,15 @@
 ### To Bind
+###### New Frameworks
+- [ ] ExternalAccessory.framework *(Added)*
+- [ ] HomeKit.framework *(Added)*
+- [ ] MultipeerConnectivity.framework *(Added)*
+- [ ] Photos.framework *(Added)*
+- [ ] ReplayKit.framework *(Added)*
+- [ ] UserNotifications.framework *(Added)*
+- [ ] VideoSubscriberAccount.framework *(Added)*
+
+
+###### Existing Frameworks
 - [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-tvOS-Beta1)
 - [ ] [AVKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AVKit-tvOS-Beta1)
 - [ ] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-tvOS-Beta1)

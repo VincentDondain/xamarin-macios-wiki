@@ -1,4 +1,15 @@
 ### To Bind
+###### New Frameworks
+- [ ] AVFoundation.framework *(Added)*
+- [ ] CloudKit.framework *(Added)*
+- [ ] CoreAudio.framework *(Added)*
+- [ ] GameKit.framework *(Added)*
+- [ ] SceneKit.framework *(Added)*
+- [ ] SpriteKit.framework *(Added)*
+- [ ] UserNotifications.framework *(Added)*
+
+
+###### Existing Frameworks
 - [ ] [CFNetwork.framework](https://github.com/xamarin/xamarin-macios/wiki/CFNetwork-watchOS-Beta1)
 - [ ] [ClockKit.framework](https://github.com/xamarin/xamarin-macios/wiki/ClockKit-watchOS-Beta1)
 - [ ] [Contacts.framework](https://github.com/xamarin/xamarin-macios/wiki/Contacts-watchOS-Beta1)

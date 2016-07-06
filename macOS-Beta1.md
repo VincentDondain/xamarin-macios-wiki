@@ -1,4 +1,11 @@
 ### To Bind
+###### New Frameworks
+- [ ] CoreDisplay.framework *(Added)*
+- [ ] Intents.framework *(Added)*
+- [ ] SafariServices.framework *(Added)*
+
+
+###### Existing Frameworks
 - [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-macOS-Beta1)
 - [ ] [AVKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AVKit-macOS-Beta1)
 - [ ] [Accelerate.framework](https://github.com/xamarin/xamarin-macios/wiki/Accelerate-macOS-Beta1)
