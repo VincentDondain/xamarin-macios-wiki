@@ -176,17 +176,5 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  @end
  NS_ASSUME_NONNULL_END
 +
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ReplayKit.framework/Headers/RPScreenRecorder.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ReplayKit.framework/Headers/RPScreenRecorder.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ReplayKit.framework/Headers/RPScreenRecorder.h	2016-05-23 08:15:43.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ReplayKit.framework/Headers/RPScreenRecorder.h	2016-06-27 08:18:10.000000000 +0200
-@@ -81,7 +81,7 @@
- /*! @abstract Called when recording has stopped for any reason.
-  @param screenRecorder The instance of the screen recorder.
-  @param error An NSError describing why recording has stopped in the RPRecordingErrorDomain.
-- @param previewController If a partial movie is available before it was stopped, an instance of RPPreviewViewController will be returned.
-+ @param previewViewController If a partial movie is available before it was stopped, an instance of RPPreviewViewController will be returned.
-  */
- - (void)screenRecorder:(RPScreenRecorder *)screenRecorder didStopRecordingWithError:(NSError *)error previewViewController:(nullable RPPreviewViewController *)previewViewController;
- 
 
 ```

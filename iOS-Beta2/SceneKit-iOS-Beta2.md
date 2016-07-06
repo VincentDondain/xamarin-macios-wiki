@@ -2910,17 +2910,4 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  
  @end
  
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SceneKit.framework/Headers/scn_metal /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SceneKit.framework/Headers/scn_metal
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SceneKit.framework/Headers/scn_metal	2016-05-31 04:56:13.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SceneKit.framework/Headers/scn_metal	2016-06-26 09:42:49.000000000 +0200
-@@ -34,7 +34,7 @@
-     float       sinTime;
-     float       cosTime;
-     float       random01;
--    // new in OSX 10.12 / iOS 10.0
-+    // new in macOS 10.12 and iOS 10
-     float       environmentIntensity;
-     float4x4    inverseProjectionTransform;
-     float4x4    inverseViewProjectionTransform;
-
 ```

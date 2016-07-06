@@ -40,17 +40,5 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  
  @end
  
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UNUserNotificationCenter.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UNUserNotificationCenter.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UNUserNotificationCenter.h	2016-05-23 06:51:14.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UserNotifications.framework/Headers/UNUserNotificationCenter.h	2016-06-26 08:24:28.000000000 +0200
-@@ -59,7 +59,7 @@
- - (void)removePendingNotificationRequestsWithIdentifiers:(NSArray<NSString *> *)identifiers;
- - (void)removeAllPendingNotificationRequests;
- 
--// Notifications that have been delivered and remain in Notification Center
-+// Notifications that have been delivered and remain in Notification Center. Notifiations triggered by location cannot be retrieved, but can be removed.
- - (void)getDeliveredNotificationsWithCompletionHandler:(void(^)(NSArray<UNNotification *> *notifications))completionHandler __TVOS_PROHIBITED;
- - (void)removeDeliveredNotificationsWithIdentifiers:(NSArray<NSString *> *)identifiers __TVOS_PROHIBITED;
- - (void)removeAllDeliveredNotifications __TVOS_PROHIBITED;
 
 ```

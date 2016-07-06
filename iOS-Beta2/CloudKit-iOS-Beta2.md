@@ -47,57 +47,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  
  @end
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CKFetchDatabaseChangesOperation.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CKFetchDatabaseChangesOperation.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CKFetchDatabaseChangesOperation.h	2016-05-27 07:20:24.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CKFetchDatabaseChangesOperation.h	2016-06-27 07:34:22.000000000 +0200
-@@ -18,7 +18,8 @@
-  This per-database serverChangeToken is not to be confused with the per-recordZone serverChangeToken from
-  CKFetchRecordZoneChangesOperation.
-  If this is your first fetch or if you wish to re-fetch all zones, pass nil for the change token.
-- Change token are opaque tokens and clients should not infer any behavior based on their content. */
-+ Change token are opaque tokens and clients should not infer any behavior based on their content.
-+ CKFetchDatabaseChangesOperations are supported in a privateCloudDatabase and sharedCloudDatabase */
- - (instancetype)initWithPreviousServerChangeToken:(nullable CKServerChangeToken *)previousServerChangeToken;
- 
- @property (nonatomic, copy, nullable) CKServerChangeToken *previousServerChangeToken;
-@@ -41,8 +42,7 @@
-  If the server returns a CKErrorChangeTokenExpired error, the previousServerChangeToken value was too old and the client should toss its local cache and
-  re-fetch the changes in this record zone starting with a nil previousServerChangeToken.
-  If moreComing is true then the server wasn't able to return all the changes in this response.
-- Another CKFetchDatabaseChangesOperation operation should be run with the previousServerChangeToken token from this operation.
-- */
-+ Another CKFetchDatabaseChangesOperation operation should be run with the previousServerChangeToken token from this operation. */
- @property (nonatomic, copy, nullable) void (^fetchDatabaseChangesCompletionBlock)(CKServerChangeToken * _Nullable serverChangeToken, BOOL moreComing, NSError * _Nullable operationError);
- 
- @end
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CKFetchRecordZoneChangesOperation.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CKFetchRecordZoneChangesOperation.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CKFetchRecordZoneChangesOperation.h	2016-06-02 07:24:52.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CKFetchRecordZoneChangesOperation.h	2016-06-27 06:05:17.000000000 +0200
-@@ -30,7 +30,9 @@
- 
- /* When set to YES, this operation will send repeated requests to the server until all record changes have been fetched.
-  recordZoneChangeTokensUpdatedBlock will be invoked periodically, to give clients an updated change token so that already-fetched
-- record changes don't need to be re-fetched on a subsequent operation.
-+ record changes don't need to be re-fetched on a subsequent operation. recordZoneFetchCompletionBlock will only be called once and moreComing 
-+ will always be NO.
-+ 
-  When set to NO, it is the responsibility of the caller to issue subsequent fetch-changes operations when moreComing is YES
-  in a recordZoneFetchCompletionBlock invocation.
-  fetchAllChanges is YES by default */
-@@ -41,9 +43,11 @@
- 
- /* Clients are responsible for saving this per-recordZone serverChangeToken and passing it in to the next call to CKFetchRecordZoneChangesOperation.
-  Note that a fetch can fail partway. If that happens, an updated change token may be returned in this
-- block so that already fetched records don't need to be re-downloaded on a subsequent operation.
-+  block so that already fetched records don't need to be re-downloaded on a subsequent operation.
-+ recordZoneChangeTokensUpdatedBlock will not be called after the last batch of changes in a zone; the recordZoneFetchCompletionBlock block will be called instead.
-  The clientChangeTokenData from the most recent CKModifyRecordsOperation issued on this zone is also returned, or nil if none was provided.
-- If the server returns a CKErrorChangeTokenExpired error, the serverChangeToken used for this record zone when initting this operation was too old and the client should toss its local cache and re-fetch the changes in this record zone starting with a nil serverChangeToken. */
-+ If the server returns a CKErrorChangeTokenExpired error, the serverChangeToken used for this record zone when initting this operation was too old and the client should toss its local cache and re-fetch the changes in this record zone starting with a nil serverChangeToken. 
-+ recordZoneChangeTokensUpdatedBlock will not be called if fetchAllChanges is NO. */
- @property (nonatomic, copy, nullable) void (^recordZoneChangeTokensUpdatedBlock)(CKRecordZoneID *recordZoneID, CKServerChangeToken * _Nullable serverChangeToken, NSData * _Nullable clientChangeTokenData);
- @property (nonatomic, copy, nullable) void (^recordZoneFetchCompletionBlock)(CKRecordZoneID *recordZoneID, CKServerChangeToken * _Nullable serverChangeToken, NSData * _Nullable clientChangeTokenData, BOOL moreComing, NSError * _Nullable recordZoneError);
- 
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CKFetchSubscriptionsOperation.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CKFetchSubscriptionsOperation.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CKFetchSubscriptionsOperation.h	2016-05-27 07:20:24.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CloudKit.framework/Headers/CKFetchSubscriptionsOperation.h	2016-06-27 07:34:22.000000000 +0200

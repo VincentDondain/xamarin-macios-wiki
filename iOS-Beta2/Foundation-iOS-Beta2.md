@@ -1,66 +1,9 @@
 #Foundation.framework
 
 ``` diff
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h	2016-05-20 07:24:14.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	Foundation.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- 
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/FoundationErrors.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/FoundationErrors.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/FoundationErrors.h	2016-05-04 00:21:22.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/FoundationErrors.h	2016-06-26 17:36:07.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	FoundationErrors.h
--	Copyright (c) 2004-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2004-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSArray.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSArray.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSArray.h	2016-05-20 07:39:55.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSArray.h	2016-06-27 06:06:10.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSArray.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSAttributedString.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSAttributedString.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSAttributedString.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSAttributedString.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSAttributedString.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- 
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSAutoreleasePool.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSAutoreleasePool.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSAutoreleasePool.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSAutoreleasePool.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSAutoreleasePool.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSBundle.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSBundle.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSBundle.h	2016-05-20 06:25:32.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSBundle.h	2016-06-27 06:06:56.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSBundle.h
--	Copyright (c) 1994-2015, Apple Inc.  All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc.  All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 @@ -29,7 +29,10 @@
  }
  
@@ -111,46 +54,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 +#endif
 +
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSByteCountFormatter.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSByteCountFormatter.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSByteCountFormatter.h	2016-05-04 00:21:21.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSByteCountFormatter.h	2016-06-27 07:19:45.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSByteCountFormatter.h
--	Copyright (c) 2012-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2012-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSFormatter.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSByteOrder.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSByteOrder.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSByteOrder.h	2016-05-20 07:24:14.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSByteOrder.h	2016-06-27 06:00:18.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSByteOrder.h
--	Copyright (c) 1995-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1995-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObjCRuntime.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSCache.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSCache.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSCache.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSCache.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*      NSCache.h
--        Copyright (c) 2008-2015, Apple Inc. All rights reserved.
-+        Copyright (c) 2008-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSCalendar.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSCalendar.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSCalendar.h	2016-05-20 07:35:40.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSCalendar.h	2016-06-27 06:02:14.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSCalendar.h
--	Copyright (c) 2004-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2004-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 @@ -98,8 +98,10 @@
  @interface NSCalendar : NSObject <NSCopying, NSSecureCoding>
  
@@ -164,15 +70,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  
  /*
  	This method returns a new autoreleased calendar object of the given type, specified by a calendar identifier constant.
-@@ -375,7 +377,7 @@
- // notification. If the computer/device is asleep when the day changed,
- // this will be posted on wakeup. You'll get just one of these if the
- // machine has been asleep for several days. The definition of "Day" is
--// relative to the current calendar ([NSCalendar currentCalendar]) of the
-+// relative to the current calendar (NSCalendar.currentCalendar) of the
- // process and its locale and time zone. There are no guarantees that this
- // notification is received by observers in a "timely" manner, same as
- // with distributed notifications.
 @@ -467,5 +469,14 @@
  
  
@@ -262,56 +159,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 +#endif
 +
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSCoder.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSCoder.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSCoder.h	2016-05-20 06:13:47.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSCoder.h	2016-06-27 07:19:44.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSCoder.h
--	Copyright (c) 1993-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1993-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSComparisonPredicate.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSComparisonPredicate.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSComparisonPredicate.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSComparisonPredicate.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSComparisonPredicate.h
--	Copyright (c) 2004-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2004-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSPredicate.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSCompoundPredicate.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSCompoundPredicate.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSCompoundPredicate.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSCompoundPredicate.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSCompoundPredicate.h
--	Copyright (c) 2004-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2004-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSPredicate.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSData.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSData.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSData.h	2016-05-20 06:13:47.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSData.h	2016-06-26 17:36:07.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSData.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDate.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDate.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDate.h	2016-05-20 07:35:40.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDate.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSDate.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 @@ -42,7 +42,9 @@
  @property (readonly, copy) NSString *description;
  - (NSString *)descriptionWithLocale:(nullable id)locale;
@@ -349,26 +199,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 +#endif
 +
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateComponentsFormatter.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateComponentsFormatter.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateComponentsFormatter.h	2016-05-20 07:39:55.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateComponentsFormatter.h	2016-06-27 06:02:14.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSDateComponentsFormatter.h
--	Copyright (c) 2014-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2014-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSFormatter.h>
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateFormatter.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateFormatter.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateFormatter.h	2016-05-20 06:25:32.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateFormatter.h	2016-06-27 06:02:14.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSDateFormatter.h
--	Copyright (c) 1995-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1995-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSFormatter.h>
 @@ -60,9 +60,9 @@
  	// no options defined, pass 0 for now
  
@@ -395,46 +228,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 +#endif
 +
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateInterval.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateInterval.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateInterval.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateInterval.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSDateInterval.h
--	Copyright © 2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2015-2016, Apple Inc. All rights reserved.
-  */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateIntervalFormatter.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateIntervalFormatter.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateIntervalFormatter.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateIntervalFormatter.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSDateIntervalFormatter.h
--        Copyright (c) 2013-2015, Apple Inc. All rights reserved.
-+        Copyright (c) 2013-2016, Apple Inc. All rights reserved.
-  */
- 
- #import <Foundation/NSFormatter.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDecimal.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDecimal.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDecimal.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDecimal.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSDecimal.h
--	Copyright (c) 1995-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1995-2016, Apple Inc. All rights reserved.
- */
- 
- #include <limits.h>
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDecimalNumber.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDecimalNumber.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDecimalNumber.h	2016-05-20 07:35:40.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDecimalNumber.h	2016-06-27 07:19:44.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSDecimalNumber.h
--	Copyright (c) 1995-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1995-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSValue.h>
 @@ -61,11 +61,13 @@
  + (NSDecimalNumber *)decimalNumberWithString:(nullable NSString *)numberValue;
  + (NSDecimalNumber *)decimalNumberWithString:(nullable NSString *)numberValue locale:(nullable id)locale;
@@ -485,56 +281,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 +#endif
 +
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDictionary.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDictionary.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDictionary.h	2016-05-20 06:12:55.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDictionary.h	2016-06-27 07:19:45.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSDictionary.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSEnergyFormatter.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSEnergyFormatter.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSEnergyFormatter.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSEnergyFormatter.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*      NSEnergyFormatter.h
--        Copyright (c) 2014-2015, Apple Inc. All rights reserved.
-+        Copyright (c) 2014-2016, Apple Inc. All rights reserved.
-  */
- 
- #import <Foundation/Foundation.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSEnumerator.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSEnumerator.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSEnumerator.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSEnumerator.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSEnumerator.h
--	Copyright (c) 1995-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1995-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSError.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSError.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSError.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSError.h	2016-06-27 07:19:45.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSError.h
--	Copyright (c) 2003-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2003-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSException.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSException.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSException.h	2016-05-20 06:13:47.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSException.h	2016-06-27 06:06:10.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSException.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 @@ -293,7 +293,9 @@
      void *_reserved;
  }
@@ -557,57 +306,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 +#endif
 +
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSExpression.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSExpression.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSExpression.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSExpression.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSExpression.h
--	Copyright (c) 2004-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2004-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSExtensionContext.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSExtensionContext.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSExtensionContext.h	2016-05-14 16:21:17.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSExtensionContext.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSExtensionContext.h
--        Copyright (c) 2013-2014, Apple Inc. All rights reserved.
-+        Copyright (c) 2013-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/Foundation.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSExtensionItem.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSExtensionItem.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSExtensionItem.h	2016-05-14 16:21:17.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSExtensionItem.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSExtensionItem.h
--        Copyright (c) 2013-2014, Apple Inc. All rights reserved.
-+        Copyright (c) 2013-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/Foundation.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSExtensionRequestHandling.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSExtensionRequestHandling.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSExtensionRequestHandling.h	2016-05-14 16:21:17.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSExtensionRequestHandling.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSExtensionRequestHandling.h
-- Copyright (c) 2013-2014, Apple Inc. All rights reserved.
-+ Copyright (c) 2013-2016, Apple Inc. All rights reserved.
-  */
- 
- #import <Foundation/Foundation.h>
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileCoordinator.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileCoordinator.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileCoordinator.h	2016-05-20 06:13:48.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileCoordinator.h	2016-06-26 17:36:07.000000000 +0200
-@@ -1,6 +1,6 @@
- /*
- 	NSFileCoordinator.h
--	Copyright (c) 2010-2015, Apple Inc.
-+	Copyright (c) 2010-2016, Apple Inc.
- 	All rights reserved.
- */
- 
 @@ -103,7 +103,9 @@
  */
  + (void)addFilePresenter:(id<NSFilePresenter>)filePresenter;
@@ -633,13 +334,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileHandle.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileHandle.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileHandle.h	2016-05-20 07:35:40.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileHandle.h	2016-06-27 07:19:45.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSFileHandle.h
--	Copyright (c) 1995-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1995-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 @@ -37,10 +37,12 @@
  
  @interface NSFileHandle (NSFileHandleCreation)
@@ -674,13 +368,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileManager.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileManager.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileManager.h	2016-05-20 07:39:55.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileManager.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSFileManager.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 @@ -90,7 +90,9 @@
  
  /* Returns the default singleton instance.
@@ -751,71 +438,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 +#endif
 +
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFilePresenter.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFilePresenter.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFilePresenter.h	2016-05-20 06:25:33.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFilePresenter.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,6 +1,6 @@
- /*
- 	NSFilePresenter.h
--	Copyright (c) 2010-2015, Apple Inc.
-+	Copyright (c) 2010-2016, Apple Inc.
- 	All rights reserved.
- */
- 
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileVersion.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileVersion.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileVersion.h	2016-05-20 06:13:48.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileVersion.h	2016-06-26 17:36:07.000000000 +0200
-@@ -1,6 +1,6 @@
- /*
- 	NSFileVersion.h
--	Copyright (c) 2010-2015, Apple Inc.
-+	Copyright (c) 2010-2016, Apple Inc.
- 	All rights reserved.
- */
- 
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileWrapper.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileWrapper.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileWrapper.h	2016-05-04 00:21:23.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileWrapper.h	2016-06-27 06:06:10.000000000 +0200
-@@ -1,6 +1,6 @@
- /*
- 	NSFileWrapper.h
--	Copyright (c) 1995-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1995-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFormatter.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFormatter.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFormatter.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFormatter.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSFormatter.h
--	Copyright (c) 1995-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1995-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSHTTPCookie.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSHTTPCookie.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSHTTPCookie.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSHTTPCookie.h	2016-06-27 07:19:45.000000000 +0200
-@@ -1,6 +1,6 @@
- /*	
-     NSHTTPCookie.h
--    Copyright (c) 2003-2015, Apple Inc. All rights reserved.    
-+    Copyright (c) 2003-2016, Apple Inc. All rights reserved.    
-     
-     Public header file.
- */
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSHTTPCookieStorage.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSHTTPCookieStorage.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSHTTPCookieStorage.h	2016-05-20 07:35:40.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSHTTPCookieStorage.h	2016-06-27 06:06:10.000000000 +0200
-@@ -1,6 +1,6 @@
- /*	
-     NSHTTPCookieStorage.h
--    Copyright (c) 2003-2015, Apple Inc. All rights reserved.    
-+    Copyright (c) 2003-2016, Apple Inc. All rights reserved.    
-     
-     Public header file.
- */
 @@ -50,13 +50,15 @@
  }
  
@@ -848,90 +473,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  /*!
      @const NSHTTPCookieManagerAcceptPolicyChangedNotification
      @discussion Name of notification that should be posted to the
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSHashTable.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSHashTable.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSHashTable.h	2016-05-20 06:24:14.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSHashTable.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSHashTable.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSPointerFunctions.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSISO8601DateFormatter.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSISO8601DateFormatter.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSISO8601DateFormatter.h	2016-05-20 07:24:14.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSISO8601DateFormatter.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,7 +1,6 @@
- /*
-     NSISO8601DateFormatter.h
--    Copyright © 2015
--    All rights reserved.
-+    Copyright (c) 2015-2016, Apple Inc. All rights reserved.
-  */
- 
- #include <CoreFoundation/CFDateFormatter.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSIndexPath.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSIndexPath.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSIndexPath.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSIndexPath.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*  NSIndexPath.h
--    Copyright (c) 2003-2015, Apple Inc. All rights reserved.
-+    Copyright (c) 2003-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSIndexSet.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSIndexSet.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSIndexSet.h	2016-05-20 06:12:55.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSIndexSet.h	2016-06-27 06:00:18.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSIndexSet.h
--	Copyright (c) 2002-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2002-2016, Apple Inc. All rights reserved.
- */
- 
- /* Class for managing set of indexes. The set of valid indexes are 0 .. NSNotFound - 1; trying to use indexes outside this range is an error.  NSIndexSet uses NSNotFound as a return value in cases where the queried index doesn't exist in the set; for instance, when you ask firstIndex and there are no indexes; or when you ask for indexGreaterThanIndex: on the last index, and so on.
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSInvocation.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSInvocation.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSInvocation.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSInvocation.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSInvocation.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSItemProvider.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSItemProvider.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSItemProvider.h	2016-05-14 15:05:41.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSItemProvider.h	2016-06-27 06:02:14.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSItemProvider.h
--        Copyright (c) 2013-2014, Apple Inc. All rights reserved.
-+        Copyright (c) 2013-2016, Apple Inc. All rights reserved.
- */
- 
- 
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSJSONSerialization.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSJSONSerialization.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSJSONSerialization.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSJSONSerialization.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,6 +1,6 @@
- /*	
-     NSJSONSerialization.h
--    Copyright (c) 2009-2015, Apple Inc. All rights reserved.
-+    Copyright (c) 2009-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSKeyValueCoding.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSKeyValueCoding.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSKeyValueCoding.h	2016-05-20 07:39:55.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSKeyValueCoding.h	2016-06-27 07:19:45.000000000 +0200
-@@ -1,6 +1,6 @@
- /*
- 	NSKeyValueCoding.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSArray.h>
 @@ -39,9 +39,13 @@
  
  @interface NSObject(NSKeyValueCoding)
@@ -947,102 +491,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  
  /* Given a key that identifies an attribute or to-one relationship, return the attribute value or the related object. Given a key that identifies a to-many relationship, return an immutable array or an immutable set that contains all of the related objects.
      
-@@ -50,7 +54,7 @@
-     2 (introduced in Mac OS 10.7). Otherwise (no simple accessor method is found), searches the class of the receiver for methods whose names match the patterns -countOf<Key> and -indexIn<Key>OfObject: and -objectIn<Key>AtIndex: (corresponding to the primitive methods defined by the NSOrderedSet class) and also -<key>AtIndexes: (corresponding to -[NSOrderedSet objectsAtIndexes:]). If a count method and an indexOf method and at least one of the other two possible methods are found, a collection proxy object that responds to all NSOrderedSet methods is returned. Each NSOrderedSet message sent to the collection proxy object will result in some combination of -countOf<Key>, -indexIn<Key>OfObject:, -objectIn<Key>AtIndex:, and -<key>AtIndexes: messages being sent to the original receiver of -valueForKey:. If the class of the receiver also implements an optional method whose name matches the pattern -get<Key>:range: that method will be used when appropriate for best performance.
-     3. Otherwise (no simple accessor method or set of ordered set access methods is found), searches the class of the receiver for methods whose names match the patterns -countOf<Key> and -objectIn<Key>AtIndex: (corresponding to the primitive methods defined by the NSArray class) and (introduced in Mac OS 10.4) also -<key>AtIndexes: (corresponding to -[NSArray objectsAtIndexes:]). If a count method and at least one of the other two possible methods are found, a collection proxy object that responds to all NSArray methods is returned. Each NSArray message sent to the collection proxy object will result in some combination of -countOf<Key>, -objectIn<Key>AtIndex:, and -<key>AtIndexes: messages being sent to the original receiver of -valueForKey:. If the class of the receiver also implements an optional method whose name matches the pattern -get<Key>:range: that method will be used when appropriate for best performance.
-     4 (introduced in Mac OS 10.4). Otherwise (no simple accessor method or set of ordered set or array access methods is found), searches the class of the receiver for a threesome of methods whose names match the patterns -countOf<Key>, -enumeratorOf<Key>, and -memberOf<Key>: (corresponding to the primitive methods defined by the NSSet class). If all three such methods are found a collection proxy object that responds to all NSSet methods is returned. Each NSSet message sent to the collection proxy object will result in some combination of -countOf<Key>, -enumeratorOf<Key>, and -memberOf<Key>: messages being sent to the original receiver of -valueForKey:.
--    5. Otherwise (no simple accessor method or set of collection access methods is found), if the receiver's class' +accessInstanceVariablesDirectly method returns YES, searches the class of the receiver for an instance variable whose name matches the pattern _<key>, _is<Key>, <key>, or is<Key>, in that order. If such an instance variable is found, the value of the instance variable in the receiver is returned, with the same sort of conversion to NSNumber or NSValue as in step 1.
-+    5. Otherwise (no simple accessor method or set of collection access methods is found), if the receiver's class' +accessInstanceVariablesDirectly property returns YES, searches the class of the receiver for an instance variable whose name matches the pattern _<key>, _is<Key>, <key>, or is<Key>, in that order. If such an instance variable is found, the value of the instance variable in the receiver is returned, with the same sort of conversion to NSNumber or NSValue as in step 1.
-     6. Otherwise (no simple accessor method, set of collection access methods, or instance variable is found), invokes -valueForUndefinedKey: and returns the result. The default implementation of -valueForUndefinedKey: raises an NSUndefinedKeyException, but you can override it in your application.
- 
- Compatibility notes:
-@@ -64,7 +68,7 @@
- 
- The default implementation of this method does the following:
-     1. Searches the class of the receiver for an accessor method whose name matches the pattern -set<Key>:. If such a method is found the type of its parameter is checked. If the parameter type is not an object pointer type but the value is nil -setNilValueForKey: is invoked. The default implementation of -setNilValueForKey: raises an NSInvalidArgumentException, but you can override it in your application. Otherwise, if the type of the method's parameter is an object pointer type the method is simply invoked with the value as the argument. If the type of the method's parameter is some other type the inverse of the NSNumber/NSValue conversion done by -valueForKey: is performed before the method is invoked.
--    2. Otherwise (no accessor method is found), if the receiver's class' +accessInstanceVariablesDirectly method returns YES, searches the class of the receiver for an instance variable whose name matches the pattern _<key>, _is<Key>, <key>, or is<Key>, in that order. If such an instance variable is found and its type is an object pointer type the value is retained and the result is set in the instance variable, after the instance variable's old value is first released. If the instance variable's type is some other type its value is set after the same sort of conversion from NSNumber or NSValue as in step 1.
-+    2. Otherwise (no accessor method is found), if the receiver's class' +accessInstanceVariablesDirectly property returns YES, searches the class of the receiver for an instance variable whose name matches the pattern _<key>, _is<Key>, <key>, or is<Key>, in that order. If such an instance variable is found and its type is an object pointer type the value is retained and the result is set in the instance variable, after the instance variable's old value is first released. If the instance variable's type is some other type its value is set after the same sort of conversion from NSNumber or NSValue as in step 1.
-     3. Otherwise (no accessor method or instance variable is found), invokes -setValue:forUndefinedKey:. The default implementation of -setValue:forUndefinedKey: raises an NSUndefinedKeyException, but you can override it in your application.
- 
- Compatibility notes:
-@@ -86,7 +90,7 @@
- The default implementation of this method recognizes the same simple accessor methods and array accessor methods as -valueForKey:'s, and follows the same direct instance variable access policies, but always returns a mutable collection proxy object instead of the immutable collection that -valueForKey: would return. It also:
-     1. Searches the class of the receiver for methods whose names match the patterns -insertObject:in<Key>AtIndex: and -removeObjectFrom<Key>AtIndex: (corresponding to the two most primitive methods defined by the NSMutableArray class), and (introduced in Mac OS 10.4) also -insert<Key>:atIndexes: and -remove<Key>AtIndexes: (corresponding to -[NSMutableArray insertObjects:atIndexes:] and -[NSMutableArray removeObjectsAtIndexes:). If at least one insertion method and at least one removal method are found each NSMutableArray message sent to the collection proxy object will result in some combination of -insertObject:in<Key>AtIndex:, -removeObjectFrom<Key>AtIndex:, -insert<Key>:atIndexes:, and -remove<Key>AtIndexes: messages being sent to the original receiver of -mutableArrayValueForKey:. If the class of the receiver also implements an optional method whose name matches the pattern -replaceObjectIn<Key>AtIndex:withObject: or (introduced in Mac OS 10.4) -replace<Key>AtIndexes:with<Key>: that method will be used when appropriate for best performance.
-     2. Otherwise (no set of array mutation methods is found), searches the class of the receiver for an accessor method whose name matches the pattern -set<Key>:. If such a method is found each NSMutableArray message sent to the collection proxy object will result in a -set<Key>: message being sent to the original receiver of -mutableArrayValueForKey:.
--    3. Otherwise (no set of array mutation methods or simple accessor method is found), if the receiver's class' +accessInstanceVariablesDirectly method returns YES, searches the class of the receiver for an instance variable whose name matches the pattern _<key> or <key>, in that order. If such an instance variable is found, each NSMutableArray message sent to the collection proxy object will be forwarded to the instance variable's value, which therefore must typically be an instance of NSMutableArray or a subclass of NSMutableArray.
-+    3. Otherwise (no set of array mutation methods or simple accessor method is found), if the receiver's class' +accessInstanceVariablesDirectly property returns YES, searches the class of the receiver for an instance variable whose name matches the pattern _<key> or <key>, in that order. If such an instance variable is found, each NSMutableArray message sent to the collection proxy object will be forwarded to the instance variable's value, which therefore must typically be an instance of NSMutableArray or a subclass of NSMutableArray.
-     4. Otherwise (no set of array mutation methods, simple accessor method, or instance variable is found), returns a mutable collection proxy object anyway. Each NSMutableArray message sent to the collection proxy object will result in a -setValue:forUndefinedKey: message being sent to the original receiver of -mutableArrayValueForKey:. The default implementation of -setValue:forUndefinedKey: raises an NSUndefinedKeyException, but you can override it in your application.
- 
- Performance note: the repetitive -set<Key>: messages implied by step 2's description are a potential performance problem. For better performance implement insertion and removal methods that fulfill the requirements for step 1 in your KVC-compliant class. For best performance implement a replacement method too.
-@@ -98,7 +102,7 @@
- The default implementation of this method recognizes the same simple accessor methods and ordered set accessor methods as -valueForKey:'s, and follows the same direct instance variable access policies, but always returns a mutable collection proxy object instead of the immutable collection that -valueForKey: would return. It also:
-     1. Searches the class of the receiver for methods whose names match the patterns -insertObject:in<Key>AtIndex: and -removeObjectFrom<Key>AtIndex: (corresponding to the two most primitive methods defined by the NSMutableOrderedSet class), and also -insert<Key>:atIndexes: and -remove<Key>AtIndexes: (corresponding to -[NSMutableOrderedSet insertObjects:atIndexes:] and -[NSMutableOrderedSet removeObjectsAtIndexes:). If at least one insertion method and at least one removal method are found each NSMutableOrderedSet message sent to the collection proxy object will result in some combination of -insertObject:in<Key>AtIndex:, -removeObjectFrom<Key>AtIndex:, -insert<Key>:atIndexes:, and -remove<Key>AtIndexes: messages being sent to the original receiver of -mutableOrderedSetValueForKey:. If the class of the receiver also implements an optional method whose name matches the pattern -replaceObjectIn<Key>AtIndex:withObject: or -replace<Key>AtIndexes:with<Key>: that method will be used when appropriate for best performance.
-     2. Otherwise (no set of ordered set mutation methods is found), searches the class of the receiver for an accessor method whose name matches the pattern -set<Key>:. If such a method is found each NSMutableOrderedSet message sent to the collection proxy object will result in a -set<Key>: message being sent to the original receiver of -mutableOrderedSetValueForKey:.
--    3. Otherwise (no set of ordered set mutation methods or simple accessor method is found), if the receiver's class' +accessInstanceVariablesDirectly method returns YES, searches the class of the receiver for an instance variable whose name matches the pattern _<key> or <key>, in that order. If such an instance variable is found, each NSMutableOrderedSet message sent to the collection proxy object will be forwarded to the instance variable's value, which therefore must typically be an instance of NSMutableOrderedSet or a subclass of NSMutableOrderedSet.
-+    3. Otherwise (no set of ordered set mutation methods or simple accessor method is found), if the receiver's class' +accessInstanceVariablesDirectly property returns YES, searches the class of the receiver for an instance variable whose name matches the pattern _<key> or <key>, in that order. If such an instance variable is found, each NSMutableOrderedSet message sent to the collection proxy object will be forwarded to the instance variable's value, which therefore must typically be an instance of NSMutableOrderedSet or a subclass of NSMutableOrderedSet.
-     4. Otherwise (no set of ordered set mutation methods, simple accessor method, or instance variable is found), returns a mutable collection proxy object anyway. Each NSMutableOrderedSet message sent to the collection proxy object will result in a -setValue:forUndefinedKey: message being sent to the original receiver of -mutableOrderedSetValueForKey:. The default implementation of -setValue:forUndefinedKey: raises an NSUndefinedKeyException, but you can override it in your application.
- 
- Performance note: the repetitive -set<Key>: messages implied by step 2's description are a potential performance problem. For better performance implement insertion and removal methods that fulfill the requirements for step 1 in your KVC-compliant class. For best performance implement a replacement method too.
-@@ -110,7 +114,7 @@
- The default implementation of this method recognizes the same simple accessor methods and set accessor methods as -valueForKey:'s, and follows the same direct instance variable access policies, but always returns a mutable collection proxy object instead of the immutable collection that -valueForKey: would return. It also:
-     1. Searches the class of the receiver for methods whose names match the patterns -add<Key>Object: and -remove<Key>Object: (corresponding to the two primitive methods defined by the NSMutableSet class) and also -add<Key>: and -remove<Key>: (corresponding to -[NSMutableSet unionSet:] and -[NSMutableSet minusSet:]). If at least one addition method and at least one removal method are found each NSMutableSet message sent to the collection proxy object will result in some combination of -add<Key>Object:, -remove<Key>Object:, -add<Key>:, and -remove<Key>: messages being sent to the original receiver of -mutableSetValueForKey:. If the class of the receiver also implements an optional method whose name matches the pattern -intersect<Key>: or -set<Key>: that method will be used when appropriate for best performance.
-     2. Otherwise (no set of set mutation methods is found), searches the class of the receiver for an accessor method whose name matches the pattern -set<Key>:. If such a method is found each NSMutableSet message sent to the collection proxy object will result in a -set<Key>: message being sent to the original receiver of -mutableSetValueForKey:.
--    3. Otherwise (no set of set mutation methods or simple accessor method is found), if the receiver's class' +accessInstanceVariablesDirectly method returns YES, searches the class of the receiver for an instance variable whose name matches the pattern _<key> or <key>, in that order. If such an instance variable is found, each NSMutableSet message sent to the collection proxy object will be forwarded to the instance variable's value, which therefore must typically be an instance of NSMutableSet or a subclass of NSMutableSet.
-+    3. Otherwise (no set of set mutation methods or simple accessor method is found), if the receiver's class' +accessInstanceVariablesDirectly property returns YES, searches the class of the receiver for an instance variable whose name matches the pattern _<key> or <key>, in that order. If such an instance variable is found, each NSMutableSet message sent to the collection proxy object will be forwarded to the instance variable's value, which therefore must typically be an instance of NSMutableSet or a subclass of NSMutableSet.
-     4. Otherwise (no set of set mutation methods, simple accessor method, or instance variable is found), returns a mutable collection proxy object anyway. Each NSMutableSet message sent to the collection proxy object will result in a -setValue:forUndefinedKey: message being sent to the original receiver of -mutableSetValueForKey:. The default implementation of -setValue:forUndefinedKey: raises an NSUndefinedKeyException, but you can override it in your application.
- 
- Performance note: the repetitive -set<Key>: messages implied by step 2's description are a potential performance problem. For better performance implement methods that fulfill the requirements for step 1 in your KVC-compliant class.
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSKeyValueObserving.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSKeyValueObserving.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSKeyValueObserving.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSKeyValueObserving.h	2016-06-27 07:19:45.000000000 +0200
-@@ -1,6 +1,6 @@
- /*
- 	NSKeyValueObserving.h
--	Copyright (c) 2003-2015, Apple Inc.
-+	Copyright (c) 2003-2016, Apple Inc.
- 	All rights reserved.
- */
- 
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSKeyedArchiver.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSKeyedArchiver.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSKeyedArchiver.h	2016-05-20 07:39:55.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSKeyedArchiver.h	2016-06-27 06:02:14.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSKeyedArchiver.h
--	Copyright (c) 2001-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2001-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSCoder.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSLengthFormatter.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSLengthFormatter.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSLengthFormatter.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSLengthFormatter.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*      NSLengthFormatter.h
--        Copyright (c) 2014-2015, Apple Inc. All rights reserved.
-+        Copyright (c) 2014-2016, Apple Inc. All rights reserved.
-  */
- 
- #import <Foundation/Foundation.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSLinguisticTagger.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSLinguisticTagger.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSLinguisticTagger.h	2016-05-20 06:13:48.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSLinguisticTagger.h	2016-06-27 07:19:45.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSLinguisticTagger.h
--	Copyright (c) 2009-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2009-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSLocale.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSLocale.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSLocale.h	2016-05-20 07:35:40.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSLocale.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSLocale.h
--	Copyright (c) 2003-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2003-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 @@ -86,10 +86,12 @@
  
  @interface NSLocale (NSLocaleCreation)
@@ -1100,47 +551,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 +#endif
 +
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSLock.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSLock.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSLock.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSLock.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSLock.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMapTable.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMapTable.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMapTable.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMapTable.h	2016-06-27 06:06:56.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSMapTable.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSPointerFunctions.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMassFormatter.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMassFormatter.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMassFormatter.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMassFormatter.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*      NSMassFormatter.h
--        Copyright (c) 2014-2015, Apple Inc. All rights reserved.
-+        Copyright (c) 2014-2016, Apple Inc. All rights reserved.
-  */
- 
- #import <Foundation/NSFormatter.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMeasurement.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMeasurement.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMeasurement.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMeasurement.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,6 +1,6 @@
- /*
-     NSMeasurement.h
--    Copyright © 2015, Apple Inc.
-+    Copyright (c) 2015-2016, Apple Inc.
-     All rights reserved.
-  */
- 
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMeasurementFormatter.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMeasurementFormatter.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMeasurementFormatter.h	2016-05-20 07:35:40.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMeasurementFormatter.h	2016-06-27 07:21:40.000000000 +0200
@@ -1173,56 +583,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  }
  
  /*
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMetadata.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMetadata.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMetadata.h	2016-05-20 07:39:55.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMetadata.h	2016-06-27 06:02:14.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSMetadata.h
--	Copyright (c) 2004-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2004-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSMetadataAttributes.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMetadataAttributes.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMetadataAttributes.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMetadataAttributes.h	2016-05-20 06:25:33.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMetadataAttributes.h	2016-06-27 06:00:18.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSMetadataAttributes.h
--        Copyright (c) 2004-2015, Apple Inc. All rights reserved.
-+        Copyright (c) 2004-2016, Apple Inc. All rights reserved.
-  */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMethodSignature.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMethodSignature.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMethodSignature.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSMethodSignature.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSMethodSignature.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNetServices.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNetServices.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNetServices.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNetServices.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSNetServices.h
--        Copyright (c) 2002-2015, Apple Inc. All rights reserved.
-+        Copyright (c) 2002-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNotification.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNotification.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNotification.h	2016-05-20 07:35:40.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNotification.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSNotification.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 @@ -41,9 +41,11 @@
      void *_pad[11];
  }
@@ -1252,13 +615,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNotificationQueue.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNotificationQueue.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNotificationQueue.h	2016-05-20 07:35:40.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNotificationQueue.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSNotificationQueue.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 @@ -29,8 +29,9 @@
      id		_idleQueue;
      id		_idleObs;
@@ -1282,62 +638,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 +#endif
 +
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNull.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNull.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNull.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNull.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSNull.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNumberFormatter.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNumberFormatter.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNumberFormatter.h	2016-05-20 06:12:55.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSNumberFormatter.h	2016-06-27 06:02:14.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSNumberFormatter.h
--	Copyright (c) 1996-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1996-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSFormatter.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObjCRuntime.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObjCRuntime.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObjCRuntime.h	2016-05-20 06:24:14.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObjCRuntime.h	2016-06-27 07:19:45.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSObjCRuntime.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #include <TargetConditionals.h>
-@@ -287,7 +287,6 @@
- #define NS_OPTIONS(_type, _name) CF_OPTIONS(_type, _name)
- 
- 
--/* <rdar://problem/24976885> Remove Foundation redeclarations of CF_STRING_ENUM macros once FCF builds are in sync */
- #ifndef CF_STRING_ENUM
- #if __has_attribute(swift_wrapper)
- #define _CF_TYPED_ENUM __attribute__((swift_wrapper(enum)))
-@@ -354,7 +353,6 @@
- #define NS_SWIFT_NOTHROW
- #endif
- 
--
- NS_ASSUME_NONNULL_BEGIN
- 
- FOUNDATION_EXPORT double NSFoundationVersionNumber;
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObject.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObject.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObject.h	2016-05-20 06:25:32.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObject.h	2016-06-27 06:02:14.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSObject.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #include <TargetConditionals.h>
 @@ -38,9 +38,13 @@
  
  @protocol NSSecureCoding <NSCoding>
@@ -1385,79 +688,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  
  NS_ASSUME_NONNULL_END
  
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSOrderedSet.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSOrderedSet.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSOrderedSet.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSOrderedSet.h	2016-06-27 06:02:14.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSOrderedSet.h
--	Copyright (c) 2007-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2007-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSOrthography.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSOrthography.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSOrthography.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSOrthography.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSOrthography.h
--	Copyright (c) 2008-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2008-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPathUtilities.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPathUtilities.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPathUtilities.h	2016-05-20 07:24:14.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPathUtilities.h	2016-06-26 17:36:07.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSPathUtilities.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSString.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPersonNameComponents.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPersonNameComponents.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPersonNameComponents.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPersonNameComponents.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSPersonNameComponents.h
--	Copyright (c) 2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2015-2016, Apple Inc. All rights reserved.
-  */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPersonNameComponentsFormatter.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPersonNameComponentsFormatter.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPersonNameComponentsFormatter.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPersonNameComponentsFormatter.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSPersonNameComponentsFormatter.h
--	Copyright (c) 2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2015-2016, Apple Inc. All rights reserved.
-  */
- 
- #import <Foundation/NSPersonNameComponents.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPointerArray.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPointerArray.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPointerArray.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPointerArray.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,6 +1,6 @@
- /*
-  *  NSPointerArray.h
-- *  Copyright (c) 2005-2015, Apple Inc. All rights reserved.
-+ *  Copyright (c) 2005-2016, Apple Inc. All rights reserved.
-  *
-  */
-  
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPointerFunctions.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPointerFunctions.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPointerFunctions.h	2016-05-20 07:24:14.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPointerFunctions.h	2016-06-27 06:02:14.000000000 +0200
-@@ -1,7 +1,7 @@
- /*
-  *  NSPointerFunctions.h
-  *
-- *  Copyright (c) 2005-2015, Apple Inc. All rights reserved.
-+ *  Copyright (c) 2005-2016, Apple Inc. All rights reserved.
-  *
-  */
-  
 @@ -69,7 +69,6 @@
  @property (nullable) void (*relinquishFunction)(const void *item, NSUInteger (* _Nullable size)(const void *item));
  @property (nullable) void * _Nonnull (*acquireFunction)(const void *src, NSUInteger (* _Nullable size)(const void *item), BOOL shouldCopy);
@@ -1466,36 +699,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  // GC used to require that read and write barrier functions be used when pointers are from GC memory
  @property BOOL usesStrongWriteBarrier // pointers should (not) be assigned using the GC strong write barrier
      API_DEPRECATED("Garbage collection no longer supported", macosx(10.5, 10.12), ios(2.0, 10.0), watchos(2.0, 3.0), tvos(9.0, 10.0));
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPort.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPort.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPort.h	2016-05-20 07:39:55.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPort.h	2016-06-27 06:00:18.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSPort.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPredicate.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPredicate.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPredicate.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPredicate.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSPredicate.h
--	Copyright (c) 2004-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2004-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSProcessInfo.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSProcessInfo.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSProcessInfo.h	2016-05-20 07:24:14.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSProcessInfo.h	2016-06-27 06:06:10.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSProcessInfo.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
-  */
- 
- #import <Foundation/NSObject.h>
 @@ -35,7 +35,9 @@
      NSInteger		automaticTerminationOptOutCounter;
  }
@@ -1527,15 +733,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
   
   Since this API returns an object, it may be easier to pair begins and ends. If the object is deallocated before the -endActivity: call, the activity will be automatically ended.
   
-@@ -218,7 +220,7 @@
-  
-  You can use this opportunity to take corrective action in your application to help cool the system down. Work that could be done in the background or at opportunistic times should be using the Quality of Service levels in NSOperation or the NSBackgroundActivityScheduler API.
-  
-- This notification is posted on the global dispatch queue. Register for it using the default notification center. The object associated with the notification is +[NSProcessInfo processInfo].
-+ This notification is posted on the global dispatch queue. Register for it using the default notification center. The object associated with the notification is NSProcessInfo.processInfo.
- */
- FOUNDATION_EXTERN NSNotificationName const NSProcessInfoThermalStateDidChangeNotification NS_AVAILABLE(10_10_3, NA);
- 
 @@ -227,8 +229,14 @@
   
   When this notification is posted your application should attempt to reduce power usage by reducing potentially costly computation and other power using activities like network activity or keeping the screen on if the low power mode setting is enabled.
@@ -1678,56 +875,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 +#endif
  
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPropertyList.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPropertyList.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPropertyList.h	2016-05-20 06:12:55.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSPropertyList.h	2016-06-26 17:36:07.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSPropertyList.h
--	Copyright (c) 2002-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2002-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSProxy.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSProxy.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSProxy.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSProxy.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSProxy.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRange.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRange.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRange.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRange.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSRange.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSValue.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRegularExpression.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRegularExpression.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRegularExpression.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRegularExpression.h	2016-06-27 07:19:45.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSRegularExpression.h
--	Copyright (c) 2009-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2009-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRunLoop.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRunLoop.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRunLoop.h	2016-05-20 07:35:40.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRunLoop.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSRunLoop.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 @@ -23,8 +23,10 @@
      void	*_reserved[6];
  }
@@ -1770,48 +920,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 +#endif
 +
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSScanner.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSScanner.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSScanner.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSScanner.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSScanner.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSSet.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSSet.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSSet.h	2016-05-20 07:24:14.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSSet.h	2016-06-27 06:02:14.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSSet.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSSortDescriptor.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSSortDescriptor.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSSortDescriptor.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSSortDescriptor.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,7 +1,7 @@
- /*
- 	NSSortDescriptor.h
- 	Foundation
--	Copyright (c) 2002-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2002-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSArray.h>
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSStream.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSStream.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSStream.h	2016-05-20 06:24:14.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSStream.h	2016-06-27 06:06:10.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSStream.h
--        Copyright (c) 2003-2015, Apple Inc. All rights reserved
-+        Copyright (c) 2003-2016, Apple Inc. All rights reserved
- */
- 
- #import <Foundation/NSObject.h>
 @@ -41,8 +41,13 @@
  @property (nullable, assign) id <NSStreamDelegate> delegate;
      // By default, a stream is its own delegate, and subclassers of NSInputStream and NSOutputStream must maintain this contract. [someStream setDelegate:nil] must restore this behavior. As usual, delegates are not retained.
@@ -1836,13 +947,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h	2016-05-20 06:24:14.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h	2016-06-27 06:06:56.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSString.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- typedef unsigned short unichar;
 @@ -254,12 +254,16 @@
  - (NSUInteger)maximumLengthOfBytesUsingEncoding:(NSStringEncoding)enc;	// Result in O(1) time; the estimate may be way over what's needed. Returns 0 on error (overflow)
  - (NSUInteger)lengthOfBytesUsingEncoding:(NSStringEncoding)enc;		// Result in O(n) time; the result is exact. Returns 0 on error (cannot convert to specified encoding, or overflow)
@@ -1886,13 +990,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSTextCheckingResult.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSTextCheckingResult.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSTextCheckingResult.h	2016-05-20 06:13:48.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSTextCheckingResult.h	2016-06-27 06:06:56.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSTextCheckingResult.h
--	Copyright (c) 2008-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2008-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 @@ -48,7 +48,9 @@
  
  /* Optional properties, used with certain types of results. */
@@ -1931,13 +1028,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSThread.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSThread.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSThread.h	2016-05-20 07:35:40.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSThread.h	2016-06-26 17:36:07.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSThread.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 @@ -16,8 +16,11 @@
      uint8_t _bytes[44];
  }
@@ -1999,13 +1089,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSTimeZone.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSTimeZone.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSTimeZone.h	2016-05-20 07:35:40.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSTimeZone.h	2016-06-26 17:36:07.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSTimeZone.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 @@ -25,20 +25,24 @@
  
  @interface NSTimeZone (NSExtendedTimeZone)
@@ -2155,28 +1238,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 +#endif
 +
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLAuthenticationChallenge.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLAuthenticationChallenge.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLAuthenticationChallenge.h	2016-05-20 07:24:14.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLAuthenticationChallenge.h	2016-06-27 06:06:10.000000000 +0200
-@@ -1,6 +1,6 @@
- /*	
-     NSURLAuthenticationChallenge.h
--    Copyright (c) 2003-2015, Apple Inc. All rights reserved.    
-+    Copyright (c) 2003-2016, Apple Inc. All rights reserved.    
-     
-     Public header file.
- */
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLCache.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLCache.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLCache.h	2016-05-20 07:24:14.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLCache.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,6 +1,6 @@
- /*	
-     NSURLCache.h
--    Copyright (c) 2003-2015, Apple Inc. All rights reserved.    
-+    Copyright (c) 2003-2016, Apple Inc. All rights reserved.    
-     
-     Public header file.
- */
 @@ -125,8 +125,11 @@
  }
  
@@ -2234,39 +1298,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 +#endif
 +
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLConnection.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLConnection.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLConnection.h	2016-05-20 07:39:55.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLConnection.h	2016-06-27 06:06:10.000000000 +0200
-@@ -1,6 +1,6 @@
- /*    
-     NSURLConnection.h
--    Copyright (c) 2003-2015, Apple Inc. All rights reserved.    
-+    Copyright (c) 2003-2016, Apple Inc. All rights reserved.    
-     
-     Public header file.
- */
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLCredential.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLCredential.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLCredential.h	2016-05-20 06:13:48.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLCredential.h	2016-06-27 06:00:18.000000000 +0200
-@@ -1,6 +1,6 @@
- /*	
-     NSURLCredential.h
--    Copyright (c) 2003-2015, Apple Inc. All rights reserved.    
-+    Copyright (c) 2003-2016, Apple Inc. All rights reserved.    
-     
-     Public header file.
- */
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLCredentialStorage.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLCredentialStorage.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLCredentialStorage.h	2016-05-20 06:24:14.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLCredentialStorage.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,6 +1,6 @@
- /*	
-     NSURLCredentialStorage.h
--    Copyright (c) 2003-2015, Apple Inc. All rights reserved.    
-+    Copyright (c) 2003-2016, Apple Inc. All rights reserved.    
-     
-     Public header file.
- */
 @@ -30,11 +30,13 @@
  }
  
@@ -2295,50 +1329,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 +
  
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLError.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLError.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLError.h	2016-05-20 07:39:55.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLError.h	2016-06-27 06:00:18.000000000 +0200
-@@ -1,6 +1,6 @@
- /*	
-     NSURLError.h
--    Copyright (c) 2003-2015, Apple Inc. All rights reserved.
-+    Copyright (c) 2003-2016, Apple Inc. All rights reserved.
-     
-     Public header file.
- */
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLProtectionSpace.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLProtectionSpace.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLProtectionSpace.h	2016-05-20 07:24:14.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLProtectionSpace.h	2016-06-27 07:19:45.000000000 +0200
-@@ -1,6 +1,6 @@
- /*	
-     NSURLProtectionSpace.h
--    Copyright (c) 2003-2015, Apple Inc. All rights reserved.    
-+    Copyright (c) 2003-2016, Apple Inc. All rights reserved.    
-     
-     Public header file.
- */
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLProtocol.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLProtocol.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLProtocol.h	2016-05-20 06:24:14.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLProtocol.h	2016-06-27 06:06:10.000000000 +0200
-@@ -1,6 +1,6 @@
- /*	
-     NSURLProtocol.h
--    Copyright (c) 2003-2015, Apple Inc. All rights reserved.    
-+    Copyright (c) 2003-2016, Apple Inc. All rights reserved.    
-     
-     Public header file.
- */
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLRequest.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLRequest.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLRequest.h	2016-05-04 00:21:23.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLRequest.h	2016-06-26 17:36:07.000000000 +0200
-@@ -1,6 +1,6 @@
- /*	
-     NSURLRequest.h
--    Copyright (c) 2003-2015, Apple Inc. All rights reserved.    
-+    Copyright (c) 2003-2016, Apple Inc. All rights reserved.    
-     
-     Public header file.
- */
 @@ -130,6 +130,7 @@
  
   @constant NSURLNetworkServiceTypeVoice Specifies that the request is for voice data.
@@ -2377,27 +1370,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  /*!
      @method requestWithURL:cachePolicy:timeoutInterval:
      @abstract Allocates and initializes a NSURLRequest with the given
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLResponse.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLResponse.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLResponse.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLResponse.h	2016-06-27 07:19:45.000000000 +0200
-@@ -1,6 +1,6 @@
- /*	
-     NSURLResponse.h
--    Copyright (c) 2003-2015, Apple Inc. All rights reserved.    
-+    Copyright (c) 2003-2016, Apple Inc. All rights reserved.    
-     
-     Public header file.
- */
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLSession.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLSession.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLSession.h	2016-05-20 07:39:55.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURLSession.h	2016-06-26 17:36:07.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSURLSession.h
--	Copyright (c) 2013-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2013-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 @@ -125,7 +125,9 @@
   * The shared session uses the currently set global NSURLCache,
   * NSHTTPCookieStorage and NSURLCredentialStorage objects.
@@ -2439,36 +1414,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 +#endif
 +
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUUID.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUUID.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUUID.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUUID.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSUUID.h
--        Copyright (c) 2011-2015, Apple Inc. All rights reserved.
-+        Copyright (c) 2011-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUbiquitousKeyValueStore.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUbiquitousKeyValueStore.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUbiquitousKeyValueStore.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUbiquitousKeyValueStore.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSUbiquitousKeyValueStore.h
--	Copyright (c) 2011-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2011-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUndoManager.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUndoManager.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUndoManager.h	2016-05-20 06:12:55.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUndoManager.h	2016-06-27 07:19:45.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSUndoManager.h
--	Copyright (c) 1995-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1995-2016, Apple Inc. All rights reserved.
- */
- 
- 
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUnit.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUnit.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUnit.h	2016-05-20 06:12:55.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUnit.h	2016-06-27 06:00:18.000000000 +0200
@@ -2542,45 +1487,4 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 +#endif
 +
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSValue.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSValue.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSValue.h	2016-05-20 07:24:14.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSValue.h	2016-06-27 06:02:14.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSValue.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSValueTransformer.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSValueTransformer.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSValueTransformer.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSValueTransformer.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSValueTransformer.h
--        Copyright (c) 2002-2015, Apple Inc. All rights reserved.
-+        Copyright (c) 2002-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSXMLParser.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSXMLParser.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSXMLParser.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSXMLParser.h	2016-06-27 06:06:10.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSXMLParser.h
--        Copyright (c) 2003-2015, Apple Inc. All rights reserved.
-+        Copyright (c) 2003-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSZone.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSZone.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSZone.h	2016-05-20 07:35:40.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSZone.h	2016-06-27 07:21:40.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSZone.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObjCRuntime.h>
-
 ```

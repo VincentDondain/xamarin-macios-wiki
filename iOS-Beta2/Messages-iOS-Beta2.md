@@ -38,16 +38,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Messages.framework/Headers/MSMessage.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Messages.framework/Headers/MSMessage.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Messages.framework/Headers/MSMessage.h	2016-06-05 05:35:26.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Messages.framework/Headers/MSMessage.h	2016-06-28 08:51:47.000000000 +0200
-@@ -27,6 +27,9 @@
-  @abstract   Initializes a message with a session.
-  @see insertMessage:localizedChangeDescription:completionHandler:
-  @param      session  The session that new message will join.
-+ @discussion A message initialized with a session will be updated 
-+ and moved to the bottom of the conversation transcript when another message created
-+ with the same session is sent.
-  */
- -(instancetype)initWithSession:(MSSession *)session NS_DESIGNATED_INITIALIZER;
- 
 @@ -81,6 +84,14 @@
  @property (nonatomic, copy, nullable) NSString *accessibilityLabel;
  
@@ -92,17 +82,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 +    MSMessageErrorCodeStickerFileImproperFileFormat,
 +    MSMessageErrorCodeURLExceedsMaxSize,
 +} NS_ENUM_AVAILABLE_IOS(10_0);
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Messages.framework/Headers/MSSession.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Messages.framework/Headers/MSSession.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Messages.framework/Headers/MSSession.h	2016-06-20 22:53:55.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Messages.framework/Headers/MSSession.h	2016-06-28 08:51:47.000000000 +0200
-@@ -12,7 +12,6 @@
-  @abstract A MSSession establishes a relationship between a sequence of messages within a conversation.
-  @discussion Messages created with the same session are represented as a single
-  entry in the conversation transcript.
-- @see insertMessage:localizedChangeDescription:completionHandler:
-  */
- NS_CLASS_AVAILABLE_IOS(10_0)
- @interface MSSession : NSObject
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Messages.framework/Headers/MSStickerBrowserView.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Messages.framework/Headers/MSStickerBrowserView.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Messages.framework/Headers/MSStickerBrowserView.h	2016-06-05 05:35:26.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Messages.framework/Headers/MSStickerBrowserView.h	2016-06-28 08:51:47.000000000 +0200
@@ -129,40 +108,5 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
   @abstract Asks the Sticker Browser View to reload its data from its data source.
   */
  - (void)reloadData;
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Messages.framework/Headers/Messages.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Messages.framework/Headers/Messages.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Messages.framework/Headers/Messages.h	2016-06-05 05:35:26.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Messages.framework/Headers/Messages.h	2016-06-28 08:51:47.000000000 +0200
-@@ -5,6 +5,8 @@
- //  Copyright © 2016 Apple Inc. All rights reserved.
- //
- 
-+#import <Messages/MessagesDefines.h>
-+
- #import <UIKit/UIKit.h>
- 
- #import <Messages/MSMessagesAppViewController.h>
-@@ -22,3 +24,4 @@
- #import <Messages/MSStickerBrowserView.h>
- #import <Messages/MSStickerBrowserViewController.h>
- 
-+#import <Messages/MSMessageError.h>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Messages.framework/Headers/MessagesDefines.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Messages.framework/Headers/MessagesDefines.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Messages.framework/Headers/MessagesDefines.h	1970-01-01 01:00:00.000000000 +0100
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Messages.framework/Headers/MessagesDefines.h	2016-06-28 08:51:47.000000000 +0200
-@@ -0,0 +1,14 @@
-+//
-+//  MessagesDefines.h
-+//  Messages
-+//
-+//  Copyright © 2016 Apple Inc. All rights reserved.
-+//
-+
-+#ifdef __cplusplus
-+#define MESSAGES_EXTERN		extern "C" __attribute__((visibility ("default")))
-+#else
-+#define MESSAGES_EXTERN	        extern __attribute__((visibility ("default")))
-+#endif
-+
-+
 
 ```

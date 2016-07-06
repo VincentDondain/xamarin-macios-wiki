@@ -1,37 +1,6 @@
 #CoreImage.framework
 
 ``` diff
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CIImage.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CIImage.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CIImage.h	2016-05-21 08:27:44.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CIImage.h	2016-06-27 06:14:18.000000000 +0200
-@@ -272,11 +272,13 @@
- 
- /* Return a new image by color matching from the colorSpace to the context's working space.
-  * This method will return nil if the CGColorSpace is not kCGColorSpaceModelRGB. */
--- (nullable CIImage *)imageByColorMatchingColorSpaceToWorkingSpace:(CGColorSpaceRef)colorSpace NS_AVAILABLE(10_12, 10_0);
-+- (nullable CIImage *)imageByColorMatchingColorSpaceToWorkingSpace:(CGColorSpaceRef)colorSpace NS_AVAILABLE(10_12, 10_0)
-+  NS_SWIFT_NAME(matchedToWorkingSpace(from:));
- 
- /* Return a new image by color matching from the context's working space to the colorSpace.
-  * This method will return nil if the CGColorSpace is not kCGColorSpaceModelRGB. */
--- (nullable CIImage *)imageByColorMatchingWorkingSpaceToColorSpace:(CGColorSpaceRef)colorSpace NS_AVAILABLE(10_12, 10_0);
-+- (nullable CIImage *)imageByColorMatchingWorkingSpaceToColorSpace:(CGColorSpaceRef)colorSpace NS_AVAILABLE(10_12, 10_0)
-+  NS_SWIFT_NAME(matchedFromWorkingSpace(to:));
- 
- /* Return a new image by multiplying the receiver's RGB values by its alpha. */
- - (CIImage *)imageByPremultiplyingAlpha NS_AVAILABLE(10_12, 10_0);
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CIImageAccumulator.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CIImageAccumulator.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CIImageAccumulator.h	2016-05-21 08:27:44.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CIImageAccumulator.h	2016-06-27 07:41:34.000000000 +0200
-@@ -11,7 +11,7 @@
- NS_CLASS_AVAILABLE(10_4, 9_0)
- @interface CIImageAccumulator : NSObject
- {
--    __strong void *_state;
-+    void *_state;
- }
- 
- /* Create a new accumulator object. 
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CIImageProcessor.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CIImageProcessor.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CIImageProcessor.h	2016-05-21 08:19:52.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CIImageProcessor.h	2016-06-26 17:49:40.000000000 +0200

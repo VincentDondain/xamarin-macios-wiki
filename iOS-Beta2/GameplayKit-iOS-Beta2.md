@@ -47,60 +47,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
   * Takes the absoltue value of all noise positions.
   */
  - (void)applyAbsoluteValue;
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GKOctree.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GKOctree.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GKOctree.h	2016-05-25 04:45:23.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GKOctree.h	2016-06-26 09:33:12.000000000 +0200
-@@ -8,6 +8,8 @@
- #import <GameplayKit/GameplayKitBase.h>
- #import <GameplayKit/GKPrimitives.h>
- 
-+NS_ASSUME_NONNULL_BEGIN
-+
- /**
-  * The individual node(s) that make up a GKOctree.
-  * Used as a hint for faster removal via [GKOctree removeData:WithNode:]
-@@ -93,3 +95,5 @@
- -(BOOL)removeElement:(ElementType)element withNode:(GKOctreeNode*)node;
- 
- @end
-+
-+NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GKQuadtree.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GKQuadtree.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GKQuadtree.h	2016-05-25 04:45:23.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GKQuadtree.h	2016-06-26 09:33:12.000000000 +0200
-@@ -8,6 +8,8 @@
- #import <GameplayKit/GameplayKitBase.h>
- #import <GameplayKit/GKPrimitives.h>
- 
-+NS_ASSUME_NONNULL_BEGIN
-+
- /**
-  * The individual node(s) that make up a GKQuadtree.
-  * Used as a hint for faster removal via [GKQuadtree removeData:WithNode:]
-@@ -93,3 +95,5 @@
- -(BOOL)removeElement:(ElementType)data withNode:(GKQuadtreeNode*)node;
- 
- @end
-+
-+NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GKRTree.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GKRTree.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GKRTree.h	2016-05-25 04:45:23.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GKRTree.h	2016-06-26 09:33:12.000000000 +0200
-@@ -8,6 +8,8 @@
- #import <GameplayKit/GameplayKitBase.h>
- #import <GameplayKit/GKPrimitives.h>
- 
-+NS_ASSUME_NONNULL_BEGIN
-+
- /** Used to adjust the way in which RTree nodes are split when they grow too large.
-  
-  @enum GKRTreeSplitStrategyHalve Specifies that nodes should be split in half based on insert order.
-@@ -74,3 +76,5 @@
- -(NSArray<ElementType>*)elementsInBoundingRectMin:(vector_float2)rectMin rectMax:(vector_float2)rectMax;
- 
- @end
-+
-+NS_ASSUME_NONNULL_END
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GKScene.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GKScene.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GKScene.h	2016-05-25 04:45:23.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GKScene.h	2016-06-26 09:33:12.000000000 +0200
@@ -131,11 +77,4 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  
  @end
  
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GKVersion.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GKVersion.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GKVersion.h	2016-05-25 04:45:23.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameplayKit.framework/Headers/GKVersion.h	2016-06-26 09:33:12.000000000 +0200
-@@ -1 +1 @@
--#define GK_VERSION 60000000
-+#define GK_VERSION 63000000
-
 ```

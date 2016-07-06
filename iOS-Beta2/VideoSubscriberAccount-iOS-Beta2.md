@@ -4,23 +4,6 @@
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework/Headers/VSAccountManager.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework/Headers/VSAccountManager.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework/Headers/VSAccountManager.h	2016-05-28 06:25:59.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework/Headers/VSAccountManager.h	2016-06-28 06:19:03.000000000 +0200
-@@ -5,14 +5,14 @@
- //  Copyright © 2016 Apple Inc. All rights reserved.
- //
- 
-+#import <Availability.h>
- #import <Foundation/NSObject.h>
- #import <VideoSubscriberAccount/VideoSubscriberAccountDefines.h>
- 
- NS_ASSUME_NONNULL_BEGIN
- 
--@class NSDictionary<KeyType, ObjectType>;
-+@class NSDictionary<KeyType, ValueType>;
- @class NSError;
--@class NSURL;
- @class UIViewController;
- @class VSAccountManagerResult;
- @class VSAccountMetadata;
 @@ -21,13 +21,14 @@
  @protocol VSAccountManagerDelegate;
  
@@ -60,37 +43,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  @protocol VSAccountManagerDelegate <NSObject>
  
  @required
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework/Headers/VSAccountManagerResult.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework/Headers/VSAccountManagerResult.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework/Headers/VSAccountManagerResult.h	2016-05-28 06:28:11.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework/Headers/VSAccountManagerResult.h	2016-06-29 07:00:15.000000000 +0200
-@@ -5,6 +5,7 @@
- //  Copyright © 2016 Apple Inc. All rights reserved.
- //
- 
-+#import <Availability.h>
- #import <Foundation/NSObject.h>
- #import <VideoSubscriberAccount/VideoSubscriberAccountDefines.h>
- 
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework/Headers/VSAccountMetadata.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework/Headers/VSAccountMetadata.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework/Headers/VSAccountMetadata.h	2016-05-28 06:28:11.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework/Headers/VSAccountMetadata.h	2016-06-29 07:00:15.000000000 +0200
-@@ -5,11 +5,15 @@
- //  Copyright © 2016 Apple Inc. All rights reserved.
- //
- 
--#import <Foundation/Foundation.h>
-+#import <Availability.h>
-+#import <Foundation/NSObject.h>
- #import <VideoSubscriberAccount/VideoSubscriberAccountDefines.h>
- 
- NS_ASSUME_NONNULL_BEGIN
- 
-+@class NSDate;
-+@class NSString;
-+
- /// A collection of information about a subscriber's account.
- NS_CLASS_AVAILABLE_IOS(10_0) __TVOS_AVAILABLE(10.0) __WATCHOS_UNAVAILABLE
- @interface VSAccountMetadata : NSObject
 @@ -22,6 +26,10 @@
  /// The value might be nil if the user is not currently authenticated.
  @property (nonatomic, readonly, copy, nullable) NSDate *authenticationExpirationDate;
@@ -140,27 +95,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  /// Attributes to add to a SAML attributeQuery request and sent to the account provider.
  @property (nonatomic, copy) NSArray<NSString *> *attributeNames;
  
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework/Headers/VideoSubscriberAccountDefines.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework/Headers/VideoSubscriberAccountDefines.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework/Headers/VideoSubscriberAccountDefines.h	2016-05-28 06:28:11.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework/Headers/VideoSubscriberAccountDefines.h	2016-06-29 07:00:15.000000000 +0200
-@@ -8,15 +8,11 @@
- #import <Availability.h>
- #import <Foundation/NSObjCRuntime.h>
- 
--#ifndef VideoSubscriberAccountDefines_h
--#define VideoSubscriberAccountDefines_h
--
- #define VS_EXPORT __attribute__((visibility ("default")))
- 
- #ifdef __cplusplus
--#define VS_EXTERN		extern "C" VS_EXPORT
-+#define VS_EXTERN extern "C" VS_EXPORT
- #else
--#define VS_EXTERN	        extern VS_EXPORT
-+#define VS_EXTERN extern VS_EXPORT
- #endif
- 
--#endif /* VideoSubscriberAccountDefines_h */
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework/Headers/VideoSubscriberAccountErrors.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework/Headers/VideoSubscriberAccountErrors.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework/Headers/VideoSubscriberAccountErrors.h	2016-05-28 06:28:11.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/VideoSubscriberAccount.framework/Headers/VideoSubscriberAccountErrors.h	2016-06-29 07:00:15.000000000 +0200

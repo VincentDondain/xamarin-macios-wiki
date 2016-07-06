@@ -1,27 +1,6 @@
 #Metal.framework
 
 ``` diff
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLBlitCommandEncoder.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLBlitCommandEncoder.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLBlitCommandEncoder.h	2016-05-16 08:17:34.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLBlitCommandEncoder.h	2016-06-26 08:49:26.000000000 +0200
-@@ -110,7 +110,7 @@
-  @method updateFence:
-  @abstract Update the event to capture all GPU work so far enqueued by this encoder.
-  @discussion The event is updated at kernel submission to maintain global order and prevent deadlock.
-- Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of an encoder. It is therefore illegal to both update and wait on the same fence in the same encoder.
-+ Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
-  */
- - (void)updateFence:(id <MTLFence>)fence NS_AVAILABLE(NA, 10_0);
- 
-@@ -118,7 +118,7 @@
-  @method waitForFence:
-  @abstract Prevent further GPU work until the event is reached.
-  @discussion The event is evaluated at kernel submision to maintain global order and prevent deadlock.
-- Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of an encoder. It is therefore illegal to both update and wait on the same fence in the same encoder.
-+ Drivers may delay fence updates until the end of the encoder. Drivers may also wait on fences at the beginning of an encoder. It is therefore illegal to wait on a fence after it has been updated in the same encoder.
-  */
- - (void)waitForFence:(id <MTLFence>)fence NS_AVAILABLE(NA, 10_0);
- 
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLCommandBuffer.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLCommandBuffer.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLCommandBuffer.h	2016-05-18 02:19:27.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLCommandBuffer.h	2016-06-26 08:34:35.000000000 +0200
@@ -158,28 +137,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
   @property depth24Stencil8PixelFormatSupported
   @abstract If YES, device supports MTLPixelFormatDepth24Unorm_Stencil8.
   */
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLFunctionConstantValues.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLFunctionConstantValues.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLFunctionConstantValues.h	2016-05-16 08:17:34.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLFunctionConstantValues.h	2016-06-26 08:49:27.000000000 +0200
-@@ -21,7 +21,6 @@
- // using names
- - (void)setConstantValue:(const void *)value type:(MTLDataType)type withName:(NSString *)name;
- 
--
- // delete all the constants
- - (void)reset;
- 
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLHeap.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLHeap.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLHeap.h	2016-05-16 08:17:34.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLHeap.h	2016-06-26 08:49:27.000000000 +0200
-@@ -14,7 +14,6 @@
- 
- NS_ASSUME_NONNULL_BEGIN
- 
--
- /*!
-  @class MTLHeapDescriptor
-  */
 @@ -79,16 +78,17 @@
  @property (readonly) MTLCPUCacheMode cpuCacheMode;
  
@@ -204,12 +164,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  
  /*!
   @method maxAvailableSizeWithAlignment:
-@@ -122,5 +122,4 @@
- 
- @end
- 
--
- NS_ASSUME_NONNULL_END
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLLibrary.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLLibrary.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLLibrary.h	2016-05-16 08:17:34.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLLibrary.h	2016-06-26 07:26:24.000000000 +0200
@@ -357,34 +311,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  
  @end
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLResource.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLResource.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLResource.h	2016-05-16 08:17:34.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLResource.h	2016-06-26 08:49:27.000000000 +0200
-@@ -206,16 +206,20 @@
- /*!
-  @method makeAliasable
-  @abstract Allow future heap sub-allocations to alias against this resource's memory.
-- @discussion It is illegal to call this method on a non heap-based resource. The debug layer will raise an exception.
-- One a resource is made aliasable, the decision cannot be reverted.
-+ @discussion It is illegal to call this method on a non heap-based resource. 
-+ It is also illegal to call this method on texture views created from heap-based textures.
-+ The debug layer will raise an exception. Calling this method on textures sub-allocated
-+ from Buffers backed by heap memory has no effect.
-+ Once a resource is made aliasable, the decision cannot be reverted.
-  */
- -(void) makeAliasable NS_AVAILABLE(NA, 10_0);
- 
- /*!
-  @method isAliasable
-  @abstract Returns whether future heap sub-allocations may alias against this resource's memory.
-- @return YES if <st>makeAliasable</st> was previously called on this resource. NO otherwise.
-- Also returns NO when storage mode is memoryless.
-+ @return YES if <st>makeAliasable</st> was previously successfully called on this resource. NO otherwise.
-+ If resource is sub-allocated from other resource created on the heap, isAliasable returns 
-+ aliasing state of that base resource. Also returns NO when storage mode is memoryless.
-  */
- -(BOOL) isAliasable NS_AVAILABLE(NA, 10_0);
- 
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLSampler.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLSampler.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLSampler.h	2016-05-18 03:41:30.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Metal.framework/Headers/MTLSampler.h	2016-06-26 07:26:25.000000000 +0200

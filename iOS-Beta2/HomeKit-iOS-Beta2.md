@@ -71,30 +71,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/HomeKit.framework/Headers/HMCharacteristicTypes.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/HomeKit.framework/Headers/HMCharacteristicTypes.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/HomeKit.framework/Headers/HMCharacteristicTypes.h	2016-05-26 07:14:11.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/HomeKit.framework/Headers/HMCharacteristicTypes.h	2016-06-27 08:09:38.000000000 +0200
-@@ -312,7 +312,8 @@
- 
- /*!
-  * @brief Characteristic type for current position of a door/window. The value of the characteristic is an
-- *        uint8 value in percent.
-+ *        uint8 value in percent. A value of 0 indicates closed/most shade/least light allowed state and a
-+ *        value of 100 indicates open/no shade/most light allowed state.
-  */
- HM_EXTERN NSString * const HMCharacteristicTypeCurrentPosition NS_AVAILABLE_IOS(9_0) __WATCHOS_AVAILABLE(2_0) __TVOS_AVAILABLE(10_0);
- 
-@@ -428,10 +429,9 @@
- HM_EXTERN NSString * const HMCharacteristicTypeTargetSecuritySystemState NS_AVAILABLE_IOS(9_0) __WATCHOS_AVAILABLE(2_0) __TVOS_AVAILABLE(10_0);
- 
- /*!
-- * @brief Characteristic type for target position of a door/window. The value of the characteristic is an
-- *        uint8 value in percent. For shades/awnings, a value of 0 indicates no shade and a value of 100
-- *        indicates most shade. For blinds, a value of 0 indicates most light is allowed in and 100
-- *        indicates least light is allowed.
-+ * @brief Characteristic type for target position of a door/window/window covering. The value of the
-+ *        characteristic is an uint8 value in percent. A value of 0 indicates closed/most shade/least
-+ *        light allowed state and a value of 100 indicates open/no shade/most light allowed state.
-  */
- HM_EXTERN NSString * const HMCharacteristicTypeTargetPosition NS_AVAILABLE_IOS(9_0) __WATCHOS_AVAILABLE(2_0) __TVOS_AVAILABLE(10_0);
- 
 @@ -446,6 +446,11 @@
  HM_EXTERN NSString * const HMCharacteristicTypeStreamingStatus NS_AVAILABLE_IOS(10_0) __WATCHOS_AVAILABLE(3_0) __TVOS_AVAILABLE(10_0);
  
@@ -135,30 +111,4 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
   * @brief Service type for humidity sensor.
   */
  HM_EXTERN NSString * const HMServiceTypeHumiditySensor NS_AVAILABLE_IOS(9_0) __WATCHOS_AVAILABLE(2_0) __TVOS_AVAILABLE(10_0);
-@@ -150,9 +155,24 @@
-  */
- HM_EXTERN NSString * const HMServiceTypeWindowCovering NS_AVAILABLE_IOS(9_0) __WATCHOS_AVAILABLE(2_0) __TVOS_AVAILABLE(10_0);
- 
-+/*!
-+ * @brief Service type for stream management.
-+ */
- HM_EXTERN NSString * const HMServiceTypeCameraRTPStreamManagement NS_AVAILABLE_IOS(10_0) __WATCHOS_AVAILABLE(3_0) __TVOS_AVAILABLE(10_0);
-+
-+/*!
-+ * @brief Service type for camera control.
-+ */
- HM_EXTERN NSString * const HMServiceTypeCameraControl NS_AVAILABLE_IOS(10_0) __WATCHOS_AVAILABLE(3_0) __TVOS_AVAILABLE(10_0);
-+
-+/*!
-+ * @brief Service type for microphone.
-+ */
- HM_EXTERN NSString * const HMServiceTypeMicrophone NS_AVAILABLE_IOS(10_0) __WATCHOS_AVAILABLE(3_0) __TVOS_AVAILABLE(10_0);
-+
-+/*!
-+ * @brief Service type for speaker.
-+ */
- HM_EXTERN NSString * const HMServiceTypeSpeaker NS_AVAILABLE_IOS(10_0) __WATCHOS_AVAILABLE(3_0) __TVOS_AVAILABLE(10_0);
- 
- NS_ASSUME_NONNULL_END
-
 ```

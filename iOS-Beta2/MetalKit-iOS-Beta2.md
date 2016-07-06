@@ -22,25 +22,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  /*!
   @group MTKTextureLoaderErrors
   */
-@@ -157,7 +168,7 @@
-  @abstract Asynchronously create a Metal texture and load image data from a given texture asset name
-  @param names An array of texture asset names
-  @param scaleFactor scale factor of the texture to retrieve from the asset catalog.  Typically the 
--                    value retrieved from -[UIView contentScale] or  -[NSWindow backingScaleFactor].
-+                    value retrieved from -[UIView contentScale] or -[NSWindow backingScaleFactor].
-  @param bundle Resource bundle in which the asset is located.  Main bundle used if nil.
-  @param options Dictonary of MTKTextureLoaderOptions. This method cannot be used with the 
-                 following options:
-@@ -166,7 +177,8 @@
-                     MTKTextureLoaderOptionCubeFromVerticalTexture
-                     MTKTextureLoaderOptionOrigin
-  @param completionHandler Block called when texture has been loaded and fully initialized
-- @discussion
-+ @discussion Uses texture data from version of the texture from the texture set in the asset catalog
-+             which mathces the device's traits
-  */
- - (void)newTextureWithName:(nonnull NSString *)name
-                scaleFactor:(CGFloat)scaleFactor
 @@ -174,6 +186,34 @@
                     options:(nullable NSDictionary <NSString *, NSObject *> *)options
           completionHandler:(nonnull MTKTextureLoaderCallback)completionHandler;
@@ -122,27 +103,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  /*!
   @method newTextureWithData:options:completionHandler:
   @abstract Asynchronously create a Metal texture and load image data from the NSData object provided
-@@ -309,7 +379,7 @@
-  @return The Metal texture. nil if an error occured
-  @param names An array of texture asset names
-  @param scaleFactor scale factor of the texture to retrieve from the asset catalog.  Typically the
--                    value retrieved from -[UIView contentScale] or  -[NSWindow backingScaleFactor].
-+                    value retrieved from -[UIView contentScale] or -[NSWindow backingScaleFactor].
-  @param bundle Resource bundle in which the asset is located
-  @param options Dictonary of MTKTextureLoaderOptions. This method cannot be used with the
-                 following options:
-@@ -318,11 +388,6 @@
-                     MTKTextureLoaderOptionCubeFromVerticalTexture
-                     MTKTextureLoaderOptionOrigins
-  @param error Pointer to an autoreleased NSError object which will be set if an error occurred
-- @discussion This method cannot be used with the following options:
--                 MTKTextureLoaderOptionGenerateMipmaps
--                 MTKTextureLoaderOptionSRGB
--                 MTKTextureLoaderOptionCubeFromVerticalTexture
--                 MTKTextureLoaderOptionOrigin 
-  */
- - (nullable id <MTLTexture>)newTextureWithName:(nonnull NSString *)name
-                                    scaleFactor:(CGFloat)scaleFactor
 @@ -330,5 +395,30 @@
                                         options:(nullable NSDictionary <NSString *, NSObject *> *)options
                                           error:(NSError *__nullable *__nullable)error;

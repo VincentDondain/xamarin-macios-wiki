@@ -4,21 +4,6 @@
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLAsset.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLAsset.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLAsset.h	2016-05-16 07:44:17.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLAsset.h	2016-06-26 08:24:46.000000000 +0200
-@@ -20,11 +20,9 @@
-  
-  @abstract An MDLAsset represents the contents of a model file.
-  
-- @discussion
--
-- Each asset contains a collection of hierarchies of objects, where each object 
-- in the asset is the top level of a hierarchy. Objects include transforms, 
-- lights, cameras, and meshes.
-+ @discussion Each asset contains a collection of hierarchies of objects, where 
-+             each object in the asset is the top level of a hierarchy. Objects 
-+             include transforms, lights, cameras, and meshes.
-  
-  MDLAssets are typically instantiated from NSURLs that refer to a model resource.
- 
 @@ -117,7 +115,7 @@
   @abstract Export an asset to the specified URL.
   @return YES is returned if exporting proceeded successfully,
@@ -44,32 +29,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  @end
  
  @protocol MDLLightProbeIrradianceDataSource <NSObject>
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLCamera.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLCamera.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLCamera.h	2016-05-16 07:44:17.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLCamera.h	2016-06-26 08:32:34.000000000 +0200
-@@ -17,18 +17,15 @@
-  
-  @summary MDLCamera models a physically plausible camera.
-  
-- @discussion
--
-- Note that values are represented as float in MDLCamera as it offers sufficient 
-- precision, and because calculations will be identical on any processor 
-+ @discussion Values are represented as float in MDLCamera as it offers sufficient 
-+ precision, and because calculations will be identical on any processor
-  architecture. This consistency is a requirement of the model.
- 
-  MDLCamera provides the a model of the parameters governing the physical process 
-  of transforming a scene into an image.
- 
-- This process is modeled as a series of steps, each governed by physically 
-- plausible properties.
-- 
-+ This process is modeled as a series of steps, each governed by the physical
-+ properties of real world cameras.
-  
-  1. The position and orientation of the camera
-     @see MDLObject transform property
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLLight.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLLight.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLLight.h	2016-05-18 04:40:09.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLLight.h	2016-06-26 09:18:51.000000000 +0200
@@ -114,31 +73,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  
  @end
  
-@@ -73,8 +75,6 @@
-  @return Initialized mesh or nil if descriptor's layout array is incompatible
-          with vertexBuffers array
-  @param vertexCount Number of vertices in vertexBuffers
-- @param vertexBuffer An array of MDLMeshBuffer objects containing vertex data
--         for the mesh
-  @param descriptor VertexDescriptor specifying how to interpret vertex data
-  @param submeshes Array of submeshes with index buffers referencing vertex data
-         and/or materials to be applied to mesh
-@@ -180,13 +180,13 @@
- /*!
-  @method addAttributeWithName:format:type:data:stride
-  @abstract Create a new vertex attribute including an associated buffer with
-- a copy of the supplied data, and update the vertex descriptor accordingly
-+           a copy of the supplied data, and update the vertex descriptor accordingly
-  @param name The name the attribute can be found by
-  @param format Format of the data, such as MDLVertexFormatFloat3
-  @param type The usage of the attribute, such as MDLVertexAttributePosition
-  @param data Object containing the data to be used in the new vertex buffer
-  @param stride The increment in bytes from the start of one data entry to
-- the next.
-+        the next.
-  */
- -(void)addAttributeWithName:(NSString *)name
-                      format:(MDLVertexFormat)format
 @@ -195,6 +195,29 @@
                       stride:(NSInteger)stride;
  
@@ -198,95 +132,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  
  /*!
   @method addTextureCoordinatesForAttributeNamed:textureCoordinateAttributeName
-@@ -319,17 +342,12 @@
- 
- 
- /*!
-- @method newEllipsoidWithRadii:radialSegments:verticalSegments:inwardNormals:hemisphere:allocator:
-+ @method initSphereWithExtent:segments:inwardNormals:geometryType:allocator
-  @abstract Factory method for generating a mesh with an ellipsoid shape
-  @return MDLMesh epllipsoid with desired attributes
-- @param radii Width, height, and depth of ellipsoid.
-- @param radialSegments Number of pie slices :)
-- @param verticalSegments Number of slices in the vertical direction
-  @param geometryType Must be MDLGeometryTypeTriangles or MDLGeometryTypeLines
-  @param inwardNormals If true, generated normals will face inwards. Useful for
-         generating a skydome.
-- @param geometryType Must be  Must be MDLGeometryTypeTriangles
-- @param hemisphere If true, only top half of ellipsoid will be generated. The
-         actual nubmer of vertical slices will be half of 'vertical' segments
-  @param allocator A mesh buffer allocator used to allocate memory to back buffers
-         for the returned mesh.  If nil, a default allocator will be used
-@@ -352,13 +370,9 @@
-                                allocator:(nullable id<MDLMeshBufferAllocator>)allocator;
- 
- /*!
-- @method newCylinderWithHeight:
-+ @method initCylinderWithExtent:segments:inwardNormals:topCap:bottomCap:geometryType:allocator
-  @abstract Factory method for generating a mesh with a cylindrical shape
-  @return MDLMesh cylinder with desired attributes
-- @param height Height of cylindoid.
-- @param radii Radii of cylinder in X and Z directions.
-- @param radialSegments Number of pie slices :)
-- @param verticalSegments Number of slices along Y axis
-  @param geometryType Must be MDLGeometryTypeTriangles or MDLGeometryTypeLines
-  @param inwardNormals Normals point toward center of cylinder
-  @param allocator A mesh buffer allocator used to allocate memory to back buffers
-@@ -391,15 +405,11 @@
-                              allocator:(nullable id<MDLMeshBufferAllocator>)allocator;
- 
- /*!
-- @method newCapsuleWithHeight:
-+ @method initCapsuleWithExtent:cylinderSegments:hemisphereSegments:inwardNormals:geometryType:allocator
-  @abstract Factory method for generating a mesh with a capsule shape; a cylinder
-            with hemispheres for caps.
-  @return MDLMesh capsule with desired attributes
-- @param height Height of cylindoid.
-- @param radii Radii of cylinder in X and Z directions.
-- @param radialSegments Number of pie slices :)
-- @param verticalSegments Number of slices along Y axis
-- @param hemisphereSegments Number of slices through hemisphere caps along Y axis 
-+ @param hemisphereSegments Number of slices through hemisphere caps along Y axis
-  @param geometryType Must be MDLGeometryTypeTriangles or MDLGeometryTypeLines
-  @param inwardNormals Normals point toward center of cylinder
-  @param allocator A mesh buffer allocator used to allocate memory to back buffers
-@@ -430,14 +440,9 @@
-                             allocator:(nullable id<MDLMeshBufferAllocator>)allocator;
- 
- /*!
-- @method newEllipticalConeWithHeight:radii:radialSegments:verticalSegments:inwardNormals:allocator:
-+ @method initConeWithExtent:segments:inwardNormals:cap:geometryType:allocator
-  @abstract Factory method for generating a mesh with an ellipticalCone shape.
-  @return MDLMesh cone with desired attributes
-- @param height Height of ellipticalCone from point to base.
-- @param radii Radii of base in X and Z directions.  Values of vector should be
--        equal to create a true cone.
-- @param radialSegments Number of pie slices :)
-- @param verticalSegments Number of slices along Y axis
-  @param geometryType Must be MDLGeometryTypeTriangles or MDLGeometryTypeLines
-  @param inwardNormals Normals point toward center of ellipticalCone
-  @param allocator A mesh buffer allocator used to allocate memory to back buffers
-@@ -464,7 +469,7 @@
-                          allocator:(nullable id<MDLMeshBufferAllocator>)allocator;
- 
- /*!
-- @method newPlaneWithDimensions:segments:geometryType:allocator:
-+ @method initPlaneWithExtent:segments:geometryType:allocator
-  @abstract Factory method for generating a mesh with an planar shape
-  @return MDLMesh plane with desired attributes
-  @param extent extent of the plane
-@@ -481,10 +486,9 @@
-                           allocator:(nullable id<MDLMeshBufferAllocator>)allocator;
- 
- /*!
-- @method newIcosahedronWithRadius:inwardNormals:allocator:
-+ @method initIcosahedronWithExtent:inwardNormals:geometryType:allocator
-  @abstract Factory method for generating a mesh icosahedron
-  @return MDLMesh icosahedron with desired attributes
-- @param radius Distance from the center to the outermost point of the mesh
-  @param inwardNormals Generated normals will face towards the center of the mesh
-  @param allocator A mesh buffer allocator used to allocate memory to back buffers
-         for the returned mesh.  If nil, a default allocator will be used
 @@ -496,7 +500,7 @@
                                  allocator:(nullable id<MDLMeshBufferAllocator>)allocator;
  
@@ -317,35 +162,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  
  @interface MDLMesh (MDLLightBaking)
  
-@@ -576,7 +566,7 @@
-  @method generateAmbientOcclusionTextureWithSize:
-  @abstract Creates an Ambient Occlusion texture, returns true upon success, false
-            upon failure
-- @param size  Texture Size in which to bake the ambient occlusion
-+ @param textureSize Texture Size in which to bake the ambient occlusion
-  @param raysPerSample Number of rays to be sent out of every texture texel against
-         the object for potential occlusion.
-  @param attenuationFactor Float between 0 to 1 that defines how to attenuate the
-@@ -601,7 +591,7 @@
-  @method generateAmbientOcclusionTextureWithQuality:
-  @abstract Creates an Ambient Occlusion texture, returns true upon success, false
-            upon failure
-- @param quality Float between 0 and 1 that defines quality of the bake process.
-+ @param bakeQuality Float between 0 and 1 that defines quality of the bake process.
-         0 is of lower quality but bakes faster and uses less memory, where 1 is
-         of higher quality.
-  @param attenuationFactor Float between 0 to 1 that defines how to attenuate the
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLMeshBuffer.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLMeshBuffer.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLMeshBuffer.h	2016-05-04 00:21:23.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLMeshBuffer.h	2016-06-26 08:21:25.000000000 +0200
-@@ -225,7 +225,6 @@
-  @return An object conforming to the MDLMeshBuffer protocol.  Returns nil the 
-          buffer could not be allocated in the zone given.
-  @param zone Zone from which to allocate the memory
-- @param data Values with which to fill the buffer
-  @param type Type of data to be stored in this buffer
-  @discussion An implementing MDLMeshBufferAllocator object may increase the size 
-              of the zone if the buffer could not be allocated with the current 
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLObject.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLObject.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLObject.h	2016-05-16 08:40:26.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/ModelIO.framework/Headers/MDLObject.h	2016-06-26 08:32:34.000000000 +0200
@@ -485,25 +301,5 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
   @property initializationValue
   @abstract Value to initialize the attribute to in the vertex buffer if no values
   @discussion This values of this vector will be set in attribute in the vertex
-@@ -246,9 +255,7 @@
- /*!
-  @class MDLVertexDescriptor
-  @abstract Describes the layout of vertex buffers in MDLMesh objects
-- @discussion 
-- 
-- This object is a property of MDLMesh describing the current state of
-+ @discussion This object is a property of MDLMesh describing the current state of
-  attributes and buffer layouts of the vertex buffers in the mesh. This must be 
-  immutable otherwise even small changes could cause the buffers to be out of sync 
-  with the layout described here.
-@@ -277,7 +284,7 @@
- 
- /*!
-  @method addOrReplaceAttribute:
-- @abstract Replace any attribute with the same name, or add it if it does not
-+ @abstract Replace any attribute with the same name and time, or add it if it does not
-            already exist.
-  */
- - (void)addOrReplaceAttribute:(nonnull MDLVertexAttribute*)attribute;
 
 ```
