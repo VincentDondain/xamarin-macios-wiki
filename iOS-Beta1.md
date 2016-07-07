@@ -38,7 +38,7 @@
 - [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-iOS-Beta1)
 - [X] [GLKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GLKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/351
 - [X] [GameController.framework](https://github.com/xamarin/xamarin-macios/wiki/GameController-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/276
-- [ ] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-iOS-Beta1) - Vincent
+- [X] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-iOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/354
 - [ ] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-iOS-Beta1)
 - [ ] [HealthKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HealthKit-iOS-Beta1)
 - [X] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-iOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/324
