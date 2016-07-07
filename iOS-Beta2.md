@@ -5,13 +5,13 @@
 - [ ] [CFNetwork.framework](https://github.com/xamarin/xamarin-macios/wiki/CFNetwork-iOS-Beta2)
 - [ ] [CallKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CallKit-iOS-Beta2)
 - [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-iOS-Beta2)
-- [ ] [Contacts.framework](https://github.com/xamarin/xamarin-macios/wiki/Contacts-iOS-Beta2)
+- [ ] [Contacts.framework](https://github.com/xamarin/xamarin-macios/wiki/Contacts-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/356
 - [ ] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-iOS-Beta2)
 - [X] [CoreFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreFoundation-iOS-Beta2) - no source change
 - [ ] [CoreGraphics.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreGraphics-iOS-Beta2)
 - [ ] [CoreImage.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreImage-iOS-Beta2)
-- [ ] [CoreLocation.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreLocation-iOS-Beta2)
-- [ ] [CoreMotion.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMotion-iOS-Beta2)
+- [ ] [CoreLocation.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreLocation-iOS-Beta2) - Sebastien
+- [ ] [CoreMotion.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMotion-iOS-Beta2) - Sebastien
 - [X] [CoreSpotlight.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreSpotlight-iOS-Beta2) - no source change
 - [X] [CoreText.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreText-iOS-Beta2) - no source change
 - [ ] [CoreVideo.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreVideo-iOS-Beta2)
@@ -27,20 +27,20 @@
 - [ ] [IntentsUI.framework](https://github.com/xamarin/xamarin-macios/wiki/IntentsUI-iOS-Beta2)
 - [X] [JavaScriptCore.framework](https://github.com/xamarin/xamarin-macios/wiki/JavaScriptCore-iOS-Beta2) - no source change
 - [ ] [LocalAuthentication.framework](https://github.com/xamarin/xamarin-macios/wiki/LocalAuthentication-iOS-Beta2)
-- [ ] [MapKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MapKit-iOS-Beta2)
+- [X] [MapKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MapKit-iOS-Beta2) - no source change
 - [ ] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-iOS-Beta2)
 - [ ] [Messages.framework](https://github.com/xamarin/xamarin-macios/wiki/Messages-iOS-Beta2)
 - [ ] [Metal.framework](https://github.com/xamarin/xamarin-macios/wiki/Metal-iOS-Beta2)
 - [ ] [MetalKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalKit-iOS-Beta2)
 - [ ] [MetalPerformanceShaders.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalPerformanceShaders-iOS-Beta2)
 - [ ] [ModelIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ModelIO-iOS-Beta2)
-- [ ] [NetworkExtension.framework](https://github.com/xamarin/xamarin-macios/wiki/NetworkExtension-iOS-Beta2)
-- [ ] [NotificationCenter.framework](https://github.com/xamarin/xamarin-macios/wiki/NotificationCenter-iOS-Beta2)
+- [ ] [NetworkExtension.framework](https://github.com/xamarin/xamarin-macios/wiki/NetworkExtension-iOS-Beta2) - Sebastien
+- [X] [NotificationCenter.framework](https://github.com/xamarin/xamarin-macios/wiki/NotificationCenter-iOS-Beta2) - no source change
 - [ ] [PassKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PassKit-iOS-Beta2)
 - [ ] [PhotosUI.framework](https://github.com/xamarin/xamarin-macios/wiki/PhotosUI-iOS-Beta2)
 - [ ] [QuartzCore.framework](https://github.com/xamarin/xamarin-macios/wiki/QuartzCore-iOS-Beta2)
 - [X] [QuickLook.framework](https://github.com/xamarin/xamarin-macios/wiki/QuickLook-iOS-Beta2) - no source change
-- [ ] [ReplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/ReplayKit-iOS-Beta2)
+- [ ] [ReplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/ReplayKit-iOS-Beta2) - Sebastien
 - [ ] [SafariServices.framework](https://github.com/xamarin/xamarin-macios/wiki/SafariServices-iOS-Beta2)
 - [ ] [SceneKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SceneKit-iOS-Beta2)
 - [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-iOS-Beta2)
@@ -51,4 +51,4 @@
 - [ ] [UserNotificationsUI.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotificationsUI-iOS-Beta2)
 - [ ] [VideoSubscriberAccount.framework](https://github.com/xamarin/xamarin-macios/wiki/VideoSubscriberAccount-iOS-Beta2)
 - [ ] [WatchKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchKit-iOS-Beta2)
-- [ ] [WebKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WebKit-iOS-Beta2)
+- [ ] [WebKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WebKit-iOS-Beta2) - Sebastien
