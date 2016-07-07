@@ -16,7 +16,7 @@
 - [X] [AddressBook.framework](https://github.com/xamarin/xamarin-macios/wiki/AddressBook-iOS-Beta1) - no source change
 - [ ] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-iOS-Beta1)
 - [ ] [AudioUnit.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioUnit-iOS-Beta1)
-- [ ] [CFNetwork.framework](https://github.com/xamarin/xamarin-macios/wiki/CFNetwork-iOS-Beta1)
+- [X] [CFNetwork.framework](https://github.com/xamarin/xamarin-macios/wiki/CFNetwork-iOS-Beta1) - no source change
 - [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-iOS-Beta1) - initial work by Tim - https://gist.github.com/timrisi/0b190b114f153d7198db4b41be2ed839
 - [X] [Contacts.framework](https://github.com/xamarin/xamarin-macios/wiki/Contacts-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/278
 - [X] [CoreAudio.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreAudio-iOS-Beta1) - no source change
@@ -59,7 +59,7 @@
 - [X] [OpenGLES.framework](https://github.com/xamarin/xamarin-macios/wiki/OpenGLES-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/302
 - [ ] [PassKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PassKit-iOS-Beta1)
 - [X] [Photos.framework](https://github.com/xamarin/xamarin-macios/wiki/Photos-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/348
-- [ ] [PhotosUI.framework](https://github.com/xamarin/xamarin-macios/wiki/PhotosUI-iOS-Beta1)
+- [X] [PhotosUI.framework](https://github.com/xamarin/xamarin-macios/wiki/PhotosUI-iOS-Beta1) - no source change
 - [X] [PushKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PushKit-iOS-Beta1) - Sebastien - mostly changes wrt PKPushType -> NS_STRING_ENUM. https://github.com/xamarin/xamarin-macios/pull/347
 - [X] [QuartzCore.framework](https://github.com/xamarin/xamarin-macios/wiki/QuartzCore-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/350
 - [X] [QuickLook.framework](https://github.com/xamarin/xamarin-macios/wiki/QuickLook-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/272
