@@ -17,10 +17,10 @@
 - [ ] [CoreVideo.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreVideo-iOS-Beta2)
 - [X] [EventKitUI.framework](https://github.com/xamarin/xamarin-macios/wiki/EventKitUI-iOS-Beta2) - no source change
 - [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-iOS-Beta2)
-- [ ] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-iOS-Beta2)
+- [ ] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-iOS-Beta2) - Vincent
 - [ ] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-iOS-Beta2)
 - [ ] [HealthKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HealthKit-iOS-Beta2)
-- [ ] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-iOS-Beta2)
+- [ ] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-iOS-Beta2) - Vincent
 - [ ] [IOKit.framework](https://github.com/xamarin/xamarin-macios/wiki/IOKit-iOS-Beta2)
 - [ ] [ImageIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ImageIO-iOS-Beta2)
 - [ ] [Intents.framework](https://github.com/xamarin/xamarin-macios/wiki/Intents-iOS-Beta2)
@@ -29,7 +29,7 @@
 - [ ] [LocalAuthentication.framework](https://github.com/xamarin/xamarin-macios/wiki/LocalAuthentication-iOS-Beta2)
 - [X] [MapKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MapKit-iOS-Beta2) - no source change
 - [ ] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-iOS-Beta2)
-- [ ] [Messages.framework](https://github.com/xamarin/xamarin-macios/wiki/Messages-iOS-Beta2)
+- [ ] [Messages.framework](https://github.com/xamarin/xamarin-macios/wiki/Messages-iOS-Beta2) - Vincent
 - [ ] [Metal.framework](https://github.com/xamarin/xamarin-macios/wiki/Metal-iOS-Beta2)
 - [ ] [MetalKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalKit-iOS-Beta2)
 - [ ] [MetalPerformanceShaders.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalPerformanceShaders-iOS-Beta2)
