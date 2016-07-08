@@ -49,11 +49,11 @@
 - [ ] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-iOS-Beta1)
 - [ ] [MessageUI.framework](https://github.com/xamarin/xamarin-macios/wiki/MessageUI-iOS-Beta1)
 - [ ] [Metal.framework](https://github.com/xamarin/xamarin-macios/wiki/Metal-iOS-Beta1)
-- [ ] [MetalKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/360
+- [ ] [MetalKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalKit-iOS-Beta1)
 - [ ] [MetalPerformanceShaders.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalPerformanceShaders-iOS-Beta1)
 - [X] [MobileCoreServices.framework](https://github.com/xamarin/xamarin-macios/wiki/MobileCoreServices-iOS-Beta1) - no source change
 - [ ] [ModelIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ModelIO-iOS-Beta1)
-- [X] [MultipeerConnectivity.framework](https://github.com/xamarin/xamarin-macios/wiki/MultipeerConnectivity-iOS-Beta1)
+- [X] [MultipeerConnectivity.framework](https://github.com/xamarin/xamarin-macios/wiki/MultipeerConnectivity-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/360
 - [X] [NetworkExtension.framework](https://github.com/xamarin/xamarin-macios/wiki/NetworkExtension-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/309
 - [X] [NotificationCenter.framework](https://github.com/xamarin/xamarin-macios/wiki/NotificationCenter-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/323
 - [X] [OpenGLES.framework](https://github.com/xamarin/xamarin-macios/wiki/OpenGLES-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/302
