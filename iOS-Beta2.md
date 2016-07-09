@@ -8,8 +8,8 @@
 - [X] [Contacts.framework](https://github.com/xamarin/xamarin-macios/wiki/Contacts-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/356
 - [ ] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-iOS-Beta2)
 - [X] [CoreFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreFoundation-iOS-Beta2) - no source change
-- [ ] [CoreGraphics.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreGraphics-iOS-Beta2)
-- [ ] [CoreImage.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreImage-iOS-Beta2)
+- [ ] [CoreGraphics.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreGraphics-iOS-Beta2) - Sebastien
+- [ ] [CoreImage.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreImage-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/370
 - [X] [CoreLocation.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreLocation-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/357
 - [X] [CoreMotion.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMotion-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/358
 - [X] [CoreSpotlight.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreSpotlight-iOS-Beta2) - no source change
