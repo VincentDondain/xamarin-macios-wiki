@@ -1,12 +1,12 @@
 ### To Bind
 ###### New Frameworks
 - [ ] AVFoundation.framework *(Added)*
-- [ ] CloudKit.framework *(Added)*
-- [ ] CoreAudio.framework *(Added)*
+- [X] CloudKit.framework *(Added)* - enabled - https://github.com/xamarin/xamarin-macios/pull/372
+- [ ] CoreAudio.framework *(Added)* - *not CoreAudioKit*
 - [ ] GameKit.framework *(Added)*
 - [ ] SceneKit.framework *(Added)*
 - [ ] SpriteKit.framework *(Added)*
-- [ ] UserNotifications.framework *(Added)*
+- [X] UserNotifications.framework *(Added)* - enabled
 
 
 ###### Existing Frameworks
