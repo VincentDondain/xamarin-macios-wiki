@@ -29,7 +29,7 @@
 - [ ] [SceneKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SceneKit-tvOS-Beta2)
 - [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-tvOS-Beta2)
 - [ ] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-tvOS-Beta2)
-- [ ] [TVMLKit.framework](https://github.com/xamarin/xamarin-macios/wiki/TVMLKit-tvOS-Beta2)
+- [ ] [TVMLKit.framework](https://github.com/xamarin/xamarin-macios/wiki/TVMLKit-tvOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/371
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-tvOS-Beta2)
 - [ ] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-tvOS-Beta2)
 - [ ] [VideoSubscriberAccount.framework](https://github.com/xamarin/xamarin-macios/wiki/VideoSubscriberAccount-tvOS-Beta2)

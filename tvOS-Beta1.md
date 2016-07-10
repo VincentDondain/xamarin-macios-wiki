@@ -1,12 +1,12 @@
 ### To Bind
 ###### New Frameworks
-- [ ] ExternalAccessory.framework *(Added)*
-- [ ] HomeKit.framework *(Added)*
-- [ ] MultipeerConnectivity.framework *(Added)*
-- [ ] Photos.framework *(Added)*
-- [ ] ReplayKit.framework *(Added)*
-- [ ] UserNotifications.framework *(Added)*
-- [ ] VideoSubscriberAccount.framework *(Added)*
+- [ ] ExternalAccessory.framework *(Added)* - not enabled, missing header files on tvOS simulator: https://trello.com/c/2e2VdbGR
+- [X] HomeKit.framework *(Added)* - enabled
+- [X] MultipeerConnectivity.framework *(Added)* - enabled
+- [X] Photos.framework *(Added)* - enabled
+- [X] ReplayKit.framework *(Added)* - enabled
+- [X] UserNotifications.framework *(Added)* - enabled
+- [X] VideoSubscriberAccount.framework *(Added)* - enabled
 
 
 ###### Existing Frameworks
@@ -47,5 +47,5 @@
 - [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-tvOS-Beta1)
 - [ ] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-tvOS-Beta1)
 - [ ] [SystemConfiguration.framework](https://github.com/xamarin/xamarin-macios/wiki/SystemConfiguration-tvOS-Beta1)
-- [ ] [TVMLKit.framework](https://github.com/xamarin/xamarin-macios/wiki/TVMLKit-tvOS-Beta1)
+- [ ] [TVMLKit.framework](https://github.com/xamarin/xamarin-macios/wiki/TVMLKit-tvOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/371
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-tvOS-Beta1)
