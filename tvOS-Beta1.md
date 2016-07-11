@@ -14,9 +14,9 @@
 - [ ] [AVKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AVKit-tvOS-Beta1)
 - [ ] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-tvOS-Beta1)
 - [ ] [AudioUnit.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioUnit-tvOS-Beta1)
-- [ ] [CFNetwork.framework](https://github.com/xamarin/xamarin-macios/wiki/CFNetwork-tvOS-Beta1)
+- [X] [CFNetwork.framework](https://github.com/xamarin/xamarin-macios/wiki/CFNetwork-tvOS-Beta1) - no source change
 - [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-tvOS-Beta1)
-- [ ] [CoreAudio.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreAudio-tvOS-Beta1)
+- [X] [CoreAudio.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreAudio-tvOS-Beta1) - no source change
 - [ ] [CoreBluetooth.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreBluetooth-tvOS-Beta1)
 - [ ] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-tvOS-Beta1)
 - [ ] [CoreFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreFoundation-tvOS-Beta1)
@@ -32,14 +32,14 @@
 - [ ] [GameController.framework](https://github.com/xamarin/xamarin-macios/wiki/GameController-tvOS-Beta1)
 - [ ] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-tvOS-Beta1)
 - [ ] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-tvOS-Beta1)
-- [ ] [ImageIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ImageIO-tvOS-Beta1)
+- [X] [ImageIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ImageIO-tvOS-Beta1) - no source change
 - [ ] [JavaScriptCore.framework](https://github.com/xamarin/xamarin-macios/wiki/JavaScriptCore-tvOS-Beta1)
 - [ ] [MapKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MapKit-tvOS-Beta1)
 - [ ] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-tvOS-Beta1)
 - [ ] [Metal.framework](https://github.com/xamarin/xamarin-macios/wiki/Metal-tvOS-Beta1)
 - [ ] [MetalKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalKit-tvOS-Beta1)
 - [ ] [MetalPerformanceShaders.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalPerformanceShaders-tvOS-Beta1)
-- [ ] [MobileCoreServices.framework](https://github.com/xamarin/xamarin-macios/wiki/MobileCoreServices-tvOS-Beta1)
+- [X] [MobileCoreServices.framework](https://github.com/xamarin/xamarin-macios/wiki/MobileCoreServices-tvOS-Beta1) - no source change
 - [ ] [ModelIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ModelIO-tvOS-Beta1)
 - [ ] [OpenGLES.framework](https://github.com/xamarin/xamarin-macios/wiki/OpenGLES-tvOS-Beta1)
 - [ ] [QuartzCore.framework](https://github.com/xamarin/xamarin-macios/wiki/QuartzCore-tvOS-Beta1)
@@ -47,5 +47,5 @@
 - [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-tvOS-Beta1)
 - [ ] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-tvOS-Beta1)
 - [ ] [SystemConfiguration.framework](https://github.com/xamarin/xamarin-macios/wiki/SystemConfiguration-tvOS-Beta1)
-- [ ] [TVMLKit.framework](https://github.com/xamarin/xamarin-macios/wiki/TVMLKit-tvOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/371
+- [X] [TVMLKit.framework](https://github.com/xamarin/xamarin-macios/wiki/TVMLKit-tvOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/371
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-tvOS-Beta1)
