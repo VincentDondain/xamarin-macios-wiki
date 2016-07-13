@@ -1,6 +1,6 @@
 ### To Bind
 - [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-macOS-Beta2)
-- [ ] [AppKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AppKit-macOS-Beta2)
+- [X] [AppKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AppKit-macOS-Beta2)
 - [ ] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-macOS-Beta2)
 - [ ] [AudioVideoBridging.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioVideoBridging-macOS-Beta2)
 - [ ] [CFNetwork.framework](https://github.com/xamarin/xamarin-macios/wiki/CFNetwork-macOS-Beta2)
