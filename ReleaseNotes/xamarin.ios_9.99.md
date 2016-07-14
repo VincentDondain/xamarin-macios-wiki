@@ -32,7 +32,7 @@ speed and memory usage of our base class libraries (BCL).
 The following new frameworks were added in iOS 10:
 
 * CallKit (available, beta1)
-* Intents (unavailable, in progress)
+* Intents (available, beta 2)
 * IntentsUI (unavailable, in progress)
 * Message (available, beta 2)
 * Speech (available, beta1)

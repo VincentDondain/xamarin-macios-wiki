@@ -14,7 +14,7 @@
 - [X] [CoreMotion.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMotion-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/358
 - [X] [CoreSpotlight.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreSpotlight-iOS-Beta2) - no source change
 - [X] [CoreText.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreText-iOS-Beta2) - no source change
-- [ ] [CoreVideo.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreVideo-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/378
+- [X] [CoreVideo.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreVideo-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/378
 - [X] [EventKitUI.framework](https://github.com/xamarin/xamarin-macios/wiki/EventKitUI-iOS-Beta2) - no source change
 - [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-iOS-Beta2)
 - [X] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-iOS-Beta2) - Vincent - https://github.com/xamarin/xamarin-macios/pull/364
@@ -23,8 +23,8 @@
 - [X] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-iOS-Beta2) - Vincent - https://github.com/xamarin/xamarin-macios/pull/368
 - [X] [IOKit.framework](https://github.com/xamarin/xamarin-macios/wiki/IOKit-iOS-Beta2) - **No Headers directory exists for this framework**
 - [X] [ImageIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ImageIO-iOS-Beta2) - https://github.com/xamarin/xamarin-macios/pull/379
-- [ ] [Intents.framework](https://github.com/xamarin/xamarin-macios/wiki/Intents-iOS-Beta2)
-- [ ] [IntentsUI.framework](https://github.com/xamarin/xamarin-macios/wiki/IntentsUI-iOS-Beta2)
+- [X] [Intents.framework](https://github.com/xamarin/xamarin-macios/wiki/Intents-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/384
+- [ ] [IntentsUI.framework](https://github.com/xamarin/xamarin-macios/wiki/IntentsUI-iOS-Beta2) - Alex
 - [X] [JavaScriptCore.framework](https://github.com/xamarin/xamarin-macios/wiki/JavaScriptCore-iOS-Beta2) - no source change
 - [ ] [LocalAuthentication.framework](https://github.com/xamarin/xamarin-macios/wiki/LocalAuthentication-iOS-Beta2)
 - [X] [MapKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MapKit-iOS-Beta2) - no source change
