@@ -4,7 +4,7 @@ The **xamarin-macios** wiki is where we keep our documents (release notes, Xcode
 
 Here we keep the initial drafts for release notes based on our main work (on master) or in special branch, e.g. `xcode8` tracks the API and tooling changes to support iOS 10, tvOS 10, watchOS 3 and macOS 10.12.
 
-* [Xamarin.iOS 9.11 (master / C9)](https://github.com/xamarin/xamarin-macios/wiki/ReleaseNotes/xamarin.ios_9.11.mdd)
+* [Xamarin.iOS 9.11 (master / C9)](https://github.com/xamarin/xamarin-macios/wiki/ReleaseNotes/xamarin.ios_9.11.md)
 * [Xamarin.iOS 9.99 (xcode8)](https://github.com/xamarin/xamarin-macios/wiki/ReleaseNotes/xamarin.ios_9.99.md)
 
 Found a typo, an undocumented new feature or a missing bug fix reference ? just create a PR and we'll merge it after review.
