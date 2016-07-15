@@ -3,7 +3,7 @@
 - [X] [AVKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AVKit-iOS-Beta2) - no source change
 - [ ] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-iOS-Beta2)
 - [ ] [CFNetwork.framework](https://github.com/xamarin/xamarin-macios/wiki/CFNetwork-iOS-Beta2)
-- [ ] [CallKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CallKit-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/403
+- [X] [CallKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CallKit-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/403
 - [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-iOS-Beta2)
 - [X] [Contacts.framework](https://github.com/xamarin/xamarin-macios/wiki/Contacts-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/356
 - [ ] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-iOS-Beta2)
@@ -44,11 +44,11 @@
 - [X] [SafariServices.framework](https://github.com/xamarin/xamarin-macios/wiki/SafariServices-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/377
 - [ ] [SceneKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SceneKit-iOS-Beta2)
 - [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-iOS-Beta2)
-- [ ] [Speech.framework](https://github.com/xamarin/xamarin-macios/wiki/Speech-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/404
+- [X] [Speech.framework](https://github.com/xamarin/xamarin-macios/wiki/Speech-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/404
 - [X] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-iOS-Beta2) - no source change
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-iOS-Beta2)
-- [ ] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/405
-- [ ] [UserNotificationsUI.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotificationsUI-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/405
+- [X] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/405
+- [X] [UserNotificationsUI.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotificationsUI-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/405
 - [ ] [VideoSubscriberAccount.framework](https://github.com/xamarin/xamarin-macios/wiki/VideoSubscriberAccount-iOS-Beta2) - Alex 🔨
 - [ ] [WatchKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchKit-iOS-Beta2)
 - [X] [WebKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WebKit-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/359
