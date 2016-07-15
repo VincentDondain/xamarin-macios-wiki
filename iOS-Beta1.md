@@ -2,7 +2,7 @@
 ###### New Frameworks
 - [X] CallKit.framework *(Added)* - Alex - [PR 189] Filled radar https://trello.com/c/afWXDZ3A
 - [X] Intents.framework *(Added)* - Alex - https://github.com/xamarin/xamarin-macios/pull/384
-- [ ] IntentsUI.framework *(Added)* - Alex
+- [X] IntentsUI.framework *(Added)* - Alex - https://github.com/xamarin/xamarin-macios/pull/400
 - [X] Messages.framework *(Added)* - Vincent - https://github.com/xamarin/xamarin-macios/pull/190
 - [X] Speech.framework *(Added)* - Alex - [PR 203] - Filled radar https://trello.com/c/s6s6YKua
 - [X] UserNotifications.framework *(Added)* - Alex
