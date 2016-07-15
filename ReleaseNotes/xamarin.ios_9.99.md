@@ -1,8 +1,3 @@
-id:23e82b9c-09e5-428f-9aab-196687fb6ebd
-title:Xamarin.iOS
-version:9.99.0
-releasedate:2016-07-14
-
 <div class="note">
 	<b>Classic Profile Deprecation:</b>
 	The complete removal of classic support is scheduled for next fall with the release of Xamarin.iOS 10.0 and
@@ -23,7 +18,7 @@ This release is built upon our [open sourced SDK](https://github.com/xamarin/xam
 using the `xcode8` branch, and include some additional IDE integratin tools.
 
 This release is based on our **cycle 8** work, which will become XI 9.10 this summer.
-It includes Mono 4.5 which continues to adopt more code from 
+It includes Mono 4.6 which continues to adopt more code from 
 Microsoft's open sourced .NET code (reference source) to improve the conformance,
 speed and memory usage of our base class libraries (BCL).
 
@@ -31,18 +26,18 @@ speed and memory usage of our base class libraries (BCL).
 
 The following new frameworks were added in iOS 10:
 
-* CallKit (available, beta1)
+* CallKit (available, beta 2)
 * Intents (available, beta 2)
-* IntentsUI (unavailable, in progress)
+* IntentsUI (available, beta 2)
 * Message (available, beta 2)
-* Speech (available, beta1)
-* UserNotification (available, beta1)
-* UserNotificationUI (available, beta1)
-* VideoSubscriberAccount (available, beta1)
+* Speech (available, beta 2)
+* UserNotification (available, beta 2)
+* UserNotificationUI (available, beta 2)
+* VideoSubscriberAccount (available, beta 1)
 
 The following new frameworks were added in tvOS 10:
 
-* ExternalAccessory* (blocked) radar #27266975
+* ExternalAccessory (blocked) radar #27266975
 * HomeKit (enabled, unaudited)
 * MultipeerConnectivity (enabled, unaudited)
 * Photos (enabled, unaudited)
