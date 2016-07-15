@@ -502,85 +502,9 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
  
  // Even though NSDateFormatter responds to the usual NSFormatter methods,
  //   here are some convenience methods which are a little more obvious.
-diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateInterval.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateInterval.h
---- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateInterval.h	1970-01-01 01:00:00.000000000 +0100
-+++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateInterval.h	2016-05-20 07:35:40.000000000 +0200
-@@ -0,0 +1,64 @@
-+/*	NSDateInterval.h
-+	Copyright © 2015, Apple Inc. All rights reserved.
-+ */
-+
-+#import <Foundation/NSObject.h>
-+#import <Foundation/NSDate.h>
-+#import <Foundation/NSCoder.h>
-+
-+NS_ASSUME_NONNULL_BEGIN
-+
-+API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.0), tvos(10.0))
-+@interface NSDateInterval : NSObject <NSCopying, NSSecureCoding>
-+
-+/*
-+ NSDateInterval represents a closed date interval in the form of [startDate, endDate].  It is possible for the start and end dates to be the same with a duration of 0.  NSDateInterval does not support reverse intervals i.e. intervals where the duration is less than 0 and the end date occurs earlier in time than the start date.
-+ */
-+
-+@property (readonly, copy) NSDate *startDate;
-+@property (readonly, copy) NSDate *endDate;
-+@property (readonly) NSTimeInterval duration;
-+
-+// This method initializes an NSDateInterval object with start and end dates set to the current date and the duration set to 0.
-+- (instancetype)init;
-+
-+- (instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;
-+
-+// This method will throw an exception if the duration is less than 0.
-+- (instancetype)initWithStartDate:(NSDate *)startDate duration:(NSTimeInterval)duration NS_DESIGNATED_INITIALIZER;
-+
-+// This method will throw an exception if the end date comes before the start date.
-+- (instancetype)initWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate;
-+
-+/*
-+ (NSComparisonResult)compare:(NSDateInterval *) prioritizes ordering by start date. If the start dates are equal, then it will order by duration.
-+ e.g.
-+    Given intervals a and b
-+        a.   |-----|
-+        b.      |-----|
-+ [a compare:b] would return NSOrderAscending because a's startDate is earlier in time than b's start date.
-+
-+ In the event that the start dates are equal, the compare method will attempt to order by duration.
-+ e.g.
-+    Given intervals c and d
-+        c.  |-----|
-+        d.  |---|
-+ [c compare:d] would result in NSOrderDescending because c is longer than d.
-+
-+ If both the start dates and the durations are equal, then the intervals are considered equal and NSOrderedSame is returned as the result.
-+ */
-+- (NSComparisonResult)compare:(NSDateInterval *)dateInterval;
-+
-+- (BOOL)isEqualToDateInterval:(NSDateInterval *)dateInterval;
-+- (BOOL)intersectsDateInterval:(NSDateInterval *)dateInterval;
-+
-+/*
-+ This method returns an NSDateInterval object that represents the interval where the given date interval and the current instance intersect. In the event that there is no intersection, the method returns nil.
-+ */
-+- (nullable NSDateInterval *)intersectionWithDateInterval:(NSDateInterval *)dateInterval;
-+
-+- (BOOL)containsDate:(NSDate *)date;
-+
-+@end
-+
-+NS_ASSUME_NONNULL_END
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateIntervalFormatter.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateIntervalFormatter.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateIntervalFormatter.h	2015-10-02 23:32:35.000000000 +0200
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSDateIntervalFormatter.h	2016-05-20 07:35:40.000000000 +0200
-@@ -3,6 +3,7 @@
-  */
- 
- #import <Foundation/NSFormatter.h>
-+#import <Foundation/NSDateInterval.h>
- #include <dispatch/dispatch.h>
- @class NSLocale, NSCalendar, NSTimeZone, NSDate;
- 
 @@ -64,6 +65,8 @@
  */
  - (NSString *)stringFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate;
@@ -4398,37 +4322,7 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
 +NS_ASSUME_NONNULL_BEGIN
 +
 +#pragma mark Unit Converters
-+/*
-+ NSUnitConverter describes how to convert a unit to and from the base unit of its dimension.  Use the NSUnitConverter protocol to implement new ways of converting a unit.
-+ */
-+API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.0), tvos(10.0))
-+@interface NSUnitConverter : NSObject
-+
-+/*
-+ The following methods perform conversions to and from the base unit of a unit class's dimension.  Each unit is defined against the base unit for the dimension to which the unit belongs.
-+
-+ These methods are implemented differently depending on the type of conversion.  The default implementation in NSUnitConverter simply returns the value.
-+
-+ These methods exist for the sole purpose of creating custom conversions for units in order to support converting a value from one kind of unit to another in the same dimension.  NSUnitConverter is an abstract class that is meant to be subclassed.  There is no need to call these methods directly to do a conversion -- the correct way to convert a measurement is to use [NSMeasurement measurementByConvertingToUnit:].  measurementByConvertingToUnit: uses the following 2 methods internally to perform the conversion.
-+ 
-+ When creating a custom unit converter, you must override these two methods to implement the conversion to and from a value in terms of a unit and the corresponding value in terms of the base unit of that unit's dimension in order for conversion to work correctly.
-+ */
-+
-+/*
-+ This method takes a value in terms of a unit and returns the corresponding value in terms of the base unit of the original unit's dimension.
-+ @param value Value in terms of the unit class
-+ @return Value in terms of the base unit
-+ */
-+- (double)baseUnitValueFromValue:(double)value;
-+
-+/*
-+ This method takes in a value in terms of the base unit of a unit's dimension and returns the equivalent value in terms of the unit.
-+ @param baseUnitValue Value in terms of the base unit
-+ @return Value in terms of the unit class
-+ */
-+- (double)valueFromBaseUnitValue:(double)baseUnitValue;
-+
-+@end
+
 +
 +
 +API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.0), tvos(10.0))
@@ -4468,49 +4362,7 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
 +- (instancetype)initWithCoefficient:(double)coefficient constant:(double)constant NS_DESIGNATED_INITIALIZER;
 +
 +@end
-+
-+
-+#pragma mark Unit
-+/*
-+ NSUnit is the base class for all unit types (dimensional and dimensionless).
-+ */
-+API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.0), tvos(10.0))
-+@interface NSUnit : NSObject <NSCopying, NSSecureCoding> {
-+@private
-+    NSString *_symbol;
-+}
-+
-+@property (readonly, copy) NSString *symbol;
-+
-+- (instancetype)initWithSymbol:(NSString *)symbol;
-+
-+@end
-+
-+
-+#pragma mark Dimensions
-+
-+API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.0), tvos(10.0))
-+@interface NSDimension : NSUnit <NSSecureCoding> {
-+@private
-+    NSUInteger _reserved;
-+@protected
-+    NSUnitConverter *_converter;
-+}
-+
-+@property (readonly, copy) NSUnitConverter *converter;
-+
-+- (instancetype)initWithSymbol:(NSString *)symbol converter:(NSUnitConverter *)converter NS_DESIGNATED_INITIALIZER;
-+
-+/*
-+ This class method returns an instance of the dimension class that represents the base unit of that dimension.
-+ e.g.
-+    NSUnitSpeed *metersPerSecond = [NSUnitSpeed baseUnit];
-+ */
-++ (instancetype)baseUnit;
-+
-+@end
-+
-+
+
 +#pragma mark - Predefined Dimensions
 +
 +API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.0), tvos(10.0))
@@ -4819,18 +4671,7 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
 +
 +@end
 +
-+API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.0), tvos(10.0))
-+@interface NSUnitTemperature : NSDimension <NSSecureCoding>
-+/*
-+ Base unit - kelvin
-+ */
-+@property (class, readonly, copy) NSUnitTemperature *kelvin;
-+@property (class, readonly, copy) NSUnitTemperature *celsius; 
-+@property (class, readonly, copy) NSUnitTemperature *fahrenheit;
-+
-+
-+@end
-+
+
 +API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.0), tvos(10.0))
 +@interface NSUnitVolume : NSDimension <NSSecureCoding>
 +/*

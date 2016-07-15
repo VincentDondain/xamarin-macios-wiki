@@ -1445,26 +1445,9 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  @end
  
  API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.0), tvos(10.0))
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUserActivity.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUserActivity.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUserActivity.h	2016-05-20 06:25:33.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUserActivity.h	2016-06-27 06:06:10.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSUserActivity.h
--	Copyright (c) 2014-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 2014-2016, Apple Inc. All rights reserved.
- */
- 
- #import <Foundation/NSObject.h>
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUserDefaults.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUserDefaults.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUserDefaults.h	2016-05-20 06:13:48.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUserDefaults.h	2016-06-27 06:06:56.000000000 +0200
-@@ -1,5 +1,5 @@
- /*	NSUserDefaults.h
--	Copyright (c) 1994-2015, Apple Inc. All rights reserved.
-+	Copyright (c) 1994-2016, Apple Inc. All rights reserved.
-  */
- 
- #import <Foundation/NSObject.h>
 @@ -57,7 +57,9 @@
  /*!
   +standardUserDefaults returns a global instance of NSUserDefaults configured to search the current application's search list.
