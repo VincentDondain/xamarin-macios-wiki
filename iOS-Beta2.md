@@ -49,6 +49,6 @@
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-iOS-Beta2)
 - [X] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/405
 - [X] [UserNotificationsUI.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotificationsUI-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/405
-- [ ] [VideoSubscriberAccount.framework](https://github.com/xamarin/xamarin-macios/wiki/VideoSubscriberAccount-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/414
+- [X] [VideoSubscriberAccount.framework](https://github.com/xamarin/xamarin-macios/wiki/VideoSubscriberAccount-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/414
 - [ ] [WatchKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchKit-iOS-Beta2)
 - [X] [WebKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WebKit-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/359
