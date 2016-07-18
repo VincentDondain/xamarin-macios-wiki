@@ -492,19 +492,4 @@ diff -ruN /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.p
  
  /*!
   @class SCNView
-diff -ruN /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SceneKit.framework/Headers/SceneKitTypes.h /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SceneKit.framework/Headers/SceneKitTypes.h
---- /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SceneKit.framework/Headers/SceneKitTypes.h	2016-06-26 09:21:12.000000000 +0200
-+++ /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SceneKit.framework/Headers/SceneKitTypes.h	2016-07-10 12:46:33.000000000 +0200
-@@ -4,7 +4,10 @@
- //  Copyright (c) 2012-2016 Apple Inc. All rights reserved.
- //
- 
-+#import <Foundation/Foundation.h>
-+#import <CoreGraphics/CoreGraphics.h>
- #import <simd/simd.h>
-+
- #import <QuartzCore/QuartzCore.h>
- #import <GLKit/GLKMathTypes.h>
- 
-
 ```

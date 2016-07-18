@@ -269,35 +269,4 @@ diff -ruN /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.p
 +#endif
  
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework/Headers/GameKit.h /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework/Headers/GameKit.h
---- /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework/Headers/GameKit.h	2016-06-29 07:15:36.000000000 +0200
-+++ /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework/Headers/GameKit.h	2016-07-14 08:18:38.000000000 +0200
-@@ -59,26 +59,3 @@
- #import <GameKit/GKTurnBasedMatchmakerViewController.h>
- #import <GameKit/GKVoiceChat.h>
- #import <GameKit/GKVoiceChatService.h>
--//
--//  GameKit.h
--//  Game Center
--//
--//  Copyright 2010-2016 Apple Inc. All rights reserved.
--//
--
--#import <TargetConditionals.h>
--#import <simd/simd.h>
--
--#import <UIKit/UIKit.h>
--
--#if !TARGET_OS_SIMULATOR
--#import <Metal/Metal.h>
--#import <MetalKit/MetalKit.h>
--#endif
--
--#import <SpriteKit/SpriteKit.h>
--#import <SceneKit/SceneKit.h>
--#import <GameplayKit/GameplayKit.h>
--#import <GameController/GameController.h>
--#import <ModelIO/ModelIO.h>
--#import <ReplayKit/ReplayKit.h>
-
 ```
