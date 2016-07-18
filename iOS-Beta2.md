@@ -28,7 +28,7 @@
 - [X] [JavaScriptCore.framework](https://github.com/xamarin/xamarin-macios/wiki/JavaScriptCore-iOS-Beta2) - no source change
 - [ ] [LocalAuthentication.framework](https://github.com/xamarin/xamarin-macios/wiki/LocalAuthentication-iOS-Beta2)
 - [X] [MapKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MapKit-iOS-Beta2) - no source change
-- [ ] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-iOS-Beta2)
+- [X] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-iOS-Beta2)
 - [X] [Messages.framework](https://github.com/xamarin/xamarin-macios/wiki/Messages-iOS-Beta2) - Vincent - https://github.com/xamarin/xamarin-macios/pull/362
 - [ ] [Metal.framework](https://github.com/xamarin/xamarin-macios/wiki/Metal-iOS-Beta2)
 - [X] [MetalKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalKit-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/383
