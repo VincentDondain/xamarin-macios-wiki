@@ -53,7 +53,7 @@ The following new frameworks were added in watchOS 3:
 * GameKit (in progress)
 * SceneKit (not yet enabled)
 * SpriteKit (not yet enabled)
-* UserNotificationUI (enabled, unaudited)
+* UserNotification (enabled, unaudited)
 
 Note: New frameworks for tvOS and watchOS are new to the platform, but already exists (or were just added) in iOS.
 
