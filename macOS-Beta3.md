@@ -4,7 +4,7 @@ No new frameworks were added in /Applications/Xcode8-beta3.app/Contents/Develope
 
 ###### Existing Frameworks
 - [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-macOS-Beta3)
-- [ ] [AVKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AVKit-macOS-Beta3)
+- [x] [AVKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AVKit-macOS-Beta3)
 - [ ] [AppKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AppKit-macOS-Beta3)
 - [ ] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-macOS-Beta3)
 - [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-macOS-Beta3)
