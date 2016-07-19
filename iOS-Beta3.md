@@ -15,7 +15,7 @@
 - [ ] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-iOS-Beta3)
 - [X] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-iOS-Beta3) - Vincent - https://github.com/xamarin/xamarin-macios/pull/432
 - [X] [IOKit.framework](https://github.com/xamarin/xamarin-macios/wiki/IOKit-iOS-Beta3) - **No Headers directory exists for this framework**
-- [ ] [Intents.framework](https://github.com/xamarin/xamarin-macios/wiki/Intents-iOS-Beta3) - Alex - https://github.com/xamarin/xamarin-macios/pull/425
+- [X] [Intents.framework](https://github.com/xamarin/xamarin-macios/wiki/Intents-iOS-Beta3) - Alex - https://github.com/xamarin/xamarin-macios/pull/425
 - [X] [IntentsUI.framework](https://github.com/xamarin/xamarin-macios/wiki/IntentsUI-iOS-Beta3) - Alex - No need for update, availability attributes already on place
 - [X] [LocalAuthentication.framework](https://github.com/xamarin/xamarin-macios/wiki/LocalAuthentication-iOS-Beta3) - No change
 - [ ] [MapKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MapKit-iOS-Beta3) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/438
