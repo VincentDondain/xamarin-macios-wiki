@@ -5,7 +5,7 @@ No new frameworks were added in /Applications/Xcode8-beta3.app
 ###### Existing Frameworks
 - [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-iOS-Beta3)
 - [X] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-iOS-Beta3) - No change
-- [ ] [CallKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CallKit-iOS-Beta3)
+- [ ] [CallKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CallKit-iOS-Beta3) - Alex - 🔨 
 - [X] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-iOS-Beta3) - No change
 - [X] [CoreBluetooth.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreBluetooth-iOS-Beta3) - No change
 - [X] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-iOS-Beta3) - No change
@@ -18,8 +18,8 @@ No new frameworks were added in /Applications/Xcode8-beta3.app
 - [ ] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-iOS-Beta3)
 - [ ] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-iOS-Beta3)
 - [X] [IOKit.framework](https://github.com/xamarin/xamarin-macios/wiki/IOKit-iOS-Beta3) - **No Headers directory exists for this framework**
-- [ ] [Intents.framework](https://github.com/xamarin/xamarin-macios/wiki/Intents-iOS-Beta3)
-- [ ] [IntentsUI.framework](https://github.com/xamarin/xamarin-macios/wiki/IntentsUI-iOS-Beta3)
+- [ ] [Intents.framework](https://github.com/xamarin/xamarin-macios/wiki/Intents-iOS-Beta3) - Alex - 🔨
+- [ ] [IntentsUI.framework](https://github.com/xamarin/xamarin-macios/wiki/IntentsUI-iOS-Beta3) - Alex - 🔨
 - [X] [LocalAuthentication.framework](https://github.com/xamarin/xamarin-macios/wiki/LocalAuthentication-iOS-Beta3) - No change
 - [ ] [MapKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MapKit-iOS-Beta3)
 - [ ] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-iOS-Beta3)
@@ -36,6 +36,6 @@ No new frameworks were added in /Applications/Xcode8-beta3.app
 - [ ] [SceneKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SceneKit-iOS-Beta3)
 - [ ] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-iOS-Beta3)
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-iOS-Beta3)
-- [ ] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-iOS-Beta3)
+- [ ] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-iOS-Beta3) - Alex - 🔨
 - [ ] [WebKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WebKit-iOS-Beta3)
 - [X] [iAd.framework](https://github.com/xamarin/xamarin-macios/wiki/iAd-iOS-Beta3) - No change
