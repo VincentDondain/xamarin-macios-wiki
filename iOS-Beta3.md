@@ -31,11 +31,11 @@ No new frameworks were added in /Applications/Xcode8-beta3.app
 - [ ] [PassKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PassKit-iOS-Beta3)
 - [ ] [Photos.framework](https://github.com/xamarin/xamarin-macios/wiki/Photos-iOS-Beta3)
 - [X] [PhotosUI.framework](https://github.com/xamarin/xamarin-macios/wiki/PhotosUI-iOS-Beta3) - No change
-- [ ] [QuartzCore.framework](https://github.com/xamarin/xamarin-macios/wiki/QuartzCore-iOS-Beta3) - Sebastien
-- [ ] [ReplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/ReplayKit-iOS-Beta3) - Sebastien
+- [ ] [QuartzCore.framework](https://github.com/xamarin/xamarin-macios/wiki/QuartzCore-iOS-Beta3) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/421
+- [ ] [ReplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/ReplayKit-iOS-Beta3) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/420
 - [ ] [SceneKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SceneKit-iOS-Beta3)
 - [ ] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-iOS-Beta3)
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-iOS-Beta3)
 - [ ] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-iOS-Beta3) - Alex - 🔨
-- [ ] [WebKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WebKit-iOS-Beta3)
+- [ ] [WebKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WebKit-iOS-Beta3) - Sebastien
 - [X] [iAd.framework](https://github.com/xamarin/xamarin-macios/wiki/iAd-iOS-Beta3) - No change

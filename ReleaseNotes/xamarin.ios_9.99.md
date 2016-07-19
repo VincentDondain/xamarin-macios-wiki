@@ -8,7 +8,7 @@
 Requirements
 ============
 
-- The latest features and API requires Xcode 8.0 beta 1 and the bundled iOS, tvOS and watchOS SDKs;
+- The latest features and API requires Xcode 8.0 beta 3 and the bundled iOS, tvOS and watchOS SDKs;
 - Apple Xcode 8.0 requires a Mac running OSX 10.11.5 (El Capitan) or newer;
 
 What's New
@@ -33,7 +33,7 @@ The following new frameworks were added in iOS 10:
 * Speech (available, beta 2)
 * UserNotification (available, beta 2)
 * UserNotificationUI (available, beta 2)
-* VideoSubscriberAccount (available, beta 1)
+* VideoSubscriberAccount (available, beta 2)
 
 The following new frameworks were added in tvOS 10:
 

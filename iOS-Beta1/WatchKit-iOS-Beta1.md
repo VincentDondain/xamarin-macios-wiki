@@ -115,33 +115,9 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
 +@end
 +
 +NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchKit.framework/Headers/WKDefines.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchKit.framework/Headers/WKDefines.h
---- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchKit.framework/Headers/WKDefines.h	2015-10-03 02:04:42.000000000 +0200
-+++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchKit.framework/Headers/WKDefines.h	2016-05-25 05:22:23.000000000 +0200
-@@ -17,3 +17,9 @@
- #define WK_AVAILABLE_WATCHOS_ONLY(_watchOSIntro) __WATCHOS_AVAILABLE(_watchOSIntro) __IOS_UNAVAILABLE
- #define WK_AVAILABLE_IOS_ONLY(_iOSIntro) __IOS_AVAILABLE(_iOSIntro) __WATCHOS_UNAVAILABLE
- #define WK_AVAILABLE_WATCHOS_IOS(_watchOSIntro,_iOSIntro) __WATCHOS_AVAILABLE(_watchOSIntro) __IOS_AVAILABLE(_iOSIntro)
-+#define WK_DEPRECATED_WATCHOS(_watchOSIntro,_watchOSDep,_msg) __WATCHOS_DEPRECATED(_watchOSIntro,_watchOSDep,_msg)
-+#if TARGET_WATCH_OS
-+#define WK_DEPRECATED_WATCHOS_IOS(_watchOSIntro,_watchOSDep,_iOSIntro,_iOSDep,_msg) __WATCHOS_DEPRECATED(_watchOSIntro,_watchOSDep,_msg)
-+#else
-+#define WK_DEPRECATED_WATCHOS_IOS(_watchOSIntro,_watchOSDep,_iOSIntro,_iOSDep,_msg) __IOS_DEPRECATED(_iOSIntro,_iOSDep,_msg)
-+#endif
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchKit.framework/Headers/WKExtension.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchKit.framework/Headers/WKExtension.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchKit.framework/Headers/WKExtension.h	2015-10-03 02:04:42.000000000 +0200
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchKit.framework/Headers/WKExtension.h	2016-05-25 05:22:23.000000000 +0200
-@@ -12,6 +12,10 @@
- NS_ASSUME_NONNULL_BEGIN
- 
- @protocol WKExtensionDelegate;
-+@class HKWorkoutConfiguration;
-+@class UNNotification;
-+@class UILocalNotification;
-+@class WKRefreshBackgroundTask;
- 
- WK_AVAILABLE_WATCHOS_ONLY(2.0)
- @interface WKExtension : NSObject
 @@ -21,11 +25,16 @@
  - (void)openSystemURL:(NSURL *)url;
  
@@ -286,18 +262,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchKit.framework/Headers/WKInterfaceController.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchKit.framework/Headers/WKInterfaceController.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchKit.framework/Headers/WKInterfaceController.h	2015-10-31 03:27:49.000000000 +0100
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchKit.framework/Headers/WKInterfaceController.h	2016-06-03 05:34:20.000000000 +0200
-@@ -14,9 +14,11 @@
- @class WKAlertAction;
- @class WKInterfaceTable;
- @class WKInterfacePicker;
-+@class WKCrownSequencer;
- @class UIImage;
- @class UILocalNotification;
- @class PKPass;
-+@class UNNotification;
- 
- typedef NS_ENUM(NSInteger, WKUserNotificationInterfaceType)  {
-     WKUserNotificationInterfaceTypeDefault,
 @@ -77,6 +79,7 @@
  - (void)awakeWithContext:(nullable id)context;   // context from controller that did push or modal presentation. default does nothing
  
@@ -599,15 +563,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchKit.framework/Headers/WatchKit.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchKit.framework/Headers/WatchKit.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchKit.framework/Headers/WatchKit.h	2016-02-25 05:39:03.000000000 +0100
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/WatchKit.framework/Headers/WatchKit.h	2016-05-25 05:22:23.000000000 +0200
-@@ -2,7 +2,7 @@
- //  WatchKit.h
- //  WatchKit
- //
--//  Copyright (c) 2014-2015 Apple Inc. All rights reserved.
-+//  Copyright (c) 2014-2016 Apple Inc. All rights reserved.
- //
- 
- #import <WatchKit/WKDefines.h>
 @@ -19,6 +19,7 @@
  #import <WatchKit/WKInterfaceTimer.h>
  #import <WatchKit/WKInterfaceTable.h>
