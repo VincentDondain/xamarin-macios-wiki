@@ -42,7 +42,7 @@ The following new frameworks were added in tvOS 10:
 * MultipeerConnectivity (enabled, unaudited)
 * Photos (enabled, unaudited)
 * ReplayKit (enabled, unaudited)
-* UserNotificationUI (enabled, unaudited)
+* UserNotification (enabled, unaudited)
 * VideoSubscriberAccount (enabled, unaudited)
 
 The following new frameworks were added in watchOS 3:
