@@ -679,18 +679,6 @@ diff -ruN /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.p
  
  NS_ASSUME_NONNULL_BEGIN
  
-diff -ruN /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Intents.framework/Headers/INRideOption.h /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Intents.framework/Headers/INRideOption.h
---- /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Intents.framework/Headers/INRideOption.h	2016-06-26 09:15:29.000000000 +0200
-+++ /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Intents.framework/Headers/INRideOption.h	2016-07-11 07:06:19.000000000 +0200
-@@ -25,7 +25,7 @@
- - (nullable instancetype)initWithCoder:(NSCoder *)decoder NS_DESIGNATED_INITIALIZER;
- 
- @property (readwrite, copy, NS_NONATOMIC_IOSONLY) NSString *name; // a name for the ride option.
--@property (readwrite, copy, nullable, NS_NONATOMIC_IOSONLY) NSString *subtitle; // a message associated with the option, shown as a subtitle under the title, which may include additional information or branding text. For example: "Shared ride" or "Operates 10am-10pm only".
-+
- @property (readwrite, copy, NS_NONATOMIC_IOSONLY) NSDate *estimatedPickupDate; // used for providing an ETA to the user.
- 
- @property (readwrite, copy, nullable, NS_NONATOMIC_IOSONLY) INPriceRange *priceRange; // The indicative range of prices for this option.
 diff -ruN /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Intents.framework/Headers/INRideStatus.h /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Intents.framework/Headers/INRideStatus.h
 --- /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Intents.framework/Headers/INRideStatus.h	2016-06-26 09:15:29.000000000 +0200
 +++ /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Intents.framework/Headers/INRideStatus.h	2016-07-11 07:06:19.000000000 +0200

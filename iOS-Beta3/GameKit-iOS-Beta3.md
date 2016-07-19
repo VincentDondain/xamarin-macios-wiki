@@ -60,29 +60,6 @@ diff -ruN /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.p
  @property (nonatomic, assign) id<GKChallengeEventHandlerDelegate> delegate NS_DEPRECATED(10_8, 10_10, 6_0, 7_0); // It is not safe to read or write this property on anything other than the main thread
  @end
 +#endif
-diff -ruN /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework/Headers/GKCloudPlayer.h /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework/Headers/GKCloudPlayer.h
---- /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework/Headers/GKCloudPlayer.h	2016-06-29 07:15:36.000000000 +0200
-+++ /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework/Headers/GKCloudPlayer.h	2016-07-14 08:18:38.000000000 +0200
-@@ -6,7 +6,7 @@
- //
- 
- #import <GameKit/GKBasePlayer.h>
--
-+NS_ASSUME_NONNULL_BEGIN
- @interface GKCloudPlayer : GKBasePlayer
- #if !__OBJC2__
- {
-@@ -15,7 +15,8 @@
- }
- #endif
- 
--// Retrieve a player instance representing the active iCloud account. Returns nil and an error if no iCloud is currently signed in.
--+ (void)getCurrentSignedInPlayer:(void(^)(GKCloudPlayer *player, NSError *error))handler;
-+// Retrieve a player instance representing the active iCloud account for a given iCloud container. Returns nil and an error if the user is not signed in to iCloud or the container is invalid.
-++ (void)getCurrentSignedInPlayerForContainer:(NSString * __nullable)containerName completionHandler:(void(^)(GKCloudPlayer *__nullable player, NSError * __nullable error))handler;
- 
- @end
-+NS_ASSUME_NONNULL_END
 diff -ruN /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework/Headers/GKFriendRequestComposeViewController.h /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework/Headers/GKFriendRequestComposeViewController.h
 --- /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework/Headers/GKFriendRequestComposeViewController.h	2016-06-29 07:15:36.000000000 +0200
 +++ /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework/Headers/GKFriendRequestComposeViewController.h	2016-07-14 08:18:38.000000000 +0200
