@@ -26,14 +26,14 @@ speed and memory usage of our base class libraries (BCL).
 
 The following new frameworks were added in iOS 10:
 
-* CallKit (available, beta 2)
-* Intents (available, beta 2)
-* IntentsUI (available, beta 2)
+* CallKit (available, beta 3)
+* Intents (available, beta 3)
+* IntentsUI (available, beta 3)
 * Message (available, beta 2)
-* Speech (available, beta 2)
-* UserNotification (available, beta 2)
-* UserNotificationUI (available, beta 2)
-* VideoSubscriberAccount (available, beta 2)
+* Speech (available, beta 3)
+* UserNotification (available, beta 3)
+* UserNotificationUI (available, beta 3)
+* VideoSubscriberAccount (available, beta 3)
 
 The following new frameworks were added in tvOS 10:
 
