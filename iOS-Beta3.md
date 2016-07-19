@@ -20,7 +20,7 @@
 - [X] [LocalAuthentication.framework](https://github.com/xamarin/xamarin-macios/wiki/LocalAuthentication-iOS-Beta3) - No change
 - [ ] [MapKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MapKit-iOS-Beta3)
 - [ ] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-iOS-Beta3) - Vincent
-- [ ] [MessageUI.framework](https://github.com/xamarin/xamarin-macios/wiki/MessageUI-iOS-Beta3) - Vincent
+- [X] [MessageUI.framework](https://github.com/xamarin/xamarin-macios/wiki/MessageUI-iOS-Beta3) - Vincent - https://github.com/xamarin/xamarin-macios/pull/431
 - [X] [Messages.framework](https://github.com/xamarin/xamarin-macios/wiki/Messages-iOS-Beta3) - Vincent - https://github.com/xamarin/xamarin-macios/pull/428
 - [ ] [Metal.framework](https://github.com/xamarin/xamarin-macios/wiki/Metal-iOS-Beta3)
 - [ ] [MetalKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalKit-iOS-Beta3)
