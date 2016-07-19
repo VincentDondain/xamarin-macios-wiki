@@ -1,7 +1,4 @@
 ### To Bind
-###### New Frameworks
-No new frameworks were added in /Applications/Xcode8-beta3.app
-
 ###### Existing Frameworks
 - [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-iOS-Beta3)
 - [X] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-iOS-Beta3) - No change
