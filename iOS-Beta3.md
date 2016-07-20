@@ -19,7 +19,7 @@
 - [X] [IntentsUI.framework](https://github.com/xamarin/xamarin-macios/wiki/IntentsUI-iOS-Beta3) - Alex - No need for update, availability attributes already on place
 - [X] [LocalAuthentication.framework](https://github.com/xamarin/xamarin-macios/wiki/LocalAuthentication-iOS-Beta3) - No change
 - [X] [MapKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MapKit-iOS-Beta3) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/438
-- [ ] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-iOS-Beta3) - Vincent
+- [X] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-iOS-Beta3) - Vincent - https://github.com/xamarin/xamarin-macios/pull/446
 - [X] [MessageUI.framework](https://github.com/xamarin/xamarin-macios/wiki/MessageUI-iOS-Beta3) - Vincent - https://github.com/xamarin/xamarin-macios/pull/431
 - [X] [Messages.framework](https://github.com/xamarin/xamarin-macios/wiki/Messages-iOS-Beta3) - Vincent - https://github.com/xamarin/xamarin-macios/pull/428
 - [ ] [Metal.framework](https://github.com/xamarin/xamarin-macios/wiki/Metal-iOS-Beta3)
