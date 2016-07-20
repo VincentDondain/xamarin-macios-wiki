@@ -97,45 +97,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecKey.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecKey.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecKey.h	2015-10-02 23:27:02.000000000 +0200
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecKey.h	2016-05-24 06:55:25.000000000 +0200
-@@ -26,8 +26,6 @@
- 	The functions provided in SecKey.h implement and manage a particular
-     type of keychain item that represents a key.  A key can be stored in a
-     keychain, but a key can also be a transient object.
--
--	You can use a key as a keychain item in most functions.
- */
- 
- #ifndef _SECURITY_SECKEY_H_
-@@ -35,6 +33,9 @@
- 
- #include <Security/SecBase.h>
- #include <CoreFoundation/CFDictionary.h>
-+#include <CoreFoundation/CFData.h>
-+#include <CoreFoundation/CFSet.h>
-+#include <CoreFoundation/CFError.h>
- #include <sys/types.h>
- 
- __BEGIN_DECLS
-@@ -155,8 +156,8 @@
-       * kSecAttrCanUnwrap default true for private keys, false for public keys
- 
- */
--OSStatus SecKeyGeneratePair(CFDictionaryRef parameters, SecKeyRef * __nullable CF_RETURNS_RETAINED publicKey,
--    SecKeyRef * __nullable CF_RETURNS_RETAINED privateKey) __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_2_0);
-+OSStatus SecKeyGeneratePair(CFDictionaryRef parameters, SecKeyRef * _Nullable CF_RETURNS_RETAINED publicKey,
-+    SecKeyRef * _Nullable CF_RETURNS_RETAINED privateKey) __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_2_0);
- 
- 
- /*!
-@@ -293,7 +294,7 @@
- 
- /*!
-     @function SecKeyGetBlockSize
--    @abstract Decrypt a block of ciphertext. 
-+    @abstract Returns size of the block for specified key, in bytes.
-     @param key The key for which the block length is requested.
-     @result The block length of the key in bytes.
-     @discussion If for example key is an RSA key the value returned by 
 @@ -302,6 +303,513 @@
  size_t SecKeyGetBlockSize(SecKeyRef key)
      __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_2_0);
@@ -653,30 +614,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecPolicy.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecPolicy.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecPolicy.h	2015-10-02 23:27:02.000000000 +0200
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecPolicy.h	2016-05-24 06:43:45.000000000 +0200
-@@ -1,5 +1,5 @@
- /*
-- * Copyright (c) 2002-2010,2012-2014 Apple Inc. All Rights Reserved.
-+ * Copyright (c) 2002-2016 Apple Inc. All Rights Reserved.
-  *
-  * @APPLE_LICENSE_HEADER_START@
-  * 
-@@ -46,6 +46,7 @@
- 	@constant kSecPolicyAppleSSL
- 	@constant kSecPolicyAppleSMIME
- 	@constant kSecPolicyAppleEAP
-+	@constant kSecPolicyAppleiChat
- 	@constant kSecPolicyAppleIPsec
- 	@constant kSecPolicyApplePKINITClient
- 	@constant kSecPolicyApplePKINITServer
-@@ -54,6 +55,8 @@
- 	@constant kSecPolicyAppleIDValidation
- 	@constant kSecPolicyAppleTimeStamping
- 	@constant kSecPolicyAppleRevocation
-+	@constant kSecPolicyApplePassbookSigning
-+	@constant kSecPolicyApplePayIssuerEncryption
- */
- extern const CFStringRef kSecPolicyAppleX509Basic
-     __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_7_0);
 @@ -65,6 +68,10 @@
      __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_7_0);
  extern const CFStringRef kSecPolicyAppleIPsec
@@ -697,35 +634,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
  extern const CFStringRef kSecPolicyApplePayIssuerEncryption
      __OSX_AVAILABLE_STARTING(__MAC_10_11, __IPHONE_9_0);
  
-@@ -93,20 +102,26 @@
-         Additional policy values which your code can optionally set:
-             kSecPolicyName      (name which must be matched)
-             kSecPolicyClient    (evaluate for client, rather than server)
--            kSecPolicyRevocationFlags (only valid for a revocation policy)
-+            kSecPolicyRevocationFlags   (only valid for a revocation policy)
-+            kSecPolicyTeamIdentifier    (only valid for a Passbook signing policy)
- 
-     @constant kSecPolicyOid Specifies the policy OID (value is a CFStringRef)
-     @constant kSecPolicyName Specifies a CFStringRef (or CFArrayRef of same)
-         containing a name which must be matched in the certificate to satisfy
-         this policy. For SSL/TLS, EAP, and IPSec policies, this specifies the
-         server name which must match the common name of the certificate.
--        For S/MIME, this specifies the RFC822 email address.
-+        For S/MIME, this specifies the RFC822 email address. For Passbook
-+        signing, this specifies the pass signer.
-     @constant kSecPolicyClient Specifies a CFBooleanRef value that indicates
-         this evaluation should be for a client certificate. If not set (or
-         false), the policy evaluates the certificate as a server certificate.
-     @constant kSecPolicyRevocationFlags Specifies a CFNumberRef that holds a
-         kCFNumberCFIndexType bitmask value. See "Revocation Policy Constants"
-         for a description of individual bits in this value.
-+    @constant kSecPolicyTeamIdentifier Specifies a CFStringRef containing a
-+        team identifier which must be matched in the certificate to satisfy
-+        this policy. For the Passbook signing policy, this string must match
-+        the Organizational Unit field of the certificate subject.
-  */
- extern const CFStringRef kSecPolicyOid
- 	__OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_7_0);
 @@ -116,6 +131,8 @@
  	__OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_7_0);
  extern const CFStringRef kSecPolicyRevocationFlags
@@ -794,34 +702,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecSharedCredential.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecSharedCredential.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecSharedCredential.h	2015-10-02 23:27:02.000000000 +0200
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecSharedCredential.h	2016-05-23 06:50:45.000000000 +0200
-@@ -1,15 +1,15 @@
- /*
-- * Copyright (c) 2014 Apple Inc. All Rights Reserved.
-+ * Copyright (c) 2014-2016 Apple Inc. All Rights Reserved.
-  *
-  * @APPLE_LICENSE_HEADER_START@
-- * 
-+ *
-  * This file contains Original Code and/or Modifications of Original Code
-  * as defined in and that are subject to the Apple Public Source License
-  * Version 2.0 (the 'License'). You may not use this file except in
-  * compliance with the License. Please obtain a copy of the License at
-  * http://www.opensource.apple.com/apsl/ and read it before using this
-  * file.
-- * 
-+ *
-  * The Original Code and all software distributed under the License are
-  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
-  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
-@@ -17,7 +17,7 @@
-  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
-  * Please see the License for the specific language governing rights and
-  * limitations under the License.
-- * 
-+ *
-  * @APPLE_LICENSE_HEADER_END@
-  */
- 
 @@ -53,7 +53,7 @@
          that contains a password.
  */
@@ -861,34 +741,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecTrust.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecTrust.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecTrust.h	2015-10-02 23:27:02.000000000 +0200
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecTrust.h	2016-05-23 06:50:45.000000000 +0200
-@@ -1,15 +1,15 @@
- /*
-- * Copyright (c) 2002-2010,2012-2014 Apple Inc. All Rights Reserved.
-+ * Copyright (c) 2002-2016 Apple Inc. All Rights Reserved.
-  *
-  * @APPLE_LICENSE_HEADER_START@
-- * 
-+ *
-  * This file contains Original Code and/or Modifications of Original Code
-  * as defined in and that are subject to the Apple Public Source License
-  * Version 2.0 (the 'License'). You may not use this file except in
-  * compliance with the License. Please obtain a copy of the License at
-  * http://www.opensource.apple.com/apsl/ and read it before using this
-  * file.
-- * 
-+ *
-  * The Original Code and all software distributed under the License are
-  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
-  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
-@@ -17,7 +17,7 @@
-  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
-  * Please see the License for the specific language governing rights and
-  * limitations under the License.
-- * 
-+ *
-  * @APPLE_LICENSE_HEADER_END@
-  */
- 
 @@ -80,16 +80,15 @@
      of trust evaluation. This value may be returned by the SecTrustEvaluate
      function but not stored as part of the user trust settings.
@@ -958,13 +810,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecureTransport.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecureTransport.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecureTransport.h	2015-11-03 02:49:30.000000000 +0100
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecureTransport.h	2016-05-24 07:00:20.000000000 +0200
-@@ -1,5 +1,5 @@
- /*
-- * Copyright (c) 1999-2002,2005-2014 Apple Inc. All Rights Reserved.
-+ * Copyright (c) 1999-2002,2005-2016 Apple Inc. All Rights Reserved.
-  *
-  * @APPLE_LICENSE_HEADER_START@
-  * 
 @@ -147,6 +147,10 @@
       * Set this option to break from a client hello in order to check for SNI
       */
@@ -976,22 +821,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
  
  };
  
-@@ -171,13 +175,13 @@
- 	/*
- 	 * Server side: We asked for a cert, client sent one, we validated
- 	 *				it OK. App can inspect the cert via
--	 *				SSLGetPeerCertificates().
-+	 *				SSLCopyPeerCertificates().
- 	 * Client side: server asked for one, we sent it.
- 	 */
- 	kSSLClientCertSent,
- 	/*
- 	 * Client sent a cert but failed validation. Server side only.
--	 * Server app can inspect the cert via SSLGetPeerCertificates().
-+	 * Server app can inspect the cert via SSLCopyPeerCertificates().
- 	 */
- 	kSSLClientCertRejected
- } ;
 @@ -303,6 +307,29 @@
      kSSLDatagramType
  };
@@ -1042,22 +871,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
  /*
   * Set the minimum SSL protocol version allowed. Optional.
   * The default is the lower supported protocol.
-@@ -444,13 +484,13 @@
-  *
-  * This can only be called when no session is active.
-  *
-- * For TLS contexts, legal values for minVersion are :
-+ * For TLS contexts, legal values for maxVersion are :
-  *		kSSLProtocol3
-  * 		kTLSProtocol1
-  * 		kTLSProtocol11
-  * 		kTLSProtocol12
-  *
-- * For DTLS contexts, legal values for minVersion are :
-+ * For DTLS contexts, legal values for maxVersion are :
-  *      kDTLSProtocol1
-  */
- OSStatus
 @@ -719,19 +759,6 @@
  	__OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_5_0);
  
@@ -1096,52 +909,5 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
   * Normal application-level read/write. On both of these, a errSSLWouldBlock
   * return and a partially completed transfer - or even zero bytes transferred -
   * are NOT mutually exclusive.
-diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/Security.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/Security.h
---- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/Security.h	2015-10-02 23:27:02.000000000 +0200
-+++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/Security.h	2016-05-24 06:55:25.000000000 +0200
-@@ -32,4 +32,6 @@
- #include <Security/SecRandom.h>
- #include <Security/SecSharedCredential.h>
- #include <Security/SecTrust.h>
--
-+#if !TARGET_OS_IPHONE
-+#include <Security/AuthSession.h>
-+#endif
-diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecurityFeatures.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecurityFeatures.h
---- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecurityFeatures.h	1970-01-01 01:00:00.000000000 +0100
-+++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Headers/SecurityFeatures.h	2016-05-24 06:55:25.000000000 +0200
-@@ -0,0 +1,32 @@
-+/*
-+ * Copyright (c) 2015 Apple Inc. All Rights Reserved.
-+ *
-+ * @APPLE_LICENSE_HEADER_START@
-+ *
-+ * This file contains Original Code and/or Modifications of Original Code
-+ * as defined in and that are subject to the Apple Public Source License
-+ * Version 2.0 (the 'License'). You may not use this file except in
-+ * compliance with the License. Please obtain a copy of the License at
-+ * http://www.opensource.apple.com/apsl/ and read it before using this
-+ * file.
-+ *
-+ * The Original Code and all software distributed under the License are
-+ * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
-+ * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
-+ * INCLUDING WITHOUT LIMITATION, ANY WARRANTIES OF MERCHANTABILITY,
-+ * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
-+ * Please see the License for the specific language governing rights and
-+ * limitations under the License.
-+ *
-+ * @APPLE_LICENSE_HEADER_END@
-+ */
-+
-+/*
-+ * What features are enabled for this platform, used so that
-+ * header files can be shared between the the different platforms
-+ */
-+
-+#ifndef SECURITY_SECURITY_FEATURES_H
-+#define SECURITY_SECURITY_FEATURES_H 1
-+
-+#endif /* SECURITY_SECURITY_FEATURES_H */
 
 ```

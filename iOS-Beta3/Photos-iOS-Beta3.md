@@ -4,17 +4,6 @@
 diff -ruN /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Photos.framework/Headers/PHAssetCollectionChangeRequest.h /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Photos.framework/Headers/PHAssetCollectionChangeRequest.h
 --- /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Photos.framework/Headers/PHAssetCollectionChangeRequest.h	2016-06-28 08:31:28.000000000 +0200
 +++ /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Photos.framework/Headers/PHAssetCollectionChangeRequest.h	2016-07-13 05:40:02.000000000 +0200
-@@ -6,8 +6,9 @@
- //
- 
- #import <Foundation/Foundation.h>
-+#import <Photos/PHFetchResult.h>
- 
--@class PHFetchResult;
-+@class PHAsset;
- @class PHAssetCollection;
- @class PHObjectPlaceholder;
- 
 @@ -35,7 +36,7 @@
  + (nullable instancetype)changeRequestForAssetCollection:(PHAssetCollection *)assetCollection;
  
@@ -27,19 +16,6 @@ diff -ruN /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.p
 diff -ruN /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Photos.framework/Headers/PHChange.h /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Photos.framework/Headers/PHChange.h
 --- /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Photos.framework/Headers/PHChange.h	2016-06-28 08:31:28.000000000 +0200
 +++ /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Photos.framework/Headers/PHChange.h	2016-07-13 05:40:02.000000000 +0200
-@@ -7,11 +7,11 @@
- 
- #import <Foundation/Foundation.h>
- #import <Photos/PhotosDefines.h>
-+#import <Photos/PHFetchResult.h>
- 
- @class PHObject;
- @class PHObjectChangeDetails;
- @class PHFetchResultChangeDetails;
--@class PHFetchResult;
- 
- NS_ASSUME_NONNULL_BEGIN
- 
 @@ -24,13 +24,13 @@
  
  
@@ -107,16 +83,6 @@ diff -ruN /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.p
 diff -ruN /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Photos.framework/Headers/PHCollectionListChangeRequest.h /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Photos.framework/Headers/PHCollectionListChangeRequest.h
 --- /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Photos.framework/Headers/PHCollectionListChangeRequest.h	2016-06-28 08:31:28.000000000 +0200
 +++ /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Photos.framework/Headers/PHCollectionListChangeRequest.h	2016-07-13 05:40:02.000000000 +0200
-@@ -7,8 +7,8 @@
- 
- #import <Foundation/Foundation.h>
- #import <Photos/PhotosDefines.h>
-+#import <Photos/PHFetchResult.h>
- 
--@class PHFetchResult;
- @class PHCollection;
- @class PHCollectionList;
- @class PHObjectPlaceholder;
 @@ -37,7 +37,7 @@
  + (nullable instancetype)changeRequestForCollectionList:(PHCollectionList *)collectionList;
  
