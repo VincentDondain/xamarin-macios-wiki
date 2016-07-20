@@ -34,5 +34,5 @@
 - [ ] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-iOS-Beta3)
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-iOS-Beta3)
 - [X] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-iOS-Beta3) - Alex - https://github.com/xamarin/xamarin-macios/pull/423
-- [ ] [WebKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WebKit-iOS-Beta3) - Sebastien
+- [ ] [WebKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WebKit-iOS-Beta3) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/442
 - [X] [iAd.framework](https://github.com/xamarin/xamarin-macios/wiki/iAd-iOS-Beta3) - No change

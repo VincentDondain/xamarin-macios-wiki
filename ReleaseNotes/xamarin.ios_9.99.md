@@ -29,7 +29,7 @@ The following new frameworks were added in iOS 10:
 * CallKit (available, beta 3)
 * Intents (available, beta 3)
 * IntentsUI (available, beta 3)
-* Message (available, beta 2)
+* Message (available, beta 3)
 * Speech (available, beta 3)
 * UserNotification (available, beta 3)
 * UserNotificationUI (available, beta 3)
