@@ -1,7 +1,7 @@
 <div class="note">
 	<b>Classic Profile Deprecation:</b>
 	The complete removal of classic support is scheduled for next fall with the release of Xamarin.iOS 10.0 and
-	this preview of our iOS 10 support does **not** ship with `monotouch.dll`.
+	this preview of our iOS 10 support does *not* ship with `monotouch.dll`.
 	Xamarin.iOS 9.10 (cycle 8) will be the last version to ship support for `monotouch.dll` this summer.
 </div>
 
