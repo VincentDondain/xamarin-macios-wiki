@@ -74,4 +74,4 @@ Starting with iOS means we're including most new, shared API with tvOS, watchOS 
 
 ### API diff
 
-This is a live document so there's no static list to link to. However our [Jenkins bots](https://jenkins.mono-project.com/job/xamarin-macios-pr-builder/) produce this information for every commit that is being built. Pick on based on `xcode8` and look for the **API diff** link on the left column.
+This is a live document so there's no static list to link to. However our [Jenkins bots](https://jenkins.mono-project.com/job/xamarin-macios-pr-builder/) produce this information for every commit that is being built. Pick any build based on `xcode8` and look for the **API diff** link on the left column.
