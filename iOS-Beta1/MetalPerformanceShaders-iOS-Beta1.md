@@ -1705,15 +1705,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageIntegral.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageIntegral.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageIntegral.h	2015-10-02 23:45:19.000000000 +0200
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageIntegral.h	2016-05-21 08:10:52.000000000 +0200
-@@ -3,7 +3,7 @@
-  *  @framework MetalPerformanceShaders.framework
-  *
-  *  @copyright Copyright (c) 2015 Apple Inc. All rights reserved.
-- *  @abstract Metal Image integral filters
-+ *  @abstract MetalPerformanceShaders integral filters
-  */
- 
- #ifndef MPS_MPSImageIntegral_h
 @@ -24,7 +24,7 @@
   *              If the channels in the source image are integer values, it is recommended that
   *              an appropriate 32-bit integer image destination format is used.
@@ -1735,15 +1726,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageKernel.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageKernel.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageKernel.h	2015-10-02 23:45:19.000000000 +0200
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageKernel.h	2016-05-21 08:10:52.000000000 +0200
-@@ -3,7 +3,7 @@
-  *  @framework MetalPerformanceShaders.framework
-  *
-  *  @copyright Copyright (c) 2015 Apple Inc. All rights reserved.
-- *  @abstract Metal Image filter base classes
-+ *  @abstract MetalPerformanceShaders filter base classes
-  */
- 
- #ifndef _MPS_MPSImageKernel_
 @@ -16,7 +16,7 @@
   *  @dependency This depends on Metal.framework
   *  @discussion A MPSUnaryImageKernel consumes one MTLTexture and produces one MTLTexture.
@@ -1753,27 +1735,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
  @interface MPSUnaryImageKernel : MPSKernel
  
  
-@@ -25,7 +25,7 @@
-  *  @discussion The offset is defined to be the position of clipRect.origin in source coordinates.
-  *              Default: {0,0,0}, indicating that the top left corners of the clipRect and source image align.
-  *
-- *              See Also: @ref subsubsection_mioffset
-+ *              See Also: @ref subsubsection_mpsoffset
-  */
- @property (readwrite, nonatomic) MPSOffset                offset;
- 
-@@ -122,6 +122,11 @@
-  *  [sobelFilter release];  // if not ARC, clean up the MPSImageSobel object
-  *  @endcode
-  *
-+ *  Note: Image filters that look at neighboring pixel values may actually consume more
-+ *        memory when operating in place than out of place. Many such operations are
-+ *        tiled internally to save intermediate texture storage, but can not tile when
-+ *        operating in place. The memory savings for tiling is however very short term,
-+ *        typically the lifetime of the MTLCommandBuffer.
-  *
-  *  @abstract   Attempt to apply a MPSKernel to a texture in place.
-  *  @param      commandBuffer       A valid MTLCommandBuffer to receive the encoded filter
 @@ -191,7 +196,7 @@
   *  @dependency This depends on Metal.framework
   *  @discussion A MPSBinaryImageKernel consumes two MTLTextures and produces one MTLTexture.
@@ -1783,68 +1744,9 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
  @interface MPSBinaryImageKernel : MPSKernel
  
  /*! @property   primaryOffset
-@@ -199,7 +204,7 @@
-  *  @discussion The offset is defined to be the position of clipRect.origin in source coordinates.
-  *              Default: {0,0,0}, indicating that the top left corners of the clipRect and primary source image align.
-  *
-- *              See Also: @ref subsubsection_mioffset
-+ *              See Also: @ref subsubsection_mpsoffset
-  */
- @property (readwrite, nonatomic) MPSOffset                primaryOffset;
- 
-@@ -208,7 +213,7 @@
-  *  @discussion The offset is defined to be the position of clipRect.origin in source coordinates.
-  *              Default: {0,0,0}, indicating that the top left corners of the clipRect and primary source image align.
-  *
-- *              See Also: @ref subsubsection_mioffset
-+ *              See Also: @ref subsubsection_mpsoffset
-  */
- @property (readwrite, nonatomic) MPSOffset                secondaryOffset;
- 
-@@ -278,6 +283,12 @@
-  *  released, *texture remains unmodified and NO is returned.  Please see the
-  *  MPSCopyAllocator definition for a sample allocator implementation.
-  *
-+ *  Note: Image filters that look at neighboring pixel values may actually consume more
-+ *        memory when operating in place than out of place. Many such operations are
-+ *        tiled internally to save intermediate texture storage, but can not tile when
-+ *        operating in place. The memory savings for tiling is however very short term,
-+ *        typically the lifetime of the MTLCommandBuffer.
-+ *
-  *  @abstract   Attempt to apply a MPSKernel to a texture in place.
-  *  @param      commandBuffer           A valid MTLCommandBuffer to receive the encoded filter
-  *  @param      primaryTexture          A pointer to a valid MTLTexture containing the
-@@ -326,6 +337,12 @@
-  *  released, *texture remains unmodified and NO is returned.  Please see the
-  *  MPSCopyAllocator definition for a sample allocator implementation.
-  *
-+ *  Note: Image filters that look at neighboring pixel values may actually consume more
-+ *        memory when operating in place than out of place. Many such operations are
-+ *        tiled internally to save intermediate texture storage, but can not tile when
-+ *        operating in place. The memory savings for tiling is however very short term,
-+ *        typically the lifetime of the MTLCommandBuffer.
-+ *
-  *  @abstract   Attempt to apply a MPSKernel to a texture in place.
-  *  @param      commandBuffer           A valid MTLCommandBuffer to receive the encoded filter
-  *  @param      inPlacePrimaryTexture   A pointer to a valid MTLTexture containing secondary image.
-@@ -419,4 +436,4 @@
- 
- @end
- 
--#endif /* defined(_MetalSmartShaders_MSImageKernel_) */
-+#endif /* defined(_MetalPerformanceShaders_MSImageKernel_) */
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageMedian.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageMedian.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageMedian.h	2015-10-02 23:45:19.000000000 +0200
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageMedian.h	2016-05-21 08:10:52.000000000 +0200
-@@ -3,7 +3,7 @@
-  *  @framework MetalPerformanceShaders.framework
-  *
-  *  @copyright Copyright (c) 2015 Apple Inc. All rights reserved.
-- *  @abstract Metal Image median filters
-+ *  @abstract MetalPerformanceShaders median filters
-  */
- 
- #ifndef MPS_MPSImageMedian_h
 @@ -22,7 +22,7 @@
   *              NOTE: The MPSImageMedian filter currently only supports images with <= 8 bits/channel.
   *
@@ -1857,15 +1759,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageMorphology.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageMorphology.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageMorphology.h	2015-10-02 23:45:19.000000000 +0200
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageMorphology.h	2016-05-21 08:10:52.000000000 +0200
-@@ -3,7 +3,7 @@
-  *  @framework MetalPerformanceShaders
-  *
-  *  @copyright Copyright (c) 2015 Apple Inc. All rights reserved.
-- *  @abstract Metal Image morphological operators
-+ *  @abstract MetalPerformanceShaders morphological operators
-  */
- 
- #ifndef MPS_MPSImageMorphology_h
 @@ -18,7 +18,7 @@
   *              in the source image. If there are multiple channels in the source image, each channel is processed independently.
   *              The edgeMode property is assumed to always be MPSImageEdgeModeClamp for this filter.
@@ -1945,53 +1838,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
  @interface  MPSImageLanczosScale : MPSUnaryImageKernel
  
  /*! @property   scaleTransform
-@@ -39,6 +39,46 @@
-  *              scaleTransform are copied to object storage, and the pointer is updated to point 
-  *              to internal storage. Do not attempt to free it.  You may free your copy of 
-  *              the MPSScaleTransform as soon as the property set operation is complete.
-+ *
-+ *              When calculating a scaleTransform, use the limits of the bounding box for the intended
-+ *              source region of interest and the destination clipRect. Adjustments for pixel center 
-+ *              coordinates are handled internally to the function.  For example,
-+ *              the scale transform to convert the entire source image to the entire destination image
-+ *              size (clipRect = MPSRectNoClip) would be:
-+ *
-+ *              @code
-+ *                  scaleTransform.scaleX = (double) dest.width / source.width;
-+ *                  scaleTransform.scaleY = (double) dest.height / source.height;
-+ *                  scaleTransform.translateX = scaleTransform.translateY = 0.0;
-+ *              @endcode
-+ *
-+ *              The translation parameters allow you to adjust the region of the source image used
-+ *              to create the destination image. They are in destination coordinates. To place the
-+ *              top left corner of the destination clipRect to represent the position {x,y} in source 
-+ *              coordinates, we solve for the translation based on the standard scale matrix operation
-+ *              for each axis:
-+ *
-+ *              @code
-+ *                  dest_position = source_position * scale + translation;
-+ *                  translation = dest_position - source_position * scale;
-+ *              @endcode
-+ *
-+ *              For the top left corner of the clipRect, the dest_position is considered to be {0,0}. 
-+ *              This gives us a translation of:
-+ *
-+ *              @code
-+ *                  scaleTransform.translateX = -source_origin.x * scaleTransform.scaleX;
-+ *                  scaleTransform.translateY = -source_origin.y * scaleTransform.scaleY;
-+ *              @endcode
-+ *
-+ *              One would typically use non-zero translations to do tiling, or provide a resized 
-+ *              view into a internal segment of an image.
-+ *
-+ *              Changing the Lanczos scale factor may trigger recalculation of signficant state internal
-+ *              to the object when the filter is encoded to the command buffer. The scale factor is
-+ *              scaleTransform->scaleX,Y, or the ratio of source and destination image sizes if
-+ *              scaleTransform is NULL. Reuse a MPSImageLancosScale object for frequently used scalings 
-+ *              to avoid redundantly recreating expensive resampling state.
-  */
- @property (readwrite, nonatomic, nullable) const MPSScaleTransform *scaleTransform;
- 
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageThreshold.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageThreshold.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageThreshold.h	2015-10-02 23:45:19.000000000 +0200
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageThreshold.h	2016-05-21 08:10:52.000000000 +0200
@@ -2144,46 +1990,9 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
  @interface MPSKernel  : NSObject <NSCopying>
  
  /****************
-@@ -120,7 +120,8 @@
-  *              nil if the device is not supported. Devices must be 
-  *              MTLFeatureSet_iOS_GPUFamily2_v1 or later.
-  */
---(nonnull instancetype) initWithDevice: (nonnull id <MTLDevice>) device     NS_DESIGNATED_INITIALIZER;
-+-(nonnull instancetype) initWithDevice: (nonnull id <MTLDevice>) device
-+                        NS_DESIGNATED_INITIALIZER;
- 
- 
- /*!
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSTypes.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSTypes.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSTypes.h	2015-10-02 23:45:19.000000000 +0200
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSTypes.h	2016-05-21 08:10:52.000000000 +0200
-@@ -1,19 +1,19 @@
- /*!
-- *  @header MPSTypes.h
-- *  @framework MetalPerformanceShaders
-- *  @copyright Copyright (c) 2015 Apple Inc. All rights reserved.
-- *  @discussion   Types common to MetalPerformanceShaders.framework
-+ *  @header     MPSTypes.h
-+ *  @framework  MetalPerformanceShaders
-+ *  @copyright  Copyright (c) 2015 Apple Inc. All rights reserved.
-+ *  @discussion Types common to MetalPerformanceShaders.framework
-  */
- 
- #ifndef MPS_Types_h
- #define MPS_Types_h
- 
-+#import <Foundation/NSObjCRuntime.h>
-+#import <Metal/Metal.h>
-+
- #ifdef __cplusplus
- extern "C" {
- #endif
--    
--#import <Foundation/NSObjCRuntime.h>
--#import <Metal/Metal.h>
- 
-     
- #ifndef __has_attribute          /* clang will define this. Other compilers maybe not. */
 @@ -27,72 +27,171 @@
  #endif
  #if __has_extension(enumerator_attributes)
@@ -2397,128 +2206,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
   */
  typedef struct
  {
-@@ -102,46 +201,38 @@
- }MPSOffset;
- 
- /*!
-- *  @typedef    MPSOrigin
-+ *  @struct     MPSOrigin
-  *  @memberof   MPSKernel
-  *  @abstract   A position in an image
-- *  @field      x   The x coordinate of the position
-- *  @field      y   The y coordinate of the position
-- *  @field      z   The z coordinate of the position
-  */
--typedef struct
-+typedef struct MPSOrigin
- {
--    double  x;
--    double  y;
--    double  z;
-+    double  x;  /**< The x coordinate of the position       */
-+    double  y;  /**< The y coordinate of the position       */
-+    double  z;  /**< The z coordinate of the position       */
- }MPSOrigin;
- 
- /*!
-- *  @typedef    MPSSize
-+ *  @struct     MPSSize
-  *  @memberof   MPSKernel
-  *  @abstract   A size of a region in an image
-- *  @field      width       The width of the region
-- *  @field      height      The height of a region
-- *  @field      depth       The depth of a region (usually 1)
-  */
--typedef struct
-+typedef struct MPSSize
- {
--    double  width;
--    double  height;
--    double  depth;
-+    double  width;      /**< The width of the region    */
-+    double  height;     /**< The height of the region   */
-+    double  depth;      /**< The depth of the region    */
- }MPSSize;
- 
- /*!
-- *  @typedef    MPSRegion
-+ *  @struct     MPSRegion
-  *  @memberof   MPSKernel
-  *  @abstract   A region of an image
-- *  @field      origin  The top left corner of the region.  Units: pixels
-- *  @field      size    The size of the region.             Units: pixels
-  */
--typedef struct
-+typedef struct MPSRegion
- {
--    MPSOrigin       origin;                 /**< The top left corner of the region.  Units: pixels */
--    MPSSize         size;                   /**< The size of the region. Units: pixels */
-+    MPSOrigin       origin;     /**< The top left corner of the region.  Units: pixels  */
-+    MPSSize         size;       /**< The size of the region. Units: pixels              */
- }MPSRegion;
-     
- /*!
-@@ -154,9 +245,18 @@
- extern const MTLRegion  MPSRectNoClip;
-     
- /*!
-- *  @typedef    MPSScaleTransform
-- *  @memberof   MPSImageLanczosScale
-- *  @abstract   Transform matrix for explict control over resampling in MPSImageLanczosScale
-+ *  @struct         MPSScaleTransform
-+ *  @abstract       Transform matrix for explict control over resampling in MPSImageLanczosScale.
-+ *  @discussion     The MPSScaleTransform is equivalent to:
-+ *       @code
-+ *          (CGAffineTransform) {
-+ *               .a = scaleX,        .b = 0,
-+ *               .c = 0,             .d = scaleY,
-+ *               .tx = translateX,   .ty = translateY
-+ *           }
-+ *       @endcode
-+ *
-+ *  @memberof       MPSImageLanczosScale
-  */
- typedef struct MPSScaleTransform
- {
-@@ -171,7 +271,7 @@
-  *  @memberof   MPSKernel
-  *  @abstract   A block to make a copy of sourceTexture for MPSKernels that can only execute out of place.
-  *  @discussion Some MPSKernel objects may not be able to operate in place. When that occurs, and in-place
-- *              operation is requested, MetalImage will call back to this block to get a new texture
-+ *              operation is requested, MPS will call back to this block to get a new texture
-  *              to return instead. To avoid spending long periods of time allocating pages to back the
-  *              MTLTexture, the block should attempt to reuse textures. The texture returned from the
-  *              MPSCopyAllocator will be returned instead of the sourceTexture from the MPSKernel method 
-@@ -187,6 +287,7 @@
-  *                                               width: sourceTexture.width
-  *                                              height: sourceTexture.height
-  *                                           mipmapped: NO];
-+ *                  d.usage = MTLTextureUsageShaderRead | MTLTextureUsageShaderWrite;
-  *
-  *                  //FIXME: Allocating a new texture each time is slow. They take up to 1 ms each.
-  *                  //       There are not too many milliseconds in a video frame! You can recycle
-@@ -203,7 +304,7 @@
-  *                  //        pixels from sourceTexture to the new texture or regions of the new texture
-  *                  //        will be uninitialized. You can make a MTLCommandEncoder to encode work on
-  *                  //        the MTLCommandBuffer here to do that work, if necessary. It will be
-- *                  //        scheduled to run immediately before the MPSKernel work. Do may call
-+ *                  //        scheduled to run immediately before the MPSKernel work. Do not call
-  *                  //        [MTLCommandBuffer enqueue/commit/waitUntilCompleted/waitUntilScheduled]
-  *                  //        in the MPSCopyAllocator block. Make sure to call -endEncoding on the
-  *                  //        MTLCommandEncoder so that the MTLCommandBuffer has no active encoder
-@@ -235,12 +336,6 @@
-  *              When the MPSCopyAllocator is called, no MTLCommandEncoder is active on the commandBuffer.
-  *              You may create a MTLCommandEncoder in the block to initialize the texture. Make sure
-  *              to call -endEncoding on it before returning, if you do.
-- *             
-- *                  The next command placed on the MTLCommandBuffer after the MPSCopyAllocator returns is
-- *                  almost assuredly going to be encoded with a MTLComputeCommandEncoder. Using any other
-- *                  type of encoder in the MPSCopyAllocator will probably cost you an additional 0.5 ms
-- *                  of both CPU _AND_ GPU time (or more!) due to a double mode switch penalty.
-- *
-  *
-  *  @param      filter          A valid pointer to the MPSKernel that is calling the MPSCopyAllocator. From
-  *                              it you can get the clipRect of the intended operation.
 diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MetalPerformanceShaders.h /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MetalPerformanceShaders.h
 --- /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MetalPerformanceShaders.h	2015-10-02 23:45:19.000000000 +0200
 +++ /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MetalPerformanceShaders.h	2016-05-21 08:10:52.000000000 +0200
@@ -2531,149 +2218,4 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
  #import <MetalPerformanceShaders/MPSImageConvolution.h>
  #import <MetalPerformanceShaders/MPSImageHistogram.h>
  #import <MetalPerformanceShaders/MPSImageIntegral.h>
-@@ -41,6 +43,29 @@
-  *  In iOS 9, MetalPerformanceShaders.framework provides a series of commonly-used image processing primitives for 
-  *  image effects on Metal textures.
-  *
-+ *  @section section_data    Data containers
-+ *  @subsection subsection_metal_containers  MTLTextures and MTLBuffers
-+ *
-+ *  Most data operated on by Metal Performance Shaders must be in a portable data container appropriate
-+ *  for use on the GPU, such as a MTLTexture, MTLBuffer or MPSImage.  The first two should be 
-+ *  self-explanatory based on your previous experience with Metal.framework. MPS will use these
-+ *  directly when it can.
-+ *
-+ *  @subsection subsection_mpsimage  MPSImages
-+ *  Convolutional neural networking (CNN) filters may need more than the four data channels that a
-+ *  MTLTexture can provide. In these cases, the MPSImage is used instead as an abstraction
-+ *  layer on top of a MTLTexture. When more than 4 channels are needed, extra RGBA pixels are inserted
-+ *  horizontally adjacent to the start of each pixel to hold the additional channels. The MPSImage
-+ *  tracks this information as the number of "feature channels" in an image. The underlying MTLTexture.width 
-+ *  may be several times that of the MPSImage.width to hold the extra data.
-+ *
-+ *  @subsection subsection_mpstemporaryimage  MPSTemporaryImages
-+ *  The MPSTemporaryImage (subclass of MPSImage) extends the MPSImage to provide advanced caching of
-+ *  unused memory to increase performance and reduce memory footprint. They are intended as fast
-+ *  GPU-only storage for intermediate image data needed only transiently within a single MTLCommandBuffer.
-+ *  They accelerate the common case of image data which is created only to be consumed and destroyed
-+ *  immediately by the next operation(s) in a MTLCommandBuffer.
-+ *
-  *  @section section_discussion     The MPSKernel
-  *
-  *  The MPSKernel is the base class for all MPS kernels. It defines baseline behavior for all MPS 
-@@ -68,15 +93,15 @@
-  *  -#  Allocate the usual Metal objects: MTLDevice, MTLCommandQueue, and MTLCommandBuffer 
-  *      to drive a Metal compute pipeline. If your application already uses Metal, chances are you 
-  *      have most of these things already. MPS will fit right in to this workflow. It can 
-- *      encode onto MTLCommandBuffers that you have already written to, using a MTLComputeCommandEncoder 
-- *      that you have previously used.
-+ *      encode onto MTLCommandBuffers inline with your own workload.
-  *
-  *  -#  Create an appropriate MPSKernel object. For example, if you want to do a Gaussian blur, make
-  *      a MPSImageGaussianBlur object.  MPSKernel objects are generally light weight but can be reused
-  *      to save some setup time. They can not be used by multiple threads concurrently, so if you
-- *      are using Metal from many threads concurrently, make extra MPSKernel objects.
-+ *      are using Metal from many threads concurrently, make extra MPSKernel objects. MPSKernel objects
-+ *      conform to <NSCopying>.
-  *
-- *  -#  Call [MPSKernelSubclass  encodeToCommandBuffer:...]. Parameters for other -encodeKernel calls
-+ *  -#  Call [MPSKernelSubclass  encodeToCommandBuffer:...]. Parameters for other -encode... calls
-  *      vary by filter type, but operate similarly. They create a MTLCommandEncoder, write commands to 
-  *      run the filter into the MTLCommandBuffer and then end the MTLCommandEncoder.  This means
-  *      you must call -endEncoding on your current MTLCommandEncoder before calling a MPSKernel encode
-@@ -398,6 +423,41 @@
-  *      MPSImageThresholdToZero           <MetalPerformanceShaders/MPSImageThreshold.h>  srcPixel > thresholdVal ? srcPixel : 0
-  *      MPSImageThresholdToZeroInverse    <MetalPerformanceShaders/MPSImageThreshold.h>  srcPixel > thresholdVal ? 0 : srcPixel
-  *
-+ *
-+ *  @subsection subsection_CNN     Convolutional Neural Networks
-+ *  Convolutional Neural Networks (CNN) is a machine learning method commonly used for object
-+ *  recognition within images that attempts to model the visual cortex as a sequence of convolution,
-+ *  rectification, pooling and normalization steps. Several CNN filters commonly derived from the MPSCNNKernel
-+ *  base class are provided to help you implement these steps as efficiently as possible.
-+ *
-+ *      MPSCNNNeuronLinear              <MetalPerformanceShaders/MPSCNN.h>      A linear neuron activation function
-+ *      MPSCNNNeuronReLU                <MetalPerformanceShaders/MPSCNN.h>      A neuron activation function with rectified linear units
-+ *      MPSCNNNeuronSigmoid             <MetalPerformanceShaders/MPSCNN.h>      A sigmoid neuron activation function 1/(1+e**-x)
-+ *      MPSCNNNeuronTanH                <MetalPerformanceShaders/MPSCNN.h>      A neuron activation function using hyperbolic tangent
-+ *      MPSCNNConvolution               <MetalPerformanceShaders/MPSCNN.h>      A 4D convolution tensor
-+ *      MPSCNNPoolingMax                <MetalPerformanceShaders/MPSCNN.h>      The maximum value in the pooling area
-+ *      MPSCNNPoolingAverage            <MetalPerformanceShaders/MPSCNN.h>      The average value in the pooling area
-+ *      MPSCNNSpatialNormalization      <MetalPerformanceShaders/MPSCNN.h>
-+ *      MPSCNNCrossChannelNormalization <MetalPerformanceShaders/MPSCNN.h>
-+ *      MPSCNNSoftmax                   <MetalPerformanceShaders/MPSCNN.h>      exp(pixel(x,y,k))/sum(exp(pixel(x,y,0)) ... exp(pixel(x,y,N-1))
-+ *
-+ *  MPSCNNKernels operate on MPSImages.  MPSImages are at their core MTLTextures. However, whereas
-+ *   MTLTextures commonly represent image or texel data, a MPSImage is a more abstract representation
-+ *  of image features. The channels within a MPSImage do not necessarily correspond to colors in a
-+ *  color space. (Though, they can.) As a result, there can be many more than four of them. 32 or 64 channels
-+ *  per pixel is not uncommon.  This is achieved on the MTLTexture hardware abstraction by inserting
-+ *  extra RGBA pixels to handle the additional feature channels (if any) beyond 4. Thus, each CNN pixel
-+ *  in a 32 channel image is represented as 8 horizontally consecutive RGBA pixels in the texture.
-+ *  The width of the MTLTexture is correspondingly wider than the width of the MPSImage.
-+ *
-+ *  MPSImages can be created from existing MTLTextures. They may also be created anew from a MPSImageDescriptor
-+ *  and backed with either standard texture memory, or as MPSTemporaryImages using memory drawn from MPS's
-+ *  internal cached texture backing store.  MPSTemporaryImages can provide great memory usage and CPU time savings,
-+ *  but come with significant restrictions that should be understood before using them. For example, their contents
-+ *  are only valid during the GPU-side execution of a single MTLCommandBuffer and can not be read from or written to
-+ *  by the CPU. They are provided as an efficient way to hold CNN computations that are used immediately within the
-+ *  scope of the same MTLCommandBuffer and then discarded.
-+ *
-  *  @section  section_validation    MPS API validation
-  *  MPS uses the same API validation layer that Metal uses to alert you to API mistakes while
-  *  you are developing your code. While this option is turned on (Xcode: Edit Scheme: options: Metal API Validation),
-@@ -466,6 +526,7 @@
-  *                                   width: sourceTexture.width
-  *                                  height: sourceTexture.height
-  *                               mipmapped: NO];
-+ *      d.usage = MTLTextureUsageShaderRead | MTLTextureUsageShaderWrite;
-  *
-  *      //FIXME: Allocating a new texture each time is slow. They take up to 1 ms each.
-  *      //       There are not too many milliseconds in a video frame! You can recycle
-@@ -537,7 +598,7 @@
-  *          if( nil == blur )
-  *              MyHandleError(kOutOfMemory);
-  *
-- *          // Set all MPSKernel properties before calling -canOperateInPlaceWithSourceTexture.
-+ *          // Set all MPSKernel properties to taste.
-  *          blur.sigma = blurRadius;
-  *          // defaults are okay here for other MPSKernel properties. (clipRect, origin, edgeMode)
-  *
-@@ -549,7 +610,8 @@
-  *          [ blur release];
-  *
-  *          // the usual metal enqueue process
-- *          [buffer waitUntilCompleted];    // slow!  Try enqueing more work on this or the next command buffer instead of waiting.
-+ *          [buffer waitUntilCompleted];    // slow!  Try enqueing more work on this or the next 
-+ *                                          // command buffer instead of waiting every time.
-  *
-  *          return result;
-  *      }
-@@ -582,7 +644,8 @@
-  *  -#  There is a large cost to allocating buffers and textures.
-  *  The cost can swamp the CPU, preventing you from keeping
-  *  the GPU busy. Try to preallocate and reuse MTLResource
-- *  objects as much as possible.
-+ *  objects as much as possible. The MPSTemporaryImage may be
-+ *  used instead for short-lived dynamic allocations.
-  *
-  *  -#  There is a cost to switching between render and compute
-  *  encoders. Each time a new render encoder is used, there
-@@ -591,6 +654,14 @@
-  *  batch compute work together. Since making a new MTLCommandBuffer
-  *  forces you to make a new MTLCommandEncoder too, try to
-  *  do more work with fewer MTLCommandBuffers.
-+ *
-+ *  -#  On currently available iOS devices we find that for some 
-+ *  image operations, particularly those involving multiple passes -
-+ *  for example, if you are chaining multiple MPS image filters
-+ *  together — performance can be improved by up a factor of two 
-+ *  by breaking the work into tiles about 512 kB in size. Use
-+ *  -sourceRegionForDestinationSize: to find the MPSRegion needed
-+ *  for each tile. 
-  */
- 
- 
-
 ```
