@@ -1,6 +1,6 @@
 ### To Bind
 ###### New Frameworks
-- [ ] ExternalAccessory.framework *(Added)* - not enabled, missing header files on tvOS simulator: https://trello.com/c/2e2VdbGR
+- [ ] ExternalAccessory.framework *(Added)* - https://github.com/xamarin/xamarin-macios/pull/470
 - [X] HomeKit.framework *(Added)* - enabled
 - [X] MultipeerConnectivity.framework *(Added)* - enabled
 - [X] Photos.framework *(Added)* - enabled

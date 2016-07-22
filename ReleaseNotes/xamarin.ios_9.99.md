@@ -1,8 +1,8 @@
 <div class="note">
 	<b>Classic Profile Deprecation:</b>
 	The complete removal of classic support is scheduled for next fall with the release of Xamarin.iOS 10.0 and
-	this preview of our iOS 10 support does *not* ship with `monotouch.dll`.
-	Xamarin.iOS 9.10 (cycle 8) will be the last version to ship support for `monotouch.dll` this summer.
+	this preview of our iOS 10 support does <b>not<>/b> ship with <code>monotouch.dll</code>.
+	Xamarin.iOS 9.10 (cycle 8) will be the last version to ship support for <code>monotouch.dll</code> this summer.
 </div>
 
 Requirements
@@ -22,7 +22,7 @@ It includes Mono 4.6 which continues to adopt more code from
 Microsoft's open sourced .NET code (reference source) to improve the conformance,
 speed and memory usage of our base class libraries (BCL).
 
-### New Frameworks
+### iOS 10
 
 The following new frameworks were added in iOS 10:
 
@@ -35,9 +35,11 @@ The following new frameworks were added in iOS 10:
 * UserNotificationUI (available, beta 3)
 * VideoSubscriberAccount (available, beta 3)
 
+### tvOS 10
+
 The following new frameworks were added in tvOS 10:
 
-* ExternalAccessory (blocked) radar #27266975
+* ExternalAccessory (available, beta 3)
 * HomeKit (enabled, unaudited)
 * MultipeerConnectivity (enabled, unaudited)
 * Photos (enabled, unaudited)
@@ -45,20 +47,35 @@ The following new frameworks were added in tvOS 10:
 * UserNotification (enabled, unaudited)
 * VideoSubscriberAccount (enabled, unaudited)
 
+Note: New frameworks for tvOS are new to the platform, but already exists (or were just added) in iOS.
+
+Bindings are also update for the exising frameworks:
+
+* TVMLKit (up to beta 3)
+* Several new API are also available (see **Work In Progress** and **API diff**)
+
+### watchOS 3
+
 The following new frameworks were added in watchOS 3:
 
 * AVFoundation (not yet enabled)
 * CloudKit (enabled, unaudited)
 * CoreAudio (not yet enabled)
-* GameKit (in progress)
+* GameKit (available, beta 3)
 * SceneKit (not yet enabled)
 * SpriteKit (not yet enabled)
 * UserNotification (enabled, unaudited)
 
-Note: New frameworks for tvOS and watchOS are new to the platform, but already exists (or were just added) in iOS.
+Note: New frameworks for watchOS are new to the platform, but already exists (or were just added) in iOS.
+
+Bindings are also update for the exising frameworks:
+
+* ClockKit (up to beta 3)
+* WatchKit (up to beta 3, minus API that requires SceneKit or SpriteKit frameworks)
+* Several new API are also available (see **Work In Progress** and **API diff**)
 
 
-### New Bindings
+### Work In Progress
 
 Beside the new frameworks there are also many updates to the existing ones. You can track the [progress of our bindings](https://github.com/xamarin/xamarin-macios/wiki/Bindings) from the wiki.
 
