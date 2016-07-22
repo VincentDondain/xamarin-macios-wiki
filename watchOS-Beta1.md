@@ -30,4 +30,4 @@
 - [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-watchOS-Beta1)
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-watchOS-Beta1)
 - [ ] [WatchConnectivity.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchConnectivity-watchOS-Beta1)
-- [ ] [WatchKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchKit-watchOS-Beta1)
+- [ ] [WatchKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchKit-watchOS-Beta1) - Sebastien

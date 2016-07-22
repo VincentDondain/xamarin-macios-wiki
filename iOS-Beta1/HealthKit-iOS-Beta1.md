@@ -2138,39 +2138,6 @@ diff -ruN /Applications/Xcode73.app/Contents/Developer/Platforms/iPhoneOS.platfo
  } HK_AVAILABLE_WATCHOS_ONLY(2_0);
  
  
-@@ -29,10 +32,30 @@
-     HKWorkoutSessionLocationTypeUnknown = 1,
-     HKWorkoutSessionLocationTypeIndoor,
-     HKWorkoutSessionLocationTypeOutdoor,
--} HK_AVAILABLE_WATCHOS_ONLY(2_0);
-+} HK_AVAILABLE_IOS_WATCHOS(10_0, 2_0);
- 
- 
--@protocol HKWorkoutSessionDelegate;
-+/*!
-+ @class         HKWorkoutConfiguration
-+ @abstract      An HKWorkoutConfiguration is an object that can be used to describe the a workout activity.
-+ */
-+HK_CLASS_AVAILABLE_IOS_WATCHOS(10_0, 3_0)
-+@interface HKWorkoutConfiguration : NSObject <NSCopying, NSSecureCoding>
-+
-+/*!
-+ @property      activityType
-+ @abstract      Indicates the type of workout for the configuration.
-+ */
-+@property (assign) HKWorkoutActivityType activityType;
-+
-+/*!
-+ @property      locationType
-+ @abstract      Indicates the type of location (indoors vs. outdoors) for the configuration.
-+ */
-+@property (assign) HKWorkoutSessionLocationType locationType;
-+
-+@end
-+
- 
- /*!
-  @class         HKWorkoutSession
 @@ -45,14 +68,22 @@
   @property      activityType
   @abstract      Indicates the type of workout that will be performed during the session.
