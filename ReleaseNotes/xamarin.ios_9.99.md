@@ -51,7 +51,7 @@ Note: New frameworks for tvOS are new to the platform, but already exists (or we
 
 Bindings are also update for the exising frameworks:
 
-* TVMLKit (up to beta 3)
+* TVMLKit (available, beta 3)
 * Several new API are also available (see **Work In Progress** and **API diff**)
 
 ### watchOS 3

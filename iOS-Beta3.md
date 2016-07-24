@@ -26,7 +26,7 @@
 - [X] [MetalKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalKit-iOS-Beta3) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/441
 - [ ] [MetalPerformanceShaders.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalPerformanceShaders-iOS-Beta3)
 - [ ] [PassKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PassKit-iOS-Beta3)
-- [ ] [Photos.framework](https://github.com/xamarin/xamarin-macios/wiki/Photos-iOS-Beta3) - Sebastien
+- [X] [Photos.framework](https://github.com/xamarin/xamarin-macios/wiki/Photos-iOS-Beta3) - Sebastien - No change (generics added to existing signatures)
 - [X] [PhotosUI.framework](https://github.com/xamarin/xamarin-macios/wiki/PhotosUI-iOS-Beta3) - No change
 - [X] [QuartzCore.framework](https://github.com/xamarin/xamarin-macios/wiki/QuartzCore-iOS-Beta3) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/421
 - [X] [ReplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/ReplayKit-iOS-Beta3) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/420

@@ -1,18 +1,6 @@
 #CoreGraphics.framework
 
 ``` diff
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGBase.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGBase.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGBase.h	2016-05-26 06:16:33.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGBase.h	2016-06-27 06:07:50.000000000 +0200
-@@ -259,7 +259,7 @@
- 
- #if !TARGET_IPHONE_SIMULATOR
- 
--typedef struct  CF_BRIDGED_TYPE(id) __IOSurface *IOSurfaceRef;
-+typedef struct  CF_BRIDGED_TYPE(id) __IOSurface *IOSurfaceRef __attribute__((swift_name("IOSurfaceRef")));
- 
- #endif
- 
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGColorConversionInfo.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGColorConversionInfo.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGColorConversionInfo.h	1970-01-01 01:00:00.000000000 +0100
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGColorConversionInfo.h	2016-06-28 08:17:39.000000000 +0200
@@ -123,77 +111,4 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  
  CF_ASSUME_NONNULL_END
  
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGImage.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGImage.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGImage.h	2016-06-03 04:58:47.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGImage.h	2016-06-28 08:12:29.000000000 +0200
-@@ -20,29 +20,37 @@
- CF_ASSUME_NONNULL_BEGIN
- 
- typedef CF_ENUM(uint32_t, CGImageAlphaInfo) {
--  kCGImageAlphaNone,               /* For example, RGB. */
--  kCGImageAlphaPremultipliedLast,  /* For example, premultiplied RGBA */
--  kCGImageAlphaPremultipliedFirst, /* For example, premultiplied ARGB */
--  kCGImageAlphaLast,               /* For example, non-premultiplied RGBA */
--  kCGImageAlphaFirst,              /* For example, non-premultiplied ARGB */
--  kCGImageAlphaNoneSkipLast,       /* For example, RBGX. */
--  kCGImageAlphaNoneSkipFirst,      /* For example, XRGB. */
--  kCGImageAlphaOnly                /* No color data, alpha data only */
-+    kCGImageAlphaNone,               /* For example, RGB. */
-+    kCGImageAlphaPremultipliedLast,  /* For example, premultiplied RGBA */
-+    kCGImageAlphaPremultipliedFirst, /* For example, premultiplied ARGB */
-+    kCGImageAlphaLast,               /* For example, non-premultiplied RGBA */
-+    kCGImageAlphaFirst,              /* For example, non-premultiplied ARGB */
-+    kCGImageAlphaNoneSkipLast,       /* For example, RBGX. */
-+    kCGImageAlphaNoneSkipFirst,      /* For example, XRGB. */
-+    kCGImageAlphaOnly                /* No color data, alpha data only */
- };
- 
-+typedef CF_ENUM(uint32_t, CGImageByteOrderInfo) {
-+    kCGImageByteOrderMask     = 0x7000,
-+    kCGImageByteOrder16Little = (1 << 12),
-+    kCGImageByteOrder32Little = (2 << 12),
-+    kCGImageByteOrder16Big    = (3 << 12),
-+    kCGImageByteOrder32Big    = (4 << 12)
-+} CG_AVAILABLE_STARTING(__MAC_10_12, __IPHONE_10_0);
-+
- typedef CF_OPTIONS(uint32_t, CGBitmapInfo) {
--  kCGBitmapAlphaInfoMask = 0x1F,
--  
--  kCGBitmapFloatInfoMask = 0xF00,
--  kCGBitmapFloatComponents = (1 << 8),
--  
--  kCGBitmapByteOrderMask = 0x7000,
--  kCGBitmapByteOrderDefault = (0 << 12),
--  kCGBitmapByteOrder16Little = (1 << 12),
--  kCGBitmapByteOrder32Little = (2 << 12),
--  kCGBitmapByteOrder16Big = (3 << 12),
--  kCGBitmapByteOrder32Big = (4 << 12)
--} CF_ENUM_AVAILABLE(10_4, 2_0);
-+    kCGBitmapAlphaInfoMask = 0x1F,
-+
-+    kCGBitmapFloatInfoMask = 0xF00,
-+    kCGBitmapFloatComponents = (1 << 8),
-+
-+    kCGBitmapByteOrderMask     = kCGImageByteOrderMask,
-+    kCGBitmapByteOrderDefault  = (0 << 12),
-+    kCGBitmapByteOrder16Little = kCGImageByteOrder16Little,
-+    kCGBitmapByteOrder32Little = kCGImageByteOrder32Little,
-+    kCGBitmapByteOrder16Big    = kCGImageByteOrder16Big,
-+    kCGBitmapByteOrder32Big    = kCGImageByteOrder32Big
-+} CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);
- 
- #ifdef __BIG_ENDIAN__
- # define kCGBitmapByteOrder16Host kCGBitmapByteOrder16Big
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.h	2016-06-03 04:58:47.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.h	2016-06-28 08:17:39.000000000 +0200
-@@ -11,6 +11,7 @@
- #include <CoreGraphics/CGBitmapContext.h>
- #include <CoreGraphics/CGColor.h>
- #include <CoreGraphics/CGColorConverter.h>
-+#include <CoreGraphics/CGColorConversionInfo.h>
- #include <CoreGraphics/CGColorSpace.h>
- #include <CoreGraphics/CGContext.h>
- #include <CoreGraphics/CGDataConsumer.h>
-
 ```

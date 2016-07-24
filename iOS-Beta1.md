@@ -72,6 +72,6 @@
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-iOS-Beta1) - Miguel
 - [X] [VideoToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/VideoToolbox-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/291
 - [X] [WatchConnectivity.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchConnectivity-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/290
-- [ ] [WatchKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/461
+- [X] [WatchKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/461
 - [X] [WebKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WebKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/345
 - [X] [iAd.framework](https://github.com/xamarin/xamarin-macios/wiki/iAd-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/289
