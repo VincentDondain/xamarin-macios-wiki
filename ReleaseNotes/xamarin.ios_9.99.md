@@ -40,7 +40,7 @@ The following new frameworks were added in iOS 10:
 The following new frameworks were added in tvOS 10:
 
 * ExternalAccessory (available, beta 3)
-* HomeKit (enabled, unaudited)
+* HomeKit (available, beta 3)
 * MultipeerConnectivity (available, beta 3)
 * Photos (available, beta 3)
 * ReplayKit (available, beta 3)

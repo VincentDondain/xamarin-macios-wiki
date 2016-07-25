@@ -22,12 +22,12 @@
 - [ ] [EventKit.framework](https://github.com/xamarin/xamarin-macios/wiki/EventKit-watchOS-Beta1)
 - [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-watchOS-Beta1)
 - [ ] [HealthKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HealthKit-watchOS-Beta1)
-- [ ] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-watchOS-Beta1)
+- [ ] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-watchOS-Beta1) - Sebastien - 
 - [X] [ImageIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ImageIO-watchOS-Beta1) - no source change
 - [ ] [MapKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MapKit-watchOS-Beta1)
 - [X] [MobileCoreServices.framework](https://github.com/xamarin/xamarin-macios/wiki/MobileCoreServices-watchOS-Beta1) - no source change
 - [ ] [PassKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PassKit-watchOS-Beta1)
 - [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-watchOS-Beta1)
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-watchOS-Beta1)
-- [ ] [WatchConnectivity.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchConnectivity-watchOS-Beta1)
-- [ ] [WatchKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchKit-watchOS-Beta1) - Sebastien
+- [X] [WatchConnectivity.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchConnectivity-watchOS-Beta1) - no additional change
+- [ ] [WatchKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchKit-watchOS-Beta1) - missing WKInterfaceSCNScene and WKInterfaceSKScene (pending framework being enabled)
