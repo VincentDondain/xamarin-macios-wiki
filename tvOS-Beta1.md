@@ -4,8 +4,8 @@
 - [X] HomeKit.framework *(Added)* - enabled
 - [X] MultipeerConnectivity.framework *(Added)* - Sebastien - https://github.com/xamarin/xamarin-macios/pull/473
 - [X] Photos.framework *(Added)* - enabled
-- [X] ReplayKit.framework *(Added)* - enabled
-- [X] UserNotifications.framework *(Added)* - enabled
+- [X] ReplayKit.framework *(Added)* - Sebastien - https://github.com/xamarin/xamarin-macios/pull/477
+- [X] UserNotifications.framework *(Added)* - enabled / reviewed
 - [X] VideoSubscriberAccount.framework *(Added)* - enabled
 
 

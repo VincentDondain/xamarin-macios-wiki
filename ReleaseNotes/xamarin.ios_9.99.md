@@ -43,7 +43,7 @@ The following new frameworks were added in tvOS 10:
 * HomeKit (enabled, unaudited)
 * MultipeerConnectivity (available, beta 3)
 * Photos (enabled, unaudited)
-* ReplayKit (enabled, unaudited)
+* ReplayKit (available, beta 3)
 * UserNotification (available, beta 3)
 * VideoSubscriberAccount (enabled, unaudited)
 
