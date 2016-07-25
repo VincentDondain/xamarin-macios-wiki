@@ -3,7 +3,7 @@
 - [ ] AVFoundation.framework *(Added)*
 - [X] CloudKit.framework *(Added)* - enabled - https://github.com/xamarin/xamarin-macios/pull/372
 - [ ] CoreAudio.framework *(Added)* - *not CoreAudioKit*
-- [ ] GameKit.framework *(Added)* - Sebastien - https://github.com/xamarin/xamarin-macios/pull/452
+- [X] GameKit.framework *(Added)* - Sebastien - https://github.com/xamarin/xamarin-macios/pull/452
 - [ ] SceneKit.framework *(Added)*
 - [ ] SpriteKit.framework *(Added)*
 - [X] UserNotifications.framework *(Added)* - enabled
@@ -11,7 +11,7 @@
 
 ###### Existing Frameworks
 - [X] [CFNetwork.framework](https://github.com/xamarin/xamarin-macios/wiki/CFNetwork-watchOS-Beta1) - No Headers directory exists for this framework
-- [ ] [ClockKit.framework](https://github.com/xamarin/xamarin-macios/wiki/ClockKit-watchOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/459
+- [X] [ClockKit.framework](https://github.com/xamarin/xamarin-macios/wiki/ClockKit-watchOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/459
 - [ ] [Contacts.framework](https://github.com/xamarin/xamarin-macios/wiki/Contacts-watchOS-Beta1)
 - [ ] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-watchOS-Beta1)
 - [ ] [CoreFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreFoundation-watchOS-Beta1)

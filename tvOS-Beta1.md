@@ -1,7 +1,7 @@
 ### To Bind
 ###### New Frameworks
 - [X] ExternalAccessory.framework *(Added)* - Rolf/Sebastien - https://github.com/xamarin/xamarin-macios/pull/470
-- [X] HomeKit.framework *(Added)* - enabled
+- [X] HomeKit.framework *(Added)* - Vincent - https://github.com/xamarin/xamarin-macios/pull/481
 - [X] MultipeerConnectivity.framework *(Added)* - Sebastien - https://github.com/xamarin/xamarin-macios/pull/473
 - [X] Photos.framework *(Added)* - Sebastien - https://github.com/xamarin/xamarin-macios/pull/478
 - [X] ReplayKit.framework *(Added)* - Sebastien - https://github.com/xamarin/xamarin-macios/pull/477
