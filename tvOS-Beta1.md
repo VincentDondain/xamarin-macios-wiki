@@ -3,7 +3,7 @@
 - [X] ExternalAccessory.framework *(Added)* - Rolf/Sebastien - https://github.com/xamarin/xamarin-macios/pull/470
 - [X] HomeKit.framework *(Added)* - enabled
 - [X] MultipeerConnectivity.framework *(Added)* - Sebastien - https://github.com/xamarin/xamarin-macios/pull/473
-- [X] Photos.framework *(Added)* - enabled
+- [X] Photos.framework *(Added)* - Sebastien - https://github.com/xamarin/xamarin-macios/pull/478
 - [X] ReplayKit.framework *(Added)* - Sebastien - https://github.com/xamarin/xamarin-macios/pull/477
 - [X] UserNotifications.framework *(Added)* - enabled / reviewed
 - [X] VideoSubscriberAccount.framework *(Added)* - enabled

@@ -1,7 +1,7 @@
 <div class="note">
 	<b>Classic Profile Deprecation:</b>
 	The complete removal of classic support is scheduled for next fall with the release of Xamarin.iOS 10.0 and
-	this preview of our iOS 10 support does <b>not<>/b> ship with <code>monotouch.dll</code>.
+	this preview of our iOS 10 support does <b>not</b> ship with <code>monotouch.dll</code>.
 	Xamarin.iOS 9.10 (cycle 8) will be the last version to ship support for <code>monotouch.dll</code> this summer.
 </div>
 
@@ -42,7 +42,7 @@ The following new frameworks were added in tvOS 10:
 * ExternalAccessory (available, beta 3)
 * HomeKit (enabled, unaudited)
 * MultipeerConnectivity (available, beta 3)
-* Photos (enabled, unaudited)
+* Photos (available, beta 3)
 * ReplayKit (available, beta 3)
 * UserNotification (available, beta 3)
 * VideoSubscriberAccount (enabled, unaudited)
