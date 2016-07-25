@@ -41,10 +41,10 @@ The following new frameworks were added in tvOS 10:
 
 * ExternalAccessory (available, beta 3)
 * HomeKit (enabled, unaudited)
-* MultipeerConnectivity (enabled, unaudited)
+* MultipeerConnectivity (available, beta 3)
 * Photos (enabled, unaudited)
 * ReplayKit (enabled, unaudited)
-* UserNotification (enabled, unaudited)
+* UserNotification (available, beta 3)
 * VideoSubscriberAccount (enabled, unaudited)
 
 Note: New frameworks for tvOS are new to the platform, but already exists (or were just added) in iOS.
@@ -64,7 +64,7 @@ The following new frameworks were added in watchOS 3:
 * GameKit (available, beta 3)
 * SceneKit (not yet enabled)
 * SpriteKit (not yet enabled)
-* UserNotification (enabled, unaudited)
+* UserNotification (available, beta 3)
 
 Note: New frameworks for watchOS are new to the platform, but already exists (or were just added) in iOS.
 
@@ -81,7 +81,7 @@ Beside the new frameworks there are also many updates to the existing ones. You 
 
 In general we start iOS SDK and when a new beta gets out then we update existing bindings to match the latest changes, then we go back to bind other frameworks. Next we'll work on tvOS and watchOS SDK.
 
-Starting with iOS means we're including most new, shared API with tvOS, watchOS and macOS. The later generally do not require a lot of changes when iOS bindings are over (mostly auditing the API).
+Starting with iOS means we're including most new, shared API with tvOS, watchOS and macOS. The later platforms generally do not require a lot of changes when iOS bindings are over (mostly auditing the API).
 
 
 ### Known Issues
