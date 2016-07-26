@@ -57,7 +57,7 @@
 - [X] [NetworkExtension.framework](https://github.com/xamarin/xamarin-macios/wiki/NetworkExtension-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/309
 - [X] [NotificationCenter.framework](https://github.com/xamarin/xamarin-macios/wiki/NotificationCenter-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/323
 - [X] [OpenGLES.framework](https://github.com/xamarin/xamarin-macios/wiki/OpenGLES-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/302
-- [ ] [PassKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PassKit-iOS-Beta1)
+- [X] [PassKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PassKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/487
 - [X] [Photos.framework](https://github.com/xamarin/xamarin-macios/wiki/Photos-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/348
 - [X] [PhotosUI.framework](https://github.com/xamarin/xamarin-macios/wiki/PhotosUI-iOS-Beta1) - no source change
 - [X] [PushKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PushKit-iOS-Beta1) - Sebastien - mostly changes wrt PKPushType -> NS_STRING_ENUM. https://github.com/xamarin/xamarin-macios/pull/347
@@ -65,7 +65,7 @@
 - [X] [QuickLook.framework](https://github.com/xamarin/xamarin-macios/wiki/QuickLook-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/272
 - [X] [ReplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/ReplayKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/270
 - [X] [SafariServices.framework](https://github.com/xamarin/xamarin-macios/wiki/SafariServices-iOS-Beta1) - Tim - https://github.com/xamarin/xamarin-macios/pull/217
-- [ ] [SceneKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SceneKit-iOS-Beta1) - Alex
+- [ ] [SceneKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SceneKit-iOS-Beta1)
 - [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-iOS-Beta1) - Sebastien
 - [ ] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-iOS-Beta1) - Vincent
 - [X] [SystemConfiguration.framework](https://github.com/xamarin/xamarin-macios/wiki/SystemConfiguration-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/312
