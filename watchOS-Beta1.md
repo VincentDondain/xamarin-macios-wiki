@@ -2,7 +2,7 @@
 ###### New Frameworks
 - [ ] AVFoundation.framework *(Added)*
 - [X] CloudKit.framework *(Added)* - enabled - https://github.com/xamarin/xamarin-macios/pull/372
-- [ ] CoreAudio.framework *(Added)* - *not CoreAudioKit*
+- [ ] CoreAudio.framework *(Added)* - *not CoreAudioKit, only defines and enums, likely to support AVFoundation*
 - [X] GameKit.framework *(Added)* - Sebastien - https://github.com/xamarin/xamarin-macios/pull/452
 - [ ] SceneKit.framework *(Added)*
 - [ ] SpriteKit.framework *(Added)*
@@ -22,11 +22,11 @@
 - [ ] [EventKit.framework](https://github.com/xamarin/xamarin-macios/wiki/EventKit-watchOS-Beta1)
 - [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-watchOS-Beta1)
 - [ ] [HealthKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HealthKit-watchOS-Beta1)
-- [ ] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-watchOS-Beta1) - Sebastien - 
+- [X] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-watchOS-Beta1) - no additional change on top of https://github.com/xamarin/xamarin-macios/pull/481
 - [X] [ImageIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ImageIO-watchOS-Beta1) - no source change
 - [ ] [MapKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MapKit-watchOS-Beta1)
 - [X] [MobileCoreServices.framework](https://github.com/xamarin/xamarin-macios/wiki/MobileCoreServices-watchOS-Beta1) - no source change
-- [ ] [PassKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PassKit-watchOS-Beta1)
+- [X] [PassKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PassKit-watchOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/487
 - [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-watchOS-Beta1)
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-watchOS-Beta1)
 - [X] [WatchConnectivity.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchConnectivity-watchOS-Beta1) - no additional change
