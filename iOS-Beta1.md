@@ -67,7 +67,7 @@
 - [X] [SafariServices.framework](https://github.com/xamarin/xamarin-macios/wiki/SafariServices-iOS-Beta1) - Tim - https://github.com/xamarin/xamarin-macios/pull/217
 - [ ] [SceneKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SceneKit-iOS-Beta1) - Alex
 - [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-iOS-Beta1) - Sebastien
-- [ ] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-iOS-Beta1) - Vincent
+- [X] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-iOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/498
 - [X] [SystemConfiguration.framework](https://github.com/xamarin/xamarin-macios/wiki/SystemConfiguration-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/312
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-iOS-Beta1) - Miguel
 - [X] [VideoToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/VideoToolbox-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/291
