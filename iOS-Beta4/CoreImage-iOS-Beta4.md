@@ -17,17 +17,4 @@ diff -ruN /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.p
  /* The key in the options dictionary used to specify number of angles, the value for this key is one of 1, 3, 5, 7, 9, 11.*/
  CORE_IMAGE_EXPORT NSString* const CIDetectorNumberOfAngles NS_AVAILABLE(10_11, 9_0);
  
-diff -ruN /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CIFilter.h /Applications/Xcode8-beta4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CIFilter.h
---- /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CIFilter.h	2016-07-10 07:43:13.000000000 +0200
-+++ /Applications/Xcode8-beta4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CIFilter.h	2016-07-25 08:46:22.000000000 +0200
-@@ -233,7 +233,7 @@
-  kCIApplyOptionDefinition: the Domain of Definition of the produced image. Value is either a CIFilterShape object, or a four element NSArray defining a rectangle.
-  @param  k         CIKernel of the filter
-  @param  args      Array of arguments that are applied to the kernel
-- @param  options   Array of additional options
-+ @param  dict      Array of additional options
- */
- - (nullable CIImage *)apply:(CIKernel *)k
- 				  arguments:(nullable NSArray *)args
-
 ```
