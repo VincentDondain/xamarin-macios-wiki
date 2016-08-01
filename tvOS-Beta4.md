@@ -12,7 +12,7 @@
 - [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-tvOS-Beta4)
 - [X] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-tvOS-Beta4) - no source change
 - [X] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-tvOS-Beta4) - no source change
-- [ ] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-tvOS-Beta4)
+- [X] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-tvOS-Beta4) - no source change
 - [ ] [Metal.framework](https://github.com/xamarin/xamarin-macios/wiki/Metal-tvOS-Beta4)
 - [ ] [MetalPerformanceShaders.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalPerformanceShaders-tvOS-Beta4)
 - [ ] [PhotosUI.framework](https://github.com/xamarin/xamarin-macios/wiki/PhotosUI-tvOS-Beta4)
