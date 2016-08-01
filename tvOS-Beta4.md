@@ -8,7 +8,7 @@
 - [ ] [CoreGraphics.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreGraphics-tvOS-Beta4)
 - [ ] [CoreImage.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreImage-tvOS-Beta4)
 - [ ] [CoreSpotlight.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreSpotlight-tvOS-Beta4)
-- [ ] [CoreText.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreText-tvOS-Beta4)
+- [X] [CoreText.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreText-tvOS-Beta4) - no source change
 - [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-tvOS-Beta4)
 - [ ] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-tvOS-Beta4)
 - [ ] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-tvOS-Beta4)
