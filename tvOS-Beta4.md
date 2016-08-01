@@ -1,7 +1,7 @@
 ### To Bind
 ###### Existing Frameworks
 - [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-tvOS-Beta4)
-- [ ] [AVKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AVKit-tvOS-Beta4)
+- [X] [AVKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AVKit-tvOS-Beta4) - no source change
 - [ ] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-tvOS-Beta4)
 - [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-tvOS-Beta4)
 - [ ] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-tvOS-Beta4)
