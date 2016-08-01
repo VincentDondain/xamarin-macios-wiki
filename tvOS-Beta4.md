@@ -4,7 +4,7 @@
 - [X] [AVKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AVKit-tvOS-Beta4) - no source change
 - [ ] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-tvOS-Beta4)
 - [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-tvOS-Beta4)
-- [ ] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-tvOS-Beta4)
+- [X] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-tvOS-Beta4) - no source change
 - [ ] [CoreGraphics.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreGraphics-tvOS-Beta4)
 - [ ] [CoreImage.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreImage-tvOS-Beta4)
 - [ ] [CoreSpotlight.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreSpotlight-tvOS-Beta4)
