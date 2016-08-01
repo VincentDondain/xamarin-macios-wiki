@@ -11,7 +11,7 @@
 - [ ] [CoreSpotlight.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreSpotlight-iOS-Beta4)
 - [ ] [CoreText.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreText-iOS-Beta4)
 - [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-iOS-Beta4)
-- [ ] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-iOS-Beta4)
+- [X] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-iOS-Beta4) - No API added (just 1 new comment)
 - [ ] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-iOS-Beta4)
 - [ ] [HealthKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HealthKit-iOS-Beta4)
 - [ ] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-iOS-Beta4)
