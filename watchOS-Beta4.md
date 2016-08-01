@@ -1,0 +1,20 @@
+### To Bind
+###### New Frameworks
+No new frameworks were added in /Applications/Xcode8-beta4.app/Contents/Developer/Platforms/WatchOS.platform/Developer/SDKs/WatchOS.sdk/System/Library/Frameworks/
+
+###### Existing Frameworks
+- [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-watchOS-Beta4)
+- [ ] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-watchOS-Beta4)
+- [ ] [CoreGraphics.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreGraphics-watchOS-Beta4)
+- [ ] [CoreMotion.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMotion-watchOS-Beta4)
+- [ ] [CoreText.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreText-watchOS-Beta4)
+- [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-watchOS-Beta4)
+- [ ] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-watchOS-Beta4)
+- [ ] [HealthKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HealthKit-watchOS-Beta4)
+- [ ] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-watchOS-Beta4)
+- [ ] [PassKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PassKit-watchOS-Beta4)
+- [ ] [SceneKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SceneKit-watchOS-Beta4)
+- [ ] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-watchOS-Beta4)
+- [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-watchOS-Beta4)
+- [ ] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-watchOS-Beta4)
+- [ ] [WatchKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchKit-watchOS-Beta4)
