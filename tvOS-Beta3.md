@@ -1,6 +1,4 @@
 ### To Bind
-###### New Frameworks
-No new frameworks were added in /Applications/Xcode8-beta3.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/
 
 ###### Existing Frameworks
 - [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-tvOS-Beta3)
@@ -15,7 +13,7 @@ No new frameworks were added in /Applications/Xcode8-beta3.app/Contents/Develope
 - [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-tvOS-Beta3)
 - [ ] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-tvOS-Beta3)
 - [ ] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-tvOS-Beta3)
-- [ ] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-tvOS-Beta3)
+- [X] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-tvOS-Beta3) - no additional changes on top of https://github.com/xamarin/xamarin-macios/pull/481
 - [ ] [MapKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MapKit-tvOS-Beta3)
 - [ ] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-tvOS-Beta3)
 - [ ] [Metal.framework](https://github.com/xamarin/xamarin-macios/wiki/Metal-tvOS-Beta3)

@@ -15,7 +15,7 @@
 - [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-tvOS-Beta2)
 - [ ] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-tvOS-Beta2)
 - [ ] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-tvOS-Beta2)
-- [ ] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-tvOS-Beta2)
+- [X] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-tvOS-Beta2) - no additional changes on top of https://github.com/xamarin/xamarin-macios/pull/481
 - [ ] [ImageIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ImageIO-tvOS-Beta2)
 - [ ] [JavaScriptCore.framework](https://github.com/xamarin/xamarin-macios/wiki/JavaScriptCore-tvOS-Beta2)
 - [ ] [MapKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MapKit-tvOS-Beta2)
