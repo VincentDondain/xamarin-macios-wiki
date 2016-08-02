@@ -13,5 +13,5 @@
 - [ ] [SceneKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SceneKit-watchOS-Beta4)
 - [X] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-watchOS-Beta4) - no source change
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-watchOS-Beta4)
-- [ ] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-watchOS-Beta4)
+- [X] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-watchOS-Beta4) - done (same as iOS)
 - [X] [WatchKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchKit-watchOS-Beta4) - done (same as iOS)

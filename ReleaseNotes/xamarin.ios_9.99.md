@@ -8,7 +8,7 @@
 Requirements
 ============
 
-- The latest features and API requires Xcode 8.0 beta 3 and the bundled iOS, tvOS and watchOS SDKs;
+- The latest features and API requires Xcode 8.0 beta 4 and the bundled iOS, tvOS and watchOS SDKs;
 - Apple Xcode 8.0 requires a Mac running OSX 10.11.5 (El Capitan) or newer;
 
 What's New
@@ -26,32 +26,32 @@ speed and memory usage of our base class libraries (BCL).
 
 The following new frameworks were added in iOS 10:
 
-* CallKit (available, beta 3)
+* CallKit (available, beta 4)
 * Intents (available, beta 3)
 * IntentsUI (available, beta 3)
-* Message (available, beta 3)
-* Speech (available, beta 3)
-* UserNotification (available, beta 3)
-* UserNotificationUI (available, beta 3)
-* VideoSubscriberAccount (available, beta 3)
+* Message (available, beta 4)
+* Speech (available, beta 4)
+* UserNotification (available, beta 4)
+* UserNotificationUI (available, beta 4)
+* VideoSubscriberAccount (available, beta 4)
 
 ### tvOS 10
 
 The following new frameworks were added in tvOS 10:
 
-* ExternalAccessory (available, beta 3)
-* HomeKit (available, beta 3)
-* MultipeerConnectivity (available, beta 3)
-* Photos (available, beta 3)
-* ReplayKit (available, beta 3)
-* UserNotification (available, beta 3)
+* ExternalAccessory (available, beta 4)
+* HomeKit (available, beta 4)
+* MultipeerConnectivity (available, beta 4)
+* Photos (available, beta 4)
+* ReplayKit (available, beta 4)
+* UserNotification (available, beta 4)
 * VideoSubscriberAccount (enabled, unaudited)
 
 Note: New frameworks for tvOS are new to the platform, but already exists (or were just added) in iOS.
 
 Bindings are also update for the exising frameworks:
 
-* TVMLKit (available, beta 3)
+* TVMLKit (available, beta 4)
 * Several new API are also available (see **Work In Progress** and **API diff**)
 
 ### watchOS 3
@@ -61,17 +61,17 @@ The following new frameworks were added in watchOS 3:
 * AVFoundation (not yet enabled)
 * CloudKit (enabled, unaudited)
 * CoreAudio (not yet enabled)
-* GameKit (available, beta 3)
+* GameKit (available, beta 4)
 * SceneKit (not yet enabled)
 * SpriteKit (not yet enabled)
-* UserNotification (available, beta 3)
+* UserNotification (available, beta 4)
 
 Note: New frameworks for watchOS are new to the platform, but already exists (or were just added) in iOS.
 
 Bindings are also update for the exising frameworks:
 
-* ClockKit (up to beta 3)
-* WatchKit (up to beta 3, minus API that requires SceneKit or SpriteKit frameworks)
+* ClockKit (up to beta 4)
+* WatchKit (up to beta 4, minus API that requires SceneKit or SpriteKit frameworks)
 * Several new API are also available (see **Work In Progress** and **API diff**)
 
 

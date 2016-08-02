@@ -6,8 +6,8 @@
 - [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-tvOS-Beta4)
 - [X] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-tvOS-Beta4) - no source change
 - [ ] [CoreGraphics.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreGraphics-tvOS-Beta4)
-- [ ] [CoreImage.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreImage-tvOS-Beta4)
-- [ ] [CoreSpotlight.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreSpotlight-tvOS-Beta4)
+- [X] [CoreImage.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreImage-tvOS-Beta4) - done (same as iOS)
+- [X] [CoreSpotlight.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreSpotlight-tvOS-Beta4) - done (same as iOS)
 - [X] [CoreText.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreText-tvOS-Beta4) - no source change
 - [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-tvOS-Beta4)
 - [X] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-tvOS-Beta4) - no source change
@@ -18,4 +18,4 @@
 - [ ] [PhotosUI.framework](https://github.com/xamarin/xamarin-macios/wiki/PhotosUI-tvOS-Beta4)
 - [X] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-tvOS-Beta4) - no source change
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-tvOS-Beta4)
-- [ ] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-tvOS-Beta4)
+- [X] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-tvOS-Beta4) - done (same as iOS)
