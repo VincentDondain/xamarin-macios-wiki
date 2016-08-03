@@ -13,7 +13,7 @@
 - [X] [CFNetwork.framework](https://github.com/xamarin/xamarin-macios/wiki/CFNetwork-watchOS-Beta1) - No Headers directory exists for this framework
 - [X] [ClockKit.framework](https://github.com/xamarin/xamarin-macios/wiki/ClockKit-watchOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/459
 - [ ] [Contacts.framework](https://github.com/xamarin/xamarin-macios/wiki/Contacts-watchOS-Beta1)
-- [ ] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-watchOS-Beta1)
+- [X] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-watchOS-Beta1) - Manuel - https://github.com/xamarin/xamarin-macios/pull/505
 - [ ] [CoreFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreFoundation-watchOS-Beta1)
 - [ ] [CoreGraphics.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreGraphics-watchOS-Beta1)
 - [ ] [CoreLocation.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreLocation-watchOS-Beta1)
