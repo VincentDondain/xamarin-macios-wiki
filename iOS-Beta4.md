@@ -17,7 +17,7 @@
 - [X] [HealthKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HealthKit-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/518
 - [X] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-iOS-Beta4) - no source change
 - [ ] [Intents.framework](https://github.com/xamarin/xamarin-macios/wiki/Intents-iOS-Beta4)
-- [ ] [IntentsUI.framework](https://github.com/xamarin/xamarin-macios/wiki/IntentsUI-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/534
+- [X] [IntentsUI.framework](https://github.com/xamarin/xamarin-macios/wiki/IntentsUI-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/534
 - [X] [LocalAuthentication.framework](https://github.com/xamarin/xamarin-macios/wiki/LocalAuthentication-iOS-Beta4) - no source change
 - [X] [MetalPerformanceShaders.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalPerformanceShaders-iOS-Beta4) - no source change
 - [X] [PassKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PassKit-iOS-Beta4) - no source change
@@ -25,7 +25,7 @@
 - [X] [SafariServices.framework](https://github.com/xamarin/xamarin-macios/wiki/SafariServices-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/518
 - [X] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-iOS-Beta4) - no source change
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-iOS-Beta4)
-- [ ] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/533
+- [X] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/533
 - [X] [VideoToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/VideoToolbox-iOS-Beta4) - no source change
 - [X] [WatchKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchKit-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/525
 - [ ] [WebKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WebKit-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/526
