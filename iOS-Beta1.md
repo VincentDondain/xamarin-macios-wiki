@@ -17,7 +17,7 @@
 - [ ] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-iOS-Beta1)
 - [ ] [AudioUnit.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioUnit-iOS-Beta1)
 - [X] [CFNetwork.framework](https://github.com/xamarin/xamarin-macios/wiki/CFNetwork-iOS-Beta1) - no source change
-- [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-iOS-Beta1) - initial work by Tim - https://gist.github.com/timrisi/0b190b114f153d7198db4b41be2ed839
+- [ ] [CloudKit.framework] - Manuel - https://github.com/xamarin/xamarin-macios/pull/530
 - [X] [Contacts.framework](https://github.com/xamarin/xamarin-macios/wiki/Contacts-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/278
 - [X] [CoreAudio.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreAudio-iOS-Beta1) - no source change
 - [X] [CoreBluetooth.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreBluetooth-iOS-Beta1) - Vincent - Filled radar https://trello.com/c/oqB27JA6 - https://github.com/xamarin/xamarin-macios/pull/342
