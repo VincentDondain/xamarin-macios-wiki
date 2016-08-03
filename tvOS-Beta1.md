@@ -18,7 +18,7 @@
 - [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-tvOS-Beta1)
 - [X] [CoreAudio.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreAudio-tvOS-Beta1) - no source change
 - [ ] [CoreBluetooth.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreBluetooth-tvOS-Beta1)
-- [ ] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-tvOS-Beta1)
+- [X] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-tvOS-Beta1) - Manuel - https://github.com/xamarin/xamarin-macios/pull/505
 - [ ] [CoreFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreFoundation-tvOS-Beta1)
 - [ ] [CoreGraphics.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreGraphics-tvOS-Beta1)
 - [ ] [CoreImage.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreImage-tvOS-Beta1)
