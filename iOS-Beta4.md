@@ -3,7 +3,7 @@
 ###### Existing Frameworks
 - [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-iOS-Beta4)
 - [ ] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-iOS-Beta4)
-- [ ] [CallKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CallKit-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/531
+- [X] [CallKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CallKit-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/531
 - [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-iOS-Beta4)
 - [X] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-iOS-Beta4) - no source change
 - [ ] [CoreGraphics.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreGraphics-iOS-Beta4) - Sebastien
@@ -28,5 +28,5 @@
 - [X] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/533
 - [X] [VideoToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/VideoToolbox-iOS-Beta4) - no source change
 - [X] [WatchKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchKit-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/525
-- [ ] [WebKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WebKit-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/526
+- [X] [WebKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WebKit-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/526
 
