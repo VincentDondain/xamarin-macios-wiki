@@ -63,7 +63,7 @@ The following new frameworks were added in watchOS 3:
 * CoreAudio (not yet enabled)
 * GameKit (available, beta 4)
 * SceneKit (not yet enabled)
-* SpriteKit (not yet enabled)
+* SpriteKit (available, beta 4, except API that requires SceneKit or AVFoundation frameworks)
 * UserNotification (available, beta 4)
 
 Note: New frameworks for watchOS are new to the platform, but already exists (or were just added) in iOS.
@@ -71,7 +71,7 @@ Note: New frameworks for watchOS are new to the platform, but already exists (or
 Bindings are also update for the exising frameworks:
 
 * ClockKit (up to beta 4)
-* WatchKit (up to beta 4, minus API that requires SceneKit or SpriteKit frameworks)
+* WatchKit (up to beta 4, except for WKInterfaceSCNScene which requires SceneKit)
 * Several new API are also available (see **Work In Progress** and **API diff**)
 
 
