@@ -86,7 +86,7 @@ Starting with iOS means we're including most new, shared API with tvOS, watchOS 
 
 ### Known Issues
 
-* **Issue:** our watchOS 3.x support has the same limitations our watchOS 2.x support has on the current XI 9.9 preview. The same mono code and tooling is shared with **cycle8** and **xcode8** branches;
+* **Issue:** our watchOS 3.x support has the same limitations our watchOS 2.x support in the current [XI 9.10 alpha](releases/ios/xamarin.ios_9/xamarin.ios_9.10). The same version of mono (code and tooling) are shared between **cycle8** and **xcode8** branches;
 
 
 ### API diff
