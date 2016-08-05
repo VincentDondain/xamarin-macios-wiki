@@ -16,7 +16,7 @@
 - [X] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-iOS-Beta4) - no source change
 - [X] [HealthKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HealthKit-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/518
 - [X] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-iOS-Beta4) - no source change
-- [ ] [Intents.framework](https://github.com/xamarin/xamarin-macios/wiki/Intents-iOS-Beta4) - Alex 🔨 
+- [X] [Intents.framework](https://github.com/xamarin/xamarin-macios/wiki/Intents-iOS-Beta4) - Alex - https://github.com/xamarin/xamarin-macios/pull/555
 - [X] [IntentsUI.framework](https://github.com/xamarin/xamarin-macios/wiki/IntentsUI-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/534
 - [X] [LocalAuthentication.framework](https://github.com/xamarin/xamarin-macios/wiki/LocalAuthentication-iOS-Beta4) - no source change
 - [X] [MetalPerformanceShaders.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalPerformanceShaders-iOS-Beta4) - no source change
@@ -29,4 +29,3 @@
 - [X] [VideoToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/VideoToolbox-iOS-Beta4) - no source change
 - [X] [WatchKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchKit-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/525
 - [X] [WebKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WebKit-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/526
-
