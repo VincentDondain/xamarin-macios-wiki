@@ -27,7 +27,7 @@ speed and memory usage of our base class libraries (BCL).
 The following new frameworks were added in iOS 10:
 
 * CallKit (available, beta 4)
-* Intents (available, beta 3)
+* Intents (available, beta 4)
 * IntentsUI (available, beta 4)
 * Message (available, beta 4)
 * Speech (available, beta 4)
@@ -62,8 +62,8 @@ The following new frameworks were added in watchOS 3:
 * CloudKit (enabled, unaudited)
 * CoreAudio (not yet enabled)
 * GameKit (available, beta 4)
-* SceneKit (not yet enabled)
-* SpriteKit (available, beta 4, except API that requires SceneKit or AVFoundation frameworks)
+* SceneKit (available, beta 4, except API that require the AVFoundation framework)
+* SpriteKit (available, beta 4, except API that require the AVFoundation framework)
 * UserNotification (available, beta 4)
 
 Note: New frameworks for watchOS are new to the platform, but already exists (or were just added) in iOS.
@@ -71,7 +71,7 @@ Note: New frameworks for watchOS are new to the platform, but already exists (or
 Bindings are also update for the exising frameworks:
 
 * ClockKit (up to beta 4)
-* WatchKit (up to beta 4, except for WKInterfaceSCNScene which requires SceneKit)
+* WatchKit (up to beta 4)
 * Several new API are also available (see **Work In Progress** and **API diff**)
 
 
