@@ -4,8 +4,8 @@
 - [X] CloudKit.framework *(Added)* - enabled - https://github.com/xamarin/xamarin-macios/pull/372
 - [ ] CoreAudio.framework *(Added)* - *not CoreAudioKit, only defines and enums, likely to support AVFoundation*
 - [X] GameKit.framework *(Added)* - Sebastien - https://github.com/xamarin/xamarin-macios/pull/452
-- [ ] SceneKit.framework *(Added)*
-- [ ] SpriteKit.framework *(Added)*
+- [X] SceneKit.framework *(Added)* - enabled - https://github.com/xamarin/xamarin-macios/pull/563
+- [X] SpriteKit.framework *(Added)* - enabled - https://github.com/xamarin/xamarin-macios/pull/543
 - [X] UserNotifications.framework *(Added)* - enabled
 
 
@@ -30,4 +30,4 @@
 - [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-watchOS-Beta1)
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-watchOS-Beta1)
 - [X] [WatchConnectivity.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchConnectivity-watchOS-Beta1) - no additional change
-- [ ] [WatchKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchKit-watchOS-Beta1) - missing WKInterfaceSCNScene and WKInterfaceSKScene (pending framework being enabled)
+- [X] [WatchKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchKit-watchOS-Beta1) - https://github.com/xamarin/xamarin-macios/pull/563

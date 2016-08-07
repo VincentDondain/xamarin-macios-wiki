@@ -10,7 +10,7 @@
 - [X] [HealthKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HealthKit-watchOS-Beta4) - done (same as iOS)
 - [X] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-watchOS-Beta4) - no source change
 - [X] [PassKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PassKit-watchOS-Beta4) - no source change
-- [ ] [SceneKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SceneKit-watchOS-Beta4)
+- [X] [SceneKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SceneKit-watchOS-Beta4) - done (same as iOS)
 - [X] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-watchOS-Beta4) - no source change
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-watchOS-Beta4)
 - [X] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-watchOS-Beta4) - done (same as iOS)

@@ -9,13 +9,13 @@
 - [ ] [CoreMotion.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMotion-watchOS-Beta2)
 - [ ] [CoreText.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreText-watchOS-Beta2)
 - [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-watchOS-Beta2)
-- [ ] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-watchOS-Beta2)
+- [X] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-watchOS-Beta2) - done (same as iOS)
 - [ ] [HealthKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HealthKit-watchOS-Beta2)
 - [X] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-watchOS-Beta2) - no additional change on top of https://github.com/xamarin/xamarin-macios/pull/481
 - [ ] [ImageIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ImageIO-watchOS-Beta2)
 - [X] [PassKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PassKit-watchOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/487
-- [ ] [SceneKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SceneKit-watchOS-Beta2)
+- [X] [SceneKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SceneKit-watchOS-Beta2) - done (same as iOS)
 - [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-watchOS-Beta2)
-- [ ] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-watchOS-Beta2)
+- [X] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-watchOS-Beta2) - done (same as iOS)
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-watchOS-Beta2)
-- [ ] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-watchOS-Beta2)
+- [X] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-watchOS-Beta2) - done (same as iOS)
