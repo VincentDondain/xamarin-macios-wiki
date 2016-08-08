@@ -40,7 +40,7 @@
 - [X] [GameController.framework](https://github.com/xamarin/xamarin-macios/wiki/GameController-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/276
 - [X] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-iOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/354
 - [ ] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-iOS-Beta1)
-- [ ] [HealthKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HealthKit-iOS-Beta1) - Vincent
+- [X] [HealthKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HealthKit-iOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/572
 - [X] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-iOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/324
 - [X] [ImageIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ImageIO-iOS-Beta1) - no source change
 - [ ] [JavaScriptCore.framework](https://github.com/xamarin/xamarin-macios/wiki/JavaScriptCore-iOS-Beta1)
