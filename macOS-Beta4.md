@@ -9,7 +9,7 @@
 - [ ] [CoreImage.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreImage-macOS-Beta4)
 - [ ] [CoreMIDIServer.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMIDIServer-macOS-Beta4)
 - [ ] [CoreText.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreText-macOS-Beta4)
-- [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-macOS-Beta4)
+- [x] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-macOS-Beta4)
 - [ ] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-macOS-Beta4)
 - [ ] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-macOS-Beta4)
 - [ ] [IOKit.framework](https://github.com/xamarin/xamarin-macios/wiki/IOKit-macOS-Beta4)
