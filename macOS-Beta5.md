@@ -1,6 +1,6 @@
 ### To Bind
 ###### Existing Frameworks
-- [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-macOS-Beta5)
+- [X] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-macOS-Beta5) - no source change
 - [ ] [AppKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AppKit-macOS-Beta5)
 - [ ] [CryptoTokenKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CryptoTokenKit-macOS-Beta5)
 - [ ] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-macOS-Beta5)
