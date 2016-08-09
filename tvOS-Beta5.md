@@ -1,6 +1,6 @@
 ### To Bind
 ###### Existing Frameworks
-- [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-tvOS-Beta5)
+- [X] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-tvOS-Beta5) - no source change
 - [ ] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-tvOS-Beta5)
 - [ ] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-tvOS-Beta5)
 - [ ] [Metal.framework](https://github.com/xamarin/xamarin-macios/wiki/Metal-tvOS-Beta5)
