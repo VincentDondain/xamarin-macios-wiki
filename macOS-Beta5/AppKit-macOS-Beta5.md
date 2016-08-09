@@ -4,35 +4,6 @@
 diff -ruN /Applications/Xcode8-beta4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSDraggingSession.h /Applications/Xcode8-beta5.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSDraggingSession.h
 --- /Applications/Xcode8-beta4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSDraggingSession.h	2016-07-27 05:10:07.000000000 +0200
 +++ /Applications/Xcode8-beta5.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSDraggingSession.h	2016-08-06 05:42:10.000000000 +0200
-@@ -30,7 +30,7 @@
-     NSPasteboard *_pboard;
-     NSImage *_compositeImageCache;
- #if !__LP64__
--    NSInteger _leaderIndex;
-+    id _filePromiseProviders;
- #endif
-     BOOL _animatesOnCancelOrFail;
- #if !__LP64__    
-diff -ruN /Applications/Xcode8-beta4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSFilePromiseProvider.h /Applications/Xcode8-beta5.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSFilePromiseProvider.h
---- /Applications/Xcode8-beta4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSFilePromiseProvider.h	2016-07-27 05:10:07.000000000 +0200
-+++ /Applications/Xcode8-beta5.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSFilePromiseProvider.h	2016-08-06 05:42:10.000000000 +0200
-@@ -21,9 +21,11 @@
- @private
-     NSString *_fileType;
-     NSArray<NSString *> *_reservedA;
-+    id _reservedB;
-     id <NSFilePromiseProviderDelegate> _delegate;
-     id _userInfo;
-     NSURL *_destinationURL;
-+    NSInteger _dragggingSequenceNumber;
-     struct {
-         unsigned int valid;
-         unsigned int reserved:31;
-@@ -46,19 +48,19 @@
- - (instancetype)init NS_DESIGNATED_INITIALIZER;
- @end
- 
--
  @protocol NSFilePromiseProviderDelegate <NSObject>
  @required
  /* Return the base filename (not a full path) for this promise item. Do not start writing the file yet. */
