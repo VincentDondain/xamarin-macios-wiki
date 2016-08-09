@@ -60,20 +60,4 @@ diff -ruN /Applications/Xcode8-beta4.app/Contents/Developer/Platforms/iPhoneOS.p
  @end
  
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode8-beta4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework/Headers/GKGameSessionSharingViewController.h /Applications/Xcode8-beta5.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework/Headers/GKGameSessionSharingViewController.h
---- /Applications/Xcode8-beta4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework/Headers/GKGameSessionSharingViewController.h	2016-07-28 05:28:06.000000000 +0200
-+++ /Applications/Xcode8-beta5.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/GameKit.framework/Headers/GKGameSessionSharingViewController.h	2016-08-06 09:48:20.000000000 +0200
-@@ -1,9 +1,8 @@
- //
- //  GKGameSessionSharingViewController.h
--//  GameCenterUI
-+//  Game Center
- //
--//  Created by Alan Berfield on 2/20/16.
--//  Copyright © 2016 Apple Inc. All rights reserved.
-+//  Copyright 2016 Apple Inc. All rights reserved.
- //
- 
- #import <Foundation/Foundation.h>
-
 ```
