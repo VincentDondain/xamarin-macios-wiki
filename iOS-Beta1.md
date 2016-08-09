@@ -52,7 +52,7 @@
 - [X] [MetalKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/383
 - [ ] [MetalPerformanceShaders.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalPerformanceShaders-iOS-Beta1)
 - [X] [MobileCoreServices.framework](https://github.com/xamarin/xamarin-macios/wiki/MobileCoreServices-iOS-Beta1) - no source change
-- [ ] [ModelIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ModelIO-iOS-Beta1)
+- [ ] [ModelIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ModelIO-iOS-Beta1) - Vincent
 - [X] [MultipeerConnectivity.framework](https://github.com/xamarin/xamarin-macios/wiki/MultipeerConnectivity-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/360
 - [X] [NetworkExtension.framework](https://github.com/xamarin/xamarin-macios/wiki/NetworkExtension-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/309
 - [X] [NotificationCenter.framework](https://github.com/xamarin/xamarin-macios/wiki/NotificationCenter-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/323
