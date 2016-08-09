@@ -69,7 +69,7 @@
 - [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-iOS-Beta1) - Sebastien
 - [X] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-iOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/498
 - [X] [SystemConfiguration.framework](https://github.com/xamarin/xamarin-macios/wiki/SystemConfiguration-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/312
-- [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-iOS-Beta1) - Miguel
+- [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-iOS-Beta1) - Miguel/Alex 🔨 
 - [X] [VideoToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/VideoToolbox-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/291
 - [X] [WatchConnectivity.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchConnectivity-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/290
 - [X] [WatchKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/461
