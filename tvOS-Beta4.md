@@ -15,7 +15,7 @@
 - [X] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-tvOS-Beta4) - no source change
 - [ ] [Metal.framework](https://github.com/xamarin/xamarin-macios/wiki/Metal-tvOS-Beta4)
 - [X] [MetalPerformanceShaders.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalPerformanceShaders-tvOS-Beta4) - no source change
-- [ ] [PhotosUI.framework](https://github.com/xamarin/xamarin-macios/wiki/PhotosUI-tvOS-Beta4)
+- [X] [PhotosUI.framework](https://github.com/xamarin/xamarin-macios/wiki/PhotosUI-tvOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/576
 - [X] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-tvOS-Beta4) - no source change
 - [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-tvOS-Beta4)
 - [X] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-tvOS-Beta4) - done (same as iOS)
