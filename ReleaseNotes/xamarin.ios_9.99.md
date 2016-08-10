@@ -46,7 +46,7 @@ The following new frameworks were added in tvOS 10:
 * PhotosUI (available, beta 5)
 * ReplayKit (available, beta 5)
 * UserNotification (available, beta 5)
-* VideoSubscriberAccount (enabled, unaudited)
+* VideoSubscriberAccount (available, beta 5)
 
 Note: New frameworks for tvOS are new to the platform, but already exists (or were just added) in iOS.
 
