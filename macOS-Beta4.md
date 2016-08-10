@@ -3,7 +3,7 @@
 - [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-macOS-Beta4)
 - [ ] [AppKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AppKit-macOS-Beta4)
 - [ ] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-macOS-Beta4)
-- [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-macOS-Beta4)
+- [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-macOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/592
 - [ ] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-macOS-Beta4)
 - [ ] [CoreGraphics.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreGraphics-macOS-Beta4)
 - [ ] [CoreImage.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreImage-macOS-Beta4)

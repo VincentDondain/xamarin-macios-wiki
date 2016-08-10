@@ -4,7 +4,7 @@
 - [ ] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-macOS-Beta2)
 - [ ] [AudioVideoBridging.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioVideoBridging-macOS-Beta2)
 - [ ] [CFNetwork.framework](https://github.com/xamarin/xamarin-macios/wiki/CFNetwork-macOS-Beta2)
-- [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-macOS-Beta2)
+- [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-macOS-Beta2) - done with iOS (xtro verified)
 - [ ] [Contacts.framework](https://github.com/xamarin/xamarin-macios/wiki/Contacts-macOS-Beta2)
 - [ ] [CoreBluetooth.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreBluetooth-macOS-Beta2)
 - [ ] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-macOS-Beta2)
