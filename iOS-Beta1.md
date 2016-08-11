@@ -22,7 +22,7 @@
 - [X] [CoreAudio.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreAudio-iOS-Beta1) - no source change
 - [X] [CoreBluetooth.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreBluetooth-iOS-Beta1) - Vincent - Filled radar https://trello.com/c/oqB27JA6 - https://github.com/xamarin/xamarin-macios/pull/342
 - [X] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-iOS-Beta1) - Manuel - https://github.com/xamarin/xamarin-macios/pull/505
-- [ ] [CoreFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreFoundation-iOS-Beta1)
+- [X] [CoreFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreFoundation-iOS-Beta1) - no source change
 - [X] [CoreGraphics.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreGraphics-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/337
 - [X] [CoreImage.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreImage-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/263
 - [X] [CoreLocation.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreLocation-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/334
