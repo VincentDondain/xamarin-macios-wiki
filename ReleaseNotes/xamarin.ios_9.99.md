@@ -8,7 +8,7 @@
 Requirements
 ============
 
-- The latest features and API requires Xcode 8.0 beta 4 and the bundled iOS, tvOS and watchOS SDKs;
+- The latest features and API requires Xcode 8.0 beta 5 and the bundled iOS, tvOS and watchOS SDKs;
 - Apple Xcode 8.0 requires a Mac running OSX 10.11.5 (El Capitan) or newer;
 
 What's New
