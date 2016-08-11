@@ -26,7 +26,7 @@
 - [X] [Intents.framework](https://github.com/xamarin/xamarin-macios/wiki/Intents-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/384
 - [X] [IntentsUI.framework](https://github.com/xamarin/xamarin-macios/wiki/IntentsUI-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/400
 - [X] [JavaScriptCore.framework](https://github.com/xamarin/xamarin-macios/wiki/JavaScriptCore-iOS-Beta2) - no source change
-- [ ] [LocalAuthentication.framework](https://github.com/xamarin/xamarin-macios/wiki/LocalAuthentication-iOS-Beta2)
+- [X] [LocalAuthentication.framework](https://github.com/xamarin/xamarin-macios/wiki/LocalAuthentication-iOS-Beta2) - https://github.com/xamarin/xamarin-macios/pull/600
 - [X] [MapKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MapKit-iOS-Beta2) - no source change
 - [X] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-iOS-Beta2)
 - [X] [Messages.framework](https://github.com/xamarin/xamarin-macios/wiki/Messages-iOS-Beta2) - Vincent - https://github.com/xamarin/xamarin-macios/pull/362
