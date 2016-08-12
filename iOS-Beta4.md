@@ -6,7 +6,7 @@
 - [X] [CallKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CallKit-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/531
 - [X] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-iOS-Beta4) - Manuel - https://github.com/xamarin/xamarin-macios/pull/530
 - [X] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-iOS-Beta4) - no source change
-- [ ] [CoreGraphics.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreGraphics-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/599
+- [X] [CoreGraphics.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreGraphics-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/599
 - [X] [CoreImage.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreImage-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/524
 - [X] [CoreMotion.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMotion-iOS-Beta4) - no source change
 - [X] [CoreSpotlight.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreSpotlight-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/527
