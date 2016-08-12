@@ -2,7 +2,7 @@
 - [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-iOS-Beta2)
 - [X] [AVKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AVKit-iOS-Beta2) - no source change
 - [ ] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-iOS-Beta2)
-- [ ] [CFNetwork.framework](https://github.com/xamarin/xamarin-macios/wiki/CFNetwork-iOS-Beta2)
+- [X] [CFNetwork.framework](https://github.com/xamarin/xamarin-macios/wiki/CFNetwork-iOS-Beta2) - done (`CF` vs `NS`, covered in Foundation)
 - [X] [CallKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CallKit-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/403
 - [X] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-iOS-Beta2) - Manuel - https://github.com/xamarin/xamarin-macios/pull/530
 - [X] [Contacts.framework](https://github.com/xamarin/xamarin-macios/wiki/Contacts-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/356
@@ -16,7 +16,7 @@
 - [X] [CoreText.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreText-iOS-Beta2) - no source change
 - [X] [CoreVideo.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreVideo-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/378
 - [X] [EventKitUI.framework](https://github.com/xamarin/xamarin-macios/wiki/EventKitUI-iOS-Beta2) - no source change
-- [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-iOS-Beta2)
+- [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/603
 - [X] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-iOS-Beta2) - Vincent - https://github.com/xamarin/xamarin-macios/pull/364
 - [ ] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-iOS-Beta2)
 - [X] [HealthKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HealthKit-iOS-Beta2) - no source change
