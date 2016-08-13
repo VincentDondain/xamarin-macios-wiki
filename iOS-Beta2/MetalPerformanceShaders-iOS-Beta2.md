@@ -36,55 +36,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  /*! @property   edgeMode
   *  @abstract   The MPSImageEdgeMode to use when texture reads stray off the edge of an image
   *  @discussion Most MPSKernel objects can read off the edge of the source image. This can happen 
-@@ -87,8 +132,8 @@
-  */
- -(void) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
-                   sourceImage: (MPSImage * __nonnull) sourceImage
--             destinationImage: (MPSImage * __nonnull) destinationImage;
--
-+             destinationImage: (MPSImage * __nonnull) destinationImage
-+                NS_SWIFT_NAME( encode(commandBuffer:sourceImage:destinationImage:));
- 
- /*!
-  *  sourceRegionForDestinationSize: is used to determine which region of the
-@@ -116,8 +161,8 @@
-  *  @param      destinationSize The size of the full virtual destination image.
-  *  @return     The area in the virtual source image that will be read.
-  */
---(MPSRegion) sourceRegionForDestinationSize: (MTLSize) destinationSize;
--
-+-(MPSRegion) sourceRegionForDestinationSize: (MTLSize) destinationSize
-+                  NS_SWIFT_NAME( sourceRegion(destinationSize:));
- @end
- 
- 
-@@ -436,26 +481,6 @@
-  */
- -(nonnull instancetype) initWithDevice: (nonnull id <MTLDevice>) device NS_UNAVAILABLE;
- 
--/*!
-- * NOTE:    The encodeToCommandBuffer API in MPSCNNKernel can be used to encode a convolution kernel
-- *          to a MTLCommandBuffer.  The source and destination images must be MPSImage objects.
-- */
--
--/*!
-- *  @abstract   Convenience API to encode a MPSCNNConvolutionKernel into a command Buffer.  
-- *              Most often the very first layer is convolution layer and input is simple metal texture
-- *              with <= 4 channels e.g. jpeg, tiff etc.
-- *              Alternatively, one can create MPSImage with [MPSImage initWithTexture:srcTexture] and use
-- *              regular [MPSKernel encodeToCommandBuffer:MPSImage:MPSImage].
-- *  @param      commandBuffer       A valid MTLCommandBuffer to receive the encoded filter
-- *  @param      sourceTexture       A valid metal texture object containing the source image.
-- *  @param      destinationImage    A valid MPSImage to be overwritten by result image. destinationImage texture may not alias sourceTexture.
-- */
---(void) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
--                sourceTexture: (__nonnull id<MTLTexture>) sourceTexture
--             destinationImage: (MPSImage * __nonnull) destinationImage;
--
--
- @end    /* MPSCNNConvolution */
-     
- /*!
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImage.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImage.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImage.h	2016-05-21 08:10:52.000000000 +0200
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImage.h	2016-06-26 08:51:26.000000000 +0200
@@ -360,39 +311,6 @@ diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.p
  @end
  
  #ifdef __cplusplus
-diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageKernel.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageKernel.h
---- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageKernel.h	2016-05-21 08:10:52.000000000 +0200
-+++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSImageKernel.h	2016-06-26 07:44:29.000000000 +0200
-@@ -145,7 +145,8 @@
-  */
- -(BOOL)    encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>)commandBuffer
-                   inPlaceTexture: (__nonnull id <MTLTexture> __strong * __nonnull) texture
--           fallbackCopyAllocator: (nullable MPSCopyAllocator) copyAllocator;
-+           fallbackCopyAllocator: (nullable MPSCopyAllocator) copyAllocator
-+                NS_SWIFT_NAME(encode(commandBuffer:inPlaceTexture:fallbackCopyAllocator:));
- 
- 
- /*!
-@@ -156,7 +157,8 @@
-  */
- -(void) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
-                 sourceTexture: (nonnull id <MTLTexture>) sourceTexture
--           destinationTexture: (nonnull id <MTLTexture>) destinationTexture;
-+           destinationTexture: (nonnull id <MTLTexture>) destinationTexture
-+            NS_SWIFT_NAME(encode(commandBuffer:sourceTexture:destinationTexture:));
- 
- 
- /*!
-@@ -185,7 +187,8 @@
-  *  @param      destinationSize The size of the full virtual destination image.
-  *  @return     The area in the virtual source image that will be read.
-  */
---(MPSRegion) sourceRegionForDestinationSize: (MTLSize) destinationSize;
-+-(MPSRegion) sourceRegionForDestinationSize: (MTLSize) destinationSize
-+            NS_SWIFT_NAME(sourceRegion(destinationSize:));
- 
- @end
- 
 diff -ruN /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSMatrix.h /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSMatrix.h
 --- /Applications/Xcode8-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSMatrix.h	1970-01-01 01:00:00.000000000 +0100
 +++ /Applications/Xcode8-beta2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MetalPerformanceShaders.framework/Headers/MPSMatrix.h	2016-06-26 07:44:29.000000000 +0200
