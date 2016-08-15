@@ -14,6 +14,7 @@ You will find in this page a list of what we will call "sections", composed of a
 - [iOS 10 Beta 2 to 3](https://github.com/xamarin/xamarin-macios/wiki/iOS-Beta3)
 - [iOS 10 Beta 3 to 4](https://github.com/xamarin/xamarin-macios/wiki/iOS-Beta4)
 - [iOS 10 Beta 4 to 5](https://github.com/xamarin/xamarin-macios/wiki/iOS-Beta5)
+- [iOS 10 Beta 5 to 6](https://github.com/xamarin/xamarin-macios/wiki/iOS-Beta6)
 
 ###### tvOS
 - [tvOS 10 Beta 1](https://github.com/xamarin/xamarin-macios/wiki/tvOS-Beta1)
@@ -21,6 +22,7 @@ You will find in this page a list of what we will call "sections", composed of a
 - [tvOS 10 Beta 2 to 3](https://github.com/xamarin/xamarin-macios/wiki/tvOS-Beta3)
 - [tvOS 10 Beta 3 to 4](https://github.com/xamarin/xamarin-macios/wiki/tvOS-Beta4)
 - [tvOS 10 Beta 4 to 5](https://github.com/xamarin/xamarin-macios/wiki/tvOS-Beta5)
+- [tvOS 10 Beta 5 to 6](https://github.com/xamarin/xamarin-macios/wiki/tvOS-Beta6)
 
 ###### watchOS
 - [watchOS 3 Beta 1](https://github.com/xamarin/xamarin-macios/wiki/watchOS-Beta1)
@@ -28,6 +30,7 @@ You will find in this page a list of what we will call "sections", composed of a
 - [watchOS 3 Beta 2 to 3](https://github.com/xamarin/xamarin-macios/wiki/watchOS-Beta3)
 - [watchOS 3 Beta 3 to 4](https://github.com/xamarin/xamarin-macios/wiki/watchOS-Beta4)
 - [watchOS 3 Beta 4 to 5](https://github.com/xamarin/xamarin-macios/wiki/watchOS-Beta5)
+- [watchOS 3 Beta 5 to 6](https://github.com/xamarin/xamarin-macios/wiki/watchOS-Beta6)
 
 ###### macOS
 - [macOS 10.12 Beta 1](https://github.com/xamarin/xamarin-macios/wiki/macOS-Beta1)
@@ -35,3 +38,4 @@ You will find in this page a list of what we will call "sections", composed of a
 - [macOS 10.12 Beta 2 to 3](https://github.com/xamarin/xamarin-macios/wiki/macOS-Beta3)
 - [macOS 10.12 Beta 3 to 4](https://github.com/xamarin/xamarin-macios/wiki/macOS-Beta4)
 - [macOS 10.12 Beta 4 to 5](https://github.com/xamarin/xamarin-macios/wiki/macOS-Beta5)
+- [macOS 10.12 Beta 5 to 6](https://github.com/xamarin/xamarin-macios/wiki/macOS-Beta6)
