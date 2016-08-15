@@ -50,7 +50,7 @@
 - [X] [MessageUI.framework](https://github.com/xamarin/xamarin-macios/wiki/MessageUI-iOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/431
 - [ ] [Metal.framework](https://github.com/xamarin/xamarin-macios/wiki/Metal-iOS-Beta1)
 - [X] [MetalKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/383
-- [ ] [MetalPerformanceShaders.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalPerformanceShaders-iOS-Beta1) - Sebastien
+- [ ] [MetalPerformanceShaders.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalPerformanceShaders-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/605
 - [X] [MobileCoreServices.framework](https://github.com/xamarin/xamarin-macios/wiki/MobileCoreServices-iOS-Beta1) - no source change
 - [X] [ModelIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ModelIO-iOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/606
 - [X] [MultipeerConnectivity.framework](https://github.com/xamarin/xamarin-macios/wiki/MultipeerConnectivity-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/360
