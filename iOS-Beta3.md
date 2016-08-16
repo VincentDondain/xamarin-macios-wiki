@@ -10,7 +10,7 @@
 - [X] [CoreImage.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreImage-iOS-Beta3) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/440
 - [X] [CoreLocation.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreLocation-iOS-Beta3) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/439
 - [X] [EventKit.framework](https://github.com/xamarin/xamarin-macios/wiki/EventKit-iOS-Beta3) - No change
-- [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-iOS-Beta3) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/603
+- [X] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-iOS-Beta3) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/603
 - [X] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-iOS-Beta3) - Vincent - https://github.com/xamarin/xamarin-macios/pull/447
 - [ ] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-iOS-Beta3)
 - [X] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-iOS-Beta3) - Vincent - https://github.com/xamarin/xamarin-macios/pull/432

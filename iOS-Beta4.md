@@ -11,7 +11,7 @@
 - [X] [CoreMotion.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMotion-iOS-Beta4) - no source change
 - [X] [CoreSpotlight.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreSpotlight-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/527
 - [X] [CoreText.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreText-iOS-Beta4) - no source change
-- [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/603
+- [X] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/603
 - [X] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-iOS-Beta4) - no source change
 - [X] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-iOS-Beta4) - no source change
 - [X] [HealthKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HealthKit-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/518

@@ -16,7 +16,7 @@
 - [X] [CoreText.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreText-iOS-Beta2) - no source change
 - [X] [CoreVideo.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreVideo-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/378
 - [X] [EventKitUI.framework](https://github.com/xamarin/xamarin-macios/wiki/EventKitUI-iOS-Beta2) - no source change
-- [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/603
+- [X] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/603
 - [X] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-iOS-Beta2) - Vincent - https://github.com/xamarin/xamarin-macios/pull/364
 - [ ] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-iOS-Beta2)
 - [X] [HealthKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HealthKit-iOS-Beta2) - no source change
