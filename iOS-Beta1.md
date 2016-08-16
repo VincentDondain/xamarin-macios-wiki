@@ -35,7 +35,7 @@
 - [X] [CoreVideo.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreVideo-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/280
 - [X] [EventKit.framework](https://github.com/xamarin/xamarin-macios/wiki/EventKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/273
 - [X] [ExternalAccessory.framework](https://github.com/xamarin/xamarin-macios/wiki/ExternalAccessory-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/274
-- [ ] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/603
+- [X] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/603
 - [X] [GLKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GLKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/351
 - [X] [GameController.framework](https://github.com/xamarin/xamarin-macios/wiki/GameController-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/276
 - [X] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-iOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/354
