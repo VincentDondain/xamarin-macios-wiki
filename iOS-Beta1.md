@@ -27,7 +27,7 @@
 - [X] [CoreImage.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreImage-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/263
 - [X] [CoreLocation.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreLocation-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/334
 - [X] [CoreMIDI.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMIDI-iOS-Beta1) - no source change required
-- [ ] [CoreMedia.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMedia-iOS-Beta1) - new constants added to non-bound API
+- [-] [CoreMedia.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMedia-iOS-Beta1) - new constants added to non-bound API (postponed)
 - [X] [CoreMotion.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreMotion-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/338
 - [X] [CoreSpotlight.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreSpotlight-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/344
 - [X] [CoreTelephony.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreTelephony-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/279
@@ -43,7 +43,7 @@
 - [X] [HealthKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HealthKit-iOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/572
 - [X] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-iOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/324
 - [X] [ImageIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ImageIO-iOS-Beta1) - no source change
-- [ ] [JavaScriptCore.framework](https://github.com/xamarin/xamarin-macios/wiki/JavaScriptCore-iOS-Beta1)
+- [-] [JavaScriptCore.framework](https://github.com/xamarin/xamarin-macios/wiki/JavaScriptCore-iOS-Beta1) - no new ObjC API (C API unbound)
 - [X] [LocalAuthentication.framework](https://github.com/xamarin/xamarin-macios/wiki/LocalAuthentication-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/600
 - [X] [MapKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MapKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/311
 - [X] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-iOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/386
