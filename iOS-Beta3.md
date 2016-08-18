@@ -24,7 +24,7 @@
 - [X] [Messages.framework](https://github.com/xamarin/xamarin-macios/wiki/Messages-iOS-Beta3) - Vincent - https://github.com/xamarin/xamarin-macios/pull/428
 - [ ] [Metal.framework](https://github.com/xamarin/xamarin-macios/wiki/Metal-iOS-Beta3)
 - [X] [MetalKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalKit-iOS-Beta3) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/441
-- [ ] [MetalPerformanceShaders.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalPerformanceShaders-iOS-Beta3) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/605
+- [X] [MetalPerformanceShaders.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalPerformanceShaders-iOS-Beta3) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/605
 - [X] [PassKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PassKit-iOS-Beta3) - no source changes
 - [X] [Photos.framework](https://github.com/xamarin/xamarin-macios/wiki/Photos-iOS-Beta3) - Sebastien - No change (generics added to existing signatures)
 - [X] [PhotosUI.framework](https://github.com/xamarin/xamarin-macios/wiki/PhotosUI-iOS-Beta3) - No change
