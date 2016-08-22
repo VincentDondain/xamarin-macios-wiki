@@ -46,7 +46,7 @@
 - [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-iOS-Beta2) - Sebastien
 - [X] [Speech.framework](https://github.com/xamarin/xamarin-macios/wiki/Speech-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/404
 - [X] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-iOS-Beta2) - no source change
-- [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-iOS-Beta2) - Alex 🔨 
+- [X] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/636
 - [X] [UserNotifications.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotifications-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/405
 - [X] [UserNotificationsUI.framework](https://github.com/xamarin/xamarin-macios/wiki/UserNotificationsUI-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/405
 - [X] [VideoSubscriberAccount.framework](https://github.com/xamarin/xamarin-macios/wiki/VideoSubscriberAccount-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/414
