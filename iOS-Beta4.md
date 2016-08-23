@@ -1,7 +1,7 @@
 ### To Bind
 
 ###### Existing Frameworks
-- [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-iOS-Beta4)
+- [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-iOS-Beta4) - Manuel - https://github.com/xamarin/xamarin-macios/pull/635
 - [ ] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-iOS-Beta4)
 - [X] [CallKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CallKit-iOS-Beta4) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/531
 - [X] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-iOS-Beta4) - Manuel - https://github.com/xamarin/xamarin-macios/pull/530
