@@ -1,5 +1,5 @@
 ### To Bind
-- [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-iOS-Beta2)
+- [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-iOS-Beta2) - Manuel https://github.com/xamarin/xamarin-macios/pull/635
 - [X] [AVKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AVKit-iOS-Beta2) - no source change
 - [ ] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-iOS-Beta2)
 - [X] [CFNetwork.framework](https://github.com/xamarin/xamarin-macios/wiki/CFNetwork-iOS-Beta2) - done (`CF` vs `NS`, covered in Foundation)
