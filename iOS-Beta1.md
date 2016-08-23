@@ -11,7 +11,7 @@
 
 
 ###### Existing Frameworks
-- [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-iOS-Beta1) - Manuel
+- [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-iOS-Beta1) - Manuel https://github.com/xamarin/xamarin-macios/pull/635
 - [X] [AVKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AVKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/298
 - [X] [AddressBook.framework](https://github.com/xamarin/xamarin-macios/wiki/AddressBook-iOS-Beta1) - no source change
 - [ ] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-iOS-Beta1)
