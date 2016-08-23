@@ -14,8 +14,8 @@
 - [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-iOS-Beta1) - Manuel https://github.com/xamarin/xamarin-macios/pull/635
 - [X] [AVKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AVKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/298
 - [X] [AddressBook.framework](https://github.com/xamarin/xamarin-macios/wiki/AddressBook-iOS-Beta1) - no source change
-- [ ] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-iOS-Beta1)
-- [ ] [AudioUnit.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioUnit-iOS-Beta1)
+- [ ] [AudioToolbox.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioToolbox-iOS-Beta1) - Alex - https://github.com/xamarin/xamarin-macios/pull/651
+- [ ] [AudioUnit.framework](https://github.com/xamarin/xamarin-macios/wiki/AudioUnit-iOS-Beta1) - Alex - https://github.com/xamarin/xamarin-macios/pull/651
 - [X] [CFNetwork.framework](https://github.com/xamarin/xamarin-macios/wiki/CFNetwork-iOS-Beta1) - no source change
 - [X] [CloudKit.framework] (https://github.com/xamarin/xamarin-macios/wiki/CloudKit-iOS-Beta1) - Manuel - https://github.com/xamarin/xamarin-macios/pull/530
 - [X] [Contacts.framework](https://github.com/xamarin/xamarin-macios/wiki/Contacts-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/278
