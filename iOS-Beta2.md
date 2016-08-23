@@ -43,7 +43,7 @@
 - [X] [ReplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/ReplayKit-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/367
 - [X] [SafariServices.framework](https://github.com/xamarin/xamarin-macios/wiki/SafariServices-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/377
 - [X] [SceneKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SceneKit-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/552
-- [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-iOS-Beta2) - Sebastien
+- [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/646
 - [X] [Speech.framework](https://github.com/xamarin/xamarin-macios/wiki/Speech-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/404
 - [X] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-iOS-Beta2) - no source change
 - [X] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-iOS-Beta2) - Alex - https://github.com/xamarin/xamarin-macios/pull/636
