@@ -1,8 +1,8 @@
 ### To Bind
 ###### New Frameworks
-- [ ] AVFoundation.framework *(Added)*
+- [X] AVFoundation.framework *(Added)* - enabled - https://github.com/xamarin/xamarin-macios/pull/659
 - [X] CloudKit.framework *(Added)* - enabled - https://github.com/xamarin/xamarin-macios/pull/372
-- [ ] CoreAudio.framework *(Added)* - *not CoreAudioKit, only defines and enums, likely to support AVFoundation*
+- [X] CoreAudio.framework *(Added)* - enabled - https://github.com/xamarin/xamarin-macios/pull/659
 - [X] GameKit.framework *(Added)* - Sebastien - https://github.com/xamarin/xamarin-macios/pull/452
 - [X] SceneKit.framework *(Added)* - enabled - https://github.com/xamarin/xamarin-macios/pull/563
 - [X] SpriteKit.framework *(Added)* - enabled - https://github.com/xamarin/xamarin-macios/pull/543
