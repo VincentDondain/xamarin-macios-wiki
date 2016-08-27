@@ -59,12 +59,12 @@ Bindings are also update for the exising frameworks:
 
 The following new frameworks were added in watchOS 3:
 
-* AVFoundation (not yet enabled)
+* AVFoundation (available, beta 6)
 * CloudKit (available, beta 6)
-* CoreAudio (not yet enabled)
+* CoreAudio (available, beta 6)
 * GameKit (available, beta 6)
-* SceneKit (available, beta 6, except API that require the AVFoundation framework)
-* SpriteKit (available, beta 6, except API that require the AVFoundation framework)
+* SceneKit (available, beta 6)
+* SpriteKit (available, beta 6)
 * UserNotification (available, beta 6)
 
 Note: New frameworks for watchOS are new to the platform, but already exists (or were just added) in iOS.
