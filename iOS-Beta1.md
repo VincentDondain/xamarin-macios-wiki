@@ -48,7 +48,7 @@
 - [X] [MapKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MapKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/311
 - [X] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-iOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/386
 - [X] [MessageUI.framework](https://github.com/xamarin/xamarin-macios/wiki/MessageUI-iOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/431
-- [ ] [Metal.framework](https://github.com/xamarin/xamarin-macios/wiki/Metal-iOS-Beta1) - Manuel
+- [X] [Metal.framework](https://github.com/xamarin/xamarin-macios/wiki/Metal-iOS-Beta1) - Manuel
 - [X] [MetalKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/383
 - [X] [MetalPerformanceShaders.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalPerformanceShaders-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/605
 - [X] [MobileCoreServices.framework](https://github.com/xamarin/xamarin-macios/wiki/MobileCoreServices-iOS-Beta1) - no source change
