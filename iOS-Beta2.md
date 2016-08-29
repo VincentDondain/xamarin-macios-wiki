@@ -30,7 +30,7 @@
 - [X] [MapKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MapKit-iOS-Beta2) - no source change
 - [X] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-iOS-Beta2)
 - [X] [Messages.framework](https://github.com/xamarin/xamarin-macios/wiki/Messages-iOS-Beta2) - Vincent - https://github.com/xamarin/xamarin-macios/pull/362
-- [ ] [Metal.framework](https://github.com/xamarin/xamarin-macios/wiki/Metal-iOS-Beta2)
+- [X] [Metal.framework](https://github.com/xamarin/xamarin-macios/wiki/Metal-iOS-Beta2)
 - [X] [MetalKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalKit-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/383
 - [X] [MetalPerformanceShaders.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalPerformanceShaders-iOS-Beta2) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/605
 - [X] [ModelIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ModelIO-iOS-Beta2) - Vincent - https://github.com/xamarin/xamarin-macios/pull/644
