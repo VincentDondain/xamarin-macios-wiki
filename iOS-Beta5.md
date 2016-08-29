@@ -7,7 +7,7 @@
 - [X] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-iOS-Beta5) - no source change
 - [X] [Intents.framework](https://github.com/xamarin/xamarin-macios/wiki/Intents-iOS-Beta5) - Alex - https://github.com/xamarin/xamarin-macios/pull/588
 - [X] [Messages.framework](https://github.com/xamarin/xamarin-macios/wiki/Messages-iOS-Beta5) - no source change
-- [ ] [Metal.framework](https://github.com/xamarin/xamarin-macios/wiki/Metal-iOS-Beta5)
+- [X] [Metal.framework](https://github.com/xamarin/xamarin-macios/wiki/Metal-iOS-Beta5)
 - [X] [MetalKit.framework](https://github.com/xamarin/xamarin-macios/wiki/MetalKit-iOS-Beta5) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/583
 - [X] [ModelIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ModelIO-iOS-Beta5) - Vincent - https://github.com/xamarin/xamarin-macios/pull/644
 - [X] [SceneKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SceneKit-iOS-Beta5) - Alex - No change for our sources, just swift related things
