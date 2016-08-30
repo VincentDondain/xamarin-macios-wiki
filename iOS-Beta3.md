@@ -12,7 +12,7 @@
 - [X] [EventKit.framework](https://github.com/xamarin/xamarin-macios/wiki/EventKit-iOS-Beta3) - No change
 - [X] [Foundation.framework](https://github.com/xamarin/xamarin-macios/wiki/Foundation-iOS-Beta3) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/603
 - [X] [GameKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameKit-iOS-Beta3) - Vincent - https://github.com/xamarin/xamarin-macios/pull/447
-- [ ] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-iOS-Beta3)
+- [X] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-iOS-Beta3) - Alex =https://github.com/xamarin/xamarin-macios/pull/689
 - [X] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-iOS-Beta3) - Vincent - https://github.com/xamarin/xamarin-macios/pull/432
 - [X] [IOKit.framework](https://github.com/xamarin/xamarin-macios/wiki/IOKit-iOS-Beta3) - **No Headers directory exists for this framework**
 - [X] [Intents.framework](https://github.com/xamarin/xamarin-macios/wiki/Intents-iOS-Beta3) - Alex - https://github.com/xamarin/xamarin-macios/pull/425
