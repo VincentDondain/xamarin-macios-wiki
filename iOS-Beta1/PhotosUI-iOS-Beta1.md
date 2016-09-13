@@ -1,3 +1,0 @@
-#PhotosUI.framework
-
-###Done

@@ -1,3 +1,0 @@
-#VideoToolbox.framework
-
-###Done

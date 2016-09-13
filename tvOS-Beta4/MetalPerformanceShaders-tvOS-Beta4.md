@@ -1,3 +1,0 @@
-#MetalPerformanceShaders.framework
-
-### Done

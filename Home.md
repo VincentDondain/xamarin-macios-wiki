@@ -20,4 +20,5 @@ You can now download Xamarin.iOS and Xamarin.Mac packages directly from our buil
 
 ### Bindings
 
-To start contributing to the bindings effort, please take a look at the [Bindings](https://github.com/xamarin/xamarin-macios/wiki/Bindings) document.
+iOS, tvOS and watchOS are complete for Xcode 8, for macOS
+please take a look at the [Bindings](https://github.com/xamarin/xamarin-macios/wiki/Bindings) document.

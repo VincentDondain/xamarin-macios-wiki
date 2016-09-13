@@ -1,3 +1,0 @@
-#CoreMIDI.framework
-
-###Done

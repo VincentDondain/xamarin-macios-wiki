@@ -1,3 +1,0 @@
-#GLKit.framework
-
-###Done

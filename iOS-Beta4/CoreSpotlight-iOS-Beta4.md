@@ -1,3 +1,0 @@
-#CoreSpotlight.framework
-
-###Done

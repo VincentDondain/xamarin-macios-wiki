@@ -1,3 +1,0 @@
-#CoreMotion.framework
-
-###Done

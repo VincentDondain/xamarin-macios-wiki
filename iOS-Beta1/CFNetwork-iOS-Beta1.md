@@ -1,3 +1,0 @@
-#CFNetwork.framework
-
-###Done

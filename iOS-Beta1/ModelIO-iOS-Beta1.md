@@ -1,3 +1,0 @@
-#ModelIO.framework
-
-### Done

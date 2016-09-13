@@ -1,3 +1,0 @@
-#QuickLook.framework
-
-###Done

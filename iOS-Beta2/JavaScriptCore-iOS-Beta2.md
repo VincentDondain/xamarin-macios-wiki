@@ -1,3 +1,0 @@
-#JavaScriptCore.framework
-
-###Done

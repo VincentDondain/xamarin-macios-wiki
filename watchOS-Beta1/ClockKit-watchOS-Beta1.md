@@ -1,3 +1,0 @@
-#ClockKit.framework
-
-###Done

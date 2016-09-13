@@ -1,3 +1,0 @@
-#MobileCoreServices.framework
-
-###Done

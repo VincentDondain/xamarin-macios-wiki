@@ -1,3 +1,0 @@
-#WatchConnectivity.framework
-
-###Done

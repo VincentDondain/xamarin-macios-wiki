@@ -1,3 +1,0 @@
-#SpriteKit.framework
-
-### Done

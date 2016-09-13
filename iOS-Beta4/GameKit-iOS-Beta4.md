@@ -1,3 +1,0 @@
-#GameKit.framework
-
-### Done

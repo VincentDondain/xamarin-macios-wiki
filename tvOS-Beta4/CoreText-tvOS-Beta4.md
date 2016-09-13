@@ -1,3 +1,0 @@
-#CoreText.framework
-
-### Done

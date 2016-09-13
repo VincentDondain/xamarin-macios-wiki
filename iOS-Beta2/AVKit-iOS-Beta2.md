@@ -1,3 +1,0 @@
-#AVKit.framework
-
-###Done

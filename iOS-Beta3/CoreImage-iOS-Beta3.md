@@ -1,3 +1,0 @@
-#CoreImage.framework
-
-###Done

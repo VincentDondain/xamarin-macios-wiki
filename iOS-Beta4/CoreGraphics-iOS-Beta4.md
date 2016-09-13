@@ -1,3 +1,0 @@
-#CoreGraphics.framework
-
-###Done

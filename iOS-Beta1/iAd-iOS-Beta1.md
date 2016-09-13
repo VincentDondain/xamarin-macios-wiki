@@ -1,3 +1,0 @@
-#iAd.framework
-
-###Done

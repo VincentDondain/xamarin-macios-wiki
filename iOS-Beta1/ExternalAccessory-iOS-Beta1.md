@@ -1,3 +1,0 @@
-#ExternalAccessory.framework
-
-###Done
