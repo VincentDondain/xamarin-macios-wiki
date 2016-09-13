@@ -18,6 +18,13 @@ Known issues
 
     Workaround: reboot the watch
 
+When something doesn't work
+---------------------------
+
+* Make sure you have the latest versions of everything (Xcode, Xamarin Studio, Xamarin.iOS) installed.
+* Reboot everything (watch + phone + mac).
+* <a href="https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS">File a bug</a> (see below for information to include in the bug report).
+
 Logs to fetch when filing a bug
 -------------------------------
 
