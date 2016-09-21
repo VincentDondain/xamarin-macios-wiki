@@ -8,11 +8,14 @@ You will find in this page a list of what we will call "sections", composed of a
 
 ### Sections
 
+###### iOS
+- [iOS 10.1 Beta 1](https://github.com/xamarin/xamarin-macios/wiki/iOS-Beta1)
+
+###### watchOS
+- [watchOS 3.1 Beta 1](https://github.com/xamarin/xamarin-macios/wiki/watchOS-Beta1)
+
+###### tvOS
+_No source changes._
+
 ###### macOS
-- [macOS 10.12 Beta 1](https://github.com/xamarin/xamarin-macios/wiki/macOS-Beta1)
-- [macOS 10.12 Beta 1 to 2](https://github.com/xamarin/xamarin-macios/wiki/macOS-Beta2)
-- [macOS 10.12 Beta 2 to 3](https://github.com/xamarin/xamarin-macios/wiki/macOS-Beta3)
-- [macOS 10.12 Beta 3 to 4](https://github.com/xamarin/xamarin-macios/wiki/macOS-Beta4)
-- [macOS 10.12 Beta 4 to 5](https://github.com/xamarin/xamarin-macios/wiki/macOS-Beta5)
-- [macOS 10.12 Beta 5 to 6](https://github.com/xamarin/xamarin-macios/wiki/macOS-Beta6)
-- [macOS 10.12 Beta 6 to GM](https://github.com/xamarin/xamarin-macios/wiki/macOS-GM)
+_No source changes._
