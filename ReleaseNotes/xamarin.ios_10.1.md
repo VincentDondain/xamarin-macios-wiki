@@ -12,8 +12,8 @@ releasedate:2016-07-14
 Requirements
 ============
 
-- The latest features and API requires Xcode 7.3 and the bundled iOS, tvOS and watchOS SDKs;
-- Apple Xcode 7.3 requires a Mac running OSX 10.11.3 (El Capitan) or newer;
+- The latest features and API requires Xcode 8 and the bundled iOS, tvOS and watchOS SDKs;
+- Apple Xcode 8 requires a Mac running OSX 10.11.5 (El Capitan) or newer;
 
 What's New
 ==========
@@ -23,8 +23,6 @@ using the `master` branch, and include some additional IDE integratin tools.
 
 
 ### Known Issues
-
-* **Issue:** This does not include Xcode8 related work. See our `xcode8` branch and releases for previews. Once Xcode8 and it's SDK becomes stable the `xcode8` branch will be merged into `master`;
 
 
 ### API diff
