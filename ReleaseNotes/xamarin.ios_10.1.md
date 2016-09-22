@@ -21,6 +21,7 @@ What's New
 This release is built upon our [open sourced SDK](https://github.com/xamarin/xamarin-macios),
 using the `master` branch, and include some additional IDE integratin tools.
 
+### It's now possible to specify how many parallel AOT processes mtouch can launch by using the `-j #` argument to mtouch (in the project's iOS Build options). The default is the number of processors on the machine, but builds on high-end machines may profit from increasing this value.
 
 ### Known Issues
 
