@@ -23,6 +23,37 @@ using the `master` branch, and include some additional IDE integratin tools.
 
 * It's now possible to specify how many parallel AOT processes mtouch can launch by using the `-j #` argument to mtouch (in the project's iOS Build options). The default is the number of processors on the machine, but builds on high-end machines may profit from increasing this value.
 
+### watchOS
+
+This version introduces stable support for native watchOS 2+ applications.
+
+However due to the limited API available on watchOS, the following managed API will throw PlatformNotSupportedExceptions:
+
+#### System assembly
+
+* System.Net.Mail.SmtpClient
+* System.Net.Sockets.Socket:Bind
+* System.Net.Sockets.TcpClient
+* System.Net.Sockets.TcpListener
+* System.Net.Sockets.UdpClient
+* System.Net.WebSockets.ClientWebSocket
+* System.Net.Dns:[Begin]GetHostByName
+* System.Net.Dns:[Begin]GetHostEntry
+* System.Net.Dns:[Begin]Resolve
+* System.Net.FtpWebRequest
+* System.Net.FtpWebResponse
+* System.Net.HttpListener
+* System.Net.HttpListenerContext
+* System.Net.HttpListenerPrefixCollection
+* System.Net.HttpListenerRequest
+* System.Net.HttpListenerResponse
+* System.Net.HttpWebRequest
+* System.Net.HttpWebResponse
+
+#### System.Net.Http assembly
+
+* System.Net.Http.HttpClientHandler
+
 ### Known Issues
 
 
