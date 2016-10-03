@@ -69,6 +69,12 @@ And the following assemblies are not shipped at all:
 
 As an alternative use HttpClient, which will use the native networking stack through a custom HttpMessageHandler (NSUrlSessionHandler).
 
+### Xamarin Analysis
+
+We added a new rule to our project analysis tool which ensures that iOS distribution builds do not include TestCloud support. App builds that initialize the Test Cloud agent will be rejected by Apple when submitted, as they use private API.
+
+*As a reminder you can run the Xamarin Analysis rules from Xamarin Studio's menu bar by selecting Project > Run Code Analysis.*
+
 ### Known Issues
 
 
