@@ -27,11 +27,15 @@ using the `master` branch, and include some additional IDE integratin tools.
 
 This version introduces stable support for native watchOS 2+ applications.
 
-However due to the limited API available on watchOS, the following managed API will throw PlatformNotSupportedExceptions:
+However due to the limited API available on watchOS, the managed networking stack is not available. This means that the following managed API will throw PlatformNotSupportedExceptions:
 
 #### System assembly
 
+* System.Net.AuthenticationManager
+* System.Net.ServicePoint
+* System.Net.ServicePointManager
 * System.Net.Mail.SmtpClient
+* System.Net.Security.SslStream
 * System.Net.Sockets.Socket:Bind
 * System.Net.Sockets.TcpClient
 * System.Net.Sockets.TcpListener
@@ -53,6 +57,17 @@ However due to the limited API available on watchOS, the following managed API w
 #### System.Net.Http assembly
 
 * System.Net.Http.HttpClientHandler
+
+#### System.Data assembly
+
+* System.Data.SqlClient namespace
+
+And the following assemblies are not shipped at all:
+
+* Mono.Data.Tds.dll
+* Mono.Security.dll
+
+As an alternative use HttpClient, which will use the native networking stack through a custom HttpMessageHandler (NSUrlSessionHandler).
 
 ### Known Issues
 
