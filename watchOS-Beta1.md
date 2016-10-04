@@ -1,4 +1,4 @@
 ### To Bind
 ###### Existing Frameworks
-- [ ] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-watchOS-Beta1)
-- [ ] [PassKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PassKit-watchOS-Beta1)
+- [X] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-watchOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/923
+- [X] [PassKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PassKit-watchOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/923
