@@ -5,6 +5,7 @@ The **xamarin-macios** wiki is where we keep our documents (release notes, Xcode
 Here we keep the initial drafts for release notes based on our main work (on master) or in special branches, e.g. `xcode8` tracks the API and tooling changes to support iOS 10, tvOS 10, watchOS 3 and macOS 10.12.
 
 * [Xamarin.iOS 10.1 (master / C9)](https://github.com/xamarin/xamarin-macios/wiki/xamarin.ios_10.1)
+* [Xamarin.iOS 10.0.9 (xcode8.1)](https://github.com/xamarin/xamarin-macios/wiki/xamarin.ios_10.0.9)
 
 Found a typo, an undocumented new feature or a missing bug fix reference ? just create a PR and we'll merge it after review.
 
@@ -16,6 +17,7 @@ You can now download Xamarin.iOS and Xamarin.Mac packages directly from our buil
 * [master](https://jenkins.mono-project.com/view/Xamarin.MaciOS/job/xamarin-macios-builds-master/) : our latest bits (that will eventually become C9);
 * [cycle8](https://jenkins.mono-project.com/view/Xamarin.MaciOS/job/xamarin-macios-builds-cycle8/) : our current cycle, used to ship Xamarin.Mac 2.10.x (until Sierra support is ready);
 * [xcode8](https://jenkins.mono-project.com/view/Xamarin.MaciOS/job/xamarin-macios-builds-xcode8/) : our support for Xcode8 and the latest SDK (based on cycle8 branch), used to ship Xamarin.iOS 10.0.x;
+* [xcode8.1](https://jenkins.mono-project.com/view/Xamarin.MaciOS/job/xamarin-macios-builds-xcode8.1/) : our support for Xcode 8.1 and the latest SDK (based on xcode8 branch), used to ship Xamarin.iOS 10.0.9.x;
 
 
 ### Bindings
