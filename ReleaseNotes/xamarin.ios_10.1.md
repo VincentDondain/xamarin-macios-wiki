@@ -1,11 +1,11 @@
 id:23e82b9c-09e5-428f-9aab-196687fb6ebd
 title:Xamarin.iOS
-version:9.11.0
-releasedate:2016-07-14
+version:10.1.0
+releasedate:2016-10-04
 
 <div class="note">
-	<b>Cycle 9 Daily Builds</b>
-	This version of Xamarin.iOS will likely ship after the release of Xcode 8 and Xamarin.iOS 10.
+	<b>Master / Cycle 9 Daily Builds</b>
+	This version of Xamarin.iOS will ship as part of Xamarin **cycle 9** releases.
 	Some fixes might be backported into `cycle8` and released long before other parts of `master` becomes public.
 </div>
 
@@ -23,11 +23,13 @@ using the `master` branch, and include some additional IDE integratin tools.
 
 * It's now possible to specify how many parallel AOT processes mtouch can launch by using the `-j #` argument to mtouch (in the project's iOS Build options). The default is the number of processors on the machine, but builds on high-end machines may profit from increasing this value.
 
+* A new implementation of `NSUrlSessionHandler` was [contributed](https://github.com/xamarin/xamarin-macios/pull/31) by Nick Berardi. The new version offers the same features as the previous one but requires less memory and, by resuing it, less time spent in the garbage collector;
+
 ### watchOS
 
 This version introduces stable support for native watchOS 2+ applications.
 
-However due to the limited API available on watchOS, the managed networking stack is not available. This means that the following managed API will throw PlatformNotSupportedExceptions:
+However due to the limited API available on watchOS, the managed networking stack is not available. This means that the following managed API will throw `PlatformNotSupportedException`:
 
 #### System assembly
 
@@ -67,7 +69,10 @@ And the following assemblies are not shipped at all:
 * Mono.Data.Tds.dll
 * Mono.Security.dll
 
-As an alternative use HttpClient, which will use the native networking stack through a custom HttpMessageHandler (NSUrlSessionHandler).
+As an alternative you can use
+
+* Native API, e.g. `NSUrlSession*`; or
+* `System.Net.Http.HttpClient` which will use the native networking stack through a custom `HttpMessageHandler`: `NSUrlSessionHandler`
 
 ### Xamarin Analysis
 
