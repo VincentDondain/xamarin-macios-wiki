@@ -19,6 +19,11 @@ Here we keep the initial drafts for release notes based on our main work (on mas
 
 Found a typo, an undocumented new feature or a missing bug fix reference ? just create a PR and we'll merge it after review.
 
+Release notes for versions available on our updater channels (alpha / beta or stable) can be found on our web site:
+
+* [Xamarin.iOS Release Notes](https://developer.xamarin.com/releases/ios/)
+* [Xamarin.Mac Release Notes](https://developer.xamarin.com/releases/mac/)
+
 
 ### Continuous Builds
 
