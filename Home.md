@@ -1,5 +1,15 @@
 The **xamarin-macios** wiki is where we keep our documents (release notes, Xcode diff, etc) about **Xamarin.iOS & Xamarin.Mac**.
 
+### Contributing
+
+You already reached our wiki! So you might already know that Xamarin's SDK are open sourced and that you can contribute to them. Some useful resources to help you are:
+
+* our **mailing list**: you can [subscribe](http://lists.dot.net/mailman/listinfo/macios-devel) or read the [archives](http://lists.dot.net/pipermail/macios-devel/);
+* our [gitter channel](https://gitter.im/xamarin/xamarin-macios)
+
+Those resources are exclusively available to help you contributing to the Xamarin.iOS/Mac SDKs.
+
+
 ### Release Notes
 
 Here we keep the initial drafts for release notes based on our main work (on master) or in special branches, e.g. `xcode8` tracks the API and tooling changes to support iOS 10, tvOS 10, watchOS 3 and macOS 10.12.
