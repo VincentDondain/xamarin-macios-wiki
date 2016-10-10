@@ -82,6 +82,8 @@ We added a new rule to our project analysis tool which ensures that iOS distribu
 
 ### Known Issues
 
+* **Issue: App may slow down your iPhone** (ex "App not optimized for iOS10") warning: This happens when a 32bit-only application executes on a 64 bits capable platform, e.g. a i386 build running on a iPhone 6 simulator (capable of 64bit). The warning simply means you're not using the optimal build for the platform. This can be normal when testing and, by default, simulator builds are only 32 or 64 bits (to make them faster).
+	* **Workaround** You can change your project settings to remove the warning. Application submitted to the app store should have both 32 and 64 bits, in general, or be 64 bits only.
 
 ### API diff
 
