@@ -12,11 +12,13 @@ You will find in this page a list of what we will call "sections", composed of a
 - [iOS 10.1 Beta 1](https://github.com/xamarin/xamarin-macios/wiki/iOS-Beta1)
 - [iOS 10.1 Beta 2](https://github.com/xamarin/xamarin-macios/wiki/iOS-Beta2)
 - _iOS 10.1 Beta 3 – No source changes_
+- _iOS 10.1 GM – No source changes_
 
 ###### watchOS
 - [watchOS 3.1 Beta 1](https://github.com/xamarin/xamarin-macios/wiki/watchOS-Beta1)
 - _watchOS 3.1 Beta 2 – No source changes_
 - _watchOS 3.1 Beta 3 – No source changes_
+- _watchOS 3.1 GM – No source changes_
 
 ###### tvOS
 _No source changes._
