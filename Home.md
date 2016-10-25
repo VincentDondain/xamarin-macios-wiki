@@ -30,11 +30,10 @@ You can now download Xamarin.iOS and Xamarin.Mac packages directly from our buil
 
 * [master](https://jenkins.mono-project.com/view/Xamarin.MaciOS/job/xamarin-macios-builds-master/) : our latest bits (that will eventually become C9);
 * [cycle8](https://jenkins.mono-project.com/view/Xamarin.MaciOS/job/xamarin-macios-builds-cycle8/) : our current cycle, used to ship Xamarin.Mac 2.10.x (until Sierra support is ready);
-* [xcode8](https://jenkins.mono-project.com/view/Xamarin.MaciOS/job/xamarin-macios-builds-xcode8/) : our support for Xcode8 and the latest SDK (based on cycle8 branch), used to ship Xamarin.iOS 10.0.x;
-* [xcode8.1](https://jenkins.mono-project.com/view/Xamarin.MaciOS/job/xamarin-macios-builds-xcode8.1/) : our support for Xcode 8.1 and the latest SDK (based on xcode8 branch), used to ship Xamarin.iOS 10.0.9.x;
+* [xcode8.1](https://jenkins.mono-project.com/view/Xamarin.MaciOS/job/xamarin-macios-builds-xcode8.1/) : our support for Xcode 8.1 and the latest SDK (based on xcode8 branch), used to ship Xamarin.iOS 10.2.x;
 
 
 ### Bindings
 
-iOS, tvOS and watchOS are complete for Xcode 8, for macOS
+iOS, tvOS and watchOS are complete for Xcode 8.1, for macOS
 please take a look at the [Bindings](https://github.com/xamarin/xamarin-macios/wiki/Bindings) document.
