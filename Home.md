@@ -14,8 +14,7 @@ Those resources are exclusively available to help you contributing to the Xamari
 
 Here we keep the initial drafts for release notes based on our main work (on master) or in special branches, e.g. `xcode8` tracks the API and tooling changes to support iOS 10, tvOS 10, watchOS 3 and macOS 10.12.
 
-* [Xamarin.iOS 10.1 (master / C9)](https://github.com/xamarin/xamarin-macios/wiki/xamarin.ios_10.1)
-* [Xamarin.iOS 10.0.9 (xcode8.1)](https://github.com/xamarin/xamarin-macios/wiki/xamarin.ios_10.0.9)
+* [Xamarin.iOS 10.3 (master / C9)](https://github.com/xamarin/xamarin-macios/wiki/xamarin.ios_10.3)
 
 Found a typo, an undocumented new feature or a missing bug fix reference ? just create a PR and we'll merge it after review.
 

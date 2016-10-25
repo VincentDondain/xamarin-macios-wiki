@@ -1,7 +1,7 @@
 id:23e82b9c-09e5-428f-9aab-196687fb6ebd
 title:Xamarin.iOS
-version:10.1.0
-releasedate:2016-10-04
+version:10.3.0
+releasedate:2016-10-25
 
 <div class="note">
 	<b>Master / Cycle 9 Daily Builds</b>
