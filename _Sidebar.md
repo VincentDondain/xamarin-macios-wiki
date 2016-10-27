@@ -11,3 +11,6 @@ Bindings
 
 ###### watchOS
 - [watchOS 3.1 Beta 1](https://github.com/xamarin/xamarin-macios/wiki/watchOS-Beta1)
+
+###### macOS
+- [macOS 10.12.1 Final](https://github.com/xamarin/xamarin-macios/wiki/macOS-Final)
