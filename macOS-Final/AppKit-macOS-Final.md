@@ -1,100 +1,3 @@
-#AppKit.framework
-
-``` diff
-diff -ruN /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h /Applications/Xcode81-Final.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h
---- /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h	2016-08-11 21:43:44.000000000 -0400
-+++ /Applications/Xcode81-Final.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.h	2016-10-10 22:25:11.000000000 -0400
-@@ -21,6 +21,7 @@
- #import <AppKit/NSBox.h>
- #import <AppKit/NSButton.h>
- #import <AppKit/NSButtonCell.h>
-+#import <AppKit/NSCandidateListTouchBarItem.h>
- #import <AppKit/NSCell.h>
- #import <AppKit/NSClipView.h>
- #import <AppKit/NSCollectionView.h>
-@@ -51,9 +52,11 @@
- #import <AppKit/NSColorPanel.h>
- #import <AppKit/NSColorPicking.h>
- #import <AppKit/NSColorPicker.h>
-+#import <AppKit/NSColorPickerTouchBarItem.h>
- #import <AppKit/NSColorWell.h>
- #import <AppKit/NSCursor.h>
- #import <AppKit/NSCustomImageRep.h>
-+#import <AppKit/NSCustomTouchBarItem.h>
- #import <AppKit/NSDocument.h>
- #import <AppKit/NSDocumentController.h>
- #import <AppKit/NSDragging.h>
-@@ -68,6 +71,7 @@
- #import <AppKit/NSHelpManager.h>
- #import <AppKit/NSGradient.h>
- #import <AppKit/NSGraphics.h>
-+#import <AppKit/NSGroupTouchBarItem.h>
- #import <AppKit/NSGestureRecognizer.h>
- #import <AppKit/NSClickGestureRecognizer.h>
- #import <AppKit/NSPanGestureRecognizer.h>
-@@ -83,6 +87,12 @@
- #import <AppKit/NSNib.h>
- #import <AppKit/NSNibLoading.h>
- #import <AppKit/NSPrinter.h>
-+#import <AppKit/NSScrubber.h>
-+#import <AppKit/NSScrubberItemView.h>
-+#import <AppKit/NSScrubberLayout.h>
-+#import <AppKit/NSSharingServicePickerTouchBarItem.h>
-+#import <AppKit/NSSliderAccessory.h>
-+#import <AppKit/NSSliderTouchBarItem.h>
- #import <AppKit/NSSpeechRecognizer.h>
- #import <AppKit/NSSpeechSynthesizer.h>
- #import <AppKit/NSSpellChecker.h>
-@@ -93,6 +103,7 @@
- #import <AppKit/NSPanel.h>
- #import <AppKit/NSPasteboard.h>
- #import <AppKit/NSPasteboardItem.h>
-+#import <AppKit/NSPopoverTouchBarItem.h>
- #import <AppKit/NSPopUpButton.h>
- #import <AppKit/NSPrintInfo.h>
- #import <AppKit/NSPrintOperation.h>
-@@ -119,6 +130,8 @@
- #import <AppKit/NSText.h>
- #import <AppKit/NSTokenField.h>
- #import <AppKit/NSTokenFieldCell.h>
-+#import <AppKit/NSTouchBar.h>
-+#import <AppKit/NSTouchBarItem.h>
- #import <AppKit/NSTrackingArea.h>
- #import <AppKit/NSUserActivity.h>
- #import <AppKit/NSView.h>
-diff -ruN /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKitDefines.h /Applications/Xcode81-Final.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKitDefines.h
---- /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKitDefines.h	2016-08-11 21:43:44.000000000 -0400
-+++ /Applications/Xcode81-Final.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKitDefines.h	2016-10-10 22:25:11.000000000 -0400
-@@ -43,10 +43,6 @@
- #define APPKIT_PRIVATE          __attribute__((visibility("hidden")))
- #endif
- 
--//
--// For Windows
--//
--
- #endif
- 
- #endif // _APPKITDEFINES_H
-diff -ruN /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSApplication.h /Applications/Xcode81-Final.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSApplication.h
---- /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSApplication.h	2016-08-11 21:43:44.000000000 -0400
-+++ /Applications/Xcode81-Final.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSApplication.h	2016-10-10 22:25:11.000000000 -0400
-@@ -60,6 +60,7 @@
- #define NSAppKitVersionNumber10_11_1 1404.13
- #define NSAppKitVersionNumber10_11_2 1404.34
- #define NSAppKitVersionNumber10_11_3 1404.34
-+#define NSAppKitVersionNumber10_12 1504
- 
- 
- /* Modes passed to NSRunLoop */
-@@ -493,6 +494,7 @@
- @property (readonly) NSRemoteNotificationType enabledRemoteNotificationTypes NS_AVAILABLE_MAC(10_7);
- @end
- 
-+
- /* An Application's startup function */
- 
- APPKIT_EXTERN int NSApplicationMain(int argc, const char *argv[]);
 diff -ruN /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSButton.h /Applications/Xcode81-Final.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSButton.h
 --- /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSButton.h	2016-08-11 21:43:44.000000000 -0400
 +++ /Applications/Xcode81-Final.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSButton.h	2016-10-10 22:25:11.000000000 -0400
@@ -1253,40 +1156,9 @@ diff -ruN /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platf
 +@end
 +
 +NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSSegmentedCell.h /Applications/Xcode81-Final.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSSegmentedCell.h
---- /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSSegmentedCell.h	2016-08-11 21:43:44.000000000 -0400
-+++ /Applications/Xcode81-Final.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSSegmentedCell.h	2016-10-10 22:25:11.000000000 -0400
-@@ -32,7 +32,9 @@
-         unsigned int flatMinX:1;
-         unsigned int flatMaxX:1;
-         unsigned int segmentedSeparated:1;
--        unsigned int reserved:10;
-+        unsigned int hidesUnselectedLabelsWhenNecessary:1;
-+        unsigned int animating:1;
-+        unsigned int reserved:8;
-     } _seFlags;
-     id           _segmentTrackingInfo;
-     id           _menuUniquer;
-@@ -57,7 +59,6 @@
- 
- @property NSSegmentSwitchTracking trackingMode;
- 
--
- // per segment info
- 
- /* Width of 0 means autosize to fit
 diff -ruN /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSSegmentedControl.h /Applications/Xcode81-Final.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSSegmentedControl.h
 --- /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSSegmentedControl.h	2016-08-11 21:43:44.000000000 -0400
 +++ /Applications/Xcode81-Final.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSSegmentedControl.h	2016-10-10 22:25:11.000000000 -0400
-@@ -37,7 +37,7 @@
-     NSInteger _reserved1;
-     NSInteger _reserved2;
-     NSInteger _reserved3;
--    NSInteger _reserved4;
-+    id        _scAux;
- }
- 
- @property NSInteger segmentCount;
 @@ -79,6 +79,8 @@
   */
  @property (readonly) double doubleValueForSelectedSegment NS_AVAILABLE_MAC(10_10_3);
@@ -1563,24 +1435,6 @@ diff -ruN /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platf
 diff -ruN /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTextView.h /Applications/Xcode81-Final.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTextView.h
 --- /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTextView.h	2016-08-11 21:43:44.000000000 -0400
 +++ /Applications/Xcode81-Final.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTextView.h	2016-10-10 22:25:11.000000000 -0400
-@@ -20,6 +20,8 @@
- #import <Foundation/NSArray.h>
- #import <Foundation/NSDictionary.h>
- #import <Foundation/NSTextCheckingResult.h>
-+#import <AppKit/NSTouchBarItem.h>
-+#import <AppKit/NSCandidateListTouchBarItem.h>
- 
- NS_ASSUME_NONNULL_BEGIN
- 
-@@ -192,7 +194,7 @@
- 
- /**************************** Ownership policy ****************************/
- // Returns whether instances of the class operate in the object ownership policy introduced with macOS Sierra and later. When YES, the new object owner policy is used. Under the policy, each text view strongly retains its text storage and its text container weakly references the view. Also, the text views are compatible with __weak storage. The default is YES.
--@property(readonly, class) BOOL stronglyReferencesTextStorage NS_AVAILABLE_MAC(10_12);
-+@property (readonly, class) BOOL stronglyReferencesTextStorage NS_AVAILABLE_MAC(10_12);
- 
- @end
- 
 @@ -456,6 +458,33 @@
  
  @end
@@ -1687,16 +1541,6 @@ diff -ruN /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platf
  
  /* Unlike the iPhone, NSTouch objects do not persist for the life of the touch.
  */
-@@ -41,8 +52,8 @@
-     NSInteger _reserved4;
-     id _device;
-     NSSize  _deviceSize;
-+    NSInteger _contextId;
- #if ! __LP64__
--    id _reserved5;
-     id _reserved6;
-     id _reserved7;
-     id _reserved8;
 @@ -66,5 +77,14 @@
  
  @end
@@ -2038,14 +1882,6 @@ diff -ruN /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platf
 diff -ruN /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSView.h /Applications/Xcode81-Final.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSView.h
 --- /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSView.h	2016-08-11 21:43:44.000000000 -0400
 +++ /Applications/Xcode81-Final.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSView.h	2016-10-10 22:25:11.000000000 -0400
-@@ -17,6 +17,7 @@
- #import <AppKit/NSUserInterfaceItemIdentification.h>
- #import <AppKit/NSDragging.h>
- #import <AppKit/NSAppearance.h>
-+#import <AppKit/NSTouch.h>
- 
- NS_ASSUME_NONNULL_BEGIN
- 
 @@ -292,9 +293,8 @@
  @property (readonly) BOOL needsPanelToBecomeKey;
  @property (readonly) BOOL mouseDownCanMoveWindow;
@@ -2070,18 +1906,3 @@ diff -ruN /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platf
  @interface NSView(NSDeprecated)
  
  /* This drag method as been deprecated in favor of beginDraggingSessionWithItems:event:source:
-diff -ruN /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSVisualEffectView.h /Applications/Xcode81-Final.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSVisualEffectView.h
---- /Applications/Xcode81-GM.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSVisualEffectView.h	2016-08-11 21:43:44.000000000 -0400
-+++ /Applications/Xcode81-Final.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSVisualEffectView.h	2016-10-10 22:25:11.000000000 -0400
-@@ -76,7 +76,8 @@
-     unsigned int _appearsDarker:1;
-     unsigned int _inheritsBlendGroup:1;
-     unsigned int _registeredForFrameChanges:1;
--    unsigned int _reservedFlags:18 __unused;
-+    unsigned int _needsClearProxy:1;
-+    unsigned int _reservedFlags:17 __unused;
- }
- 
- /* The default value is NSVisualEffectMaterialAppearanceBased; the material is updated to be the correct material based on the appearance set on this view.
-
-```
