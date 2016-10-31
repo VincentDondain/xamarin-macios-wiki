@@ -1,5 +1,24 @@
 ### To Bind
 ###### Existing Frameworks
-- [X] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-iOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/923
-- [X] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-iOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/923
-- [X] [PassKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PassKit-iOS-Beta1) - Vincent - https://github.com/xamarin/xamarin-macios/pull/943
+- [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-iOS-Beta1)
+- [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-iOS-Beta1)
+- [ ] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-iOS-Beta1)
+- [ ] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-iOS-Beta1)
+- [ ] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-iOS-Beta1)
+- [ ] [Intents.framework](https://github.com/xamarin/xamarin-macios/wiki/Intents-iOS-Beta1)
+- [ ] [IntentsUI.framework](https://github.com/xamarin/xamarin-macios/wiki/IntentsUI-iOS-Beta1)
+- [ ] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-iOS-Beta1)
+- [ ] [Messages.framework](https://github.com/xamarin/xamarin-macios/wiki/Messages-iOS-Beta1)
+- [ ] [ModelIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ModelIO-iOS-Beta1)
+- [ ] [NetworkExtension.framework](https://github.com/xamarin/xamarin-macios/wiki/NetworkExtension-iOS-Beta1)
+- [ ] [PassKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PassKit-iOS-Beta1)
+- [ ] [Photos.framework](https://github.com/xamarin/xamarin-macios/wiki/Photos-iOS-Beta1)
+- [ ] [QuartzCore.framework](https://github.com/xamarin/xamarin-macios/wiki/QuartzCore-iOS-Beta1)
+- [ ] [ReplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/ReplayKit-iOS-Beta1)
+- [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-iOS-Beta1)
+- [ ] [Speech.framework](https://github.com/xamarin/xamarin-macios/wiki/Speech-iOS-Beta1)
+- [ ] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-iOS-Beta1)
+- [ ] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-iOS-Beta1)
+- [ ] [VideoSubscriberAccount.framework](https://github.com/xamarin/xamarin-macios/wiki/VideoSubscriberAccount-iOS-Beta1)
+- [ ] [WatchConnectivity.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchConnectivity-iOS-Beta1)
+- [ ] [WatchKit.framework](https://github.com/xamarin/xamarin-macios/wiki/WatchKit-iOS-Beta1)

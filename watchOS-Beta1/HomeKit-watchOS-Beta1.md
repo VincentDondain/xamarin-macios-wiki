@@ -1,3 +1,0 @@
-#HomeKit.framework
-
-### Done

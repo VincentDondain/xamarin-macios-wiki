@@ -1,9 +1,9 @@
 #MediaPlayer.framework
 
 ``` diff
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPContentItem.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPContentItem.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPContentItem.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPContentItem.h	2016-10-24 05:59:56.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPContentItem.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPContentItem.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPContentItem.h	2016-08-11 06:42:45.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPContentItem.h	2016-10-24 06:54:14.000000000 +0200
 @@ -16,7 +16,7 @@
  /// representation outside the client application. Examples of media items that a
  /// developer might want to represent include song files, streaming audio URLs,
@@ -13,9 +13,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  @interface MPContentItem : NSObject
  
  /// Designated initializer. A unique identifier is required to identify the item
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPError.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPError.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPError.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPError.h	2016-10-24 05:59:56.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPError.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPError.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPError.h	2016-08-11 06:42:45.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPError.h	2016-10-24 06:54:13.000000000 +0200
 @@ -10,7 +10,7 @@
  
  NS_ASSUME_NONNULL_BEGIN
@@ -25,9 +25,17 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  
  // error codes for the MPErrorDomain
  typedef NS_ENUM(NSInteger, MPErrorCode) {
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaEntity.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaEntity.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaEntity.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaEntity.h	2016-10-24 05:59:56.000000000 +0200
+@@ -20,6 +20,7 @@
+     MPErrorNetworkConnectionFailed,                 // the device could not connect to the network
+     MPErrorNotFound,                                // the id could not be found in the current storefront
+     MPErrorNotSupported,                            // the request is not supported (ex: trying to add items to a smart playlist)
++    MPErrorCancelled NS_ENUM_AVAILABLE_IOS(10_1),   // the request was cancelled before it could complete
+ } NS_ENUM_AVAILABLE_IOS(9_3);
+ 
+ NS_ASSUME_NONNULL_END
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaEntity.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaEntity.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaEntity.h	2016-08-11 06:42:45.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaEntity.h	2016-10-24 06:54:14.000000000 +0200
 @@ -17,8 +17,7 @@
  // An MPMediaEntity represents an abstract member of an MPMediaLibrary.
  // Concrete subclasses are MPMediaItem and MPMediaItemCollection.
@@ -47,9 +55,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  @property (nonatomic, readonly) MPMediaEntityPersistentID persistentID NS_AVAILABLE_IOS(7_0);
  
  @end
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaItem.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaItem.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaItem.h	2016-09-25 15:33:24.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaItem.h	2016-10-24 05:31:45.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaItem.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaItem.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaItem.h	2016-09-25 15:33:24.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaItem.h	2016-10-24 05:31:45.000000000 +0200
 @@ -12,76 +12,75 @@
  
  NS_ASSUME_NONNULL_BEGIN
@@ -258,9 +266,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  - (id)init NS_UNAVAILABLE;
  
  @end
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaItemCollection.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaItemCollection.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaItemCollection.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaItemCollection.h	2016-10-24 05:59:56.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaItemCollection.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaItemCollection.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaItemCollection.h	2016-08-11 06:42:45.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaItemCollection.h	2016-10-24 06:54:13.000000000 +0200
 @@ -13,8 +13,7 @@
  
  // An MPMediaItemCollection is a collection of related MPMediaItems in a media library.
@@ -271,9 +279,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  @interface MPMediaItemCollection : MPMediaEntity
  
  // Creates a media item collection by copying an array of MPMediaItems.
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaLibrary.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaLibrary.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaLibrary.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaLibrary.h	2016-10-24 05:59:56.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaLibrary.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaLibrary.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaLibrary.h	2016-08-11 06:42:45.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaLibrary.h	2016-10-24 06:54:13.000000000 +0200
 @@ -30,8 +30,7 @@
      MPMediaLibraryAuthorizationStatusAuthorized,
  } NS_ENUM_AVAILABLE_IOS(9_3);
@@ -284,9 +292,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  @interface MPMediaLibrary : NSObject <NSSecureCoding>
  
  + (MPMediaLibrary *)defaultMediaLibrary;
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaPickerController.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaPickerController.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaPickerController.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaPickerController.h	2016-10-24 05:59:56.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaPickerController.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaPickerController.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaPickerController.h	2016-08-11 06:42:45.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaPickerController.h	2016-10-24 06:54:13.000000000 +0200
 @@ -18,8 +18,7 @@
  // MPMediaPickerController is a UIViewController for visually selecting media items.
  // To display it, present it modally on an existing view controller.
@@ -297,9 +305,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  @interface MPMediaPickerController : UIViewController
  
  - (instancetype)initWithMediaTypes:(MPMediaType)mediaTypes NS_DESIGNATED_INITIALIZER;
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaPlaylist.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaPlaylist.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaPlaylist.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaPlaylist.h	2016-10-24 05:59:56.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaPlaylist.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaPlaylist.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaPlaylist.h	2016-08-11 06:42:45.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaPlaylist.h	2016-10-24 06:54:13.000000000 +0200
 @@ -19,13 +19,12 @@
      MPMediaPlaylistAttributeOnTheGo = (1 << 0), // if set, the playlist was created on a device rather than synced from iTunes
      MPMediaPlaylistAttributeSmart   = (1 << 1),
@@ -326,9 +334,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  @interface MPMediaPlaylistCreationMetadata : NSObject
  
  - (id)init NS_UNAVAILABLE;
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaQuery.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaQuery.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaQuery.h	2016-08-05 08:27:48.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaQuery.h	2016-10-24 06:38:13.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaQuery.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaQuery.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaQuery.h	2016-08-05 08:27:48.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaQuery.h	2016-10-24 06:38:13.000000000 +0200
 @@ -24,12 +24,11 @@
      MPMediaGroupingGenre,
      MPMediaGroupingPlaylist,
@@ -367,9 +375,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  @interface MPMediaPropertyPredicate : MPMediaPredicate
  
  + (MPMediaPropertyPredicate *)predicateWithValue:(nullable id)value forProperty:(NSString *)property; // comparisonType is MPMediaPredicateComparisonEqualTo
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaQuerySection.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaQuerySection.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaQuerySection.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaQuerySection.h	2016-10-24 05:59:56.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaQuerySection.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaQuerySection.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaQuerySection.h	2016-08-11 06:42:45.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMediaQuerySection.h	2016-10-24 06:54:14.000000000 +0200
 @@ -12,8 +12,7 @@
  
  // An MPMediaQuerySection object represents a single section grouping for a query.
@@ -380,9 +388,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  @interface MPMediaQuerySection : NSObject <NSSecureCoding, NSCopying>
  
  // The localized title of the section grouping.
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMoviePlayerController.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMoviePlayerController.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMoviePlayerController.h	2016-08-05 08:27:47.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMoviePlayerController.h	2016-10-24 05:31:44.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMoviePlayerController.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMoviePlayerController.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMoviePlayerController.h	2016-08-05 08:27:47.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMoviePlayerController.h	2016-10-24 05:31:44.000000000 +0200
 @@ -6,6 +6,7 @@
  //
  
@@ -718,9 +726,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
 +@property (nonatomic) BOOL useApplicationAudioSession MP_API_IOS_DEPRECATED_MACOS_TVOS_PROHIBITED(3.2, 6.0, 10.12.1, 10.12.1, 3.2, 6.0);
  
  @end
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMoviePlayerViewController.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMoviePlayerViewController.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMoviePlayerViewController.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMoviePlayerViewController.h	2016-10-24 05:59:56.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMoviePlayerViewController.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMoviePlayerViewController.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMoviePlayerViewController.h	2016-08-11 06:42:45.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMoviePlayerViewController.h	2016-10-24 06:54:13.000000000 +0200
 @@ -11,9 +11,7 @@
  
  @class MPMoviePlayerController;
@@ -742,10 +750,23 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
 +- (void)dismissMoviePlayerViewControllerAnimated MP_API_IOS_DEPRECATED_WITH_REPLACEMENT_MACOS_TVOS_PROHIBITED("Use AVPlayerViewController in AVKit.", 3.2, 9.0, 10.12.1, 10.12.1, 3.2, 9.0);
  
  @end
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMusicPlayerController.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMusicPlayerController.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMusicPlayerController.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMusicPlayerController.h	2016-10-24 06:38:13.000000000 +0200
-@@ -22,25 +22,24 @@
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMusicPlayerController.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMusicPlayerController.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMusicPlayerController.h	2016-05-04 00:21:21.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMusicPlayerController.h	2016-10-24 06:38:13.000000000 +0200
+@@ -11,11 +11,10 @@
+ #import <MediaPlayer/MPMediaItem.h>
+ #import <MediaPlayer/MPMediaQuery.h>
+ #import <MediaPlayer/MPMediaPlayback.h>
++#import <MediaPlayer/MPMusicPlayerQueueDescriptor.h>
+ 
+ NS_ASSUME_NONNULL_BEGIN
+ 
+-@class MPMediaItem, MPMediaQuery, MPMusicPlayerControllerInternal;
+-
+ typedef NS_ENUM(NSInteger, MPMusicPlaybackState) {
+     MPMusicPlaybackStateStopped,
+     MPMusicPlaybackStatePlaying,
+@@ -23,25 +22,24 @@
      MPMusicPlaybackStateInterrupted,
      MPMusicPlaybackStateSeekingForward,
      MPMusicPlaybackStateSeekingBackward
@@ -775,39 +796,75 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  @interface MPMusicPlayerController : NSObject <MPMediaPlayback>
  
  /// Playing media items with the applicationMusicPlayer will restore the user's Music state after the application quits.
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMusicPlayerQueueDescriptor.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMusicPlayerQueueDescriptor.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMusicPlayerQueueDescriptor.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMusicPlayerQueueDescriptor.h	2016-10-24 05:59:56.000000000 +0200
-@@ -12,14 +12,12 @@
+@@ -83,6 +81,13 @@
+ - (void)setQueueWithQuery:(MPMediaQuery *)query;
+ - (void)setQueueWithItemCollection:(MPMediaItemCollection *)itemCollection;
+ - (void)setQueueWithStoreIDs:(NSArray<NSString *> *)storeIDs NS_AVAILABLE_IOS(9_3);
++- (void)setQueueWithDescriptor:(MPMusicPlayerQueueDescriptor *)descriptor NS_AVAILABLE_IOS(10_1);
++
++// The completion handler will be called when the first item from the queue is buffered and ready to play.
++// If a first item has been specified using MPMusicPlayerQueueDescriptor, the error will be non-nil if the specified item cannot be prepared for playback.
++// If a first item is not specified, the error will be non-nil if an item cannot be prepared for playback.
++// Errors will be in MPErrorDomain.
++- (void)prepareToPlayWithCompletionHandler:(void (^)(NSError *_Nullable error))completionHandler NS_AVAILABLE_IOS(10_1);
  
- @class MPMediaItem, MPMediaItemCollection, MPMediaQuery;
- 
--MP_EXTERN_CLASS_AVAILABLE(10_1)
--__TVOS_PROHIBITED
+ // Skips to the next item in the queue. If already at the last item, this will end playback.
+ - (void)skipToNextItem;
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMusicPlayerQueueDescriptor.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMusicPlayerQueueDescriptor.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMusicPlayerQueueDescriptor.h	1970-01-01 01:00:00.000000000 +0100
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPMusicPlayerQueueDescriptor.h	2016-10-24 06:54:13.000000000 +0200
+@@ -0,0 +1,48 @@
++//
++//  MPMusicPlayerQueueDescriptor.h
++//  MediaPlayerFramework
++//
++//  Copyright © 2016 Apple Inc. All rights reserved.
++//
++
++#import <Foundation/Foundation.h>
++#import <MediaPlayer/MediaPlayerDefines.h>
++
++NS_ASSUME_NONNULL_BEGIN
++
++@class MPMediaItem, MPMediaItemCollection, MPMediaQuery;
++
 +MP_API_IOS_AVAILABLE_MACOS_TVOS_PROHIBITED(10.1, 10.12.1, 10.1)
- @interface MPMusicPlayerQueueDescriptor : NSObject<NSSecureCoding>
- 
- @end
- 
--MP_EXTERN_CLASS_AVAILABLE(10_1)
--__TVOS_PROHIBITED
++@interface MPMusicPlayerQueueDescriptor : NSObject<NSSecureCoding>
++
++@end
++
 +MP_API_IOS_AVAILABLE_MACOS_TVOS_PROHIBITED(10.1, 10.12.1, 10.1)
- @interface MPMusicPlayerMediaItemQueueDescriptor : MPMusicPlayerQueueDescriptor
- 
- - (instancetype)initWithQuery:(MPMediaQuery *)query;
-@@ -34,8 +32,7 @@
- 
- @end
- 
--MP_EXTERN_CLASS_AVAILABLE(10_1)
--__TVOS_PROHIBITED
++@interface MPMusicPlayerMediaItemQueueDescriptor : MPMusicPlayerQueueDescriptor
++
++- (instancetype)initWithQuery:(MPMediaQuery *)query;
++- (instancetype)initWithItemCollection:(MPMediaItemCollection *)itemCollection;
++
++@property (nonatomic, copy, readonly) MPMediaQuery *query;
++@property (nonatomic, strong, readonly) MPMediaItemCollection *itemCollection;
++@property (nonatomic, strong, nullable) MPMediaItem *startItem;
++
++- (void)setStartTime:(NSTimeInterval)startTime forItem:(MPMediaItem *)mediaItem;
++- (void)setEndTime:(NSTimeInterval)endTime forItem:(MPMediaItem *)mediaItem;
++
++@end
++
 +MP_API_IOS_AVAILABLE_MACOS_TVOS_PROHIBITED(10.1, 10.12.1, 10.1)
- @interface MPMusicPlayerStoreQueueDescriptor : MPMusicPlayerQueueDescriptor
- 
- - (instancetype)initWithStoreIDs:(NSArray<NSString *> *)storeIDs;
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPNowPlayingInfoCenter.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPNowPlayingInfoCenter.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPNowPlayingInfoCenter.h	2016-08-05 08:27:48.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPNowPlayingInfoCenter.h	2016-10-24 05:31:45.000000000 +0200
++@interface MPMusicPlayerStoreQueueDescriptor : MPMusicPlayerQueueDescriptor
++
++- (instancetype)initWithStoreIDs:(NSArray<NSString *> *)storeIDs;
++
++@property (nonatomic, copy, nullable) NSArray<NSString *> *storeIDs;
++@property (nonatomic, copy, nullable) NSString *startItemID;
++
++- (void)setStartTime:(NSTimeInterval)startTime forItemWithStoreID:(NSString *)storeID;
++- (void)setEndTime:(NSTimeInterval)endTime forItemWithStoreID:(NSString *)storeID;
++
++@end
++
++NS_ASSUME_NONNULL_END
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPNowPlayingInfoCenter.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPNowPlayingInfoCenter.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPNowPlayingInfoCenter.h	2016-08-05 08:27:48.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPNowPlayingInfoCenter.h	2016-10-24 05:31:45.000000000 +0200
 @@ -39,19 +39,34 @@
      MPNowPlayingInfoMediaTypeNone = 0,
      MPNowPlayingInfoMediaTypeAudio,
@@ -937,9 +994,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
 +MP_EXTERN NSString *const MPNowPlayingInfoPropertyMediaType NS_AVAILABLE(10_12_1, 10_0); // NSNumber (MPNowPlayingInfoMediaType)
  
  NS_ASSUME_NONNULL_END
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPNowPlayingInfoLanguageOption.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPNowPlayingInfoLanguageOption.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPNowPlayingInfoLanguageOption.h	2016-05-04 00:21:26.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPNowPlayingInfoLanguageOption.h	2016-10-24 06:54:13.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPNowPlayingInfoLanguageOption.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPNowPlayingInfoLanguageOption.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPNowPlayingInfoLanguageOption.h	2016-05-04 00:21:26.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPNowPlayingInfoLanguageOption.h	2016-10-24 06:54:13.000000000 +0200
 @@ -22,26 +22,26 @@
  // Common values used to to populate MPNowPlayingInfoLanguageOption's
  // characteristics property.
@@ -988,9 +1045,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  @interface MPNowPlayingInfoLanguageOptionGroup : NSObject
  
  - (instancetype)initWithLanguageOptions:(NSArray<MPNowPlayingInfoLanguageOption *> *)languageOptions
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentDataSource.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentDataSource.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentDataSource.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentDataSource.h	2016-10-24 05:59:56.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentDataSource.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentDataSource.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentDataSource.h	2016-08-11 06:42:45.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentDataSource.h	2016-10-24 06:54:13.000000000 +0200
 @@ -17,7 +17,7 @@
  /// Data sources are responsible for providing metadata about your media to these
  /// systems in a meaningful way, so that features like user interfaces and play
@@ -1009,9 +1066,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  
  @required
  /// Returns the number of child nodes at the specified index path. In a virtual
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentDelegate.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentDelegate.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentDelegate.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentDelegate.h	2016-10-24 05:59:56.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentDelegate.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentDelegate.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentDelegate.h	2016-08-11 06:42:45.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentDelegate.h	2016-10-24 06:54:13.000000000 +0200
 @@ -6,6 +6,7 @@
  //
  
@@ -1050,9 +1107,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  
  @end
  
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentManager.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentManager.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentManager.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentManager.h	2016-10-24 05:59:56.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentManager.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentManager.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentManager.h	2016-08-11 06:42:45.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentManager.h	2016-10-24 06:54:13.000000000 +0200
 @@ -17,8 +17,7 @@
  /// provides the content manager with a data source, which allows the media player
  /// to browse the media content offered by the application, as well as a delegate,
@@ -1072,9 +1129,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  
  /// Returns the application's instance of the content manager.
  + (instancetype)sharedContentManager;
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentManagerContext.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentManagerContext.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentManagerContext.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentManagerContext.h	2016-10-24 05:59:56.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentManagerContext.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentManagerContext.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentManagerContext.h	2016-08-11 06:42:45.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPPlayableContentManagerContext.h	2016-10-24 06:54:13.000000000 +0200
 @@ -8,12 +8,10 @@
  #import <Foundation/Foundation.h>
  #import <MediaPlayer/MediaPlayerDefines.h>
@@ -1089,9 +1146,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  @interface MPPlayableContentManagerContext : NSObject
  
  /// The number of items the content server will display when content limiting is enforced.
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommand.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommand.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommand.h	2016-08-11 06:42:45.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommand.h	2016-10-24 05:31:45.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommand.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommand.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommand.h	2016-08-11 06:42:45.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommand.h	2016-10-24 05:31:45.000000000 +0200
 @@ -25,13 +25,13 @@
      /// available that is required for this command. As an example, an
      /// application would return this error code if an "enable language option"
@@ -1172,9 +1229,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  @interface MPChangeRepeatModeCommand : MPRemoteCommand
  
  @property (nonatomic, assign) MPRepeatType currentRepeatType;
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommandCenter.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommandCenter.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommandCenter.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommandCenter.h	2016-10-24 05:59:56.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommandCenter.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommandCenter.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommandCenter.h	2016-08-11 06:42:45.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommandCenter.h	2016-10-24 06:54:14.000000000 +0200
 @@ -19,7 +19,7 @@
  @class MPRemoteCommand;
  @class MPSkipIntervalCommand;
@@ -1204,9 +1261,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  
  // Rating Command
  @property (nonatomic, readonly) MPRatingCommand *ratingCommand;
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommandEvent.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommandEvent.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommandEvent.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommandEvent.h	2016-10-24 06:38:13.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommandEvent.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommandEvent.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommandEvent.h	2016-09-30 07:27:06.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteCommandEvent.h	2016-10-24 06:38:13.000000000 +0200
 @@ -14,7 +14,7 @@
  
  @class MPRemoteCommand;
@@ -1300,9 +1357,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  @interface MPChangeRepeatModeCommandEvent : MPRemoteCommandEvent
  
  /// The desired repeat type to use when fulfilling the request.
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteControlTypes.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteControlTypes.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteControlTypes.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteControlTypes.h	2016-10-24 05:59:56.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteControlTypes.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteControlTypes.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteControlTypes.h	2016-08-11 06:42:45.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPRemoteControlTypes.h	2016-10-24 06:54:13.000000000 +0200
 @@ -12,16 +12,16 @@
      MPShuffleTypeOff,           /// Nothing is shuffled during playback.
      MPShuffleTypeItems,         /// Individual items are shuffled during playback.
@@ -1323,9 +1380,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
      MPChangeLanguageOptionSettingPermanent /// The Language Option change should apply to all future playback
 -} NS_ENUM_AVAILABLE_IOS(9_4);
 +} NS_ENUM_AVAILABLE(10_12_1, 9_4);
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPVolumeView.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPVolumeView.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPVolumeView.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPVolumeView.h	2016-10-24 05:59:56.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPVolumeView.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPVolumeView.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPVolumeView.h	2016-08-11 06:42:45.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MPVolumeView.h	2016-10-24 06:54:13.000000000 +0200
 @@ -11,8 +11,7 @@
  
  NS_ASSUME_NONNULL_BEGIN
@@ -1336,9 +1393,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  @interface MPVolumeView : UIView <NSCoding>
  
  @property (nonatomic) BOOL showsVolumeSlider NS_AVAILABLE_IOS(4_2); // Default is YES.
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MediaPlayer.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MediaPlayer.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MediaPlayer.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MediaPlayer.h	2016-10-24 05:59:56.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MediaPlayer.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MediaPlayer.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MediaPlayer.h	2016-08-11 06:42:45.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MediaPlayer.h	2016-10-24 06:54:13.000000000 +0200
 @@ -6,9 +6,9 @@
  //
  
@@ -1352,12 +1409,13 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  #import <MediaPlayer/MPMediaItemCollection.h>
  #import <MediaPlayer/MPMediaLibrary.h>
  #import <MediaPlayer/MPMediaPickerController.h>
-@@ -19,15 +19,21 @@
+@@ -18,15 +18,22 @@
+ #import <MediaPlayer/MPMoviePlayerController.h>
  #import <MediaPlayer/MPMoviePlayerViewController.h>
  #import <MediaPlayer/MPMusicPlayerController.h>
- #import <MediaPlayer/MPMusicPlayerQueueDescriptor.h>
 -#import <MediaPlayer/MPNowPlayingInfoCenter.h>
 -#import <MediaPlayer/MPNowPlayingInfoLanguageOption.h>
++#import <MediaPlayer/MPMusicPlayerQueueDescriptor.h>
  #import <MediaPlayer/MPPlayableContentDataSource.h>
  #import <MediaPlayer/MPPlayableContentDelegate.h>
  #import <MediaPlayer/MPPlayableContentManager.h>
@@ -1378,9 +1436,9 @@ diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platfo
  #import <MediaPlayer/MPRemoteControlTypes.h>
 -#import <MediaPlayer/MPVolumeSettings.h>
 -#import <MediaPlayer/MPVolumeView.h>
-diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MediaPlayerDefines.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MediaPlayerDefines.h
---- /Applications/Xcode81.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MediaPlayerDefines.h	2016-09-30 07:27:06.000000000 +0200
-+++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MediaPlayerDefines.h	2016-10-24 05:59:56.000000000 +0200
+diff -ruN /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MediaPlayerDefines.h /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MediaPlayerDefines.h
+--- /Applications/Xcode81.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MediaPlayerDefines.h	2016-08-11 06:42:45.000000000 +0200
++++ /Applications/Xcode82-beta1.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS.sdk/System/Library/Frameworks/MediaPlayer.framework/Headers/MediaPlayerDefines.h	2016-10-24 06:54:13.000000000 +0200
 @@ -11,5 +11,31 @@
  #define MP_EXTERN     extern __attribute__((visibility ("default")))
  #endif

@@ -1,3 +1,0 @@
-#PassKit.framework
-
-### Done
