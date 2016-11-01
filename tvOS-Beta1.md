@@ -9,7 +9,7 @@
 - [ ] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-tvOS-Beta1)
 - [ ] [ModelIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ModelIO-tvOS-Beta1)
 - [ ] [Photos.framework](https://github.com/xamarin/xamarin-macios/wiki/Photos-tvOS-Beta1)
-- [ ] [QuartzCore.framework](https://github.com/xamarin/xamarin-macios/wiki/QuartzCore-tvOS-Beta1) - Sebastien
+- [X] [QuartzCore.framework](https://github.com/xamarin/xamarin-macios/wiki/QuartzCore-tvOS-Beta1) - no source changes
 - [ ] [ReplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/ReplayKit-tvOS-Beta1) - Sebastien
 - [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-tvOS-Beta1) - Sebastien
 - [ ] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-tvOS-Beta1)
