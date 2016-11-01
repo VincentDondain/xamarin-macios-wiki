@@ -2,11 +2,11 @@
 ###### Existing Frameworks
 - [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-iOS-Beta1)
 - [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-iOS-Beta1)
-- [ ] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-iOS-Beta1)
-- [ ] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-iOS-Beta1)
+- [X] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-iOS-Beta1) - no source changes
+- [X] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-iOS-Beta1) - no source changes
 - [ ] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-iOS-Beta1) - Vincent
 - [ ] [Intents.framework](https://github.com/xamarin/xamarin-macios/wiki/Intents-iOS-Beta1)
-- [ ] [IntentsUI.framework](https://github.com/xamarin/xamarin-macios/wiki/IntentsUI-iOS-Beta1)
+- [X] [IntentsUI.framework](https://github.com/xamarin/xamarin-macios/wiki/IntentsUI-iOS-Beta1) - no source changes
 - [ ] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-iOS-Beta1) - Vincent
 - [ ] [Messages.framework](https://github.com/xamarin/xamarin-macios/wiki/Messages-iOS-Beta1) - Vincent
 - [ ] [ModelIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ModelIO-iOS-Beta1) - Vincent
