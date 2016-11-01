@@ -4,7 +4,7 @@ version:10.3.0
 releasedate:2016-10-25
 
 <div class="note">
-	<b>Master / Cycle 9 Daily Builds</b>
+	<b>Cycle 9 Daily Builds</b>
 	This version of Xamarin.iOS will ship as part of Xamarin **cycle 9** releases.
 	Some fixes might be backported into `cycle8` and released long before other parts of `master` becomes public.
 </div>
@@ -27,7 +27,7 @@ What's New
 ==========
 
 This release is built upon our [open sourced SDK](https://github.com/xamarin/xamarin-macios),
-using the `master` branch, and include some additional IDE integratin tools.
+using the `cycle9` branch, and include some additional IDE integratin tools.
 
 * It's now possible to specify how many parallel AOT processes mtouch can launch by using the `-j #` argument to mtouch (in the project's iOS Build options). The default is the number of processors on the machine, but builds on high-end machines may profit from increasing this value.
 
