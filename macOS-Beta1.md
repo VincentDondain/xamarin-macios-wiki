@@ -14,7 +14,7 @@
 - [ ] [Kernel.framework](https://github.com/xamarin/xamarin-macios/wiki/Kernel-macOS-Beta1)
 - [ ] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-macOS-Beta1)
 - [ ] [ModelIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ModelIO-macOS-Beta1)
-- [ ] [NetworkExtension.framework](https://github.com/xamarin/xamarin-macios/wiki/NetworkExtension-macOS-Beta1)
+- [X] [NetworkExtension.framework](https://github.com/xamarin/xamarin-macios/wiki/NetworkExtension-macOS-Beta1) - no source changes
 - [ ] [Ruby.framework](https://github.com/xamarin/xamarin-macios/wiki/Ruby-macOS-Beta1)
 - [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-macOS-Beta1) - Sebastien
 - [ ] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-macOS-Beta1)

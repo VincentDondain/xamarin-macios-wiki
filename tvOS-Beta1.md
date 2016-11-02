@@ -3,8 +3,8 @@
 - [ ] [AVFoundation.framework](https://github.com/xamarin/xamarin-macios/wiki/AVFoundation-tvOS-Beta1)
 - [ ] [AVKit.framework](https://github.com/xamarin/xamarin-macios/wiki/AVKit-tvOS-Beta1)
 - [ ] [CloudKit.framework](https://github.com/xamarin/xamarin-macios/wiki/CloudKit-tvOS-Beta1)
-- [ ] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-tvOS-Beta1)
-- [ ] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-tvOS-Beta1)
+- [X] [CoreData.framework](https://github.com/xamarin/xamarin-macios/wiki/CoreData-tvOS-Beta1) - no source changes
+- [X] [GameplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/GameplayKit-tvOS-Beta1) - no source changes
 - [ ] [HomeKit.framework](https://github.com/xamarin/xamarin-macios/wiki/HomeKit-tvOS-Beta1)
 - [ ] [MediaPlayer.framework](https://github.com/xamarin/xamarin-macios/wiki/MediaPlayer-tvOS-Beta1)
 - [ ] [ModelIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ModelIO-tvOS-Beta1)
