@@ -11,7 +11,7 @@ releasedate:2016-11-01
 
 <div class="note">
 	<b>Mono TLS Removal:</b>
-	This version of Xamarin.iOS (C10) does <b>not<b> ship with the old Mono (managed) SSL/TLS provider, which
+	This version of Xamarin.iOS (C10) does <b>not</b> ship with the old Mono (managed) SSL/TLS provider, which
 	only supported the SSLv3 and TLSv1 standards. TLS support (up to version 1.2) is provided by the 
 	newer AppleTLS provider (already the default since XI 9.8 / C7).
 </div>
