@@ -28,6 +28,10 @@ What's New
 This release is built upon our [open sourced SDK](https://github.com/xamarin/xamarin-macios),
 using the `master` branch, and include some additional IDE integratin tools.
 
+### Memory usage and executable size improvements
+
+We've <a href="https://github.com/xamarin/xamarin-macios/commit/7728c4cd196e605e036ecf531a8bd81072094412">reworked how managed types are registered</a> with the Objective-C runtime, improving executable size and memory usage significantly (for a sample app the executable size decreased by ~200 kb and the memory usage decreased by ~400 kb).
+
 ### API diff
 
 This is a live document so there's no static list to link to. However our [Jenkins bots](https://jenkins.mono-project.com/job/xamarin-macios-pr-builder/) produce this information for every commit that is being built. Pick on based on `master` and look for the **API diff** link on the left column.
