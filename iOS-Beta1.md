@@ -12,7 +12,7 @@
 - [ ] [ModelIO.framework](https://github.com/xamarin/xamarin-macios/wiki/ModelIO-iOS-Beta1) - Vincent
 - [X] [NetworkExtension.framework](https://github.com/xamarin/xamarin-macios/wiki/NetworkExtension-iOS-Beta1) - no source changes
 - [X] [PassKit.framework](https://github.com/xamarin/xamarin-macios/wiki/PassKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/1099
-- [ ] [Photos.framework](https://github.com/xamarin/xamarin-macios/wiki/Photos-iOS-Beta1)
+- [ ] [Photos.framework](https://github.com/xamarin/xamarin-macios/wiki/Photos-iOS-Beta1) - Alex
 - [X] [QuartzCore.framework](https://github.com/xamarin/xamarin-macios/wiki/QuartzCore-iOS-Beta1) - no source changes
 - [ ] [ReplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/ReplayKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/1101
 - [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/1100
