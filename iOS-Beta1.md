@@ -16,7 +16,7 @@
 - [X] [QuartzCore.framework](https://github.com/xamarin/xamarin-macios/wiki/QuartzCore-iOS-Beta1) - no source changes
 - [ ] [ReplayKit.framework](https://github.com/xamarin/xamarin-macios/wiki/ReplayKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/1101
 - [ ] [Security.framework](https://github.com/xamarin/xamarin-macios/wiki/Security-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/1100
-- [ ] [Speech.framework](https://github.com/xamarin/xamarin-macios/wiki/Speech-iOS-Beta1) - Alex
+- [X] [Speech.framework](https://github.com/xamarin/xamarin-macios/wiki/Speech-iOS-Beta1) - Alex - no source changes, we already had the availability attributes in place
 - [ ] [SpriteKit.framework](https://github.com/xamarin/xamarin-macios/wiki/SpriteKit-iOS-Beta1) - Vincent
 - [X] [UIKit.framework](https://github.com/xamarin/xamarin-macios/wiki/UIKit-iOS-Beta1) - Sebastien - https://github.com/xamarin/xamarin-macios/pull/1098
 - [ ] [VideoSubscriberAccount.framework](https://github.com/xamarin/xamarin-macios/wiki/VideoSubscriberAccount-iOS-Beta1)
